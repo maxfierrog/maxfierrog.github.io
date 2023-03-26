@@ -48,7 +48,7 @@ enableEmoji = true
   description = "Includes my soicals, CV, and some senseless ramblings."
 
 [params.author]
-  avatar = "me.jpg" # put the file in assets folder; also ensure that image has same height and width
+  avatar = "me.png" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Max Fierro"
   name = "Max F"

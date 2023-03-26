@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Max Fierro</title>
+    <link>www.maxfierro.me/</link>
+    <description>Recent content on Max Fierro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 15:16:31 -0700</lastBuildDate><atom:link href="www.maxfierro.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>www.maxfierro.me/resume/</link>
+      <pubDate>Fri, 24 Mar 2023 17:12:34 -0700</pubDate>
+      
+      <guid>www.maxfierro.me/resume/</guid>
+      <description>I am currently completing the fourth semester of my undergraduate studies, and have found interests in mathematics, computer science, leadership, and low-level programming. I also work in UC Berkeley IT and have recently gotten involved with a research group exploring computational game theory, advised by Dr. Dan Garcia.
+🎓 Academic History University of California, Berkeley &amp;ndash; Aug 2021 to Dec 2025 B.A. Computer Science Planning to concentrate on systems and security; interested in spectral graph theory.</description>
+    </item>
+    
+    <item>
+      <title>Who am I?</title>
+      <link>www.maxfierro.me/aboutme/</link>
+      <pubDate>Thu, 23 Mar 2023 14:57:34 -0700</pubDate>
+      
+      <guid>www.maxfierro.me/aboutme/</guid>
+      <description>Our surroundings seem to implicitly suggest that the universal set can be partitioned into two subsets (a self and an other) in reference to every person, and that their boundary is the best definition of who that person is.
+I do not subscribe to this belief, as I do not think that there exists a correct way to describe a manifold which effectively encapsulates (or isolates) us in our entirety. I think that we all contribute to a single collective experience which our bodies can only feel locally.</description>
+    </item>
+    
+    <item>
+      <title>Initialize!</title>
+      <link>www.maxfierro.me/posts/initial-post/</link>
+      <pubDate>Wed, 22 Mar 2023 15:16:31 -0700</pubDate>
+      
+      <guid>www.maxfierro.me/posts/initial-post/</guid>
+      <description>Rubs hands
+git add . git commit -m &amp;quot;initial commit&amp;quot; git push Okay, what now?</description>
+    </item>
+    
+  </channel>
+</rss>

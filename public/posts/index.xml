@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Max Fierro</title>
+    <link>www.maxfierro.me/posts/</link>
+    <description>Recent content in Posts on Max Fierro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 15:16:31 -0700</lastBuildDate><atom:link href="www.maxfierro.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initialize!</title>
+      <link>www.maxfierro.me/posts/initial-post/</link>
+      <pubDate>Wed, 22 Mar 2023 15:16:31 -0700</pubDate>
+      
+      <guid>www.maxfierro.me/posts/initial-post/</guid>
+      <description>Rubs hands
+git add . git commit -m &amp;quot;initial commit&amp;quot; git push Okay, what now?</description>
+    </item>
+    
+  </channel>
+</rss>
