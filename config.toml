@@ -1,5 +1,5 @@
 title = "Max Fierro"
-baseURL = 'https://maxfierro.me/'
+baseURL = 'www.maxfierro.me/'
 languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 
@@ -43,9 +43,9 @@ enableEmoji = true
     weight = 40
 
 [params]
-  sitename = "Max's Site"
+  sitename = "Max's Personal Site"
   defaultColor = "light" # set default color mode: dark or light
-  description = "Max's personal blog and introductory site."
+  description = "Includes my soicals, CV, and some senseless ramblings."
 
 [params.author]
   avatar = "me.png" # put the file in assets folder; also ensure that image has same height and width
