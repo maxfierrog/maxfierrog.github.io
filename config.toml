@@ -39,7 +39,7 @@ enableEmoji = true
   [[menu.main]]
     pageRef="resume"
     name = 'CV'
-    url = '/resume/'
+    url = '/cv/'
     weight = 40
 
 [params]
