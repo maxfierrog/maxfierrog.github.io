@@ -39,7 +39,7 @@ I lead a team responsible for the development of open-ended IT initiatives in th
 * Built infrastructure for and provided 60 iPads to teachers in the [ECE Program](https://ece.berkeley.edu/).
 * Created 2 interviewing stations free for all UC Berkeley students at the [Career Center](https://career.berkeley.edu/).
 * Set up an accessible station for [CalDining](https://caldining.berkeley.edu/) employees with low tech and English literacy.
-* Helped [Cal Esports](https://recsports.berkeley.edu/programs-events/esports/) do a drop-in replacement of 55 gaming PCs' hardware and software. 
+* Helped [Cal Esports](https://recsports.berkeley.edu/programs-events/esports/) do a drop-in replacement of 55 gaming PCs' hardware and software.
 
 In addition to these collective achievements, in my specific capacity as team lead I have:
 
@@ -57,7 +57,7 @@ The main project I worked on was an iOS task-based project management applicatio
 **[UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)** <span style="float:right;"> Berkeley, CA </span> \
 **_Student Technology Consultant_** <span style="float:right;"> Aug 2021 - Mar 2022 </span>
 
-I provided frontline hardware and software assistance to students, and contributed to our standardized procedures which are still used by the 20+ member [Student Helpdesk](https://studenttech.berkeley.edu/techsupport) team. This was overall incredibly varying work, and I learned a lot about customer service and got to be very scrappy (in a careful way). Students can sometimes get their computers intot truly _"wow"_ states.
+I provided frontline hardware and software assistance to students, and contributed to our standardized procedures which are still used by the 20+ member [Student Helpdesk](https://studenttech.berkeley.edu/techsupport) team. This was overall incredibly varying work, and I learned a lot about customer service and got to be very scrappy (in a careful way). Students can sometimes get their computers into truly _"wow"_ states.
 
 **[Jolibee](https://www.jollibeefoods.com/)** <span style="float:right;"> San Diego, CA </span> \
 **_Crew Member_** <span style="float:right;"> Mar 2021 - Jun 2021 </span>
@@ -81,12 +81,12 @@ This group researches methods for strongly solving abstract strategy games and d
 **[FRC Team #6348](https://frc-events.firstinspires.org/team/6348)** <span style="float:right;"> Sep 2019 - Aug 2022 </span> \
 _High school robotics and STEM group from Colima, Mexico._
 
-This is a First Robotics Competition group from my high shcool. It is very close to my heart, because me and my closest friends put in a lot of work for the team. While I still occasionally help out with mentoring, my active involvement has largely ceased because I have gotten increasingly busy. Here are the roles I have held:
+This is a FIRST Robotics Competition group from my high school. It is very close to my heart, because me and my closest friends put in a lot of work for the team. While I still occasionally help out with mentoring, my active involvement has largely ceased because I have gotten increasingly busy. Here are the roles I have held:
 
-* As an **official mentor** I gave professional and acadmic guidance to the team.
+* As an **official mentor** I gave professional and academic guidance to the team.
 * As **head of the Design Division** I coordinated the design of an award-winning robot.
 * As a **driver** I participated in competitions and got to crash our robots a few times.
-* As a **member** I made a lot of friends who went on to become incredible individuals. 
+* As a **member** I made a lot of friends who went on to become incredible individuals.
 
 ---
 

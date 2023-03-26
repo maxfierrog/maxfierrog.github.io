@@ -34,7 +34,7 @@ As a result, I am also very lighthearted and generally a positive person. My moo
 
 #### Beauty and aesthetics
 
-As I mentioned, my mind gravitates naturally towards the abstract, or in other words, to reducing objects to their fundamental characteristics and researching relationships between them. This is because I believe there there is profound beauty in simple form. In this regard, I have allowed my aesthetics to be a guide when it comes to what I do with my time.
+As I mentioned, my mind gravitates naturally towards the abstract, or in other words, to reducing objects to their fundamental characteristics and researching relationships between them. This is because I believe there is profound beauty within simple form. In this regard, I have allowed my aesthetics to be a guide when it comes to what I do with my time.
 
 This appreciation often finds itself at odds with the intent of having a tangible impact on my surroundings. However, even within functional processes, I have been able to draw abstract parallels with pure forms, which I find very stimulating. This has allowed me to blur the lines between what I do out of need, good, and affection.
 
