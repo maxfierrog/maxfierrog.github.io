@@ -43,9 +43,9 @@ enableEmoji = true
     weight = 40
 
 [params]
-  sitename = "Blog"
+  sitename = "Max's Site"
   defaultColor = "light" # set default color mode: dark or light
-  description = "Minimal Hugo blog theme with light and dark mode support"
+  description = "Max's personal blog and introductory site."
 
 [params.author]
   avatar = "me.png" # put the file in assets folder; also ensure that image has same height and width
