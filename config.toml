@@ -1,5 +1,5 @@
 title = "Max Fierro"
-baseURL = 'www.maxfierro.me/'
+baseURL = 'https://www.maxfierro.me/'
 languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 
