@@ -103,7 +103,6 @@ This is a First Robotics Competition group from my high shcool. It is very close
 
 * Rust
 * C
-* Go
 * Java
 * Swift
 * Python
