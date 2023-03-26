@@ -1,4 +1,4 @@
-# maxfierro.me
+# [maxfierro.me](https://www.maxfierro.me/)
 
 I made this site because I am trying to be cool. It is facilitated by:
 
