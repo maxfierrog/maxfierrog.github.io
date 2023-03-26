@@ -52,7 +52,7 @@ enableEmoji = true
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Max Fierro"
   name = "Max F"
-  description = "Nice to see you, thank you for stopping by :)"
+  description = "Nice to see you, thank you for stopping by!"
 
 [[params.socialIcons]]
 name = "github"
@@ -65,6 +65,10 @@ url = "https://www.linkedin.com/in/maxfierro/"
 [[params.socialIcons]]
 name = "twitter"
 url = "https://twitter.com/MaxFierro"
+
+[[params.socialIcons]]
+name = "instagram"
+url = "https://www.instagram.com/maxfierrog/"
 
 [[params.socialIcons]]
 name = "spotify"
