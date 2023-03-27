@@ -45,13 +45,17 @@ Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422L
 **[Meta](https://about.meta.com/)** <span style="float:right;"> Menlo Park, CA </span> \
 **_Software Engineer Intern_** <span style="float:right;"> May 2023 - Aug 2023 </span>
 
+{{< details "Details..." >}}
 This has not happened yet, but I am hoping to be matched with a team working in systems or infrastructure. Last time I worked on iOS, and that was not incredibly fun for me.
+<p>
+{{< /details >}}
 
 </br>
 
 **[UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)** <span style="float:right;"> Berkeley, CA </span> \
 **_Lead Endpoint Engineer_** <span style="float:right;"> Mar 2022 - Now </span>
 
+{{< details "Details..." >}}
 I lead a team responsible for the development of open-ended IT initiatives in the department of Student Affairs and the management of all workstations and devices used by UC Berkeley Student Affairs groups. Some of the things we have achieved in my time here have been:
 
 * Built infrastructure for and provided 60 iPads to teachers in the [ECE Program](https://ece.berkeley.edu/).
@@ -64,29 +68,38 @@ In addition to these collective achievements, in my specific capacity as team le
 * Conducted 2 hiring panels for the [Endpoint Engineer](https://docs.google.com/document/d/17_sCM0PM0WK7ghG6OPg30eWQ8d081LPXzWVUMnY5pMc/edit) position.
 * Advised CIO and senior IT leaders as part of the [Student Technology Council](https://stc.berkeley.edu/).
 * [Contributed](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
+{{< /details >}}
 
 </br>
 
 **[Meta](https://about.meta.com/)** <span style="float:right;"> Menlo Park, CA </span> \
 **_MetaU Engineering Intern_** <span style="float:right;"> Jun 2022 - Aug 2022 </span>
 
+{{< details "Details..." >}}
 I was taught large-scale application design and developed my own project with the guidance of two (incredibly didactic and supportive) software engineers. While I barely touched Meta's codebase (by the program's design), I did learn a lot about the work of the team I was placed into, which helped [WhatsApp](https://www.whatsapp.com/) transfer and archive data.
 
 The main project I worked on was an iOS task-based project management application I called [Process](https://github.com/maxfierrog/process) whose main feature was a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of task-to-task dependencies (as opposed to just a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) or list) on a recursive user interface. It is built on a [Firebase](https://firebase.google.com/)-d backend and [SwiftUI](https://developer.apple.com/xcode/swiftui/) frontend (in hindsight, should have used [Neo4j](https://neo4j.com/)'s graph DB instead).
+{{< /details >}}
 
 </br>
 
 **[UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)** <span style="float:right;"> Berkeley, CA </span> \
 **_Student Technology Consultant_** <span style="float:right;"> Aug 2021 - Mar 2022 </span>
 
+{{< details "Details..." >}}
 I provided frontline hardware and software assistance to students, and contributed to our standardized procedures which are still used by the 20+ member [Student Helpdesk](https://studenttech.berkeley.edu/techsupport) team. This was overall incredibly varying work, and I learned a lot about customer service and got to be very scrappy (in a careful way). Students can sometimes get their computers into truly _"wow"_ states.
+<p>
+{{< /details >}}
 
 </br>
 
 **[Jolibee](https://www.jollibeefoods.com/)** <span style="float:right;"> San Diego, CA </span> \
 **_Crew Member_** <span style="float:right;"> Mar 2021 - Jun 2021 </span>
 
+{{< details "Details..." >}}
 No meal is complete without the bread, and no CV is complete without fast food experience. With the help of my comrades, I served food at up to 3 orders per minute. I worked 40 hour weeks while being a full-time high school student, which was exhausting. This is the hardest work I have done in my life, including being a Berkeley student (but excluding 40 degree Celsius soccer practices in 2nd grade).
+<p>
+{{< /details >}}
 
 </br>
 
