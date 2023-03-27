@@ -15,13 +15,15 @@ I am currently completing the fourth semester of my undergraduate studies, and h
 #### **University of California, Berkeley**
 
 _**B.A. Computer Science** - In progress_\
-Planning to concentrate on systems and security where applicable. Here are some of the courses I have completed:
+Planning to concentrate on systems and security where applicable.
 
 <blockquote>
 
+{{< details "Completed courses..." >}}
 * CS 61A: Structure and Interpretation of Computer Programs
 * CS 61B: Data Structures and Algorithms
 * CS 70: Discrete Mathematics and Probability Theory
+{{< /details >}}
 
 </blockquote>
 
@@ -30,8 +32,10 @@ Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422L
 
 <blockquote>
 
+{{< details "Completed courses..." >}}
 * MATH 1A: Calculus I
 * MATH 1B: Calculus II
+{{< /details >}}
 
 </blockquote>
 
@@ -135,85 +139,36 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 
 # 🚀 Skills
 
-**Things I Am Good at Because I Fundamentally Enjoy Them**
+Here are a few lists I curated of what I think shines about me most. I categorized them in what I think is the most personally meaningful way possible.
 
 <blockquote>
-
-* Organizational work (leadership, coordination, advising, etc.)
-* Designing clean and modular software / applications
-* Written communication
-* Coding in Rust
-
-</blockquote>
-
-</br>
-
-**General Purpose Programming Languages I Know and Love**
-
-<blockquote>
-
+{{< details "**General Purpose Programming Languages I Know and Love...**" >}}
+* Python
+* Swift
+* Java
 * Rust
 * C
-* Java
-* Swift
-* Python
+{{< /details >}}
 
-</blockquote>
+{{< details "**Things I Am Good at Because I Fundamentally Enjoy Them...**" >}}
+* Organizational work (leadership, coordination, advising, etc.)
+* Designing clean and modular software/applications
+* Written communication
+* Coding in Rust
+{{< /details >}}
 
-</br>
-
-**Stuff I Have Picked Up Along the Way**
-
-<blockquote>
-
+{{< details "**Stuff I Have Picked Up Along the Way...**" >}}
 * General purpose scripting (bash, powershell, actionscript)
 * Workstation and device management
 * Working with Linux distributions
 * System administration
 * Git workflows
 * SwiftUI
+{{< /details >}}
 
-</blockquote>
-
-</br>
-
----
-
-# 📃 Other
-
-**Coursework in progress**
-
-<blockquote>
-
-* MATH 54: Linear Algebra and Differential Equations
-* CS 61C: Machine Structures
-
-</blockquote>
-
-**Planned coursework in Computer Science**
-
-<blockquote>
-
-* CS 161: Computer Security
-* CS 162: Operating Systems and Systems Programming
-* CS 164: Programming Languages and Compilers
-* CS 168: Introduction to the Internet
-* CS 170: Efficient Algorithms and Intractable Problems
-
-</blockquote>
-
-**Planned coursework in Mathematics**
-
-<blockquote>
-
-* MATH 53: Multivariable Calculus
-* MATH 104: Introduction to Analysis
-* MATH 110: Linear Algebra
-* MATH 113: Abstract Algebra I
-* MATH 114: Abstract Algebra II
-* MATH 136: Incompleteness and Undecidability
-* MATH 185: Introduction to Complex Analysis
-* MATH 125: Mathematical Logic
-* MATH 128: Numerical Analysis
-
+{{< details "**Interpersonal Specialties...**" >}}
+* Emotional intelligence
+* Individual advocacy
+* Transparency
+{{< /details >}}
 </blockquote>
