@@ -139,7 +139,7 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 
 # 🚀 Skills
 
-Here are a few lists I curated of what I think shines about me most. I categorized them in what I think is the most personally meaningful way possible.
+Here are a few lists I curated of what I think shines about me most. I categorized them in the most personally meaningful way possible.
 
 <blockquote>
 {{< details "**General Purpose Programming Languages I Know and Love...**" >}}
