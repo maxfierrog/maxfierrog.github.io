@@ -12,14 +12,28 @@ I am currently completing the fourth semester of my undergraduate studies, and h
 
 # 🎓 Academic History
 
-##### **University of California, Berkeley -- Aug 2021 to Dec 2025**
+#### **University of California, Berkeley**
 
-_**B.A. Computer Science**_ \
-Planning to concentrate on systems and security. Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). Here are some of the courses I have completed:
+_**B.A. Computer Science** - In progress_\
+Planning to concentrate on systems and security where applicable. Here are some of the courses I have completed:
+
+<blockquote>
 
 * CS 61A: Structure and Interpretation of Computer Programs
 * CS 61B: Data Structures and Algorithms
 * CS 70: Discrete Mathematics and Probability Theory
+
+</blockquote>
+
+_**B.A. Pure Mathematics** - Will declare in Dec 2023_ \
+Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). It makes the most sense for me to pursue a double major rather than a minor. Some courses I have completed are listed here:
+
+<blockquote>
+
+* MATH 1A: Calculus I
+* MATH 1B: Calculus II
+
+</blockquote>
 
 </br>
 
@@ -110,12 +124,20 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 
 **Things I Am Good at Because I Fundamentally Enjoy Them**
 
+<blockquote>
+
 * Organizational work (leadership, coordination, advising, etc.)
 * Designing clean and modular software / applications
 * Written communication
 * Coding in Rust
 
+</blockquote>
+
+</br>
+
 **General Purpose Programming Languages I Know and Love**
+
+<blockquote>
 
 * Rust
 * C
@@ -123,7 +145,13 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 * Swift
 * Python
 
+</blockquote>
+
+</br>
+
 **Stuff I Have Picked Up Along the Way**
+
+<blockquote>
 
 * General purpose scripting (bash, powershell, actionscript)
 * Workstation and device management
@@ -132,34 +160,47 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 * Git workflows
 * SwiftUI
 
+</blockquote>
+
 </br>
 
 ---
 
-# Other
+# 📃 Other
 
-Coursework in progress:
+**Coursework in progress**
+
+<blockquote>
 
 * MATH 54: Linear Algebra and Differential Equations
 * CS 61C: Machine Structures
 
-Mathematics coursework completed:
+</blockquote>
 
-* MATH 1A: Calculus I
-* MATH 1B: Calculus II
+**Planned coursework in Computer Science**
 
-Planned coursework:
+<blockquote>
 
 * CS 161: Computer Security
 * CS 162: Operating Systems and Systems Programming
 * CS 164: Programming Languages and Compilers
 * CS 168: Introduction to the Internet
-* CS 186: Introduction to Database Systems
 * CS 170: Efficient Algorithms and Intractable Problems
-* CS 172: Computability and Complexity
+
+</blockquote>
+
+**Planned coursework in Mathematics**
+
+<blockquote>
+
+* MATH 53: Multivariable Calculus
+* MATH 104: Introduction to Analysis
 * MATH 110: Linear Algebra
 * MATH 113: Abstract Algebra I
 * MATH 114: Abstract Algebra II
-* MATH 115: Introduction to Number Theory
+* MATH 136: Incompleteness and Undecidability
+* MATH 185: Introduction to Complex Analysis
 * MATH 125: Mathematical Logic
-* MATH 172: Combinatorics
+* MATH 128: Numerical Analysis
+
+</blockquote>
