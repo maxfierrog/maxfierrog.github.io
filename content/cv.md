@@ -6,6 +6,8 @@ draft: false
 
 I am currently completing the fourth semester of my undergraduate studies, and have found interests in mathematics, computer science, leadership, and low-level programming. I also work in UC Berkeley IT and have recently gotten involved with a research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
 
+</br>
+
 ---
 
 # 🎓 Academic History
@@ -13,13 +15,13 @@ I am currently completing the fourth semester of my undergraduate studies, and h
 ##### **University of California, Berkeley -- Aug 2021 to Dec 2025**
 
 _**B.A. Computer Science**_ \
-Planning to concentrate on systems and security; interested in [spectral graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings).
-
-<u>Completed coursework:</u>
+Planning to concentrate on systems and security. Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). Here are some of the courses I have completed:
 
 * CS 61A: Structure and Interpretation of Computer Programs
 * CS 61B: Data Structures and Algorithms
 * CS 70: Discrete Mathematics and Probability Theory
+
+</br>
 
 ---
 
@@ -30,6 +32,8 @@ Planning to concentrate on systems and security; interested in [spectral graph t
 **_Software Engineer Intern_** <span style="float:right;"> May 2023 - Aug 2023 </span>
 
 This has not happened yet, but I am hoping to be matched with a team working in systems or infrastructure. Last time I worked on iOS, and that was not incredibly fun for me.
+
+</br>
 
 **[UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)** <span style="float:right;"> Berkeley, CA </span> \
 **_Lead Endpoint Engineer_** <span style="float:right;"> Mar 2022 - Now </span>
@@ -47,6 +51,8 @@ In addition to these collective achievements, in my specific capacity as team le
 * Advised CIO and senior IT leaders as part of the [Student Technology Council](https://stc.berkeley.edu/).
 * [Contributed](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
 
+</br>
+
 **[Meta](https://about.meta.com/)** <span style="float:right;"> Menlo Park, CA </span> \
 **_MetaU Engineering Intern_** <span style="float:right;"> Jun 2022 - Aug 2022 </span>
 
@@ -54,15 +60,21 @@ I was taught large-scale application design and developed my own project with th
 
 The main project I worked on was an iOS task-based project management application I called [Process](https://github.com/maxfierrog/process) whose main feature was a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of task-to-task dependencies (as opposed to just a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) or list) on a recursive user interface. It is built on a [Firebase](https://firebase.google.com/)-d backend and [SwiftUI](https://developer.apple.com/xcode/swiftui/) frontend (in hindsight, should have used [Neo4j](https://neo4j.com/)'s graph DB instead).
 
+</br>
+
 **[UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)** <span style="float:right;"> Berkeley, CA </span> \
 **_Student Technology Consultant_** <span style="float:right;"> Aug 2021 - Mar 2022 </span>
 
 I provided frontline hardware and software assistance to students, and contributed to our standardized procedures which are still used by the 20+ member [Student Helpdesk](https://studenttech.berkeley.edu/techsupport) team. This was overall incredibly varying work, and I learned a lot about customer service and got to be very scrappy (in a careful way). Students can sometimes get their computers into truly _"wow"_ states.
 
+</br>
+
 **[Jolibee](https://www.jollibeefoods.com/)** <span style="float:right;"> San Diego, CA </span> \
 **_Crew Member_** <span style="float:right;"> Mar 2021 - Jun 2021 </span>
 
 No meal is complete without the bread, and no CV is complete without fast food experience. With the help of my comrades, I served food at up to 3 orders per minute. I worked 40 hour weeks while being a full-time high school student, which was exhausting. This is the hardest work I have done in my life, including being a Berkeley student (but excluding 40 degree Celsius soccer practices in 2nd grade).
+
+</br>
 
 ---
 
@@ -78,6 +90,8 @@ This group researches methods for strongly solving abstract strategy games and d
 * A [model based](http://mattmahoney.net/dc/mmahoney00.pdf) database compression scheme (memorizing using neural nets).
 * Prepping for [CalDay](https://engineering.berkeley.edu/events/cal-day/)!
 
+</br>
+
 **[FRC Team #6348](https://frc-events.firstinspires.org/team/6348)** <span style="float:right;"> Sep 2019 - Aug 2022 </span> \
 _High school robotics and STEM group from Colima, Mexico._
 
@@ -87,6 +101,8 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 * As **head of the Design Division** I coordinated the design of an award-winning robot.
 * As a **driver** I participated in competitions and got to crash our robots a few times.
 * As a **member** I made a lot of friends who went on to become incredible individuals.
+
+</br>
 
 ---
 
@@ -115,6 +131,8 @@ This is a FIRST Robotics Competition group from my high school. It is very close
 * System administration
 * Git workflows
 * SwiftUI
+
+</br>
 
 ---
 
