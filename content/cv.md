@@ -28,7 +28,7 @@ Planning to concentrate on systems and security where applicable.
 </blockquote>
 
 _**B.A. Mathematics** - Will declare in Dec 2023_ \
-Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). It makes the most sense for me to pursue a double major rather than a minor. Some courses I have completed are listed here:
+Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). It makes the most sense for me to pursue a double major rather than a minor.
 
 <blockquote>
 
