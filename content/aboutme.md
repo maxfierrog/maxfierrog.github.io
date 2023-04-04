@@ -4,7 +4,7 @@ date: 2023-03-23T14:57:34-07:00
 draft: false
 ---
 
-The world seems to think that the universal set can be partitioned into two subsets (a _self_ and an _other_) in reference to every person, and that their boundary is the best definition of who that person is. I disagree, as I do not think that there exists a correct way to describe a surface which effectively encapsulates (or isolates) us in our entirety. I think that we all contribute to a single collective experience which our bodies can only feel locally. When our egos collide (contact of mind, skin, or will), our experiences ache to equalize much like temperature does when very hot and cold metals touch.
+The world seems to think that the universal set can be partitioned into two subsets (a _self_ and an _other_) in reference to every person, and that their boundary is the best definition of who that person is. I disagree. I do not think that there exists a correct way to describe a surface which effectively encapsulates (or isolates) us in our entirety. I think that we all contribute to a single collective experience which our bodies can only feel locally. When our egos collide, our experiences ache to equalize much like temperature does when very hot and cold metals touch.
 
 I want this page to expose as much of myself as possible so that you may understand me, and so that I may understand you (insofar as your having read this allows me to understand you). To me, communion is one of the greatest joys of life, so I thank you for the chance of being understood beyond superficially.
 
