@@ -3,7 +3,7 @@
 I made this site because I am trying to be cool. It is facilitated by:
 
 * [Hugo](https://gohugo.io/), a very clean and fast static site generator built with Go. 
-* This hugo [theme](https://github.com/hugo-sid/hugo-blog-awesome).
+* This hugo [theme](https://github.com/adityatelange/hugo-PaperMod).
 * GitHub pages deployments using actions.
 * Google services.
 
