@@ -3,7 +3,7 @@ title: "Curriculum Vitae"
 summary: Long-form summary of my life's work and achievements.
 date: 2023-03-20
 weight: 1
-tags: ["serious", "maintained"]
+tags: ["Serious", "Maintained"]
 draft: false
 ShowReadingTime: false
 ShowWordCount: false
@@ -47,6 +47,7 @@ Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422L
 ## 🛠️ Professional History
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
+
 Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
@@ -58,6 +59,7 @@ This has not happened yet, but I am hoping to be matched with a team working in 
 {{< brk >}}
 
 ### Lead Endpoint Engineer @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
+
 Berkeley, CA -- Mar 2022 to now
 
 {{< collapse "summary"="Details..." >}}
@@ -80,6 +82,7 @@ In addition to these collective achievements, in my specific capacity as team le
 {{< brk >}}
 
 ### MetaU Engineering Intern @ [Meta](https://about.meta.com/)
+
 Menlo Park, CA -- Jun 2022 to Aug 2022
 
 {{< collapse "summary"="Details..." >}}
@@ -93,6 +96,7 @@ The main project I worked on was an iOS task-based project management applicatio
 {{< brk >}}
 
 ### Student Technology Consultant @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
+
 Berkeley, CA -- Aug 2021 to Mar 2022
 
 {{< collapse "summary"="Details..." >}}
@@ -104,6 +108,7 @@ I provided frontline hardware and software assistance to students, and contribut
 {{< brk >}}
 
 ### Crew Member @ [Jolibee](https://www.jollibeefoods.com/)
+
 San Diego, CA -- Mar 2021 to Jun 2021
 
 {{< collapse "summary"="Details..." >}}
@@ -117,6 +122,7 @@ No meal is complete without the bread, and no CV is complete without fast food e
 ## 🤝 Afiliations
 
 ### R&D group [GamesCrafters](http://gamescrafters.berkeley.edu/)
+
 Berkeley, CA -- Jan 2023 to now
 
 This group researches methodologies for strongly solving abstract strategy games and develops the infrastructure to do it (and to make the solution sets available through a few types of interfaces).
@@ -124,10 +130,10 @@ This group researches methodologies for strongly solving abstract strategy games
 {{< collapse "summary"="Things I am working on..." >}}
 
 > * Re-writing and re-architecting [GamesmanClassic](https://github.com/GamesCrafters/GamesmanClassic), the group's seminal project, in Rust.
-> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and more performant re-implementation of the database we use to store our solution sets, which will provide the needed infrastructure to implement... 
->     * A [lookup table](https://en.wikipedia.org/wiki/Lookup_table) based database compression scheme.
->     * A [model based](http://mattmahoney.net/dc/mmahoney00.pdf) database compression scheme (memorizing using neural nets).
->     * Parallelized solving algorithms.
+> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and more performant re-implementation of the database we use to store our solution sets, which will provide the needed infrastructure to implement...
+>   * A [lookup table](https://en.wikipedia.org/wiki/Lookup_table) based database compression scheme.
+>   * A [model based](http://mattmahoney.net/dc/mmahoney00.pdf) database compression scheme (memorizing using neural nets).
+>   * Parallelized solving algorithms.
 
 {{< /collapse >}}
 
@@ -141,6 +147,7 @@ This group researches methodologies for strongly solving abstract strategy games
 {{< brk >}}
 
 ### FIRST Robotics [Team #6348](https://frc-events.firstinspires.org/team/6348)
+
 Colima, Mexico -- Sep 2019 to Aug 2022
 
 This is the FIRST Robotics Competition group from one of the high schools I went to. It is very close to my heart, because me and my closest friends put in a lot of work for the team. While I still occasionally help out with mentoring, my active involvement has largely ceased because I have gotten increasingly busy. Here are the roles I have held:

@@ -3,7 +3,7 @@ title: "Personal Overview"
 summary: Some ramblings I wrote down to give people a better idea of who I am.
 date: 2023-03-23
 weight: 2
-tags: ["serious", "abstract"]
+tags: ["Serious", "Abstract"]
 draft: false
 showtoc: false
 ---
