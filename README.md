@@ -7,4 +7,4 @@ I made this site because I am trying to be cool. It is facilitated by:
 * GitHub pages deployments using actions.
 * Google services.
 
-Feel free to let me know if you find a typo, a security flaw of some kind (in my static site lol), or have a suggestion.
+Feel free to let me know if you find a typo, a security flaw of some kind, or have a suggestion.
