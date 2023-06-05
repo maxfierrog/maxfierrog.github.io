@@ -62,7 +62,7 @@ params:
     enabled: true # needs to be explicitly set
     title: Hello there
     subtitle: "Welcome, and thank you for stopping by :)"
-    imageUrl: "https://s.gravatar.com/avatar/326976fc6cd1ab6bc7eb844d43bbcf09?s=80"
+    imageUrl: "https://s.gravatar.com/avatar/326976fc6cd1ab6bc7eb844d43bbcf09?s=300"
     imageWidth: 120
     imageHeight: 120
     imageTitle: Portrait

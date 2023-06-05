@@ -20,12 +20,13 @@ I am completing the fourth semester of my undergraduate studies, and have found 
 ### University of California, Berkeley
 
 _**B.A. Computer Science** - In progress_\
-Planning to concentrate on systems and security where applicable.
+Planning to concentrate on distributed systems.
 
 > {{< collapse "summary"="Completed courses..." >}}
 
 * `CS 61A`  _Structure and Interpretation of Computer Programs_
 * `CS 61B` _Data Structures and Algorithms_
+* `CS 61C` _Great Ideas in Computer Architecture (Machine Structures)_
 * `CS 70` _Discrete Mathematics and Probability Theory_
 
 > {{< /collapse >}}
@@ -39,6 +40,7 @@ Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422L
 
 * `MATH 1A` _Calculus I_
 * `MATH 1B` _Calculus II_
+* `MATH 54` _Linear Algebra and Differential Equations_
 
 > {{< /collapse >}}
 
@@ -52,7 +54,7 @@ Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
 \
-This has not happened yet, but I am hoping to be matched with a team working in systems or infrastructure. Last time I worked on iOS, and that was not incredibly fun for me.
+I am currently in one of the teams that work on the [Meta Ads](https://www.facebook.com/business/ads) product. I myself am working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
 
 {{< /collapse >}}
 
