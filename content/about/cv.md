@@ -54,7 +54,7 @@ Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
 \
-I am currently in one of the teams that work on the [Meta Ads](https://www.facebook.com/business/ads) product. I myself am working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
+I am currently in one of the teams that contribute to [Meta Ads](https://www.facebook.com/business/ads). I myself am working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
 
 {{< /collapse >}}
 
