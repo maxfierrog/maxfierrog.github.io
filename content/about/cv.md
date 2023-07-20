@@ -33,7 +33,7 @@ My favorite fields are distributed systems and systems programming.
 
 {{< brk >}}
 
-_**B.A. Mathematics** - Will declare in Dec 2023_ \
+_**B.A. Mathematics** - In progress_ \
 I love mathematics, in particular the study of algebraic structures.
 
 > {{< collapse "summary"="Completed courses..." >}}
@@ -75,7 +75,7 @@ I lead a team responsible for the development of open-ended IT initiatives in th
 
 In addition to these collective achievements, in my specific capacity as team lead I have:
 
-* Conducted 2 hiring panels for the [Endpoint Engineer](https://docs.google.com/document/d/17_sCM0PM0WK7ghG6OPg30eWQ8d081LPXzWVUMnY5pMc/edit) position.
+* Conducted 3 successful hiring panels for the [Endpoint Engineer](https://docs.google.com/document/d/17_sCM0PM0WK7ghG6OPg30eWQ8d081LPXzWVUMnY5pMc/edit) position.
 * Advised CIO Jenn Stringer and senior IT leaders as part of the [Student Technology Council](https://stc.berkeley.edu/).
 * [Contributed](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
 
