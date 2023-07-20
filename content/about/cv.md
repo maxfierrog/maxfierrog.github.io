@@ -11,7 +11,7 @@ ShowWordCount: false
 
 ## 🙋 Introduction
 
-I am completing the fourth semester of my undergraduate studies, and have found interests in mathematics, computer science, leadership, and low-level programming. I also work in UC Berkeley IT and have recently gotten involved with a research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
+I am a third-year undergraduate, and have found interests in mathematics, computer science, leadership, and low-level programming. I also work in UC Berkeley IT and have recently gotten involved with a research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
 
 ---
 
@@ -20,7 +20,7 @@ I am completing the fourth semester of my undergraduate studies, and have found 
 ### University of California, Berkeley
 
 _**B.A. Computer Science** - In progress_\
-Planning to concentrate on distributed systems.
+My favorite fields are distributed systems and systems programming.
 
 > {{< collapse "summary"="Completed courses..." >}}
 
@@ -34,7 +34,7 @@ Planning to concentrate on distributed systems.
 {{< brk >}}
 
 _**B.A. Mathematics** - Will declare in Dec 2023_ \
-Enthralled by [algebraic graph theory](https://www.youtube.com/watch?v=CDMQR422LGM&t=2793s&ab_channel=JointMathematicsMeetings). It makes the most sense for me to pursue a double major rather than a minor.
+I love mathematics, in particular the study of algebraic structures.
 
 > {{< collapse "summary"="Completed courses..." >}}
 
@@ -54,7 +54,7 @@ Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
 \
-I am currently in one of the teams that contribute to [Meta Ads](https://www.facebook.com/business/ads). I myself am working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
+I am currently in one of the teams that contribute to [Meta Ads](https://www.facebook.com/business/ads). I am personally working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
 
 {{< /collapse >}}
 
@@ -168,10 +168,9 @@ This is the FIRST Robotics Competition group from one of the high schools I went
 The list of programming languages I can "code" in is longer, but if you ask me to make something great, I will pick one of these.
 
 * Python
-* Swift
 * Java
 * Rust
-* C
+* C++
 
 {{< brk >}}
 
@@ -180,8 +179,8 @@ The list of programming languages I can "code" in is longer, but if you ask me t
 Here are a few activities I am skilled at doing because I fundamentally enjoy them.
 
 * Organizational work (leadership, coordination, advising, etc.)
-* Designing clean and modular software/applications
 * Written and verbal communication
+* Creating software systems
 * Programming in Rust
 
 {{< brk >}}
@@ -193,8 +192,9 @@ A lot of the work I have done has been enabled by different technologies, and th
 * General purpose scripting (Bash, PowerShell, ActionScript)
 * Workstation and device management (BigFix, MDM systems, Active Directory)
 * UNIX system administration
-* Git workflows
+* Git and Mercurial workflows
 * SwiftUI
+* React
 
 {{< brk >}}
 
