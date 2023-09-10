@@ -11,7 +11,7 @@ ShowWordCount: false
 
 ## 🙋 Introduction
 
-I am a third-year undergraduate, and have found interests in mathematics, computer science, leadership, and low-level programming. I also work in UC Berkeley IT and have recently gotten involved with a research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
+I am a third-year undergraduate, and have found interests in pure mathematics, computer science, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
 
 ---
 
@@ -54,7 +54,21 @@ Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
 \
-I am currently in one of the teams that contribute to [Meta Ads](https://www.facebook.com/business/ads). I am personally working on a feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding), which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released.
+I contributed to the [Meta Ads](https://www.facebook.com/business/ads) platform. I specifically worked on a pre-alpha feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding) which will help advertisers express granular adjustments to the value they attribute to different audiences based on various user dimensions, and which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released. I cannot delve into minute details, but this would be best described as full-stack product work.
+
+{{< /collapse >}}
+
+{{< brk >}}
+
+### MetaU Engineering Intern @ [Meta](https://about.meta.com/)
+
+Menlo Park, CA -- Jun 2022 to Aug 2022
+
+{{< collapse "summary"="Details..." >}}
+\
+I was taught large-scale application design and developed my own project with the guidance of two (incredibly didactic and supportive) software engineers. While I barely touched Meta's codebase (by the program's design), I did learn a lot about the work of the team I was placed into, which helped [WhatsApp](https://www.whatsapp.com/) transfer and archive data.
+
+The main project I worked on was an iOS task-based project management application I called [Process](https://github.com/maxfierrog/process) whose main feature was a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of task-to-task dependencies (as opposed to just a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) or list) on a recursive user interface. It is built on a [Firebase](https://firebase.google.com/)-d backend and [SwiftUI](https://developer.apple.com/xcode/swiftui/) frontend (in hindsight, should have used [Neo4j](https://neo4j.com/)'s graph DB instead).
 
 {{< /collapse >}}
 
@@ -78,20 +92,6 @@ In addition to these collective achievements, in my specific capacity as team le
 * Conducted 3 successful hiring panels for the [Endpoint Engineer](https://docs.google.com/document/d/17_sCM0PM0WK7ghG6OPg30eWQ8d081LPXzWVUMnY5pMc/edit) position.
 * Advised CIO Jenn Stringer and senior IT leaders as part of the [Student Technology Council](https://stc.berkeley.edu/).
 * [Contributed](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
-
-{{< /collapse >}}
-
-{{< brk >}}
-
-### MetaU Engineering Intern @ [Meta](https://about.meta.com/)
-
-Menlo Park, CA -- Jun 2022 to Aug 2022
-
-{{< collapse "summary"="Details..." >}}
-\
-I was taught large-scale application design and developed my own project with the guidance of two (incredibly didactic and supportive) software engineers. While I barely touched Meta's codebase (by the program's design), I did learn a lot about the work of the team I was placed into, which helped [WhatsApp](https://www.whatsapp.com/) transfer and archive data.
-
-The main project I worked on was an iOS task-based project management application I called [Process](https://github.com/maxfierrog/process) whose main feature was a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of task-to-task dependencies (as opposed to just a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) or list) on a recursive user interface. It is built on a [Firebase](https://firebase.google.com/)-d backend and [SwiftUI](https://developer.apple.com/xcode/swiftui/) frontend (in hindsight, should have used [Neo4j](https://neo4j.com/)'s graph DB instead).
 
 {{< /collapse >}}
 
@@ -170,7 +170,7 @@ The list of programming languages I can "code" in is longer, but if you ask me t
 * Python
 * Java
 * Rust
-* C++
+* C/C++
 
 {{< brk >}}
 
