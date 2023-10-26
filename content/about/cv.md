@@ -19,30 +19,23 @@ I am a third-year undergraduate, and have found interests in pure mathematics, c
 
 ### University of California, Berkeley
 
-_**B.A. Computer Science** - In progress_\
-My favorite fields are distributed systems and systems programming.
+_**B.A. Computer Science, minor in Mathematics** - In progress_\
+Finding abstract overlaps at the intersection of these fields makes the essence of mathematics tangible in a form that does not underplay its purity, which allows practical applications to remain faithful to the beauty of fundamental objects. 
 
-> {{< collapse "summary"="Completed courses..." >}}
+{{< collapse "summary"="Courses..." >}}
 
-* `CS 61A`  _Structure and Interpretation of Computer Programs_
-* `CS 61B` _Data Structures and Algorithms_
-* `CS 61C` _Great Ideas in Computer Architecture (Machine Structures)_
-* `CS 70` _Discrete Mathematics and Probability Theory_
+>* `CS 61A`  _Structure and Interpretation of Computer Programs_
+>* `CS 61B` _Data Structures and Algorithms_
+>* `CS 61C` _Great Ideas in Computer Architecture (Machine Structures)_
+>* `CS 70` _Discrete Mathematics and Probability Theory_
+>* `CS 170` _Efficient Algorithms and Intractable Problems_
+>* `CS 186` _Introduction to Database Systems_
 
-> {{< /collapse >}}
+>* `MATH 1A` _Calculus I_
+>* `MATH 1B` _Calculus II_
+>* `MATH 54` _Linear Algebra and Differential Equations_
 
-{{< brk >}}
-
-_**B.A. Mathematics** - In progress_ \
-I love mathematics, in particular the study of algebraic structures.
-
-> {{< collapse "summary"="Completed courses..." >}}
-
-* `MATH 1A` _Calculus I_
-* `MATH 1B` _Calculus II_
-* `MATH 54` _Linear Algebra and Differential Equations_
-
-> {{< /collapse >}}
+{{< /collapse >}}
 
 ---
 
@@ -54,7 +47,7 @@ Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
 \
-I contributed to the [Meta Ads](https://www.facebook.com/business/ads) platform. I specifically worked on a pre-alpha feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding) which will help advertisers express granular adjustments to the value they attribute to different audiences based on various user dimensions, and which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released. I cannot delve into minute details, but this would be best described as full-stack product work.
+I contributed to the [Meta Ads](https://www.facebook.com/business/ads) platform. Specifically, I worked on a pre-alpha feature related to [ad bidding](https://en.wikipedia.org/wiki/Real-time_bidding) which will help advertisers express granular adjustments to the value they attribute to different audiences based on various user dimensions, and which will be a part of the [Ads Manager tool](https://www.facebook.com/ads/manager) once released. This was full-stack product work.
 
 {{< /collapse >}}
 
@@ -127,14 +120,14 @@ No meal is complete without the bread, and no CV is complete without fast food e
 
 Berkeley, CA -- Jan 2023 to now
 
-This group researches methodologies for strongly solving abstract strategy games and develops the infrastructure to do it (and to make the solution sets available through a few types of interfaces).
+We research computational methods for strongly solving abstract strategy games (and make the solution sets available through a few types of interfaces). I am personally interested in the computational modelling of coalitional games, and in developing infrastructure to solve this type of game generically across player count.
 
 {{< collapse "summary"="Things I am working on..." >}}
 
-> * Re-writing and re-architecting [GamesmanClassic](https://github.com/GamesCrafters/GamesmanClassic), the group's seminal project, in Rust.
-> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and more performant re-implementation of the database we use to store our solution sets, which will provide the needed infrastructure to implement...
+> * Creating a re-architected version of [GamesmanClassic](https://github.com/GamesCrafters/GamesmanClassic), the group's seminal project, in Rust.
+> * Modelling [_N_-player transferrable-utility coalitional games](https://en.wikipedia.org/wiki/Transferable_utility#:~:text=Transferable%20utility%20is%20assumed%20in,enjoy%20the%20same%20total%20utility.) in cases of complete information and turn-based play with the objective of computing their strong solution sets.
+> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and more performant re-implementation of the database engine we use to store our solution sets, which will provide the needed infrastructure to implement...
 >   * A [lookup table](https://en.wikipedia.org/wiki/Lookup_table) based database compression scheme.
->   * A [model based](http://mattmahoney.net/dc/mmahoney00.pdf) database compression scheme (memorizing using neural nets).
 >   * Parallelized solving algorithms.
 
 {{< /collapse >}}
@@ -163,9 +156,9 @@ This is the FIRST Robotics Competition group from one of the high schools I went
 
 ## 🚀 Skills
 
-### GPPLs I know and love
+### GPPLs I `know && love`
 
-The list of programming languages I can "code" in is longer, but if you ask me to make something great, I will pick one of these.
+I can learn a programming language in about a week; if you ask me to make something great though, I will pick one of these:
 
 * Python
 * Java
@@ -174,20 +167,9 @@ The list of programming languages I can "code" in is longer, but if you ask me t
 
 {{< brk >}}
 
-### General Aptitudes
-
-Here are a few activities I am skilled at doing because I fundamentally enjoy them.
-
-* Organizational work (leadership, coordination, advising, etc.)
-* Written and verbal communication
-* Creating software systems
-* Programming in Rust
-
-{{< brk >}}
-
 ### Technical Toolchain
 
-A lot of the work I have done has been enabled by different technologies, and this is some of what I have picked up along the way.
+A lot of the work I have done has been enabled by different technologies, and this is some of what I have picked up along the way:
 
 * General purpose scripting (Bash, PowerShell, ActionScript)
 * Workstation and device management (BigFix, MDM systems, Active Directory)
@@ -198,10 +180,13 @@ A lot of the work I have done has been enabled by different technologies, and th
 
 {{< brk >}}
 
-### Interpersonal Specialties
+### General Aptitudes
 
-These are the personal qualities and intents I have worked the hardest to foster.
+Here are a few activities I am skilled at doing because I fundamentally enjoy them:
 
-* Emotional intelligence
-* Individual advocacy
-* Transparency
+* Organizational work (leadership, coordination, advising, etc.)
+* Written and verbal communication
+* Designing software systems
+* Programming in Rust
+
+{{< brk >}}
