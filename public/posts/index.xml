@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Max Fierro</title>
+    <link>https://www.maxfierro.me/posts/</link>
+    <description>Recent content in Posts on Max Fierro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.maxfierro.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>https://www.maxfierro.me/posts/cv/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/posts/cv/</guid>
+      <description>Long-form summary of my life&amp;rsquo;s work and achievements.</description>
+    </item>
+    
+    <item>
+      <title>Personal Overview</title>
+      <link>https://www.maxfierro.me/posts/intro/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/posts/intro/</guid>
+      <description>Some ramblings I wrote down to give people a better idea of who I am.</description>
+    </item>
+    
+    <item>
+      <title>Evangelizing GamesmanClassic</title>
+      <link>https://www.maxfierro.me/posts/evangelizing-gc/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/posts/evangelizing-gc/</guid>
+      <description>The process of rewriting GamesmanClassic (a C project) in Rust, and the motivation behind it.</description>
+    </item>
+    
+  </channel>
+</rss>

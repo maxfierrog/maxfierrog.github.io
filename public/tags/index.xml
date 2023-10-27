@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Max Fierro</title>
+    <link>https://www.maxfierro.me/tags/</link>
+    <description>Recent content in Tags on Max Fierro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.maxfierro.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programming</title>
+      <link>https://www.maxfierro.me/tags/programming/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>https://www.maxfierro.me/tags/project/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Abstract</title>
+      <link>https://www.maxfierro.me/tags/abstract/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/tags/abstract/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serious</title>
+      <link>https://www.maxfierro.me/tags/serious/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/tags/serious/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maintained</title>
+      <link>https://www.maxfierro.me/tags/maintained/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/tags/maintained/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Serious on Max Fierro</title>
+    <link>https://www.maxfierro.me/tags/serious/</link>
+    <description>Recent content in Serious on Max Fierro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.maxfierro.me/tags/serious/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>https://www.maxfierro.me/about/cv/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/about/cv/</guid>
+      <description>Long-form summary of my life&amp;rsquo;s work and achievements.</description>
+    </item>
+    
+    <item>
+      <title>Personal Overview</title>
+      <link>https://www.maxfierro.me/about/intro/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.maxfierro.me/about/intro/</guid>
+      <description>Some ramblings I wrote down to give people a better idea of who I am.</description>
+    </item>
+    
+  </channel>
+</rss>
