@@ -11,7 +11,7 @@ ShowWordCount: false
 
 ## 🙋 Introduction
 
-I am a third-year undergraduate, and have found interests in pure mathematics, computer science, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Dr. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/?_ga=2.162746047.2021628792.1679746835-1016432887.1673162780).
+I am a third-year undergraduate, and have found interests in pure mathematics, computer science, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
 
 ---
 
@@ -20,20 +20,24 @@ I am a third-year undergraduate, and have found interests in pure mathematics, c
 ### University of California, Berkeley
 
 _**B.A. Computer Science, minor in Mathematics** - In progress_\
-Finding abstract overlaps at the intersection of these fields makes the essence of mathematics tangible in a form that does not underplay its purity, which allows practical applications to remain faithful to the beauty of fundamental objects. 
+Finding abstract overlaps at the intersection of these fields makes the essence of mathematics tangible in a form that does not underplay its purity, allowing practical applications to remain faithful to the beauty of fundamental objects. 
 
-{{< collapse "summary"="Courses..." >}}
+{{< collapse "summary"="Coursework..." >}}
 
->* `CS 61A`  _Structure and Interpretation of Computer Programs_
->* `CS 61B` _Data Structures and Algorithms_
->* `CS 61C` _Great Ideas in Computer Architecture (Machine Structures)_
->* `CS 70` _Discrete Mathematics and Probability Theory_
->* `CS 170` _Efficient Algorithms and Intractable Problems_
->* `CS 186` _Introduction to Database Systems_
+* `CS 61A`  _Structure & Interpretation of Computer Programs_ ([Prof. DeNero](https://denero.org/))
+* `CS 61B` _Data Structures & Algorithms_ ([Prof. Hilfinger](https://www2.eecs.berkeley.edu/Faculty/Homepages/hilfinger.html#main-content))
+* `CS 61C` **_Great Ideas in Computer Architecture_** ([Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/))
+* `CS 70` _Discrete Mathematics & Probability Theory_ ([Prof. Rao](https://www2.eecs.berkeley.edu/Faculty/Homepages/rao.html#main-content), [Prof. Ayazifar](https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html#main-content))
+* `CS 170` **_Efficient Algorithms & Intractable Problems_** ([Prof. Haghtalab](https://people.eecs.berkeley.edu/~nika/), [Prof. Wright](https://www2.eecs.berkeley.edu/Faculty/Homepages/jswright.html#main-content))
+* `CS 186` _Introduction to Database Systems_ ([Prof. Cheung](https://people.eecs.berkeley.edu/~akcheung/))
 
->* `MATH 1A` _Calculus I_
->* `MATH 1B` _Calculus II_
->* `MATH 54` _Linear Algebra and Differential Equations_
+{{< brk >}}
+
+* `MATH 1A` _Calculus I_ ([Prof. Vojta](https://math.berkeley.edu/~vojta/))
+* `MATH 1B` _Calculus II_ ([Prof. Paulin](https://math.berkeley.edu/~apaulin/))
+* `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
+
+→ Courses **in bold** are favorites of mine!
 
 {{< /collapse >}}
 
