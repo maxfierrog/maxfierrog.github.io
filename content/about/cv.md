@@ -22,7 +22,7 @@ I am a third-year undergraduate, and have found interests in pure mathematics, c
 _**B.A. Computer Science, minor in Mathematics** - In progress_\
 Finding abstract overlaps at the intersection of these fields makes the essence of mathematics tangible in a form that does not underplay its purity, allowing practical applications to remain faithful to the beauty of fundamental objects. 
 
-{{< collapse "summary"="Coursework..." >}}
+{{< collapse "summary"="Completed coursework..." >}}
 
 * `CS 61A`  _Structure & Interpretation of Computer Programs_ ([Prof. DeNero](https://denero.org/))
 * `CS 61B` _Data Structures & Algorithms_ ([Prof. Hilfinger](https://www2.eecs.berkeley.edu/Faculty/Homepages/hilfinger.html#main-content))
@@ -38,6 +38,13 @@ Finding abstract overlaps at the intersection of these fields makes the essence 
 * `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
 
 → Courses **in bold** are favorites of mine!
+
+{{< /collapse >}}
+
+{{< collapse "summary"="Current coursework..." >}}
+
+* `CS 162` _Operating Systems & Systems Programming_ ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
+* `MATH 110` _Abstract Linear Algebra_ ([Prof. Frenkel](https://www.edwardfrenkel.com/))
 
 {{< /collapse >}}
 
@@ -128,11 +135,12 @@ We research computational methods for strongly solving abstract strategy games (
 
 {{< collapse "summary"="Things I am working on..." >}}
 
-> * Creating a re-architected version of [GamesmanClassic](https://github.com/GamesCrafters/GamesmanClassic), the group's seminal project, in Rust.
-> * Modelling [_N_-player transferrable-utility coalitional games](https://en.wikipedia.org/wiki/Transferable_utility#:~:text=Transferable%20utility%20is%20assumed%20in,enjoy%20the%20same%20total%20utility.) in cases of complete information and turn-based play with the objective of computing their strong solution sets.
-> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and more performant re-implementation of the database engine we use to store our solution sets, which will provide the needed infrastructure to implement...
->   * A [lookup table](https://en.wikipedia.org/wiki/Lookup_table) based database compression scheme.
->   * Parallelized solving algorithms.
+> * Building on a re-architected version of [GamesmanClassic](https://github.com/GamesCrafters/GamesmanClassic), the group's seminal project, in Rust. See [GamesmanNova](https://github.com/GamesCrafters/GamesmanNova) for more.
+> * Modelling [_N_-player transferrable-utility coalitional games](https://en.wikipedia.org/wiki/Transferable_utility#:~:text=Transferable%20utility%20is%20assumed%20in,enjoy%20the%20same%20total%20utility.) in cases of complete information and turn-based play with the objective of proposing a new strong solution concept for this game class.
+> * An [ACID](https://en.wikipedia.org/wiki/ACID)-compliant and write-optimized reformulation of the database engine we use to store our solution sets, built over an [LSM-tree](https://en.wikipedia.org/wiki/Log-structured_merge-tree). This will provide the infrastructure needed to...
+>   * Create a compression table based database reduction scheme.
+>   * Overcome the bottleneck of virtual memory usage while solving large games.
+>   * Parallelized and distributed solvers.
 
 {{< /collapse >}}
 
