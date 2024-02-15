@@ -1,0 +1,35 @@
+baseURL = "https://www.maxfierro.me/"
+title = "Max Fierro"
+theme = "etch"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  description = "Max's personal site"
+  copyright = "Copyright © 2024 Max Fierro"
+  dark = "auto"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "CV"
+    name = "CV"
+    title = "Max Fierro | CV"
+    url = "/cv/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allows HTML in Markdown
+  unsafe = true
