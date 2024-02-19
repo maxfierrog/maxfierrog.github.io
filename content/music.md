@@ -1,7 +1,7 @@
 ---
 title: "Favorite Music Collections"
 summary: A list of music pieces I love and optionally explanations of why.
-date: 2024-01-09
+date: 2024-02-19
 ---
 
 {{< center >}}
