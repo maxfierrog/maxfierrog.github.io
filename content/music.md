@@ -28,7 +28,7 @@ date: 2024-01-09
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2738e8753ff69b7efb6f8e146cd" width="256" attr="\"FERXXO (VOL 1: M.O.R.)\" by Feid" align=center target="_blank" >}}
 
-{{< figure src="https://i.scdn.co/image/ab67616d0000b2733926e048d839e1173fe17326" width="256" attr="\"Afrodisíaco\" by Rauw Alejandro" align=center target="_blank" >}}
+{{< figure src="https://i.scdn.co/image/ab67616d0000b2733d7b95838b533131d1db6292" width="256" attr="\"INTER SHIBUYA - LA MAFIA\" by Feid" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d00001e02614b5974ec6e23185462700b" width="256" attr="\"Famouz\" by Jhay Cortez" align=center target="_blank" >}}
 
