@@ -58,8 +58,10 @@ date: 2024-02-19
 
 {{< /center >}}
 
+{{< figure src="https://i.scdn.co/image/ab67616d0000b27329843bbfd6ddbb6e9de10226" width="256" attr="\"Eastern Sounds\" by Yusef Lateef" align=center target="_blank" >}}
+
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273bf090fba4cfd5ebe9c1f4f6b" width="256" attr="\"Red Clay\" by Freddie Hubbard" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2731480af9485095e3b713adcec" width="256" attr="\"Parker's Mood\" by Charlie Parker" align=center target="_blank" >}}
 
-{{< figure src="https://i.scdn.co/image/ab67616d0000b273ac6dc0b030f14723bd2279f8" width="256" attr="\"Lágrimas Negras\" by Diego Valdés, Diego el Cigala" align=center target="_blank" >}}
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273ac6dc0b030f14723bd2279f8" width="256" attr="\"Lágrimas Negras\" by Bebo Valdés, Diego el Cigala" align=center target="_blank" >}}

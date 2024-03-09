@@ -75,18 +75,18 @@ Berkeley, CA -- Mar 2022 to Feb 2024
 
 {{< collapse "summary"="Details..." >}}
 
-I lead a team responsible for the development of open-ended IT initiatives in the department of Student Affairs and the management of all workstations and devices used by UC Berkeley Student Affairs groups. Some of the things we have achieved in my time here have been:
+I led a team responsible for the development of open-ended IT initiatives in the department of Student Affairs and the management of all workstations and devices used by UC Berkeley Student Affairs groups. Here are some of the things we achieved together during my time there:
 
 * Built infrastructure for and provided 60 iPads to teachers in the [ECE Program](https://ece.berkeley.edu/).
 * Created 2 interviewing stations free for all UC Berkeley students at the [Career Center](https://career.berkeley.edu/).
 * Set up an accessible station for [CalDining](https://caldining.berkeley.edu/) employees with low tech and English literacy.
 * Helped [Cal Esports](https://recsports.berkeley.edu/programs-events/esports/) do a drop-in replacement of 55 gaming PCs' hardware and software.
 
-In addition to these collective achievements, in my specific capacity as team lead I have:
+In addition to these collective achievements, in my specific capacity as team lead I was able to:
 
-* Conducted 3 successful hiring panels for the [Endpoint Engineer](https://docs.google.com/document/d/17_sCM0PM0WK7ghG6OPg30eWQ8d081LPXzWVUMnY5pMc/edit) position.
-* Advised CIO Jenn Stringer and IT leadership as part of the [Student Technology Council](https://stc.berkeley.edu/).
-* [Contributed](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
+* Conduct 4 successful hiring panels for positions on my team (including my own).
+* Advise ex-CIO Jenn Stringer and IT leadership as part of the [Student Technology Council](https://stc.berkeley.edu/).
+* [Contribute](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
 
 {{< /collapse >}}
 
