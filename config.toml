@@ -1,6 +1,6 @@
 baseURL = "https://www.maxfierro.me/"
 title = "Max Fierro"
-theme = "etch"
+theme = ["hugo-embed-pdf-shortcode", "etch"]
 languageCode = "en-US"
 enableInlineShortcodes = true
 pygmentsCodeFences = true
@@ -9,7 +9,6 @@ pygmentsUseClasses = true
 [params]
   description = "Max's personal site"
   copyright = "Copyright © 2024 Max Fierro"
-  dark = "auto"
   highlight = true
 
 [menu]
