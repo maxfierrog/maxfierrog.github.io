@@ -47,6 +47,18 @@ In progress:
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
+New York, NY -- May 2024 to Aug 2024
+
+{{< collapse "summary"="Details..." >}}
+
+I will be working on systems for machine learning as part of the Ads Training Data and Model Infrastructure organizational group.
+
+[]() <!-- This is for rendering the above as a <p> element -->
+
+{{< /collapse >}}
+
+### Software Engineer Intern @ [Meta](https://about.meta.com/)
+
 Menlo Park, CA -- May 2023 to Aug 2023
 
 {{< collapse "summary"="Details..." >}}
