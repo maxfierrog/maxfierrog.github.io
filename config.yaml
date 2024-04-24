@@ -1,0 +1,43 @@
+baseURL: 'https://www.maxfierro.me/'
+title: Max Fierro
+
+theme:
+  - hugo-embed-pdf-shortcode
+  - etch
+
+languageCode: en-US
+enableInlineShortcodes: true
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+
+params:
+  description: Max's personal site
+  copyright: Copyright © 2024 Max Fierro
+  highlight: true
+
+menu:
+  main:
+    - identifier: resume
+      name: resume
+      title: resume
+      url: /resume/
+      weight: 2
+    - identifier: about
+      name: about
+      title: about
+      url: /about/
+      weight: 1
+    - identifier: rss
+      name: rss
+      weight: 3
+      url: /index.xml
+      params:
+        - format: rss
+
+permalinks:
+  posts: '/:title/'
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
