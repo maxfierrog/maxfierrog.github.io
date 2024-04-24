@@ -1,56 +1,273 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Max Fierro</title>
     <link>https://www.maxfierro.me/tags/</link>
     <description>Recent content in Tags on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 23 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.maxfierro.me/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Programming</title>
-      <link>https://www.maxfierro.me/tags/programming/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.maxfierro.me/tags/programming/</guid>
-      <description></description>
-    </item>
+    <language>en-US</language>
+    
+	<atom:link href="https://www.maxfierro.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    
+    
     
     <item>
-      <title>Project</title>
-      <link>https://www.maxfierro.me/tags/project/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      <title>Scalable Search in Game-Theoretic Systems</title>
+      <link>https://www.maxfierro.me/scalable-search-in-game-theoretic-systems/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.maxfierro.me/tags/project/</guid>
-      <description></description>
+      <guid>https://www.maxfierro.me/scalable-search-in-game-theoretic-systems/</guid>
+      <description>&lt;p&gt;I gave an introductory talk about how computer systems perform search (or &amp;ldquo;do traversals&amp;rdquo;) on games at scale. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate conference primarily dedicated to Combinatorial Game Theory (CGT).&lt;/p&gt;
+&lt;script type=&#34;text/javascript&#34; src= &#39;/js/pdf-js/build/pdf.js&#39;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+  
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  
+  
+  
+  
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+  
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+  
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+  
+  
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  &lt;/style&gt;&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
+    &lt;div class=&#34;pdf-loadingWrapper&#34; id=&#34;pdf-loadingWrapper-de1ff50c&#34;&gt;
+        &lt;div class=&#34;pdf-loading&#34; id=&#34;pdf-loading-de1ff50c&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;canvas class=&#34;pdf-canvas&#34; id=&#34;pdf-canvas-de1ff50c&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;pdf-paginator&#34; id=&#34;pdf-paginator-de1ff50c&#34;&gt;
+    &lt;button id=&#34;pdf-prev-de1ff50c&#34;&gt;Previous&lt;/button&gt;
+    &lt;button id=&#34;pdf-next-de1ff50c&#34;&gt;Next&lt;/button&gt; &amp;nbsp; &amp;nbsp;
+    &lt;span&gt;
+      &lt;span class=&#34;pdf-pagenum&#34; id=&#34;pdf-pagenum-de1ff50c&#34;&gt;&lt;/span&gt; / &lt;span class=&#34;pdf-pagecount&#34; id=&#34;pdf-pagecount-de1ff50c&#34;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;https://www.maxfierro.me/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;noscript&gt;
+View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;https://www.maxfierro.me/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
+&lt;/noscript&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    (function(){
+    var url = &#39;\/pdf\/slides-sprouts-2024.pdf&#39;;
+
+    var hidePaginator = &#34;&#34; === &#34;true&#34;;
+    var hideLoader = &#34;&#34; === &#34;true&#34;;
+    var selectedPageNum = parseInt(&#34;&#34;) || 1;
+
+    
+    var pdfjsLib = window[&#39;pdfjs-dist/build/pdf&#39;];
+
+    
+    if (pdfjsLib.GlobalWorkerOptions.workerSrc == &#39;&#39;)
+      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;https:\/\/www.maxfierro.me\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
+
+    
+    var pdfDoc = null,
+        pageNum = selectedPageNum,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 3,
+        canvas = document.getElementById(&#39;pdf-canvas-de1ff50c&#39;),
+        ctx = canvas.getContext(&#39;2d&#39;),
+        paginator = document.getElementById(&#34;pdf-paginator-de1ff50c&#34;),
+        loadingWrapper = document.getElementById(&#39;pdf-loadingWrapper-de1ff50c&#39;);
+
+
+    
+    showPaginator();
+    showLoader();
+
+    
+
+    function renderPage(num) {
+      pageRendering = true;
+      
+      pdfDoc.getPage(num).then(function(page) {
+        var viewport = page.getViewport({scale: scale});
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        var renderTask = page.render(renderContext);
+
+        
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          showContent();
+
+          if (pageNumPending !== null) {
+            
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      
+      document.getElementById(&#39;pdf-pagenum-de1ff50c&#39;).textContent = num;
+    }
+
+    
+
+    function showContent() {
+      loadingWrapper.style.display = &#39;none&#39;;
+      canvas.style.display = &#39;block&#39;;
+    }
+
+    
+
+    function showLoader() {
+      if(hideLoader) return
+      loadingWrapper.style.display = &#39;flex&#39;;
+      canvas.style.display = &#39;none&#39;;
+    }
+
+    
+
+    function showPaginator() {
+      if(hidePaginator) return
+      paginator.style.display = &#39;block&#39;;
+    }
+
+    
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    
+
+    function onPrevPage() {
+      if (pageNum &lt;= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById(&#39;pdf-prev-de1ff50c&#39;).addEventListener(&#39;click&#39;, onPrevPage);
+
+    
+
+    function onNextPage() {
+      if (pageNum &gt;= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById(&#39;pdf-next-de1ff50c&#39;).addEventListener(&#39;click&#39;, onNextPage);
+
+    
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      var numPages = pdfDoc.numPages;
+      document.getElementById(&#39;pdf-pagecount-de1ff50c&#39;).textContent = numPages;
+
+      
+      if(pageNum &gt; numPages) {
+        pageNum = numPages
+      }
+
+      
+      renderPage(pageNum);
+    });
+    })();
+&lt;/script&gt;
+
+</description>
     </item>
     
-    <item>
-      <title>Abstract</title>
-      <link>https://www.maxfierro.me/tags/abstract/</link>
-      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.maxfierro.me/tags/abstract/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>Serious</title>
-      <link>https://www.maxfierro.me/tags/serious/</link>
-      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.maxfierro.me/tags/serious/</guid>
-      <description></description>
-    </item>
     
-    <item>
-      <title>Maintained</title>
-      <link>https://www.maxfierro.me/tags/maintained/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.maxfierro.me/tags/maintained/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
