@@ -5,7 +5,7 @@ date: 2023-03-23
 weight: 2
 ---
 
-It is easy to suppose that the world can be partitioned on two subsets (a "self" and the rest) in reference to every person, and that the boundary between them is the best definition of who that person is. This is a recurring thought for me, and I do not think that there exists a correct way to describe a surface which effectively encapsulates (or isolates) us in our entirety. I think that everything contributes to a collective which we happen to interface with in discernable concentrations, each being a single person.
+It is easy to suppose that the world can be partitioned into what is _you_ and _not you_ in reference to every person, and that their observable boundary is the best definition of who a person is. This is a recurring thought for me, and I do not think that there exists a correct way to describe a surface which effectively encapsulates (or isolates) us in our entirety. I think we interface with a collective in occasionally discernable concentrations, each being a single person.
 
 Framing things that way, getting to know another person is in many ways an impactful act. Even if a person never knows that information about them is spreading, reality is certainly different due to them, and the person or systems to whom it spread will carry a bit of the information emitter's existence together with their own.
 
