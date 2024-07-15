@@ -10,13 +10,29 @@ date: 2024-02-19
 
 {{< /center >}}
 
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273d8db2a2e1fb2474962960d25" width="256" attr="\"Effloresce\" by Covet" align=center target="_blank" >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273fc825d57fe8933e012c2ad62" width="256" attr="\"Technicolor\" by Covet" align=center target="_blank" >}}
+
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273101232ffd5af0e3c37e2c528" width="256" attr="\"I Let It in and It Took Everything\" by Loathe" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b27373652b7a0dc388dd1d044b69" width="256" attr="\"Koi No Yokan\" by Deftones" align=center target="_blank" >}}
 
-{{< figure src="https://i.scdn.co/image/ab67616d0000b273ca41a947c13b78749c4953b1" width="256" attr="\"Lateralus\" by Tool" align=center target="_blank" >}}
+{{< brk >}}
 
-{{< figure src="https://i.scdn.co/image/ab67616d0000b2738431fb4cb38f8ee96d3434c0" width="256" attr="\"The Division Bell\" by Pink Floyd" align=center target="_blank" >}}
+{{< center >}}
+
+## Classical
+
+{{< /center >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d0000b2738d47f69b6e1b5e7202e49ea0" width="256" attr="Tchaikovsky's Symphony No. 6" align=center target="_blank" >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273b550c53b4dc7c0c30efcb574" width="256" attr="Bach's Goldberg Variations" align=center target="_blank" >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273d612003e37c4cdc82f39eda7" width="256" attr="Paganini's 24 Caprices" align=center target="_blank" >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d00001e02e379b684061a1d2de65c9494" width="256" attr="Debussy's Préludes, Book 1" align=center target="_blank" >}}
 
 {{< brk >}}
 
@@ -33,22 +49,6 @@ date: 2024-02-19
 {{< figure src="https://i.scdn.co/image/ab67616d00001e02614b5974ec6e23185462700b" width="256" attr="\"Famouz\" by Jhay Cortez" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273f885fb64a381318a1c9c14e4" width="256" attr="\"DATA\" by Tainy" align=center target="_blank" >}}
-
-{{< brk >}}
-
-{{< center >}}
-
-## Classical
-
-{{< /center >}}
-
-{{< figure src="https://i.scdn.co/image/ab67616d0000b2738d47f69b6e1b5e7202e49ea0" width="256" attr="Tchaikovsky's Symphony No. 6" align=center target="_blank" >}}
-
-{{< figure src="https://i.scdn.co/image/ab67616d0000b273d612003e37c4cdc82f39eda7" width="256" attr="Paganini's 24 Caprices" align=center target="_blank" >}}
-
-{{< figure src="https://i.scdn.co/image/ab67616d00001e02e379b684061a1d2de65c9494" width="256" attr="Debussy's Préludes, Book 1" align=center target="_blank" >}}
-
-{{< figure src="https://i.scdn.co/image/ab67616d0000b2734a7a2e0cab8f2db75a1c3f55" width="256" attr="Chopin's 4 Ballades" align=center target="_blank" >}}
 
 {{< brk >}}
 

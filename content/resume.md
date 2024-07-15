@@ -1,13 +1,13 @@
 ---
 title: "Resume"
 summary: Long-form summary of my life's work and achievements.
-date: 2024-04-24
+date: 2024-07-14
 weight: 1
 ---
 
 ## Introduction
 
-I am a third-year undergraduate and have found interests in mathematics, computer science, and engineering. I am especially interested in game theory, multiagent systems, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
+I am a fourth-year undergraduate invested in mathematics and computer science. I am interested in game theory, programming languages, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
 
 ---
 
@@ -25,17 +25,19 @@ _**B.A. Computer Science, minor in Mathematics** - In progress_
 * `CS 61C` **_Great Ideas in Computer Architecture_** ([Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/))
 * `CS 170` **_Efficient Algorithms & Intractable Problems_** ([Prof. Haghtalab](https://people.eecs.berkeley.edu/~nika/), [Prof. Wright](https://www2.eecs.berkeley.edu/Faculty/Homepages/jswright.html#main-content))
 * `CS 186` _Introduction to Database Systems_ ([Prof. Cheung](https://people.eecs.berkeley.edu/~akcheung/))
+* `CS 162` **_Operating Systems & Systems Programming_** ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
 
 <!-- -->
 
 * `MATH 1A` _Calculus I_ ([Prof. Vojta](https://math.berkeley.edu/~vojta/))
 * `MATH 1B` _Calculus II_ ([Prof. Paulin](https://math.berkeley.edu/~apaulin/))
 * `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
+* `MATH 110` **_Abstract Linear Algebra_** ([Prof. Frenkel](https://www.edwardfrenkel.com/))
 
 In progress:
 
-* `CS 162` _Operating Systems & Systems Programming_ ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
-* `MATH 110` _Abstract Linear Algebra_ ([Prof. Frenkel](https://www.edwardfrenkel.com/))
+* `CS 164` _Programming Languages and Compilers_ ([Prof. Sen](https://people.eecs.berkeley.edu/~ksen/))
+* `CS 189` _Introduction to Machine Learning_ ([Prof. Listgarten](http://www.jennifer.listgarten.com/))
 
 **Courses **in bold** are favorites of mine!*
 
@@ -51,9 +53,9 @@ New York, NY -- May 2024 to Aug 2024
 
 {{< collapse "summary"="Details..." >}}
 
-I will be working on systems for machine learning as part of the Ads Training Data and Model Infrastructure organizational grouph.
+I am part of the Ads AI Infrastructure group, where I own a project that will facilitate automatic tuning of hyper- and production parameters for models that are online-trained, such as the models that estimate the probability of a user's click on a given ad on their feed. Tuning these parameters helps minimize both loss and compute-related cost overhead.
 
-[]() <!-- This is for rendering the above as a <p> element -->
+This mostly looks like writing [typed Python](https://pyre-check.org/) and working with a very wide breadth of internal tooling, including HPC schedulers, database services, and [distributed computing frameworks](https://engineering.fb.com/2016/05/09/core-infra/introducing-fblearner-flow-facebook-s-ai-backbone/).
 
 {{< /collapse >}}
 
@@ -96,9 +98,21 @@ I led a team responsible for the development of open-ended IT initiatives in the
 
 In addition to these collective achievements, in my specific capacity as team lead I was able to:
 
-* Conduct 4 successful hiring panels for positions on my team (including my own).
+* Conduct 4 successful hiring panels for positions on my team (including my own position).
 * Advise ex-CIO Jenn Stringer and IT leadership as part of the [Student Technology Council](https://stc.berkeley.edu/).
 * [Contribute](https://drive.google.com/file/d/1JcIjnEDlngqoJxj0I6JEmAplYlQL42iv/view?usp=sharing) to the OneIT initiative instantiating more student programs in Berkeley IT.
+
+{{< /collapse >}}
+
+### Senior Endpoint Engineer @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
+
+Berkeley, CA -- Since Feb 2024
+
+{{< collapse "summary"="Details..." >}}
+
+After leading the Endpoint Engineering team for about 2 years, I transitioned to a Senior role to enjoy additional time for pursuing my research interests. I focus on supporting my team in additional onboarding as well as other ongoing efforts, such as improving our implementation of mobile device management.
+
+[]() <!-- This is for rendering the above as a <p> element -->
 
 {{< /collapse >}}
 
@@ -136,7 +150,7 @@ Berkeley, CA -- Jan 2023 to now
 
 {{< collapse "summary"="Details..." >}}
 
-We research computational methods for strongly solving abstract strategy games (and make the solution sets available through a few types of interfaces). I am personally interested in the computational modelling of coalitional games, and in developing infrastructure for finding "solutions" for them generically.
+We research computational methods generating [strong solutions](https://en.wikipedia.org/wiki/Solved_game#:~:text=of%20the%20game.-,Strong%20solution,-%5Bedit%5D) for different classes of sequential games (and make the solutions available through a few types of interfaces). I am personally interested in the computational modelling of coalitional games, and in developing infrastructure for finding "solutions" for them generically.
 
 {{< collapse "summary"="Work in progress..." >}}
 
@@ -150,14 +164,14 @@ We research computational methods for strongly solving abstract strategy games (
 
 {{< collapse "summary"="Complete results..." >}}
 
-* Solving [Five Field Kono](https://en.wikipedia.org/wiki/Five_Field_Kono) (you can play against the solution [here](https://nyc.cs.berkeley.edu/uni/games/fivefieldkono/variants/regular)).
-* Outreach during [CalDay 2023](https://engineering.berkeley.edu/events/cal-day/)!
+* Solving [Five-Field Kono](https://en.wikipedia.org/wiki/Five_Field_Kono) (you can play against the solution [here](https://nyc.cs.berkeley.edu/uni/games/fivefieldkono/variants/regular)).
+* Outreach during [CalDay '23 and '24](https://engineering.berkeley.edu/events/cal-day/)!
 
 {{< /collapse >}}
 
 {{< /collapse >}}
 
-### Competitive Robotics @ [FIRST Team #6348](https://frc-events.firstinspires.org/team/6348)
+### Competition Robotics @ [FIRST Team #6348](https://frc-events.firstinspires.org/team/6348)
 
 Colima, Mexico -- Sep 2019 to Aug 2022
 
