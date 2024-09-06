@@ -7,7 +7,7 @@ weight: 1
 
 ## Introduction
 
-I am a fourth-year undergraduate invested in mathematics and computer science. I am interested in game theory, programming languages, and systems programming. I also work in UC Berkeley IT and am involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
+I am a fourth-year undergraduate invested in mathematics and computer science. In the real world, I do systems programming. I am interested in ML systems, compilers, and programming languages. I am also involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
 
 ---
 
@@ -15,7 +15,7 @@ I am a fourth-year undergraduate invested in mathematics and computer science. I
 
 ### University of California, Berkeley
 
-_**B.A. Computer Science, minor in Mathematics** - In progress_
+_**B.A. Computer Science** - In progress_
 
 {{< collapse "summary"="Coursework..." >}}
 
@@ -53,9 +53,9 @@ New York, NY -- May 2024 to Aug 2024
 
 {{< collapse "summary"="Details..." >}}
 
-I am part of the Ads AI Infrastructure group, where I own a project that will facilitate automatic tuning of hyper- and production parameters for models that are online-trained, such as the models that estimate the probability of a user's click on a given ad on their feed. Tuning these parameters helps minimize both loss and compute-related cost overhead.
+Improved automatic tuning of hyper- and production parameters for models that are online-trained by lowering the overhead of trial-based experimentation, which is used in their automatic tuning routines. Examples of these models are those that estimate the probability of a user's click on a given ad on their feed. Tuning these parameters helps minimize both loss and compute-related cost overhead.
 
-This mostly looks like writing [typed Python](https://pyre-check.org/) and working with a very wide breadth of internal tooling, including HPC schedulers, database services, and [distributed computing frameworks](https://engineering.fb.com/2016/05/09/core-infra/introducing-fblearner-flow-facebook-s-ai-backbone/).
+This mostly looked like writing [typed Python](https://pyre-check.org/) and working with a very wide breadth of internal tooling, including HPC schedulers, database services, and [distributed computing frameworks](https://engineering.fb.com/2016/05/09/core-infra/introducing-fblearner-flow-facebook-s-ai-backbone/).
 
 {{< /collapse >}}
 
