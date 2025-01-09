@@ -1,0 +1,18 @@
+<style>
+    .book-column > :first-child:not(.halign-container, .valign-container) {
+        margin-top: 0px !important;
+    }
+
+    .book-column > :last-child:not(.halign-container, .valign-container) {
+        margin-bottom: 0px !important;
+    }
+</style>
+<div style="display: flex; flex-wrap: flex">
+    {{ $widths := .Get "widths" | default "1" }} {{ $widthsArray := split
+    $widths "," }} {{ range $index, $content := split .Inner "<--->" }} {{
+    $width := index $widthsArray $index | default "1" }}
+    <div class="book-column" style="flex: {{ $width }};">
+        {{ $content | $.Page.RenderString }}
+    </div>
+    {{ end }}
+</div>

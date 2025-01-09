@@ -1,13 +1,13 @@
 ---
 title: "Resume"
 summary: Long-form summary of my life's work and achievements.
-date: 2024-07-14
+date: 2024-12-19
 weight: 1
 ---
 
 ## Introduction
 
-I am a fourth-year undergraduate invested in mathematics and computer science. In the real world, I do systems programming. I am interested in ML systems, compilers, and programming languages. I am also involved with an applied research group exploring computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/).
+I am a fourth-year undergraduate at [UC Berkeley](https://www.berkeley.edu/) invested in mathematics and computer science. Primarily, I am a systems programmer and machine learning practitioner. I apply these aptitudes to research projects within computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/). I have also spent the previous three summers at [Meta](https://about.meta.com/) working on ML infrastructure among other things, and accrued significant leadership experience in two years as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
 
 ---
 
@@ -26,6 +26,7 @@ _**B.A. Computer Science** - In progress_
 * `CS 170` **_Efficient Algorithms & Intractable Problems_** ([Prof. Haghtalab](https://people.eecs.berkeley.edu/~nika/), [Prof. Wright](https://www2.eecs.berkeley.edu/Faculty/Homepages/jswright.html#main-content))
 * `CS 186` _Introduction to Database Systems_ ([Prof. Cheung](https://people.eecs.berkeley.edu/~akcheung/))
 * `CS 162` **_Operating Systems & Systems Programming_** ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
+* `CS 189` **_Introduction to Machine Learning_** ([Prof. Listgarten](http://www.jennifer.listgarten.com/), [Prof. Saremi](https://www.linkedin.com/in/saeed-saremi-71935916/))
 
 <!-- -->
 
@@ -36,8 +37,8 @@ _**B.A. Computer Science** - In progress_
 
 In progress:
 
-* `CS 164` _Programming Languages and Compilers_ ([Prof. Sen](https://people.eecs.berkeley.edu/~ksen/))
-* `CS 189` _Introduction to Machine Learning_ ([Prof. Listgarten](http://www.jennifer.listgarten.com/))
+* `CS 182` _Deep Neural Networks_ ([Prof. Sahai](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
+* `MATH 113` _Abstract Algebra_ ([Prof. Utiralova](https://math.berkeley.edu/~sashau/))
 
 **Courses **in bold** are favorites of mine!*
 
@@ -144,30 +145,20 @@ No meal is complete without the bread, and no CV is complete without fast food e
 
 ## Afiliations
 
-### Research & Development @ [GamesCrafters](http://gamescrafters.berkeley.edu/)
+### Research & Development @ [GamesCrafters](https://gamescrafters.github.io/)
 
 Berkeley, CA -- Jan 2023 to now
 
 {{< collapse "summary"="Details..." >}}
 
-We research computational methods generating [strong solutions](https://en.wikipedia.org/wiki/Solved_game#:~:text=of%20the%20game.-,Strong%20solution,-%5Bedit%5D) for different classes of sequential games (and make the solutions available through a few types of interfaces). I am personally interested in the computational modelling of coalitional games, and in developing infrastructure for finding "solutions" for them generically.
+I own a Rust platform for analyzing sequential games called [GamesmanNova](https://github.com/GamesCrafters/GamesmanNova). It was originally built as an informed re-architecture of my advisor's original C software [Gamesman](https://github.com/GamesCrafters/GamesmanClassic).
 
-{{< collapse "summary"="Work in progress..." >}}
+My recent work has been aimed towards translating encodings of provably perfect strategy in sequential games to representations that are intuitive to humans in a reproducible and abstract fashion by expressing them in terms of observable features of game states. In the past, I have helped with:
 
-* Expanding the game modelling and solving system I authored, [GamesmanNova](https://github.com/GamesCrafters/GamesmanNova).
-* Finding a way to model "contracts" for [_N_-player transferrable-utility coalitional games](https://en.wikipedia.org/wiki/Transferable_utility#:~:text=Transferable%20utility%20is%20assumed%20in,enjoy%20the%20same%20total%20utility.) in cases of complete information and turn-based play with the objective of proposing a new "strong solution concept" for this game class.
-* An optimized reformulation of the database engine we use to store our solution sets, utilizing a [LSM-tree](https://en.wikipedia.org/wiki/Log-structured_merge-tree). This will provide the infrastructure needed to:
-  * Overcome the bottleneck of virtual memory usage while solving large games.
-  * Accommodate parallel and distributed solvers.
-
-{{< /collapse >}}
-
-{{< collapse "summary"="Complete results..." >}}
-
+* Desigining domain-specfic databse systems and algorithms for analyzing sequential games.
+* Administrating the instructional component of our group, teaching 20+ students per semester.
 * Solving [Five-Field Kono](https://en.wikipedia.org/wiki/Five_Field_Kono) (you can play against the solution [here](https://nyc.cs.berkeley.edu/uni/games/fivefieldkono/variants/regular)).
 * Outreach during [CalDay '23 and '24](https://engineering.berkeley.edu/events/cal-day/)!
-
-{{< /collapse >}}
 
 {{< /collapse >}}
 
@@ -190,7 +181,7 @@ This is the FIRST Robotics Competition group from one of the high schools I went
 
 ## Skills
 
-The elements below are things I have experience with, which are also building blocks of at least some things I am excited to contribute to. For example, I have significant JavaScript experience but I am not interested in web development, so I do not include it here.
+The items below are things I have experience with, which are also building blocks of at least some things I am excited to contribute to. For example, I have much JavaScript experience but I am not interested in web development, so I do not include it here.
 
 ### GPPLs
 
@@ -203,5 +194,6 @@ The elements below are things I have experience with, which are also building bl
 
 * General purpose scripting (Bash, Python, PowerShell, etc.)
 * Leadership (meeting scheduling is definitely NP-complete)
+* Understanding of mathematics, especially for ML
 * UNIX system administration & programming
 * Git and Mercurial development workflows

@@ -1,0 +1,33 @@
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+
+<div
+    class="hint-box"
+    style="
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >{{ .Get "title" }}</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">{{ .Inner }}</div>
+</div>

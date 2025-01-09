@@ -1,13 +1,14 @@
 {{ if not (eq .Site.Params.dark "on") -}}
 @media (prefers-color-scheme: dark) {
 {{ end -}}
+/*
 html {
     scrollbar-color: #6c6c6c #2e2e2e;
 }
 
 body {
     color: #ebebeb;
-    background: #121212;
+    background: #c8beaa;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -52,6 +53,7 @@ main#content header#post-header div {
 main#content code {
     background-color: #333;
 }
+*/
 {{- if not (eq .Site.Params.dark "on") -}}
 }
 {{- end -}}
