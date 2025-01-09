@@ -46,11 +46,11 @@ But from a global point of view, there is no obvious question to ask about a gam
 
 There are a lot of classes of games. They are separated by the mathematical properties of their setting and participants, among other factors.
 
-There is no global dictionary or atlas for game classes, as interpretations can become neuanced to the extent of opinion. Hence, anytime someone makes a statement in game theory they must specify the class of games it targets. In this article, we will target games that are:
+There is no global dictionary or atlas for game classes, as interpretations can become nuanced to the extent of opinion. Hence, anytime someone makes a statement in game theory they must specify the class of games it targets. In this article, we will target games that are:
 
 1. **Perfect-information.** Here, all players know everything in the universe that could possibly help them make or avoid any decision, except the decisions that other players will make. Most forms of Poker are not perfect-information, as the exact location of the cards is unknown.
 
-2. **Deterministic.** Here, if all palyers choose a strategy and never change it, there is only one possible outcome for the game. Chess is deterministic, because if players make the exact same moves in two different games they are guaranteed to achieve the same result.
+2. **Deterministic.** Here, if all players choose a strategy and never change it, there is only one possible outcome for the game. Chess is deterministic, because if players make the exact same moves in two different games they are guaranteed to achieve the same result.
 
 3. **Sequential.** More intuitive superset of {{< hidden-link "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" "extensive-form games" >}}. Here, all actions that players can take are indivisible. Soccer is not discrete, because players' movements constitute their actions and it is possible to divide any movement into a shorter one.
 
@@ -60,9 +60,9 @@ There is no global dictionary or atlas for game classes, as interpretations can 
 
 There are some questions that are so broadly-applicable in terms of the classes of games they can target that they achieve the special status of a **solution concept.** This is a term that refers to a characteristic can be observed in a useful set of game classes.
 
-A very human thing to ask about broad categories of games is who will win. As it turns out, there is no real answer to this question most of the time, because it can come across obstacles like chance, incomplete information, and lack of clarity around the word "win." An equally important yet more applicable question, however, is what strategy each player should take to achieve the best posible result for themselves.
+A very human thing to ask about broad categories of games is who will win. As it turns out, there is no real answer to this question most of the time, because it can come across obstacles like chance, incomplete information, and lack of clarity around the word "win." An equally important yet more applicable question, however, is what strategy each player should take to achieve the best possible result for themselves.
 
-In many cases, it is necessary to tack on additional neuances to this question to be able to answer it. One such refinement of the question (which revolutionized economics) asks which strategy each player should adopt so that no single player could change their own and benefit from it. A pairing of players to strategies is known as a **strategy profile**, and those that satisfy the above property are known as **Nash Equilibria**.
+In many cases, it is necessary to tack on additional nuances to this question to be able to answer it. One such refinement of the question (which revolutionized economics) asks which strategy each player should adopt so that no single player could change their own and benefit from it. A pairing of players to strategies is known as a **strategy profile**, and those that satisfy the above property are known as **Nash Equilibria**.
 
 The strategies and strategy profiles that allow players to act probabilistically are called **mixed**. Mixed strategies are tantamount to sampling [probability distributions](https://en.wikipedia.org/wiki/Probability_distribution) of **pure strategies**, which themselves specify deterministic actions. In 1950, John Nash defined the concept of a Nash Equilibrium (NE), additionally proving that there exists such a mixed strategy profile in all games [^nash-dissertation].
 
@@ -170,7 +170,7 @@ A proof of the bijection between inductive and directed graphs is omitted.
 
 {{% /hint %}}
 
-Furthermore, because many actions could be globally or locally commutative with respect to proxies' mutable state, sets of histories in the extensive form are usually of much higher cardinality than sets of possible states for rulesets' proxies. This is of course computationally favorable, as finite ruelesets (whose proxies have a finite number of possible states) can generate even inifinite extensive forms.
+Furthermore, because many actions could be globally or locally commutative with respect to proxies' mutable state, sets of histories in the extensive form are usually of much higher cardinality than sets of possible states for rulesets' proxies. This is of course computationally favorable, as finite ruelesets (whose proxies have a finite number of possible states) can generate even infinite extensive forms.
 
 {{< hint title="Example" >}}
 {{< split widths="9,5" >}}
@@ -245,7 +245,7 @@ Further, the number of board states this algorithm will need to visit is reduced
 
 So far, discussion has brought us to inductive graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.
 
-To do this, we will cover a representation of an inductive graph in a real programming language, apply it to a new problem domain, and make improvments that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.
+To do this, we will cover a representation of an inductive graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.
 
 ### Interface items
 
@@ -369,7 +369,7 @@ where
 
 {{< /highlight >}}
 
-Here, `partition` is the template of $\pi$. The big idea is that during a traversal, we can observe a change in the value of `*::partition(current)`, where `current` is the current state in the traversal. This way, we can build a graph of the outputs of this function based on their adjacency in the subproblem graph. Finally, we analyze the resulting graph to find sets of states that can be traversed simultaneusly.
+Here, `partition` is the template of $\pi$. The big idea is that during a traversal, we can observe a change in the value of `*::partition(current)`, where `current` is the current state in the traversal. This way, we can build a graph of the outputs of this function based on their adjacency in the subproblem graph. Finally, we analyze the resulting graph to find sets of states that can be traversed simultaneously.
 
 {{% hint title="Example" %}}
 
@@ -422,7 +422,7 @@ These general steps skip some details, but they present an arbitrarily parallel 
 
 # Meta-content
 
-The section titled "Representation" got us to stumble across the new concepts of inductive graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic progamming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.
+The section titled "Representation" got us to stumble across the new concepts of inductive graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.
 
 Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to [solve](https://en.wikipedia.org/wiki/Solved_game) bigger games faster than was previously possible (through DP algorithms that consume representations of them).
 
