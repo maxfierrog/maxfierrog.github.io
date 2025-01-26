@@ -4,6 +4,8 @@ summary: A list of music pieces I love and optionally explanations of why.
 date: 2024-02-19
 ---
 
+{{< figure src="https://i.scdn.co/image/ab67616d0000b2739b5c7536dbc2dd98fede7754" width="256" attr="\"Harmonielehre\" by John Adams" align=center target="_blank" >}}
+
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2736d5c90793ffa469ced01ca38" width="256" attr="\"Glassworks\" by Philip Glass" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273101232ffd5af0e3c37e2c528" width="256" attr="\"I Let It in and It Took Everything\" by Loathe" align=center target="_blank" >}}
