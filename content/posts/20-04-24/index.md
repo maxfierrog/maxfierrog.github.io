@@ -1,5 +1,5 @@
 ---
-title: "Computational Techniques in Game-Theoretic Systems"
+title: "Representation Concepts in Game-Theoretic Systems"
 date: 2024-04-20
 math: true
 ---
@@ -10,9 +10,9 @@ I gave an introductory talk about how computer systems represent, compute, and s
 
 ### Abstract
 
-Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones.
+Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called [implicit graph](https://en.wikipedia.org/wiki/Implicit_graph)).
 
-As a concrete case of this abstract class of problems, I present techiques that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these techniques are also applicable to other such problems (e.g., the membership problem[^cfg-membership] for decidable subclasses of context-free grammars).
+As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem[^cfg-membership] for decidable subclasses of context-free grammars).
 
 ---
 
@@ -78,7 +78,7 @@ The possibility of players taking actions simultaneously (among other things) ca
 
 Because finding a NE is such a popular desire, most of the discussion here will focus on the procedure of finding a pure-strategy NE in the class of games we specified previously. This is a costly process, which is why it calls for techniques that help minimize use of computational resources. However, you will notice that the things that make this an inherently costly process for some games are actually factors that have nothing to do with game theory.
 
-Hence, it is possible that the techniques I will discuss are applicable beyond the problem of finding a pure-strategy NE. To elaborate, a maximally generic yet snobby version of this article would perhaps be titled _Computational Techniques on Implementing Solutions to Search Problems on Implicit Graphs_. The meanings of these terms are:
+Hence, it is possible that the concepts I will discuss are applicable beyond the problem of finding a pure-strategy NE. To elaborate, a maximally generic yet snobby version of this article would perhaps be titled _Techniques for Implementing Solutions to Search Problems on Implicit Graphs_. The meanings of these terms are:
 
 1. **Implementing.** Bring into the real world.
 
@@ -90,7 +90,7 @@ Hence, it is possible that the techniques I will discuss are applicable beyond t
 
 In particular, the section titled "Representation" will explain the link between the definition of an extensive game and the representation of its structure as an implicit graph, and will introduce a trick that can be used to end up with a significantly simpler traversals. This trick is also applicable to problem domains other than games, but I only present it with regard to games because its implementation depends on the underlying problem. Everything else is applicable as soon as you have an implicit graph in your hands.
 
-While explaining these techniques, it will be useful to have access to ideas in complexity theory. Below are some domain-specific remarks and definitions introducing language that will be of relevance later.
+While explaining these concepts, it will be useful to have access to ideas in complexity theory. Below are some domain-specific remarks and definitions introducing language that will be of relevance later.
 
 #### Complexity theory
 
@@ -426,7 +426,7 @@ The section titled "Representation" got us to stumble across the new concepts of
 
 Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to [solve](https://en.wikipedia.org/wiki/Solved_game) bigger games faster than was previously possible (through DP algorithms that consume representations of them).
 
-This way, I can say that this whole article was in fact about computational game theory. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.
+This way, I can say that this whole article was in fact about game-theoretic systems. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.
 
 [^cfg-membership]: The problem of deciding whether or not a string is in the language of a context-free grammar.
 
