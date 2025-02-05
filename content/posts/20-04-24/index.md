@@ -12,7 +12,7 @@ I gave an introductory talk about how computer systems represent, compute, and s
 
 Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones.
 
-As a concrete case of this abstract class of problems, I present techiques that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these techniques are also applicable to other such problems, such as the membership problem for decidable subclasses of context-free grammars.
+As a concrete case of this abstract class of problems, I present techiques that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these techniques are also applicable to other such problems (e.g., the membership problem[^cfg-membership] for decidable subclasses of context-free grammars).
 
 ---
 
@@ -78,7 +78,7 @@ The possibility of players taking actions simultaneously (among other things) ca
 
 Because finding a NE is such a popular desire, most of the discussion here will focus on the procedure of finding a pure-strategy NE in the class of games we specified previously. This is a costly process, which is why it calls for techniques that help minimize use of computational resources. However, you will notice that the things that make this an inherently costly process for some games are actually factors that have nothing to do with game theory.
 
-Hence, it is possible that the techniques I will discuss are applicable beyond the problem of finding a pure-strategy NE. To elaborate, a maximally generic yet snobby version of this article would perhaps be titled _Computational Techniques on Implementing Solutions to Search Problems on Inductive Graphs_. The meanings of these terms are:
+Hence, it is possible that the techniques I will discuss are applicable beyond the problem of finding a pure-strategy NE. To elaborate, a maximally generic yet snobby version of this article would perhaps be titled _Computational Techniques on Implementing Solutions to Search Problems on Implicit Graphs_. The meanings of these terms are:
 
 1. **Implementing.** Bring into the real world.
 
@@ -86,9 +86,9 @@ Hence, it is possible that the techniques I will discuss are applicable beyond t
 
 3. **Search Problem.** A problem that asks you to find something.
 
-4. **Inductive Graph.** [Graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) representation in terms of an initial element and a collection of functions which allow you to perform a traversal. Useful but unconventional term.
+4. **Implicit Graph.** [Graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) representation in terms of an initial element and a collection of functions which allow you to perform a traversal. Useful but unconventional term.
 
-In particular, the section titled "Representation" will explain the link between the definition of an extensive game and the representation of its structure as an inductive graph, and will introduce a trick that can be used to end up with a significantly simpler traversals. This trick is also applicable to problem domains other than games, but I only present it with regard to games because its implementation depends on the underlying problem. Everything else is applicable as soon as you have an inductive graph in your hands.
+In particular, the section titled "Representation" will explain the link between the definition of an extensive game and the representation of its structure as an implicit graph, and will introduce a trick that can be used to end up with a significantly simpler traversals. This trick is also applicable to problem domains other than games, but I only present it with regard to games because its implementation depends on the underlying problem. Everything else is applicable as soon as you have an implicit graph in your hands.
 
 While explaining these techniques, it will be useful to have access to ideas in complexity theory. Below are some domain-specific remarks and definitions introducing language that will be of relevance later.
 
@@ -156,17 +156,17 @@ In this game, the collection of items that is mutated by players' actions is a p
 
 {{% /hint %}}
 
-This way, the information contained in the state of a proxy is a representation of the history of actions that produced it. These representations are called **game states**. This makes rulesets inductive graphs over the set of game states (denoted $S$). While they do not act directly over a set of histories, rulesets include enough information to generate an equivalent extensive-form representation. The resulting structure of generated action histories is hence intimately tied to the nature of the proxy.
+This way, the information contained in the state of a proxy is a representation of the history of actions that produced it. These representations are called **game states**. This makes rulesets implicit graphs over the set of game states (denoted $S$). While they do not act directly over a set of histories, rulesets include enough information to generate an equivalent extensive-form representation. The resulting structure of generated action histories is hence intimately tied to the nature of the proxy.
 
 {{% hint title="Definition" %}}
 
-Given a directed graph $G = \langle S, E \rangle$, the corresponding **inductive graph** $G^I$ is a 3-tuple $\langle S, t, s_0 \rangle$, where:
+Given a directed graph $G = \langle S, E \rangle$, the corresponding **implicit graph** $G^I$ is a 3-tuple $\langle S, t, s_0 \rangle$, where:
 
 * $S$ is a set of states.
 * $s_0 \in S$ is a starting element.
 * $t : S \to \mathcal{P}(S)$ is a transition dynamics function with $(s_i, s_j) \in E \iff s_j \in t(s_i)$.
 
-A proof of the bijection between inductive and directed graphs is omitted.
+A proof of the bijection between implicit and directed graphs is omitted.
 
 {{% /hint %}}
 
@@ -200,11 +200,11 @@ As you can see, $|H| > |S|$ despite how $|A| < |S|$. The difference in size betw
 
 In real life, games come mostly in the form of rulesets. We are usually aware of the environment they transpire in (the so-called intuitive proxy) and the laws that describe how it can change as a function of players' actions. Because of this, much of applied theory is centered around semantics that involve mutable state. For example, a [Markov Decision Process (MDP)](https://en.wikipedia.org/wiki/Markov_decision_process) from [reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning) strongly reflects the nature of a ruleset.
 
-However, all of these constructs have a latent yet equivalent extensive form representation. This will motivate the technique of **state abstraction**[^abstraction-rl]: The necessity for action histories to be directly prefixed implies that they have a directed tree structure, and because all directed graphs have an equivalent inductive graph representation, the relationship between action histories and ruleset states maps an inductive graph to another one that retains important information about the original.
+However, all of these constructs have a latent yet equivalent extensive form representation. This will motivate the technique of **state abstraction**[^abstraction-rl]: The necessity for action histories to be directly prefixed implies that they have a directed tree structure, and because all directed graphs have an equivalent implicit graph representation, the relationship between action histories and ruleset states maps an implicit graph to another one that retains important information about the original.
 
 {{% hint title="Definition" %}}
 
-An **abstraction map** $a : S_{\text{pre}} \to S_{\text{post}}$ maps the states in an inductive graph $G^I_{\text{pre}}$ to the states in another inductive graph $G^I_{\text{post}}$ with the structure-preserving condition
+An **abstraction map** $a : S_{\text{pre}} \to S_{\text{post}}$ maps the states in an implicit graph $G^I_{\text{pre}}$ to the states in another implicit graph $G^I_{\text{post}}$ with the structure-preserving condition
 
 $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$
 
@@ -243,17 +243,17 @@ Further, the number of board states this algorithm will need to visit is reduced
 
 # Design
 
-So far, discussion has brought us to inductive graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.
+So far, discussion has brought us to implicit graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.
 
-To do this, we will cover a representation of an inductive graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.
+To do this, we will cover a representation of an implicit graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.
 
 ### Interface items
 
-There are a number of considerations to make when encoding an inductive graph, whose importance will vary depending on the object being represented. This section will introduce only the example of graphs of subproblems in the context of [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) (DP), and will iterate on the following [Rust interface](https://doc.rust-lang.org/book/ch10-02-traits.html) to eventually allow their solutions to be found in parallel through a special kind of abstraction.
+There are a number of considerations to make when encoding an implicit graph, whose importance will vary depending on the object being represented. This section will introduce only the example of graphs of subproblems in the context of [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) (DP), and will iterate on the following [Rust interface](https://doc.rust-lang.org/book/ch10-02-traits.html) to eventually allow their solutions to be found in parallel through a special kind of abstraction.
 
 {{< highlight rust "lineNos=true, lineNoStart=1" >}}
 
-trait InductiveGraph<C>
+trait ImplicitGraph<C>
 where
   C: IntoIterator<Item = Self::State>,
 {
@@ -264,7 +264,7 @@ where
 
 {{< /highlight >}}
 
-The elements of this interface declaration relate to the inductive graph $G^I = \langle S, t, s_0 \rangle$ as follows:
+The elements of this interface declaration relate to the implicit graph $G^I = \langle S, t, s_0 \rangle$ as follows:
 
 * The generic parameter `Start` is the type of the elements in $S$.
 * The generic parameter `C` is the type of the elements in $\mathcal{P}(S)$.
@@ -273,14 +273,14 @@ The elements of this interface declaration relate to the inductive graph $G^I = 
 
 {{% hint title="Example" %}}
 
-Implementation of the game `10-to-0-by-1-or-2` from the section on Rulesets as an inductive graph.
+Implementation of the game `10-to-0-by-1-or-2` from the section on Rulesets as an implicit graph.
 
 {{< highlight rust "lineNos=true, lineNoStart=1" >}}
 
 /// The game `10-to-0-by-1-or-2`.
 struct ZeroBy;
 
-impl InductiveGraph<Vec<(u32, bool)>> for ZeroBy {
+impl ImplicitGraph<Vec<(u32, bool)>> for ZeroBy {
   // Tuple of (items, turn).
   type State = (u32, bool);
 
@@ -309,9 +309,9 @@ impl InductiveGraph<Vec<(u32, bool)>> for ZeroBy {
 
 ### Parallel DP
 
-A popular characterization of DP is to establish dependency [relations](https://en.wikipedia.org/wiki/Relation_(mathematics)) on sets of subproblems, defining a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (DAG) for any properly formulated subproblem definition. A natural link to inductive graphs exists through their bijection with general graphs.
+A popular characterization of DP is to establish dependency [relations](https://en.wikipedia.org/wiki/Relation_(mathematics)) on sets of subproblems, defining a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (DAG) for any properly formulated subproblem definition. A natural link to implicit graphs exists through their bijection with general graphs.
 
-Having established that a DP problem can be characterized as an inductive graph of subproblems, it is also worth mentioning that most unorganized solution implementations (i.e., that do not organize solutions or information about subproblems in a tensor) make use of stack-like data structures to aid traversals of subproblems in [postorder](https://en.wikipedia.org/wiki/Tree_traversal).
+Having established that a DP problem can be characterized as an implicit graph of subproblems, it is also worth mentioning that most unorganized solution implementations (i.e., that do not organize solutions or information about subproblems in a tensor) make use of stack-like data structures to aid traversals of subproblems in [postorder](https://en.wikipedia.org/wiki/Tree_traversal).
 
 {{% hint title="Example" %}}
 
@@ -319,7 +319,7 @@ DP algorithm to compute who will win a game of `10-to-0-by-1-or-2`, with the bel
 
 $$ W(s) = \max_{s' \in \\, t(s)} \min_{s' \in \\, t(s)} W(s'). $$
 
-Here, $W : S \to \\{ 0, \\, 1 \\} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the inductive graph over this game's states. This uses the implementation from the previous example.
+Here, $W : S \to \\{ 0, \\, 1 \\} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game's states. This uses the implementation from the previous example.
 
 {{< highlight plaintext "lineNos=true, lineNoStart=1" >}}
 
@@ -353,11 +353,11 @@ Note the use of $W$ in line 19. Also note that the subproblem relation does not 
 
 Attempts to parallelize this setup must first identify a method to partition the subproblem graph in a way optimizes the tradeoff between parallelism and its own overhead. Of course, this depends significantly on the specific resources that will be used to execute the resulting program.
 
-I will introduce one way of doing this that follows naturally from the use of the inductive graph interface. Concretely, a carefully chosen abstraction $\pi : S \to \mathbb{N}$ that connects the graph of subproblems to a DAG of enumerated sets of states will provide a parallelization scheme.
+I will introduce one way of doing this that follows naturally from the use of the implicit graph interface. Concretely, a carefully chosen abstraction $\pi : S \to \mathbb{N}$ that connects the graph of subproblems to a DAG of enumerated sets of states will provide a parallelization scheme.
 
 {{< highlight rust "lineNos=true, lineNoStart=1" >}}
 
-trait InductiveGraph<C>
+trait ImplicitGraph<C>
 where
   C: IntoIterator<Item = Self::State>,
 {
@@ -385,7 +385,7 @@ Having found such an abstraction, the next perplexity of parallelizing a postord
 
 {{< highlight rust "lineNos=true, lineNoStart=1" >}}
 
-trait InductiveGraph<C>
+trait ImplicitGraph<C>
 where
   C: IntoIterator<Item = Self::State>,
 {
@@ -398,9 +398,9 @@ where
 
 {{< /highlight >}}
 
-In an ideal world, `retrograde` is the equivalent of `transition` for the [transpose](https://en.wikipedia.org/wiki/Transpose_graph) of the graph being represented. Unfortunately, it is not generally tractable to have a perfect implementation of `retrograde` without first materializing the entire graph (defeating the purpose of an inductive graph representation). Thus, we only make sure that `retrograde` returns a superset of what `transition` would return for the transpose of the graph, which is easy to ensure in many useful cases.
+In an ideal world, `retrograde` is the equivalent of `transition` for the [transpose](https://en.wikipedia.org/wiki/Transpose_graph) of the graph being represented. Unfortunately, it is not generally tractable to have a perfect implementation of `retrograde` without first materializing the entire graph (defeating the purpose of an implicit graph representation). Thus, we only make sure that `retrograde` returns a superset of what `transition` would return for the transpose of the graph, which is easy to ensure in many useful cases.
 
-With $\pi$ and $t'$ in our hands, we can provision the following procedure for parallelizing the execution of an unorganized dynamic programming algorithm over an inductive graph $G^I$ of subproblems:
+With $\pi$ and $t'$ in our hands, we can provision the following procedure for parallelizing the execution of an unorganized dynamic programming algorithm over an implicit graph $G^I$ of subproblems:
 
 {{% hint title="Procedure" %}}
 
@@ -422,11 +422,11 @@ These general steps skip some details, but they present an arbitrarily parallel 
 
 # Meta-content
 
-The section titled "Representation" got us to stumble across the new concepts of inductive graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.
+The section titled "Representation" got us to stumble across the new concepts of implicit graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.
 
 Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to [solve](https://en.wikipedia.org/wiki/Solved_game) bigger games faster than was previously possible (through DP algorithms that consume representations of them).
 
-This way, I can say that this whole article was in fact about computational game theory. But we both know that it was really about inductive graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.
+This way, I can say that this whole article was in fact about computational game theory. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.
 
 [^cfg-membership]: The problem of deciding whether or not a string is in the language of a context-free grammar.
 
@@ -443,8 +443,6 @@ This way, I can say that this whole article was in fact about computational game
 [^restricted-nash-linearity]: $\text{N}\small{\text{ASH}}$ asks to find a mixed-strategy NE. A pure-strategy NE is a case of a mixed-strategy NE. [Zermelo's theorem](https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)) shows a pure-strategy NE always exists for the class of games in question. Then, [backward induction](https://en.wikipedia.org/wiki/Backward_induction) algorithms can find one in linear time for finite representations of games.
 
 [^rubiks-god-number]: It is possible to obtain this number for a specific starting configuration of a Rubik's Cube, but no one knows the length of the longest minimal sequence of moves necessary to solve it across all starting configurations. This is somewhat dramatically known as [God's Number](https://web.archive.org/web/20141109174500/http://digitaleditions.walsworthprintgroup.com/article/The_Quest_For_God%E2%80%99s_Number/532775/50242/article.html).
-
-[^not-inverse]: Not a mathematical inverse. The true inverse $t^{-1} : \mathcal{P}(S) \to S$ would map sets of states to particular states. Here, the so-called "inverse" is a function $t' : S \to \mathcal{P}(S)$ with $s' \in t(s) \iff s \in t'(s') \\; \\; \forall s, s' \in S$. In particular, replacing $t$ with $t'$ in an inductive graph is equivalent to .
 
 [^minimax-relation]: This subproblem relation monomorphizes the generic formulation of the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax).
 
