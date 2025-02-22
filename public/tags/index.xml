@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Max Fierro</title>
-    <link>https://www.maxfierro.me/tags/</link>
+    <link>http://localhost:51274/tags/</link>
     <description>Recent content in Tags on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="https://www.maxfierro.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:51274/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -16,12 +16,19 @@
     
     
     <item>
-      <title>Scalable Search in Game-Theoretic Systems</title>
-      <link>https://www.maxfierro.me/scalable-search-in-game-theoretic-systems/</link>
+      <title>Representation Concepts in Game-Theoretic Systems</title>
+      <link>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.maxfierro.me/scalable-search-in-game-theoretic-systems/</guid>
-      <description>&lt;p&gt;I gave an introductory talk about how computer systems perform search (or &amp;ldquo;do traversals&amp;rdquo;) on games at scale. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate conference primarily dedicated to Combinatorial Game Theory (CGT).&lt;/p&gt;
+      <guid>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.&lt;/p&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called &lt;a href=&#34;https://en.wikipedia.org/wiki/Implicit_graph&#34;&gt;implicit graph&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; for decidable subclasses of context-free grammars).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;materials&#34;&gt;Materials&lt;/h1&gt;
+&lt;p&gt;The slides I used during my talk can be found below. Anyone can use them without my permission.&lt;/p&gt;
 &lt;script type=&#34;text/javascript&#34; src= &#39;/js/pdf-js/build/pdf.js&#39;&gt;&lt;/script&gt;
 
 &lt;style&gt;
@@ -32,7 +39,7 @@
     min-height: 20vh;
      
   }
-  
+
   .pdf-canvas {
     border: 1px solid black;
     direction: ltr;
@@ -40,7 +47,7 @@
     height: auto;
     display: none;
   }
-  
+
   #the-canvas {
     border: 1px solid black;
     direction: ltr;
@@ -48,8 +55,8 @@
     height: auto;
     display: none;
   }
-  
-  
+
+
   .pdf-loadingWrapper {
     display: none;
     justify-content: center;
@@ -57,7 +64,7 @@
     width: 100%;
     height: 350px;
   }
-  
+
   .pdf-loading {
     display: inline-block;
     width: 50px;
@@ -68,17 +75,17 @@
     animation: spin 1s ease-in-out infinite;
     -webkit-animation: spin 1s ease-in-out infinite;
   }
+
   
-  
-  
-  
-  
+
+
+
   #overlayText {
     word-wrap: break-word;
     display: grid;
     justify-content: end;
   }
-  
+
   #overlayText a {
     position: relative;
     top: 10px;
@@ -92,14 +99,14 @@
     border-color: #00000030;
     text-decoration: none;
   }
-  
+
   #overlayText svg {
     height: clamp(1em, 2vw, 1.4em);
     width:  clamp(1em, 2vw, 1.4em);
   }
-  
-  
-  
+
+
+
   @keyframes spin {
     to { -webkit-transform: rotate(360deg); }
   }
@@ -119,11 +126,11 @@
     &lt;span&gt;
       &lt;span class=&#34;pdf-pagenum&#34; id=&#34;pdf-pagenum-de1ff50c&#34;&gt;&lt;/span&gt; / &lt;span class=&#34;pdf-pagecount&#34; id=&#34;pdf-pagecount-de1ff50c&#34;&gt;&lt;/span&gt;
     &lt;/span&gt;
-    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;https://www.maxfierro.me/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
+    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;noscript&gt;
-View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;https://www.maxfierro.me/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
+View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
 &lt;/noscript&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
@@ -139,7 +146,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == &#39;&#39;)
-      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;https:\/\/www.maxfierro.me\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:51274\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
 
     
     var pdfDoc = null,
@@ -263,6 +270,886 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
     })();
 &lt;/script&gt;
 
+&lt;h3 id=&#34;errata&#34;&gt;Errata&lt;/h3&gt;
+&lt;p&gt;Here are the mistakes I have found in the slides:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In slide 10, the first bullet point should also restrain the set of games under consideration to be extensive-form and non-collaborative, as implied by the subsequent definition in slides 11-15.&lt;/li&gt;
+&lt;li&gt;In slide 20, the formulation $\langle N, S, p, u \rangle$ should also include a transition function $t : S \to \mathcal{P}(S)$, where if $s$ is a state corresponding to history $h$, then the history $h&amp;rsquo;$ corresponding to $s&amp;rsquo;$ should be the same as $h$ with an additional action appended for all $s&amp;rsquo; \in t(s)$.&lt;/li&gt;
+&lt;li&gt;In slide 28, the partition should not necessarily minimize the sum of the conductance of all cuts that produce the partition. Instead, the ideal partition would be a solution to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_partition#:~:text=%5B4%5D-,Problem,-%5Bedit%5D&#34;&gt;balanced partition problem&lt;/a&gt;, where optimal parameters are determined from hardware-related constraints (such as the cost of inter-process communication). The goal is to balance parallelism with its own overhead.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;p&gt;In the interest of accessibility, I will briefly cover useful basics in game theory and computer science that seldom find their way into students&amp;rsquo; syllabi or are otherwise worth refreshing. If you think you can safely skip this, you are probably right.&lt;/p&gt;
+&lt;h3 id=&#34;game-theory&#34;&gt;Game theory&lt;/h3&gt;
+&lt;p&gt;The generic setup of a game is some amount of &amp;ldquo;players&amp;rdquo; taking actions according to their own interests or preferences, potentially affecting other players in the process. From the point of view of a single player, a game is an optimization problem that seeks to find an &amp;ldquo;optimal strategy&amp;rdquo; from the information available to them. This is an assumption known as &amp;ldquo;individual rationality&amp;rdquo; that pervades most of game theory.&lt;/p&gt;
+&lt;p&gt;But from a global point of view, there is no obvious question to ask about a game. This is why games are not problems; they are situations that we can ask different questions about. But &lt;em&gt;per se&lt;/em&gt;, games are not aching to be solved. To ask specific questions with some hope of rigor, a lot of effort has been placed into defining classes of games that posses different characteristics.&lt;/p&gt;
+&lt;h4 id=&#34;taxonomy-of-games&#34;&gt;Taxonomy of games&lt;/h4&gt;
+&lt;p&gt;There are a lot of classes of games. They are separated by the mathematical properties of their setting and participants, among other factors.&lt;/p&gt;
+&lt;p&gt;There is no global dictionary or atlas for game classes, as interpretations can become nuanced to the extent of opinion. Hence, anytime someone makes a statement in game theory they must specify the class of games it targets. In this article, we will target games that are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Perfect-information.&lt;/strong&gt; Here, all players know everything in the universe that could possibly help them make or avoid any decision, except the decisions that other players will make. Most forms of Poker are not perfect-information, as the exact location of the cards is unknown.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deterministic.&lt;/strong&gt; Here, if all players choose a strategy and never change it, there is only one possible outcome for the game. Chess is deterministic, because if players make the exact same moves in two different games they are guaranteed to achieve the same result.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sequential.&lt;/strong&gt; More intuitive superset of &lt;a href=&#34;https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png&#34; style=&#34;color: inherit; text-decoration: none&#34;&gt;extensive-form games&lt;/a&gt;. Here, all actions that players can take are indivisible. Soccer is not discrete, because players&amp;rsquo; movements constitute their actions and it is possible to divide any movement into a shorter one.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Extensive-form.&lt;/strong&gt; The adjective &amp;ldquo;extensive-form&amp;rdquo; refers to games that can be written in extensive form, which is a kind of mathematical template. Here, games are defined in terms of the histories of actions that could be observed by the players, and the preferences each player has among them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;solution-concepts&#34;&gt;Solution concepts&lt;/h4&gt;
+&lt;p&gt;There are some questions that are so broadly-applicable in terms of the classes of games they can target that they achieve the special status of a &lt;strong&gt;solution concept.&lt;/strong&gt; This is a term that refers to a characteristic can be observed in a useful set of game classes.&lt;/p&gt;
+&lt;p&gt;A very human thing to ask about broad categories of games is who will win. As it turns out, there is no real answer to this question most of the time, because it can come across obstacles like chance, incomplete information, and lack of clarity around the word &amp;ldquo;win.&amp;rdquo; An equally important yet more applicable question, however, is what strategy each player should take to achieve the best possible result for themselves.&lt;/p&gt;
+&lt;p&gt;In many cases, it is necessary to tack on additional nuances to this question to be able to answer it. One such refinement of the question (which revolutionized economics) asks which strategy each player should adopt so that no single player could change their own and benefit from it. A pairing of players to strategies is known as a &lt;strong&gt;strategy profile&lt;/strong&gt;, and those that satisfy the above property are known as &lt;strong&gt;Nash Equilibria&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The strategies and strategy profiles that allow players to act probabilistically are called &lt;strong&gt;mixed&lt;/strong&gt;. Mixed strategies are tantamount to sampling &lt;a href=&#34;https://en.wikipedia.org/wiki/Probability_distribution&#34;&gt;probability distributions&lt;/a&gt; of &lt;strong&gt;pure strategies&lt;/strong&gt;, which themselves specify deterministic actions. In 1950, John Nash defined the concept of a Nash Equilibrium (NE), additionally proving that there exists such a mixed strategy profile in all games &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Note&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;Nash Equilibrium is an overloaded term, as it refers to both a solution concept and a strategy profile that satisfies the solution concept. You will need to tell which is which from context.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;computer-science&#34;&gt;Computer science&lt;/h3&gt;
+&lt;p&gt;The possibility of players taking actions simultaneously (among other things) can make the existence of a pure-strategy NE impossible. But if sequential play is assumed, it is straightforward to show that there always exists a pure-strategy NE &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. As mentioned above, this article benefits from this assumption.&lt;/p&gt;
+&lt;p&gt;Because finding a NE is such a popular desire, most of the discussion here will focus on the procedure of finding a pure-strategy NE in the class of games we specified previously. This is a costly process, which is why it calls for techniques that help minimize use of computational resources. However, you will notice that the things that make this an inherently costly process for some games are actually factors that have nothing to do with game theory.&lt;/p&gt;
+&lt;p&gt;Hence, it is possible that the concepts I will discuss are applicable beyond the problem of finding a pure-strategy NE. To elaborate, a maximally generic yet snobby version of this article would perhaps be titled &lt;em&gt;Techniques for Implementing Solutions to Search Problems on Implicit Graphs&lt;/em&gt;. The meanings of these terms are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementing.&lt;/strong&gt; Bring into the real world.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solutions.&lt;/strong&gt; In this context, algorithms that solve problems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Search Problem.&lt;/strong&gt; A problem that asks you to find something.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implicit Graph.&lt;/strong&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_(abstract_data_type)&#34;&gt;Graph&lt;/a&gt; representation in terms of an initial element and a collection of functions which allow you to perform a traversal. Useful but unconventional term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In particular, the section titled &amp;ldquo;Representation&amp;rdquo; will explain the link between the definition of an extensive game and the representation of its structure as an implicit graph, and will introduce a trick that can be used to end up with a significantly simpler traversals. This trick is also applicable to problem domains other than games, but I only present it with regard to games because its implementation depends on the underlying problem. Everything else is applicable as soon as you have an implicit graph in your hands.&lt;/p&gt;
+&lt;p&gt;While explaining these concepts, it will be useful to have access to ideas in complexity theory. Below are some domain-specific remarks and definitions introducing language that will be of relevance later.&lt;/p&gt;
+&lt;h4 id=&#34;complexity-theory&#34;&gt;Complexity theory&lt;/h4&gt;
+&lt;p&gt;In computer science, complexity is a measure&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; of the minimal number of elementary operations that must be composed to complete a target operation. The relevant elementary operations correspond to the kind of complexity in question:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Time complexity.&lt;/strong&gt; Here, elementary operations are other operations whose time is assumed to be a known constant. Elementary operations should always be specified.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Space complexity.&lt;/strong&gt; Here, the elementary operation is setting a bit. A more formal definition of space complexity depends on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Model_of_computation&#34;&gt;model of computation&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For the sake of expressibility, complexity is usually expressed in terms of &lt;a href=&#34;https://en.wikipedia.org/wiki/Asymptotic_analysis&#34;&gt;asymptotic characteristics&lt;/a&gt;. In particular, symbolisms like &lt;a href=&#34;https://web.mit.edu/16.070/www/lecture/big_o.pdf&#34;&gt;Big-O notation&lt;/a&gt; help compare the asymptotic complexity of different algorithms.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_problem&#34;&gt;Computational problems&lt;/a&gt; can be put into &lt;a href=&#34;https://en.wikipedia.org/wiki/Complexity_class&#34;&gt;complexity classes&lt;/a&gt;. For example, the problem of finding a mixed-strategy NE, known as $\text{N}\small{\text{ASH}}$, is in the time complexity class &lt;a href=&#34;https://en.wikipedia.org/wiki/FNP_(complexity)&#34;&gt;$\text{FNP}$&lt;/a&gt;, which has led many people to look for other solution concepts that are more computationally favorable&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;. The equivalent problem for the class of games we are considering, however, is in &lt;a href=&#34;https://en.wikipedia.org/wiki/FP_(complexity)&#34;&gt;$FP$&lt;/a&gt;. In other words, $\text{N}\small{\text{ASH}}$ can be solved &lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithmic_efficiency&#34;&gt;efficiently&lt;/a&gt; on this restricted domain of games&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;representation&#34;&gt;Representation&lt;/h1&gt;
+&lt;p&gt;One can find solutions to instances of many search and decision problems over games without incurring large computational expenses. This is possible by deriving a logical analysis on a case-by-case basis, using the mathematical properties of the components of the game in question.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Definition&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;An &lt;strong&gt;extensive-form game&lt;/strong&gt; is a 4-tuple $\langle N, H, p, (\succsim_i) \rangle$, where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$N$ is a set of players, usually $\{1, \; \ldots, \; n\}$ for simplicity.&lt;/li&gt;
+&lt;li&gt;$H$ is a set of strings of actions where $h \in H \implies h&amp;rsquo; \in H$ where $h&amp;rsquo;$ is the string resulting from removing the last action from the string $h$.&lt;/li&gt;
+&lt;li&gt;$p : H \to N$ assigns a player to each non-terminal history.&lt;/li&gt;
+&lt;li&gt;The player $i \in N$ has a preference relation $\succsim_i$ on the set $Z \subseteq H$ of terminal histories (which is reflexive and transitive).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;For a game provided in the extensive form, its instantiation of the above abstractions can be logically leveraged to prove statements about the game. But given that it can be defined arbitrarily, sometimes it is impossible to achieve this solely through formal rewriting.&lt;/p&gt;
+&lt;p&gt;In some of these cases it is possible to simply expand the component definitions into their explicit forms in order to later compute a solution using these expansions. But of course, doing this can also be extremely impractical. For example, it is common for $H$ to be of very high cardinality.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;Consider a &lt;a href=&#34;https://en.wikipedia.org/wiki/Rubik%27s_Cube&#34;&gt;Rubik&amp;rsquo;s Cube&lt;/a&gt; that is initialized to specific starting colors, which can be set into the extensive form via the following instantiations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$N = \{1\}$.&lt;/li&gt;
+&lt;li&gt;$H = \{ h \; | \; h \text{ is a sequence of 90° rotations of a plane in the cube} \}$.&lt;/li&gt;
+&lt;li&gt;$p : h \mapsto 1$ for all $h \in H$.&lt;/li&gt;
+&lt;li&gt;$h_i \succsim_1 h_j$ for all $h_i$ that leave the cube solved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here, the set $H$ is countably infinite, so it is impossible to expand it to its elements in order to later compute a property of this puzzle. One such property is the smallest number of actions that can solve the cube&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;rulesets&#34;&gt;Rulesets&lt;/h3&gt;
+&lt;p&gt;Before introducing tools to deal with this, there is another representation that is common when dealing with &lt;a href=&#34;https://en.wikipedia.org/wiki/Abstract_strategy_game&#34;&gt;abstract strategy games&lt;/a&gt;. A ruleset, as it is known in &lt;a href=&#34;https://en.wikipedia.org/wiki/Combinatorial_game_theory&#34;&gt;combinatorial game theory&lt;/a&gt;, is the most familiar kind of representation of a game.&lt;/p&gt;
+&lt;p&gt;In particular, a ruleset specifies exactly what actions are permitted to whom and when. It also explains the &lt;a href=&#34;https://en.wikipedia.org/wiki/Utility&#34;&gt;utility&lt;/a&gt; obtained by each participating player when no further actions are available. These characteristics are expressed in terms of the mutable state of a proxy (e.g., a board with pieces).&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;The game &lt;code&gt;10-to-0-by-1-or-2&lt;/code&gt; is generated by the following ruleset:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There is a collection of 10 items.&lt;/li&gt;
+&lt;li&gt;2 players take alternating turns removing either 1 or 2 items from the collection.&lt;/li&gt;
+&lt;li&gt;Player 1 starts. The player who takes the last item from the collection wins.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this game, the collection of items that is mutated by players&amp;rsquo; actions is a proxy that allows players to judge what they are allowed to do and to determine who wins the game.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This way, the information contained in the state of a proxy is a representation of the history of actions that produced it. These representations are called &lt;strong&gt;game states&lt;/strong&gt;. This makes rulesets implicit graphs over the set of game states (denoted $S$). While they do not act directly over a set of histories, rulesets include enough information to generate an equivalent extensive-form representation. The resulting structure of generated action histories is hence intimately tied to the nature of the proxy.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Definition&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;Given a directed graph $G = \langle S, E \rangle$, the corresponding &lt;strong&gt;implicit graph&lt;/strong&gt; $G^I$ is a 3-tuple $\langle S, t, s_0 \rangle$, where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$S$ is a set of states.&lt;/li&gt;
+&lt;li&gt;$s_0 \in S$ is a starting element.&lt;/li&gt;
+&lt;li&gt;$t : S \to \mathcal{P}(S)$ is a transition dynamics function with $(s_i, s_j) \in E \iff s_j \in t(s_i)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A proof of the bijection between implicit and directed graphs is omitted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Furthermore, because many actions could be globally or locally commutative with respect to proxies&amp;rsquo; mutable state, sets of histories in the extensive form are usually of much higher cardinality than sets of possible states for rulesets&amp;rsquo; proxies. This is of course computationally favorable, as finite ruelesets (whose proxies have a finite number of possible states) can generate even infinite extensive forms.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;style&gt;
+    .book-column &gt; :first-child:not(.halign-container, .valign-container) {
+        margin-top: 0px !important;
+    }
+
+    .book-column &gt; :last-child:not(.halign-container, .valign-container) {
+        margin-bottom: 0px !important;
+    }
+&lt;/style&gt;
+&lt;div style=&#34;display: flex; flex-wrap: flex&#34;&gt;
+       
+    &lt;div class=&#34;book-column&#34; style=&#34;flex: 9;&#34;&gt;
+        &lt;p&gt;In the diagram to the right, let $S_0$, $S_1$, $S_2$, and $S_3$ be allowed states under a ruleset, and $A = \{a, b\}$ allowed actions. We have that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The set of histories is $H = \{ \epsilon, a, b, ab, ba \}$.&lt;/li&gt;
+&lt;li&gt;The set of states is $S = \{ S_0, S_1, S_2, S_3 \}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As you can see, $|H| &amp;gt; |S|$ despite how $|A| &amp;lt; |S|$. The difference in size between $H$ and $S$ scales rapidly in the general case.&lt;/p&gt;
+
+    &lt;/div&gt;
+     
+    &lt;div class=&#34;book-column&#34; style=&#34;flex: 5;&#34;&gt;
+        &lt;style&gt;
+    .valign-container {
+        display: flex;
+        height: 100%;
+        align-items: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;valign-container&#34;&gt;
+&lt;style&gt;
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;halign-container&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;commutative_diagram.png&#34; width=&#34;128&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;abstraction&#34;&gt;Abstraction&lt;/h3&gt;
+&lt;p&gt;In real life, games come mostly in the form of rulesets. We are usually aware of the environment they transpire in (the so-called intuitive proxy) and the laws that describe how it can change as a function of players&amp;rsquo; actions. Because of this, much of applied theory is centered around semantics that involve mutable state. For example, a &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_decision_process&#34;&gt;Markov Decision Process (MDP)&lt;/a&gt; from &lt;a href=&#34;https://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;reinforcement learning&lt;/a&gt; strongly reflects the nature of a ruleset.&lt;/p&gt;
+&lt;p&gt;However, all of these constructs have a latent yet equivalent extensive form representation. This will motivate the technique of &lt;strong&gt;state abstraction&lt;/strong&gt;&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;: The necessity for action histories to be directly prefixed implies that they have a directed tree structure, and because all directed graphs have an equivalent implicit graph representation, the relationship between action histories and ruleset states maps an implicit graph to another one that retains important information about the original.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Definition&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;An &lt;strong&gt;abstraction map&lt;/strong&gt; $a : S_{\text{pre}} \to S_{\text{post}}$ maps the states in an implicit graph $G^I_{\text{pre}}$ to the states in another implicit graph $G^I_{\text{post}}$ with the structure-preserving condition&lt;/p&gt;
+&lt;p&gt;$$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;As shown in the last example, the set of action histories is usually of much greater cardinality than its corresponding set of ruleset states, with the difference being possibly infinite. Altogether, this is a hint that, much like the implicit jump from action histories to ruleset states, it is possible to jump to more abstract state sets of smaller cardinality but equal representational power.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+
+&lt;p&gt;An abstraction mapping between the action histories (left) and states (right) from the previous example. Notice how action histories always imply a tree, and the process of abstraction folds it into a potentially cyclic graph.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;&lt;/a&gt; &lt;!-- This is for rendering the above as a &lt;p&gt; element --&gt;&lt;/p&gt;
+
+
+
+&lt;style&gt;
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;halign-container&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;abstraction.png&#34; width=&#34;475&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Therefore, much like imposing a ruleset proxy causes many of the action histories to fold into equivalent states, we can determine for a problem $\text{P}$ which states would be $\text{P}$-equivalent under the ruleset&amp;rsquo;s laws. This way, we can create new abstractions $a_i : S_{i - 1} \to S_i$ that can be composed to obtain a reduced state space that is equivalent to the original under $\text{P}$ for a significant computational upside.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;Consider the ruleset underlying the game of Tic-Tac-Toe. Denote $B_i$ a board state. Then, any algorithm that computes a NE for this game through its ruleset is invariant to the abstraction $a$, where&lt;/p&gt;
+&lt;p&gt;$$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;/p&gt;
+&lt;p&gt;Further, the number of board states this algorithm will need to visit is reduced by a factor $&amp;gt;5$.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;design&#34;&gt;Design&lt;/h1&gt;
+&lt;p&gt;So far, discussion has brought us to implicit graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.&lt;/p&gt;
+&lt;p&gt;To do this, we will cover a representation of an implicit graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.&lt;/p&gt;
+&lt;h3 id=&#34;interface-items&#34;&gt;Interface items&lt;/h3&gt;
+&lt;p&gt;There are a number of considerations to make when encoding an implicit graph, whose importance will vary depending on the object being represented. This section will introduce only the example of graphs of subproblems in the context of &lt;a href=&#34;https://en.wikipedia.org/wiki/Dynamic_programming&#34;&gt;dynamic programming&lt;/a&gt; (DP), and will iterate on the following &lt;a href=&#34;https://doc.rust-lang.org/book/ch10-02-traits.html&#34;&gt;Rust interface&lt;/a&gt; to eventually allow their solutions to be found in parallel through a special kind of abstraction.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;trait&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImplicitGraph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;: &lt;span class=&#34;nb&#34;&gt;IntoIterator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Item&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;transition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The elements of this interface declaration relate to the implicit graph $G^I = \langle S, t, s_0 \rangle$ as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The generic parameter &lt;code&gt;Start&lt;/code&gt; is the type of the elements in $S$.&lt;/li&gt;
+&lt;li&gt;The generic parameter &lt;code&gt;C&lt;/code&gt; is the type of the elements in $\mathcal{P}(S)$.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transition&lt;/code&gt; is the template of $t$.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;start&lt;/code&gt; simply returns $s_0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;Implementation of the game &lt;code&gt;10-to-0-by-1-or-2&lt;/code&gt; from the section on Rulesets as an implicit graph.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sd&#34;&gt;/// The game `10-to-0-by-1-or-2`.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sd&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ZeroBy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;impl&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImplicitGraph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;Vec&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ZeroBy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Tuple of (items, turn).
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Returns (10 items left, player 0&amp;#39;s turn).
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// Returns states with one and two less items on the opposing player&amp;#39;s turn.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;transition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nb&#34;&gt;Vec&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;turn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;mut&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;Vec&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;turn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;turn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;turn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;parallel-dp&#34;&gt;Parallel DP&lt;/h3&gt;
+&lt;p&gt;A popular characterization of DP is to establish dependency &lt;a href=&#34;https://en.wikipedia.org/wiki/Relation_(mathematics)&#34;&gt;relations&lt;/a&gt; on sets of subproblems, defining a &lt;a href=&#34;https://en.wikipedia.org/wiki/Directed_acyclic_graph&#34;&gt;directed acyclic graph&lt;/a&gt; (DAG) for any properly formulated subproblem definition. A natural link to implicit graphs exists through their bijection with general graphs.&lt;/p&gt;
+&lt;p&gt;Having established that a DP problem can be characterized as an implicit graph of subproblems, it is also worth mentioning that most unorganized solution implementations (i.e., that do not organize solutions or information about subproblems in a tensor) make use of stack-like data structures to aid traversals of subproblems in &lt;a href=&#34;https://en.wikipedia.org/wiki/Tree_traversal&#34;&gt;postorder&lt;/a&gt;.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;DP algorithm to compute who will win a game of &lt;code&gt;10-to-0-by-1-or-2&lt;/code&gt;, with the below subproblem relation&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;p&gt;$$ W(s) = \max_{s&amp;rsquo; \in \, t(s)} \min_{s&amp;rsquo; \in \, t(s)} W(s&amp;rsquo;). $$&lt;/p&gt;
+&lt;p&gt;Here, $W : S \to \{ 0, \, 1 \} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game&amp;rsquo;s states. This uses the implementation from the previous example.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;procedure:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  temp ← empty stack
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  stack ← empty stack
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  visited ← empty set
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  stack.push(ZeroBy::start())
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  while stack is not empty:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    current ← stack.pop()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    if current is not in visited:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      visited.add(current)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      temp_stack.push(current)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      for each state in ZeroBy::transition(current):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        if state is not in visited:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          stack.push(state)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  solution ← empty map
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  while temp_stack is not empty:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    current ← temp_stack.pop()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    solution[current] = W(current)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  return solution[ZeroBy::start()]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Note the use of $W$ in line 19. Also note that the subproblem relation does not necessarily generalize to other games and, for the sake of brevity, is not defined for base cases (where $t(s) = \varnothing$).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Attempts to parallelize this setup must first identify a method to partition the subproblem graph in a way optimizes the tradeoff between parallelism and its own overhead. Of course, this depends significantly on the specific resources that will be used to execute the resulting program.&lt;/p&gt;
+&lt;p&gt;I will introduce one way of doing this that follows naturally from the use of the implicit graph interface. Concretely, a carefully chosen abstraction $\pi : S \to \mathbb{N}$ that connects the graph of subproblems to a DAG of enumerated sets of states will provide a parallelization scheme.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;trait&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImplicitGraph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;: &lt;span class=&#34;nb&#34;&gt;IntoIterator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Item&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;partition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;kt&#34;&gt;u64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// &amp;lt;-- NEW
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;transition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, &lt;code&gt;partition&lt;/code&gt; is the template of $\pi$. The big idea is that during a traversal, we can observe a change in the value of &lt;code&gt;*::partition(current)&lt;/code&gt;, where &lt;code&gt;current&lt;/code&gt; is the current state in the traversal. This way, we can build a graph of the outputs of this function based on their adjacency in the subproblem graph. Finally, we analyze the resulting graph to find sets of states that can be traversed simultaneously.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;On the left, a graph over a set of states $S = \{ s_0, \, \ldots, \, s_{11} \}$. On the right, a graph over a set $\Pi \subset \mathbb{N}$ with four elements. They are related by an abstraction $\pi : S \to \Pi$ that is special in that the resulting graph over the elements of $\Pi$ is acyclic. Hence, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fiber_(mathematics)&#34;&gt;fibers&lt;/a&gt; $\pi^{-1}(\{\pi_i\})$ of certain distinct elements $(\pi_i)$ of $\Pi$ could possibly be traversed in parallel. An example of groupings of elements in  $\Pi$ whose fibers under $\pi$ could be traversed in parallel is provided in dotted boxes on the graph of $\Pi$.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;partition.png&#34; width=&#34;550&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Finding a suitable $\pi$ depends on the chosen state (subproblem) representation and is of course highly problem-specific. However, a general strategy is to ensure that $\pi$ outputs a different label if and only if an irreversible change is made to some form of mutable state. As a high-level criterion, this helps construct an abstraction that assuredly maps onto a DAG.&lt;/p&gt;
+&lt;p&gt;Having found such an abstraction, the next perplexity of parallelizing a postorder traversal of subproblems is managing efficient and clear use of shared data structures. Here, a zoo of approaches with varyingly personable tradeoffs are available. I will introduce only one, which involves an additional interface item in the form of a function $t&amp;rsquo; : S \to \mathcal{P}(S)$ called &lt;code&gt;retrograde&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;trait&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImplicitGraph&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;: &lt;span class=&#34;nb&#34;&gt;IntoIterator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Item&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;partition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;kt&#34;&gt;u64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;transition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fn&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;retrograde&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;: &lt;span class=&#34;nc&#34;&gt;Self&lt;/span&gt;::&lt;span class=&#34;n&#34;&gt;State&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span class=&#34;nc&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// &amp;lt;-- NEW
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In an ideal world, &lt;code&gt;retrograde&lt;/code&gt; is the equivalent of &lt;code&gt;transition&lt;/code&gt; for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Transpose_graph&#34;&gt;transpose&lt;/a&gt; of the graph being represented. Unfortunately, it is not generally tractable to have a perfect implementation of &lt;code&gt;retrograde&lt;/code&gt; without first materializing the entire graph (defeating the purpose of an implicit graph representation). Thus, we only make sure that &lt;code&gt;retrograde&lt;/code&gt; returns a superset of what &lt;code&gt;transition&lt;/code&gt; would return for the transpose of the graph, which is easy to ensure in many useful cases.&lt;/p&gt;
+&lt;p&gt;With $\pi$ and $t&amp;rsquo;$ in our hands, we can provision the following procedure for parallelizing the execution of an unorganized dynamic programming algorithm over an implicit graph $G^I$ of subproblems:&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 2px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Procedure&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;Traverse $G^I$ to obtain the set of subproblems $S$ in $\mathcal{\Theta}(|G^I|)$ time and $\mathcal{\Theta}(|S|)$ space.&lt;/li&gt;
+&lt;li&gt;During (1), track the subset of subproblems $S_{base} = \{ s \; | \; t(s) = \varnothing \}$ at no additional cost.&lt;/li&gt;
+&lt;li&gt;During (1), construct a graph $G_\Pi$ over a set of partition labels $\Pi$ using $\pi$, at a $\pi$-dependent cost.&lt;/li&gt;
+&lt;li&gt;Use $G_\Pi$ to generate a plan&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; of labeled parallel tasks in $\mathcal{\Theta}(|G_\Pi|)$ time and $\mathcal{\Theta}(|\Pi|)$ space.&lt;/li&gt;
+&lt;li&gt;Delegate tasks, starting exploration from popped elements of $S_{base}$ with the task&amp;rsquo;s label.&lt;/li&gt;
+&lt;li&gt;Use $t&amp;rsquo;$ for backward intra-partition traversal (using $S$ for existence checks) in $t&amp;rsquo;$-dependent time.&lt;/li&gt;
+&lt;li&gt;When a change in $\pi(s)$ is observed on the current state $s$, add $s$ to $S_{base}$, leaving it unexplored.&lt;/li&gt;
+&lt;li&gt;When a partition is completely explored, finish its task and free the parallel unit.&lt;/li&gt;
+&lt;li&gt;Repeat from (5) on new elements of $S_{base}$ until there are no tasks remaining.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;These general steps skip some details, but they present an arbitrarily parallel stack-free traversal that can be implemented over a single shared data structure whose size scales in the order of $\mathcal{\Theta}(|S|)$ (ignoring structures related to partitions, whose size is assumed to be negligible). This kind of map-like &lt;a href=&#34;https://en.wikipedia.org/wiki/Thread_safety&#34;&gt;thread-safe&lt;/a&gt; functionality is available in many database implementations which automatically bring the added benefit of disk usage, making this method applicable to &amp;ldquo;bigger&amp;rdquo; problems.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;meta-content&#34;&gt;Meta-content&lt;/h1&gt;
+&lt;p&gt;The section titled &amp;ldquo;Representation&amp;rdquo; got us to stumble across the new concepts of implicit graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.&lt;/p&gt;
+&lt;p&gt;Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to &lt;a href=&#34;https://en.wikipedia.org/wiki/Solved_game&#34;&gt;solve&lt;/a&gt; bigger games faster than was previously possible (through DP algorithms that consume representations of them).&lt;/p&gt;
+&lt;p&gt;This way, I can say that this whole article was in fact about game-theoretic systems. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;The problem of deciding whether or not a string is in the language of a context-free grammar.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;For his doctoral dissertation, &lt;a href=&#34;https://gametheory.online/projects/documents/1521541344.pdf&#34;&gt;&lt;em&gt;Non-Cooperative Games&lt;/em&gt;&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;This fact is known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)&#34;&gt;Zermelo&amp;rsquo;s theorem&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;In both &lt;a href=&#34;https://en.wikipedia.org/wiki/Measure_(mathematics)&#34;&gt;the mathematical&lt;/a&gt; and informal sense.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;For example, &lt;a href=&#34;https://www.youtube.com/watch?v=-aSBlRhpwVc&#34;&gt;Christos Papadimitrou on replicator dynamics&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;$\text{N}\small{\text{ASH}}$ asks to find a mixed-strategy NE. A pure-strategy NE is a case of a mixed-strategy NE. &lt;a href=&#34;https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)&#34;&gt;Zermelo&amp;rsquo;s theorem&lt;/a&gt; shows a pure-strategy NE always exists for the class of games in question. Then, &lt;a href=&#34;https://en.wikipedia.org/wiki/Backward_induction&#34;&gt;backward induction&lt;/a&gt; algorithms can find one in linear time for finite representations of games.&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;It is possible to obtain this number for a specific starting configuration of a Rubik&amp;rsquo;s Cube, but no one knows the length of the longest minimal sequence of moves necessary to solve it across all starting configurations. This is somewhat dramatically known as &lt;a href=&#34;https://web.archive.org/web/20141109174500/http://digitaleditions.walsworthprintgroup.com/article/The_Quest_For_God%E2%80%99s_Number/532775/50242/article.html&#34;&gt;God&amp;rsquo;s Number&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;Term generalized from &lt;a href=&#34;https://www2.eecs.berkeley.edu/Pubs/TechRpts/2001/CSD-01-1156.pdf&#34;&gt;its use in reinforcement learning&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;This subproblem relation monomorphizes the generic formulation of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Minimax&#34;&gt;minimax algorithm&lt;/a&gt;.&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;
+&lt;p&gt;A parallelization plan is a data structure that can dispense information on which task must be worked on next when a parallel unit becomes available for work. It may also communicate the need to wait until another unit completes its work.&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     
