@@ -1,10 +1,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     {{ with .Site.Params.description -}}
     <meta name="description" content="{{ . }}">
     {{ end }}
-    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}

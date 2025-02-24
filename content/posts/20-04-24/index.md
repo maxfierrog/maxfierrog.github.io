@@ -4,11 +4,11 @@ date: 2024-04-20
 math: true
 ---
 
-# Introduction
+{{< toc >}}
+
+## Introduction
 
 I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of [Sprouts '24](http://kyleburke.info/sprouts/), an undergraduate-oriented conference primarily dedicated to combinatorial game theory.
-
-### Abstract
 
 Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called [implicit graph](https://en.wikipedia.org/wiki/Implicit_graph)).
 
@@ -16,7 +16,7 @@ As a concrete case of this abstract class of problems, I present concepts that s
 
 ---
 
-# Materials
+## Materials
 
 The slides I used during my talk can be found below. Anyone can use them without my permission.
 
@@ -32,7 +32,7 @@ Here are the mistakes I have found in the slides:
 
 ---
 
-# Background
+## Background
 
 In the interest of accessibility, I will briefly cover useful basics in game theory and computer science that seldom find their way into students' syllabi or are otherwise worth refreshing. If you think you can safely skip this, you are probably right.
 
@@ -106,7 +106,7 @@ For the sake of expressibility, complexity is usually expressed in terms of [asy
 
 ---
 
-# Representation
+## Representation
 
 One can find solutions to instances of many search and decision problems over games without incurring large computational expenses. This is possible by deriving a logical analysis on a case-by-case basis, using the mathematical properties of the components of the game in question.
 
@@ -241,7 +241,7 @@ Further, the number of board states this algorithm will need to visit is reduced
 
 ---
 
-# Design
+## Design
 
 So far, discussion has brought us to implicit graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.
 
@@ -420,7 +420,7 @@ These general steps skip some details, but they present an arbitrarily parallel 
 
 ---
 
-# Meta-content
+## Meta-content
 
 The section titled "Representation" got us to stumble across the new concepts of implicit graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.
 

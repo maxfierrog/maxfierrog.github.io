@@ -34,6 +34,11 @@ header#banner {
     margin: 25px 0;
 }
 
+header#banner .site-logo {
+    height: 25px;
+    width: auto;
+}
+
 header#banner a {
     color: #313a3d;
     text-decoration: none;
@@ -167,11 +172,12 @@ main#content header#post-header > div {
 }
 
 main#content #toc {
-    border: 1px solid #b1b1b1;
-    border-radius: 1px;
     line-height: 26px;
-    margin: 16px 0;
-    padding: 9px 14px;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 main#content #toc h4 {
@@ -186,18 +192,18 @@ main#content #toc nav#TableOfContents {
 
 main#content #toc nav#TableOfContents > ul,
 main#content #toc nav#TableOfContents > ol {
-    margin-left: -40px;
+    margin-left: -15px;
 }
 
 main#content #toc ul,
 main#content #toc ol {
     font-size: 0.98em;
     margin: 0;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 30px;
 }
 
 main#content #toc ul {
-    list-style-type: none;
+    list-style-type: decimal;
 }
 
 main#content #toc ol {

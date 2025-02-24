@@ -4,6 +4,8 @@ date: 2025-02-21
 math: true
 ---
 
+{{< toc >}}
+
 ## Abstract
 
 In praxis learning[^praxis-learning], choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=55901&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=56604&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     <meta name="description" content="Max&#39;s personal site">
     
-    <link rel="shortcut icon" href="http://localhost:55901/favicon.ico">
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -29,19 +33,28 @@
     
     <link rel="stylesheet" href="/css/style.min.css">
 
-    <link rel="canonical" href="http://localhost:55901/representation-concepts-in-game-theoretic-systems/" />
+    <link rel="canonical" href="http://localhost:56604/representation-concepts-in-game-theoretic-systems/" />
     <title>Representation Concepts in Game-Theoretic Systems</title>
 </head>
 <body><header id="banner">
-    <h2><a href="http://localhost:55901/">Max Fierro</a></h2>
+    <a href="http://localhost:56604/"
+        ><img src="/logo.svg" alt="Logo" class="site-logo"
+    /></a>
+    <h2><a href="http://localhost:56604/">Max Fierro</a></h2>
     <nav>
         <ul>
             <li>
-                <a href="/about/" title="about">about</a>
+                <a href="/about/" title="about"
+                    >about</a
+                >
             </li><li>
-                <a href="/resume/" title="resume">resume</a>
+                <a href="/resume/" title="resume"
+                    >resume</a
+                >
             </li><li>
-                <a href="/index.xml" title="">rss</a>
+                <a href="/index.xml" title=""
+                    >rss</a
+                >
             </li>
         </ul>
     </nav>
@@ -53,99 +66,49 @@
         <div>
                 <time>April 20, 2024</time>
             </div>
-    </header><h1 id="introduction">Introduction</h1>
+    </header><aside id="toc">
+    <details>
+        <summary>&nbsp;<strong> Table of contents</strong></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#materials">Materials</a>
+      <ul>
+        <li><a href="#errata">Errata</a></li>
+      </ul>
+    </li>
+    <li><a href="#background">Background</a>
+      <ul>
+        <li><a href="#game-theory">Game theory</a></li>
+        <li><a href="#computer-science">Computer science</a></li>
+      </ul>
+    </li>
+    <li><a href="#representation">Representation</a>
+      <ul>
+        <li><a href="#rulesets">Rulesets</a></li>
+        <li><a href="#abstraction">Abstraction</a></li>
+      </ul>
+    </li>
+    <li><a href="#design">Design</a>
+      <ul>
+        <li><a href="#interface-items">Interface items</a></li>
+        <li><a href="#parallel-dp">Parallel DP</a></li>
+      </ul>
+    </li>
+    <li><a href="#meta-content">Meta-content</a></li>
+  </ul>
+</nav>
+    </details>
+</aside>
+
+<h2 id="introduction">Introduction</h2>
 <p>I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of <a href="http://kyleburke.info/sprouts/">Sprouts &lsquo;24</a>, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.</p>
-<h3 id="abstract">Abstract</h3>
 <p>Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called <a href="https://en.wikipedia.org/wiki/Implicit_graph">implicit graph</a>).</p>
 <p>As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> for decidable subclasses of context-free grammars).</p>
 <hr>
-<h1 id="materials">Materials</h1>
+<h2 id="materials">Materials</h2>
 <p>The slides I used during my talk can be found below. Anyone can use them without my permission.</p>
-<script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
-
-<style>
-  #embed-pdf-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 20vh;
-     
-  }
-
-  .pdf-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-
-  #the-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-
-
-  .pdf-loadingWrapper {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 350px;
-  }
-
-  .pdf-loading {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 3px solid #d2d0d0;;
-    border-radius: 50%;
-    border-top-color: #383838;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
-  }
-
-  
-
-
-
-  #overlayText {
-    word-wrap: break-word;
-    display: grid;
-    justify-content: end;
-  }
-
-  #overlayText a {
-    position: relative;
-    top: 10px;
-    right: 4px;
-    color: #000;
-    margin: auto;
-    background-color: #eeeeee;
-    padding: 0.3em 1em;
-    border: solid 2px;
-    border-radius: 12px;
-    border-color: #00000030;
-    text-decoration: none;
-  }
-
-  #overlayText svg {
-    height: clamp(1em, 2vw, 1.4em);
-    width:  clamp(1em, 2vw, 1.4em);
-  }
-
-
-
-  @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  @-webkit-keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  </style><div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
+<div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
     <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-de1ff50c">
         <div class="pdf-loading" id="pdf-loading-de1ff50c"></div>
     </div>
@@ -178,7 +141,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "http:\/\/localhost:55901\/" + 'js/pdf-js/build/pdf.worker.js';
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "http:\/\/localhost:56604\/" + 'js/pdf-js/build/pdf.worker.js';
 
     
     var pdfDoc = null,
@@ -310,7 +273,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <li>In slide 28, the partition should not necessarily minimize the sum of the conductance of all cuts that produce the partition. Instead, the ideal partition would be a solution to the <a href="https://en.wikipedia.org/wiki/Graph_partition#:~:text=%5B4%5D-,Problem,-%5Bedit%5D">balanced partition problem</a>, where optimal parameters are determined from hardware-related constraints (such as the cost of inter-process communication). The goal is to balance parallelism with its own overhead.</li>
 </ol>
 <hr>
-<h1 id="background">Background</h1>
+<h2 id="background">Background</h2>
 <p>In the interest of accessibility, I will briefly cover useful basics in game theory and computer science that seldom find their way into students&rsquo; syllabi or are otherwise worth refreshing. If you think you can safely skip this, you are probably right.</p>
 <h3 id="game-theory">Game theory</h3>
 <p>The generic setup of a game is some amount of &ldquo;players&rdquo; taking actions according to their own interests or preferences, potentially affecting other players in the process. From the point of view of a single player, a game is an optimization problem that seeks to find an &ldquo;optimal strategy&rdquo; from the information available to them. This is an assumption known as &ldquo;individual rationality&rdquo; that pervades most of game theory.</p>
@@ -349,7 +312,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -404,7 +367,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <p>For the sake of expressibility, complexity is usually expressed in terms of <a href="https://en.wikipedia.org/wiki/Asymptotic_analysis">asymptotic characteristics</a>. In particular, symbolisms like <a href="https://web.mit.edu/16.070/www/lecture/big_o.pdf">Big-O notation</a> help compare the asymptotic complexity of different algorithms.</p>
 <p><a href="https://en.wikipedia.org/wiki/Computational_problem">Computational problems</a> can be put into <a href="https://en.wikipedia.org/wiki/Complexity_class">complexity classes</a>. For example, the problem of finding a mixed-strategy NE, known as $\text{N}\small{\text{ASH}}$, is in the time complexity class <a href="https://en.wikipedia.org/wiki/FNP_(complexity)">$\text{FNP}$</a>, which has led many people to look for other solution concepts that are more computationally favorable<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. The equivalent problem for the class of games we are considering, however, is in <a href="https://en.wikipedia.org/wiki/FP_(complexity)">$FP$</a>. In other words, $\text{N}\small{\text{ASH}}$ can be solved <a href="https://en.wikipedia.org/wiki/Algorithmic_efficiency">efficiently</a> on this restricted domain of games<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>.</p>
 <hr>
-<h1 id="representation">Representation</h1>
+<h2 id="representation">Representation</h2>
 <p>One can find solutions to instances of many search and decision problems over games without incurring large computational expenses. This is possible by deriving a logical analysis on a case-by-case basis, using the mathematical properties of the components of the game in question.</p>
 <style>
     .box-body > :last-child {
@@ -418,7 +381,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -460,7 +423,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -504,7 +467,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -545,7 +508,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -587,7 +550,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -673,7 +636,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -709,7 +672,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$</div>
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -765,7 +728,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$</div>
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -789,7 +752,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$<p>Further, the nu
 </div>
 </div>
 <hr>
-<h1 id="design">Design</h1>
+<h2 id="design">Design</h2>
 <p>So far, discussion has brought us to implicit graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.</p>
 <p>To do this, we will cover a representation of an implicit graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.</p>
 <h3 id="interface-items">Interface items</h3>
@@ -835,7 +798,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$<p>Further, the nu
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -928,7 +891,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$<p>Further, the nu
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1039,7 +1002,7 @@ $$ W(s) = \max_{s' \in \\, t(s)} \min_{s' \in \\, t(s)} W(s'). $$<p>Here, $W : S
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1106,7 +1069,7 @@ $$ W(s) = \max_{s' \in \\, t(s)} \min_{s' \in \\, t(s)} W(s'). $$<p>Here, $W : S
 <div
     class="hint-box"
     style="
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1140,7 +1103,7 @@ $$ W(s) = \max_{s' \in \\, t(s)} \min_{s' \in \\, t(s)} W(s'). $$<p>Here, $W : S
 </div>
 <p>These general steps skip some details, but they present an arbitrarily parallel stack-free traversal that can be implemented over a single shared data structure whose size scales in the order of $\mathcal{\Theta}(|S|)$ (ignoring structures related to partitions, whose size is assumed to be negligible). This kind of map-like <a href="https://en.wikipedia.org/wiki/Thread_safety">thread-safe</a> functionality is available in many database implementations which automatically bring the added benefit of disk usage, making this method applicable to &ldquo;bigger&rdquo; problems.</p>
 <hr>
-<h1 id="meta-content">Meta-content</h1>
+<h2 id="meta-content">Meta-content</h2>
 <p>The section titled &ldquo;Representation&rdquo; got us to stumble across the new concepts of implicit graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.</p>
 <p>Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to <a href="https://en.wikipedia.org/wiki/Solved_game">solve</a> bigger games faster than was previously possible (through DP algorithms that consume representations of them).</p>
 <p>This way, I can say that this whole article was in fact about game-theoretic systems. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.</p>

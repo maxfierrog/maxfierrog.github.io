@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=55901&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=56604&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     <meta name="description" content="Max&#39;s personal site">
     
-    <link rel="shortcut icon" href="http://localhost:55901/favicon.ico">
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -29,19 +33,28 @@
     
     <link rel="stylesheet" href="/css/style.min.css">
 
-    <link rel="canonical" href="http://localhost:55901/n-gram-model-of-optimal-policy-on-interpretable-abstractions/" />
+    <link rel="canonical" href="http://localhost:56604/n-gram-model-of-optimal-policy-on-interpretable-abstractions/" />
     <title>N-Gram Model of Optimal Policy on Interpretable Abstractions</title>
 </head>
 <body><header id="banner">
-    <h2><a href="http://localhost:55901/">Max Fierro</a></h2>
+    <a href="http://localhost:56604/"
+        ><img src="/logo.svg" alt="Logo" class="site-logo"
+    /></a>
+    <h2><a href="http://localhost:56604/">Max Fierro</a></h2>
     <nav>
         <ul>
             <li>
-                <a href="/about/" title="about">about</a>
+                <a href="/about/" title="about"
+                    >about</a
+                >
             </li><li>
-                <a href="/resume/" title="resume">resume</a>
+                <a href="/resume/" title="resume"
+                    >resume</a
+                >
             </li><li>
-                <a href="/index.xml" title="">rss</a>
+                <a href="/index.xml" title=""
+                    >rss</a
+                >
             </li>
         </ul>
     </nav>
@@ -53,7 +66,38 @@
         <div>
                 <time>February 21, 2025</time>
             </div>
-    </header><h2 id="abstract">Abstract</h2>
+    </header><aside id="toc">
+    <details>
+        <summary>&nbsp;<strong> Table of contents</strong></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#background">Background</a>
+      <ul>
+        <li><a href="#rules-of-thumb">Rules of Thumb</a></li>
+        <li><a href="#abstract-strategy">Abstract Strategy</a></li>
+      </ul>
+    </li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="#training">Training</a>
+      <ul>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#sinks">Sinks</a></li>
+      </ul>
+    </li>
+    <li><a href="#inference">Inference</a></li>
+    <li><a href="#remarks">Remarks</a>
+      <ul>
+        <li><a href="#explorations">Explorations</a></li>
+      </ul>
+    </li>
+    <li><a href="#credits">Credits</a></li>
+  </ul>
+</nav>
+    </details>
+</aside>
+
+<h2 id="abstract">Abstract</h2>
 <p>In praxis learning<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.</p>
 <hr>
 <h2 id="background">Background</h2>
