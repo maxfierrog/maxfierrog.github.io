@@ -693,8 +693,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
     />
     <div style="font-size: 0.92em" class="box-body">
 <p>An <strong>abstraction map</strong> $a : S_{\text{pre}} \to S_{\text{post}}$ maps the states in an implicit graph $G^I_{\text{pre}}$ to the states in another implicit graph $G^I_{\text{post}}$ with the structure-preserving condition</p>
-<p>$$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$</p>
-</div>
+$$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$</div>
 </div>
 <p>As shown in the last example, the set of action histories is usually of much greater cardinality than its corresponding set of ruleset states, with the difference being possibly infinite. Altogether, this is a hint that, much like the implicit jump from action histories to ruleset states, it is possible to jump to more abstract state sets of smaller cardinality but equal representational power.</p>
 <style>
@@ -786,8 +785,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
     />
     <div style="font-size: 0.92em" class="box-body">
 <p>Consider the ruleset underlying the game of Tic-Tac-Toe. Denote $B_i$ a board state. Then, any algorithm that computes a NE for this game through its ruleset is invariant to the abstraction $a$, where</p>
-<p>$$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$</p>
-<p>Further, the number of board states this algorithm will need to visit is reduced by a factor $&gt;5$.</p>
+$$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$<p>Further, the number of board states this algorithm will need to visit is reduced by a factor $&gt;5$.</p>
 </div>
 </div>
 <hr>
@@ -950,8 +948,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
     />
     <div style="font-size: 0.92em" class="box-body">
 <p>DP algorithm to compute who will win a game of <code>10-to-0-by-1-or-2</code>, with the below subproblem relation<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>:</p>
-<p>$$ W(s) = \max_{s&rsquo; \in \, t(s)} \min_{s&rsquo; \in \, t(s)} W(s&rsquo;). $$</p>
-<p>Here, $W : S \to \{ 0, \, 1 \} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game&rsquo;s states. This uses the implementation from the previous example.</p>
+$$ W(s) = \max_{s' \in \\, t(s)} \min_{s' \in \\, t(s)} W(s'). $$<p>Here, $W : S \to \{ 0, \, 1 \} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game&rsquo;s states. This uses the implementation from the previous example.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1

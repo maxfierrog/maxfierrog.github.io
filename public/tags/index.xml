@@ -16,12 +16,110 @@
     
     
     <item>
-      <title>N-Gram Markovian Modeling of Optimal Policy Under Interpretable Abstractions</title>
-      <link>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</link>
+      <title>N-Gram Model of Optimal Policy on Interpretable Abstractions</title>
+      <link>http://localhost:55901/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</guid>
-      <description></description>
+      <guid>http://localhost:55901/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;In praxis learning&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;$n$-gram models were developed as a rudimentary statistical model of language. Assuming an $n^{th}$-order &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_property&#34;&gt;Markov property&lt;/a&gt; on the probability of a word $w_{t + 1}$ at discrete time $t + 1$ given a history $\langle w_i \rangle_{i \in [1, \, t]}$,&lt;/p&gt;
+$$
+\begin{equation}
+  P(w_1, \, \ldots, w_{t + 1}) =
+  P(w_1, \dots, w_{t - n - 1}) \prod_{i = 0}^{n - 1} P(w_{t+1} \mid w_{t-n}, \dots, w_t),
+\end{equation}
+$$&lt;p&gt;straightforward &lt;a href=&#34;https://en.wikipedia.org/wiki/Maximum_likelihood_estimation&#34;&gt;maximum likelihood estimation&lt;/a&gt; shows that this probability is the proportion of times that the sequence $\langle w_{t-n}, \, \ldots, w_t \rangle$ appears before $w_{t + 1}$ in observations. This is can be seen as frequentist inference, making the probability measure intuitive.&lt;/p&gt;
+&lt;p&gt;When applied to a set of symbols (words) $S$, such a model implies a Markov chain over the product $S^n = S \times \cdots \times S$. It follows that the chain&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_matrix&#34;&gt;stochastic matrix&lt;/a&gt; $\Pi$ is an element of $\mathbb{R}^{k \times k^n}$ with $k = |S|$, so the number of learnable parameters grows exponentially with the order of the model for a fixed $S$.&lt;/p&gt;
+&lt;p&gt;As a result of upholding the Markov property, $n$-gram models are stationary&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. This flaw makes them incompatible with natural language to any useful extent, and is directly addressed by modern language models through mechanisms like &lt;a href=&#34;https://en.wikipedia.org/wiki/Attention_(machine_learning)&#34;&gt;attention&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;rules-of-thumb&#34;&gt;Rules of Thumb&lt;/h3&gt;
+&lt;p&gt;Many heuristics taught in strategic decision-making can be described to be conditionals on the result of classification exercises. For example, there is a rule of thumb in Chess which calls for protecting one&amp;rsquo;s own king if it is open.&lt;/p&gt;
+&lt;p&gt;When implementing this heuristic, a player performs classification via a mapping $\phi : S \to \{\text{Yes}, \, \text{No}\}$ from the set of board states to an answer to the heuristic&amp;rsquo;s condition, where experience insists that if a player&amp;rsquo;s $\phi$ is sufficiently close to ground truth, they obtain a performance improvement in expectation.&lt;/p&gt;
+&lt;p&gt;Naturally, the complexity involved in evaluating a classification $\phi_h(s)$ for some state $s \in S$ should be minimal so that its heuristic $h$ can be implemented without computer assistance. In many cases, their simplicity to humans (i.e., how intuitive they are) directly translates to the simplicity of implementing them in other models of computation. Put simply, it is generally easy to program such functions.&lt;/p&gt;
+&lt;p&gt;However, humans can obtain an &lt;em&gt;unexplainable&lt;/em&gt; intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area &amp;lsquo;crowdedness&amp;rsquo; in Chess). This can be seen loosely as &lt;a href=&#34;https://en.wikipedia.org/wiki/Feature_learning&#34;&gt;feature learning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But even in these cases, it is relatively simple to train a model which replicates a human&amp;rsquo;s capacity to perform classification for their own expert-level heuristics by having them label training datasets by hand. Hence, one can generally assume access to efficient classifiers for human-interpretable features.&lt;/p&gt;
+&lt;h3 id=&#34;abstract-strategy&#34;&gt;Abstract Strategy&lt;/h3&gt;
+&lt;p&gt;Given a morphism (an abstraction) $\alpha : S \to \tilde{S}$ over a state set $S$, the lack of an injectivity constraint could produce a situation where for an arbitrary policy $\pi : S \to S$ satisfying $\pi(s) = a$ and $\pi(s^\prime) = b$ with distinct $a, \, b, \, s, \, s^\prime \in S$,&lt;/p&gt;
+$$
+\begin{equation}
+  \alpha(s) = \alpha(s^\prime) \;\; \text{and} \;\; \alpha(a) \neq \alpha(b).
+\end{equation}
+$$&lt;p&gt;Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an &amp;lsquo;abstract strategy&amp;rsquo;) which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to &amp;lsquo;remember&amp;rsquo; the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.&lt;/p&gt;
+&lt;h2 id=&#34;model&#34;&gt;Model&lt;/h2&gt;
+&lt;p&gt;Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,&lt;/p&gt;
+$$
+\begin{equation}
+  P^{(\alpha)}_{t+1}(k) = P[\phi^{(\alpha)}(\pi^{t + 1}(s)) = k \; | \; \phi^{(\alpha)}(\pi^t(s)) = k_t, \, \ldots, \, \phi^{(\alpha)}(\pi^0(s)) = k_0],
+\end{equation}
+$$&lt;p&gt;of the elements $k_i \in S^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
+This yields a collection of stochastic matrices $\langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ with&lt;/p&gt;
+$$
+\Pi^{(\alpha)}_{i, j} = P[\, i \text{ is observed at time } t \; | \; j \text{ is observed immediately before}\,],
+$$&lt;p&gt;where $i \in S^{(\alpha)}$ and $j \in (S^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore&lt;/p&gt;
+$$
+\begin{equation}
+  |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
+\end{equation}
+$$&lt;h2 id=&#34;training&#34;&gt;Training&lt;/h2&gt;
+&lt;p&gt;The parameter space for a model $M$ of order $n$ is precisely&lt;/p&gt;
+$$
+\begin{equation}
+  \Theta =
+  \large{\times_{\alpha \in \Alpha}}
+  \large{\times_{k \in S^{(\alpha)}}}
+  \bold{S}^{|S^{(\alpha)}|^n},
+\end{equation}
+$$&lt;p&gt;(where $\bold{S}^d$ denotes the $d$-dimensional unit sphere). Finding optimal parameters $\theta^* \in \Theta$ follows standard procedure as in any $n$-gram model. Hence, we simply provide the generic closed-form solution written in terms of the objects at hand,&lt;/p&gt;
+$$
+\begin{equation}
+ \Pi^{(\alpha)}_{i, j} = \frac{1}{N}
+ \sum_{s \in S}
+  I^{(\alpha)}_{i,j}(\pi^n(s), \langle \pi^i(s) \rangle_{i \in [0, \, n)}),
+\end{equation}
+$$&lt;p&gt;where&lt;/p&gt;
+$$
+\begin{equation*}
+ I^{(\alpha)}_{i,j}(a, \langle b_i \rangle_{i \in [0, \, n)}) =
+ \begin{cases}
+       1 &amp; \text{if } \; \phi^{(\alpha)}(a) = i \; \text{ and } \; \phi^{(\alpha)}(b) = j, \\
+       0 &amp; \text{otherwise},
+  \end{cases}
+\end{equation*}
+$$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in the dynamics of $\pi$, which can be easily sketched while computing the sum in $(5)$.&lt;/p&gt;
+&lt;h3 id=&#34;sources&#34;&gt;Sources&lt;/h3&gt;
+&lt;p&gt;The nature of the policy operator $\pi$ is such that there exists some $s \in S$ wihtout an $s^\prime$ with $\pi(s^\prime) = s$. Here, $s$ is called a source within the dynamics of $\pi$. This constitutes a problem, as the start $s_0$ of the game for which $S$ is a state space is necessarily a source (which may not be unique); therefore, an attempt to find an $n$-length sequence of moves leading up to a state less than $n$ applications of $\pi$ away from a source in its dynamics may fail.&lt;/p&gt;
+&lt;p&gt;This is important because it is a step necessary to compute the $\Pi^{(\alpha)}_{i, j}$$^{\text{th}}$ parameter of the model, where $i$ is the parameter that is too close to a source to have a valid $n$-gram history. A solution which does not significantly alter transition distributions of $\Pi^{(\alpha)}$ is to sample missing elements of $n$-gram histories from a uniform distribution while computing its entries. If this measure is taken, $N$ can be set to $|S|$ in $(5)$, avoiding the need for sketching proportions.&lt;/p&gt;
+&lt;h3 id=&#34;sinks&#34;&gt;Sinks&lt;/h3&gt;
+&lt;p&gt;In many traditional definitions of a policy $\pi$, there may exist elements $s^\prime_i$ of $S$ over which $\pi$ is not defined, as they are terminal in the game under representation. These are sinks in the dynamics of $\pi$, and should never be considered as part of a history while computing model parameters.&lt;/p&gt;
+&lt;h2 id=&#34;inference&#34;&gt;Inference&lt;/h2&gt;
+&lt;p&gt;When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.&lt;/p&gt;
+&lt;p&gt;While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.&lt;/p&gt;
+&lt;h2 id=&#34;remarks&#34;&gt;Remarks&lt;/h2&gt;
+&lt;p&gt;Establishing an approximation of optimal policy in the form of a Markov process provides an interpretable functional representation that is able to work with intuitive abstractions. Thus, it is a valid representation of a praxis, and the above methods effectively &amp;rsquo;translate&amp;rsquo; from policies of arbitrary form.&lt;/p&gt;
+&lt;h3 id=&#34;explorations&#34;&gt;Explorations&lt;/h3&gt;
+&lt;p&gt;The following are left as potential avenues of analysis relating to the model family.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smoothing techniques, and an analysis of their benefit in the context of optimal policy.&lt;/li&gt;
+&lt;li&gt;Non-interpretability of $n$-gram model successors; in particular transformer attention.&lt;/li&gt;
+&lt;li&gt;Skip-gram models as an extension of this family.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+&lt;p&gt;Thank you to my good friend Humberto Gutierrez for spending late nights discussing the concept of policy abstraction with me, and helping me organize many ideas about policies over continuous abstractions.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Automated synthesis of artifacts that improve unassisted human performance from machine representations of perfect or near-perfect game-theoretic strategy.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;A stationary model&amp;rsquo;s probability assignments are invariant with respect to shifts in the time index.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     
@@ -672,8 +770,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
 &lt;p&gt;An &lt;strong&gt;abstraction map&lt;/strong&gt; $a : S_{\text{pre}} \to S_{\text{post}}$ maps the states in an implicit graph $G^I_{\text{pre}}$ to the states in another implicit graph $G^I_{\text{post}}$ with the structure-preserving condition&lt;/p&gt;
-&lt;p&gt;$$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/p&gt;
-&lt;/div&gt;
+$$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;As shown in the last example, the set of action histories is usually of much greater cardinality than its corresponding set of ruleset states, with the difference being possibly infinite. Altogether, this is a hint that, much like the implicit jump from action histories to ruleset states, it is possible to jump to more abstract state sets of smaller cardinality but equal representational power.&lt;/p&gt;
 &lt;style&gt;
@@ -765,8 +862,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
 &lt;p&gt;Consider the ruleset underlying the game of Tic-Tac-Toe. Denote $B_i$ a board state. Then, any algorithm that computes a NE for this game through its ruleset is invariant to the abstraction $a$, where&lt;/p&gt;
-&lt;p&gt;$$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;/p&gt;
-&lt;p&gt;Further, the number of board states this algorithm will need to visit is reduced by a factor $&amp;gt;5$.&lt;/p&gt;
+$$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, the number of board states this algorithm will need to visit is reduced by a factor $&amp;gt;5$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;hr&gt;
@@ -929,8 +1025,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
 &lt;p&gt;DP algorithm to compute who will win a game of &lt;code&gt;10-to-0-by-1-or-2&lt;/code&gt;, with the below subproblem relation&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
-&lt;p&gt;$$ W(s) = \max_{s&amp;rsquo; \in \, t(s)} \min_{s&amp;rsquo; \in \, t(s)} W(s&amp;rsquo;). $$&lt;/p&gt;
-&lt;p&gt;Here, $W : S \to \{ 0, \, 1 \} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game&amp;rsquo;s states. This uses the implementation from the previous example.&lt;/p&gt;
+$$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt;p&gt;Here, $W : S \to \{ 0, \, 1 \} $ maps state information (including the number of items remaining and player turn) to whether the player whose turn it is at $s$ would win under optimal play, with $t$ being the transition function of the implicit graph over this game&amp;rsquo;s states. This uses the implementation from the previous example.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1

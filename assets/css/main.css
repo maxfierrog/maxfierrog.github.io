@@ -6,7 +6,7 @@
 
 html {
     font-size: 57.5%;
-    scrollbar-color: #313a3d #d9cbb8;
+    scrollbar-color: #313a3d #dbdbdb;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
-    background: #d9cbb8;
+    background: #dbdbdb;
     line-height: 1.6;
     overflow-wrap: break-word;
 }

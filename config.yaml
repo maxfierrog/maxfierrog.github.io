@@ -1,4 +1,4 @@
-baseURL: 'https://www.maxfierro.me/'
+baseURL: "https://www.maxfierro.me/"
 title: Max Fierro
 
 theme:
@@ -33,9 +33,17 @@ menu:
       url: /index.xml
 
 permalinks:
-  posts: '/:title/'
+  posts: "/:title/"
 
 markup:
+  highlight:
+    noClasses: false
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block: [['\[', '\]'], ["$$", "$$"]]
+          inline: [['\(', '\)']]
+        enable: true
