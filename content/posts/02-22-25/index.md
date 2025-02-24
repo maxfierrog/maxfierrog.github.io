@@ -51,6 +51,8 @@ $$
 
 Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an 'abstract strategy') which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to 'remember' the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.
 
+---
+
 ## Model
 
 Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,
@@ -75,6 +77,8 @@ $$
   |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
 \end{equation}
 $$
+
+---
 
 ## Training
 
@@ -122,11 +126,15 @@ This is important because it is a step necessary to compute the $\Pi^{(\alpha)}_
 
 In many traditional definitions of a policy $\pi$, there may exist elements $s^\prime_i$ of $S$ over which $\pi$ is not defined, as they are terminal in the game under representation. These are sinks in the dynamics of $\pi$, and should never be considered as part of a history while computing model parameters.
 
+---
+
 ## Inference
 
 When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.
 
 While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.
+
+---
 
 ## Remarks
 

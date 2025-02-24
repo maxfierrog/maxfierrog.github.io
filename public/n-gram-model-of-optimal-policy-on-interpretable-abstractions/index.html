@@ -79,6 +79,7 @@ $$
   \alpha(s) = \alpha(s^\prime) \;\; \text{and} \;\; \alpha(a) \neq \alpha(b).
 \end{equation}
 $$<p>Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an &lsquo;abstract strategy&rsquo;) which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to &lsquo;remember&rsquo; the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.</p>
+<hr>
 <h2 id="model">Model</h2>
 <p>Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,</p>
 $$
@@ -94,7 +95,8 @@ $$
 \begin{equation}
   |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
 \end{equation}
-$$<h2 id="training">Training</h2>
+$$<hr>
+<h2 id="training">Training</h2>
 <p>The parameter space for a model $M$ of order $n$ is precisely</p>
 $$
 \begin{equation}
@@ -125,9 +127,11 @@ $$<p>and $N$ is the number of length-$(n + 1)$ contiguous subsequences in the dy
 <p>This is important because it is a step necessary to compute the $\Pi^{(\alpha)}_{i, j}$$^{\text{th}}$ parameter of the model, where $i$ is the parameter that is too close to a source to have a valid $n$-gram history. A solution which does not significantly alter transition distributions of $\Pi^{(\alpha)}$ is to sample missing elements of $n$-gram histories from a uniform distribution while computing its entries. If this measure is taken, $N$ can be set to $|S|$ in $(5)$, avoiding the need for sketching proportions.</p>
 <h3 id="sinks">Sinks</h3>
 <p>In many traditional definitions of a policy $\pi$, there may exist elements $s^\prime_i$ of $S$ over which $\pi$ is not defined, as they are terminal in the game under representation. These are sinks in the dynamics of $\pi$, and should never be considered as part of a history while computing model parameters.</p>
+<hr>
 <h2 id="inference">Inference</h2>
 <p>When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.</p>
 <p>While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.</p>
+<hr>
 <h2 id="remarks">Remarks</h2>
 <p>Establishing an approximation of optimal policy in the form of a Markov process provides an interpretable functional representation that is able to work with intuitive abstractions. Thus, it is a valid representation of a praxis, and the above methods effectively &rsquo;translate&rsquo; from policies of arbitrary form.</p>
 <h3 id="explorations">Explorations</h3>
