@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51274&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=55901&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Max&#39;s personal site">
     
-    <link rel="shortcut icon" href="http://localhost:51274/favicon.ico">
+    <link rel="shortcut icon" href="http://localhost:55901/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
@@ -29,11 +29,11 @@
     
     <link rel="stylesheet" href="/css/style.min.css">
 
-    <link rel="canonical" href="http://localhost:51274/representation-concepts-in-game-theoretic-systems/" />
+    <link rel="canonical" href="http://localhost:55901/representation-concepts-in-game-theoretic-systems/" />
     <title>Representation Concepts in Game-Theoretic Systems</title>
 </head>
 <body><header id="banner">
-    <h2><a href="http://localhost:51274/">Max Fierro</a></h2>
+    <h2><a href="http://localhost:55901/">Max Fierro</a></h2>
     <nav>
         <ul>
             <li>
@@ -61,7 +61,91 @@
 <hr>
 <h1 id="materials">Materials</h1>
 <p>The slides I used during my talk can be found below. Anyone can use them without my permission.</p>
-<div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
+<script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
+
+<style>
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+
+  
+
+
+
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+
+
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style><div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
     <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-de1ff50c">
         <div class="pdf-loading" id="pdf-loading-de1ff50c"></div>
     </div>
@@ -94,7 +178,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-de1ff50c" href="
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "http:\/\/localhost:51274\/" + 'js/pdf-js/build/pdf.worker.js';
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "http:\/\/localhost:55901\/" + 'js/pdf-js/build/pdf.worker.js';
 
     
     var pdfDoc = null,

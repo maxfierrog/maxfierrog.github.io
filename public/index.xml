@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Max Fierro</title>
-    <link>http://localhost:51274/</link>
+    <link>http://localhost:55901/</link>
     <description>Recent content on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 21 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:51274/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:55901/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -18,10 +18,10 @@
     
     <item>
       <title>N-Gram Markovian Modeling of Optimal Policy Under Interpretable Abstractions</title>
-      <link>http://localhost:51274/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</link>
+      <link>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51274/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</guid>
+      <guid>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</guid>
       <description></description>
     </item>
     
@@ -29,10 +29,10 @@
     
     <item>
       <title>Representation Concepts in Game-Theoretic Systems</title>
-      <link>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</link>
+      <link>http://localhost:55901/representation-concepts-in-game-theoretic-systems/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</guid>
+      <guid>http://localhost:55901/representation-concepts-in-game-theoretic-systems/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.&lt;/p&gt;
 &lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
@@ -41,7 +41,91 @@
 &lt;hr&gt;
 &lt;h1 id=&#34;materials&#34;&gt;Materials&lt;/h1&gt;
 &lt;p&gt;The slides I used during my talk can be found below. Anyone can use them without my permission.&lt;/p&gt;
-&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
+&lt;script type=&#34;text/javascript&#34; src= &#39;/js/pdf-js/build/pdf.js&#39;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+
+  
+
+
+
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+
+
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  &lt;/style&gt;&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
     &lt;div class=&#34;pdf-loadingWrapper&#34; id=&#34;pdf-loadingWrapper-de1ff50c&#34;&gt;
         &lt;div class=&#34;pdf-loading&#34; id=&#34;pdf-loading-de1ff50c&#34;&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -54,11 +138,11 @@
     &lt;span&gt;
       &lt;span class=&#34;pdf-pagenum&#34; id=&#34;pdf-pagenum-de1ff50c&#34;&gt;&lt;/span&gt; / &lt;span class=&#34;pdf-pagecount&#34; id=&#34;pdf-pagecount-de1ff50c&#34;&gt;&lt;/span&gt;
     &lt;/span&gt;
-    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
+    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:55901/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;noscript&gt;
-View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
+View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:55901/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
 &lt;/noscript&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
@@ -74,7 +158,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == &#39;&#39;)
-      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:51274\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:55901\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
 
     
     var pdfDoc = null,

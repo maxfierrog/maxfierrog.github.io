@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Max Fierro</title>
-    <link>http://localhost:51274/tags/</link>
+    <link>http://localhost:55901/tags/</link>
     <description>Recent content in Tags on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="http://localhost:51274/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:55901/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -16,11 +16,22 @@
     
     
     <item>
+      <title>N-Gram Markovian Modeling of Optimal Policy Under Interpretable Abstractions</title>
+      <link>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</link>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:55901/n-gram-markovian-modeling-of-optimal-policy-under-interpretable-abstractions/</guid>
+      <description></description>
+    </item>
+    
+    
+    
+    <item>
       <title>Representation Concepts in Game-Theoretic Systems</title>
-      <link>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</link>
+      <link>http://localhost:55901/representation-concepts-in-game-theoretic-systems/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:51274/representation-concepts-in-game-theoretic-systems/</guid>
+      <guid>http://localhost:55901/representation-concepts-in-game-theoretic-systems/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.&lt;/p&gt;
 &lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
@@ -126,11 +137,11 @@
     &lt;span&gt;
       &lt;span class=&#34;pdf-pagenum&#34; id=&#34;pdf-pagenum-de1ff50c&#34;&gt;&lt;/span&gt; / &lt;span class=&#34;pdf-pagecount&#34; id=&#34;pdf-pagecount-de1ff50c&#34;&gt;&lt;/span&gt;
     &lt;/span&gt;
-    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
+    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:55901/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;noscript&gt;
-View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:51274/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
+View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:55901/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
 &lt;/noscript&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
@@ -146,7 +157,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == &#39;&#39;)
-      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:51274\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:55901\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
 
     
     var pdfDoc = null,
