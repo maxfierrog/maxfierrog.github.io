@@ -71,7 +71,7 @@
         <summary>&nbsp;<strong> Table of contents</strong></summary>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#abstract">Abstract</a></li>
     <li><a href="#materials">Materials</a>
       <ul>
         <li><a href="#errata">Errata</a></li>
@@ -101,14 +101,98 @@
     </details>
 </aside>
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="abstract">Abstract</h2>
 <p>I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of <a href="http://kyleburke.info/sprouts/">Sprouts &lsquo;24</a>, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.</p>
 <p>Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called <a href="https://en.wikipedia.org/wiki/Implicit_graph">implicit graph</a>).</p>
 <p>As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> for decidable subclasses of context-free grammars).</p>
 <hr>
 <h2 id="materials">Materials</h2>
 <p>The slides I used during my talk can be found below. Anyone can use them without my permission.</p>
-<div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
+<script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
+
+<style>
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+
+  
+
+
+
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+
+
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style><div class="embed-pdf-container" id="embed-pdf-container-de1ff50c">
     <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-de1ff50c">
         <div class="pdf-loading" id="pdf-loading-de1ff50c"></div>
     </div>

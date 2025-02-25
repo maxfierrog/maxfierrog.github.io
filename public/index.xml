@@ -171,7 +171,7 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
         &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
         &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#materials&#34;&gt;Materials&lt;/a&gt;
       &lt;ul&gt;
         &lt;li&gt;&lt;a href=&#34;#errata&#34;&gt;Errata&lt;/a&gt;&lt;/li&gt;
@@ -201,14 +201,98 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
     &lt;/details&gt;
 &lt;/aside&gt;
 
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.&lt;/p&gt;
 &lt;p&gt;Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called &lt;a href=&#34;https://en.wikipedia.org/wiki/Implicit_graph&#34;&gt;implicit graph&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; for decidable subclasses of context-free grammars).&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
 &lt;p&gt;The slides I used during my talk can be found below. Anyone can use them without my permission.&lt;/p&gt;
-&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
+&lt;script type=&#34;text/javascript&#34; src= &#39;/js/pdf-js/build/pdf.js&#39;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+
+  
+
+
+
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+
+
+
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  &lt;/style&gt;&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
     &lt;div class=&#34;pdf-loadingWrapper&#34; id=&#34;pdf-loadingWrapper-de1ff50c&#34;&gt;
         &lt;div class=&#34;pdf-loading&#34; id=&#34;pdf-loading-de1ff50c&#34;&gt;&lt;/div&gt;
     &lt;/div&gt;

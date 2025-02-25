@@ -6,7 +6,7 @@ math: true
 
 {{< toc >}}
 
-## Introduction
+## Abstract
 
 I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of [Sprouts '24](http://kyleburke.info/sprouts/), an undergraduate-oriented conference primarily dedicated to combinatorial game theory.
 
