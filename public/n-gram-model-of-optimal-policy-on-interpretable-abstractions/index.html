@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=56604&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -33,14 +33,14 @@
     
     <link rel="stylesheet" href="/css/style.min.css">
 
-    <link rel="canonical" href="http://localhost:56604/n-gram-model-of-optimal-policy-on-interpretable-abstractions/" />
+    <link rel="canonical" href="http://localhost:1313/n-gram-model-of-optimal-policy-on-interpretable-abstractions/" />
     <title>N-Gram Model of Optimal Policy on Interpretable Abstractions</title>
 </head>
 <body><header id="banner">
-    <a href="http://localhost:56604/"
+    <a href="http://localhost:1313/"
         ><img src="/logo.svg" alt="Logo" class="site-logo"
     /></a>
-    <h2><a href="http://localhost:56604/">Max Fierro</a></h2>
+    <h2><a href="http://localhost:1313/">Max Fierro</a></h2>
     <nav>
         <ul>
             <li>
@@ -74,8 +74,9 @@
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#background">Background</a>
       <ul>
+        <li><a href="#n-gram-modeling">$N$-Gram Modeling</a></li>
         <li><a href="#rules-of-thumb">Rules of Thumb</a></li>
-        <li><a href="#abstract-strategy">Abstract Strategy</a></li>
+        <li><a href="#markov-abstractions">Markov Abstractions</a></li>
       </ul>
     </li>
     <li><a href="#model">Model</a></li>
@@ -98,9 +99,10 @@
 </aside>
 
 <h2 id="abstract">Abstract</h2>
-<p>In praxis learning<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.</p>
+<p>Generally, the choice of functional form of a policy model and of the domain that it operates on forms the basis of interpretability. Domains that are the image of class-valued abstractions of the observable state space are desireable because humans excel at visual classification tasks that map onto (largely) discrete characteristics. Hence, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.</p>
 <hr>
 <h2 id="background">Background</h2>
+<h3 id="n-gram-modeling">$N$-Gram Modeling</h3>
 <p>$n$-gram models were developed as a rudimentary statistical model of language. Assuming an $n^{th}$-order <a href="https://en.wikipedia.org/wiki/Markov_property">Markov property</a> on the probability of a word $w_{t + 1}$ at discrete time $t + 1$ given a history $\langle w_i \rangle_{i \in [1, \, t]}$,</p>
 $$
 \begin{equation}
@@ -109,45 +111,47 @@ $$
 \end{equation}
 $$<p>straightforward <a href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">maximum likelihood estimation</a> shows that this probability is the proportion of times that the sequence $\langle w_{t-n}, \, \ldots, w_t \rangle$ appears before $w_{t + 1}$ in observations. This is can be seen as frequentist inference, making the probability measure intuitive.</p>
 <p>When applied to a set of symbols (words) $S$, such a model implies a Markov chain over the product $S^n = S \times \cdots \times S$. It follows that the chain&rsquo;s <a href="https://en.wikipedia.org/wiki/Stochastic_matrix">stochastic matrix</a> $\Pi$ is an element of $\mathbb{R}^{k \times k^n}$ with $k = |S|$, so the number of learnable parameters grows exponentially with the order of the model for a fixed $S$.</p>
-<p>As a result of upholding the Markov property, $n$-gram models are stationary<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. This flaw makes them incompatible with natural language to any useful extent, and is directly addressed by modern language models through mechanisms like <a href="https://en.wikipedia.org/wiki/Attention_(machine_learning)">attention</a>.</p>
+<p>As a result of upholding the Markov property, $n$-gram models are stationary<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. This flaw makes them incompatible with natural language to any useful extent, and is directly addressed by modern language models through mechanisms like <a href="https://en.wikipedia.org/wiki/Attention_(machine_learning)">attention</a>.</p>
 <h3 id="rules-of-thumb">Rules of Thumb</h3>
 <p>Many heuristics taught in strategic decision-making can be described to be conditionals on the result of classification exercises. For example, there is a rule of thumb in Chess which calls for protecting one&rsquo;s own king if it is open.</p>
 <p>When implementing this heuristic, a player performs classification via a mapping $\phi : S \to \{\text{Yes}, \, \text{No}\}$ from the set of board states to an answer to the heuristic&rsquo;s condition, where experience insists that if a player&rsquo;s $\phi$ is sufficiently close to ground truth, they obtain a performance improvement in expectation.</p>
 <p>Naturally, the complexity involved in evaluating a classification $\phi_h(s)$ for some state $s \in S$ should be minimal so that its heuristic $h$ can be implemented without computer assistance. In many cases, their simplicity to humans (i.e., how intuitive they are) directly translates to the simplicity of implementing them in other models of computation. Put simply, it is generally easy to program such functions.</p>
-<p>However, humans can obtain an <em>unexplainable</em> intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area &lsquo;crowdedness&rsquo; in Chess). This can be seen loosely as <a href="https://en.wikipedia.org/wiki/Feature_learning">feature learning</a>.</p>
+<p>However, humans can obtain an <em>unexplainable</em> intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area &lsquo;crowdedness&rsquo; in Chess). This can be seen as <a href="https://en.wikipedia.org/wiki/Feature_learning">representation learning</a>.</p>
 <p>But even in these cases, it is relatively simple to train a model which replicates a human&rsquo;s capacity to perform classification for their own expert-level heuristics by having them label training datasets by hand. Hence, one can generally assume access to efficient classifiers for human-interpretable features.</p>
-<h3 id="abstract-strategy">Abstract Strategy</h3>
-<p>Given a morphism (an abstraction) $\alpha : S \to \tilde{S}$ over a state set $S$, the lack of an injectivity constraint could produce a situation where for an arbitrary policy $\pi : S \to S$ satisfying $\pi(s) = a$ and $\pi(s^\prime) = b$ with distinct $a, \, b, \, s, \, s^\prime \in S$,</p>
+<h3 id="markov-abstractions">Markov Abstractions</h3>
+<p>Given an abstraction $\phi : S \to Z$ over a state set $S$, the lack of an injectivity constraint could produce a situation where, for a policy $\pi_S : S \to S$ with $\pi(s) = a$ and $\pi(s^\prime) = b$ on distinct $a, \, b, \, s, \, s^\prime \in S$,</p>
 $$
 \begin{equation}
-  \alpha(s) = \alpha(s^\prime) \;\; \text{and} \;\; \alpha(a) \neq \alpha(b).
+  \phi(s) = \phi(s^\prime) \;\; \text{and} \;\; \phi(a) \neq \phi(b).
 \end{equation}
-$$<p>Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an &lsquo;abstract strategy&rsquo;) which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to &lsquo;remember&rsquo; the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.</p>
+$$<p>Hence, learning a counterpart $\pi_Z : Z \to Z$ which preserves the information in $\pi_S$ could be impossible, as $\pi_Z(\alpha(s)) = \pi_Z(\alpha(s^\prime))$ would have to &lsquo;retain&rsquo; the information of both $\pi_S(s) = a$ and $\pi_S(s^\prime) = b$. Such an abstraction $\phi$ is said to not be Markov, as its image contains insufficient information to induce a dynamics that corresponds to the behavior specified by $\pi_S$ in $S$.</p>
+<p>In the context of interpretable rules of thumb, reducing the state space $S$ to significantly smaller abstract spaces (e.g., taking decision in $\{\text{Yes}, \, \text{No}\}$ while implementing a heuristic) nearly guarantees that the abstraction which mediated the reduction is not Markov<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
 <hr>
 <h2 id="model">Model</h2>
-<p>Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,</p>
+<p>Let $\langle \phi^{(\alpha)} : S \to Z^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi_S : S \to S$ a policy over $S$. We propose modeling class-conditional transition probability distributions,</p>
 $$
 \begin{equation}
   P^{(\alpha)}_{t+1}(k) = P[\phi^{(\alpha)}(\pi^{t + 1}(s)) = k \; | \; \phi^{(\alpha)}(\pi^t(s)) = k_t, \, \ldots, \, \phi^{(\alpha)}(\pi^0(s)) = k_0],
 \end{equation}
-$$<p>of the elements $k_i \in S^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
-This yields a collection of stochastic matrices $\langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ with</p>
+$$<p>of the elements $k_i \in Z^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
+This yields a collection of stochastic matrices $\langle  \Pi^{(\alpha)} \rangle_{\alpha \in \Alpha}$ with</p>
 $$
 \Pi^{(\alpha)}_{i, j} = P[\, i \text{ is observed at time } t \; | \; j \text{ is observed immediately before}\,],
-$$<p>where $i \in S^{(\alpha)}$ and $j \in (S^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore</p>
+$$<p>where $i \in Z^{(\alpha)}$ and $j \in (Z^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore</p>
 $$
 \begin{equation}
-  |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
+  |M| = \sum_{\alpha \in \Alpha} |Z^{(\alpha)}|^n \, (|Z^{(\alpha)}| - 1).
 \end{equation}
-$$<hr>
+$$<p>The finalized abstract policy $\pi_Z$ would use this model to operate on $Z = \large{\times_{\alpha \in \Alpha}} Z^{(\alpha)}$ (see the <a href="#inference">inference section</a> for a high-level overview of evaluation). By operating on the cross-product of multiple sufficiently independent heuristics, $\pi_Z$ could closely approximate $\pi_S$ while remaining interpretable.</p>
+<hr>
 <h2 id="training">Training</h2>
 <p>The parameter space for a model $M$ of order $n$ is precisely</p>
 $$
 \begin{equation}
   \Theta =
   \large{\times_{\alpha \in \Alpha}}
-  \large{\times_{k \in S^{(\alpha)}}}
-  \bold{S}^{|S^{(\alpha)}|^n},
+  \large{\times_{k \in Z^{(\alpha)}}}
+  \bold{S}^{|Z^{(\alpha)}|^n},
 \end{equation}
 $$<p>(where $\bold{S}^d$ denotes the $d$-dimensional unit sphere). Finding optimal parameters $\theta^* \in \Theta$ follows standard procedure as in any $n$-gram model. Hence, we simply provide the generic closed-form solution written in terms of the objects at hand,</p>
 $$
@@ -173,7 +177,7 @@ $$<p>and $N$ is the number of length-$(n + 1)$ contiguous subsequences in the dy
 <p>In many traditional definitions of a policy $\pi$, there may exist elements $s^\prime_i$ of $S$ over which $\pi$ is not defined, as they are terminal in the game under representation. These are sinks in the dynamics of $\pi$, and should never be considered as part of a history while computing model parameters.</p>
 <hr>
 <h2 id="inference">Inference</h2>
-<p>When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.</p>
+<p>When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the MLE objective of maximizing the probability that their action is observed across all abstract state space transitions.</p>
 <p>While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.</p>
 <hr>
 <h2 id="remarks">Remarks</h2>
@@ -192,10 +196,10 @@ $$<p>and $N$ is the number of length-$(n + 1)$ contiguous subsequences in the dy
 <hr>
 <ol>
 <li id="fn:1">
-<p>Automated synthesis of artifacts that improve unassisted human performance from machine representations of perfect or near-perfect game-theoretic strategy.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>A stationary model&rsquo;s probability assignments are invariant with respect to shifts in the time index.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>A stationary model&rsquo;s probability assignments are invariant with respect to shifts in the time index.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Which is a way of saying that rules of thumb are not globally applicable.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

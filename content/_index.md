@@ -4,7 +4,7 @@ title: "Max Fierro"
 
 Howdy! I'm Max, and I am in your user space.
 
-If you are looking for my technical experience, take a look at my [resume](/resume/). If you want to get to know me a little better, there is a corresponding wall of text in my [about page](/about/). Otherwise, feel free to take a look at my [favorite music](/music/), or read through one of my longer-form posts below.
+If you would like to get to know me a little better, I wrote a wall of text in the [about section](/about/). You can also see [my resume](/resume/) if you would like. Some of my favorite music is [here](/music/), too. I like to write on occasion, and you can find some of my senseless ramblings below.
 
 **Email:** `maxfierro (at) berkeley.edu`
 

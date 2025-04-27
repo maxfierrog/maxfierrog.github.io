@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Max Fierro</title>
-    <link>http://localhost:56604/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="http://localhost:56604/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -16,15 +16,82 @@
     
     
     <item>
+      <title>Poem 1. Dedicado a Delia</title>
+      <link>http://localhost:1313/poem-1.-dedicado-a-delia/</link>
+      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/poem-1.-dedicado-a-delia/</guid>
+      <description>&lt;p&gt;madre que no te suelta el estandarte&lt;br&gt;
+madre de selva que te cubre como yedra&lt;br&gt;
+me arrulla desde la penumbra&lt;br&gt;
+me susurra el nombre de Dios&lt;br&gt;
+ya quítame de aquí que me muero, madre&lt;br&gt;
+dame las palabras que me corresponden&lt;br&gt;
+sacude desde tu sigilo mi sangre&lt;br&gt;
+hazme llegar tu amor&lt;br&gt;
+soledad eterna y vida corta&lt;br&gt;
+no te vayas a olvidar de mi&lt;br&gt;
+madre que a ciegas todo lo ve&lt;br&gt;
+corazón de parota, palabras de luz&lt;br&gt;
+eres la cumbre de este desierto&lt;br&gt;
+autora del método mío&lt;br&gt;
+madre de todo&lt;br&gt;
+mi primer amor, también el último&lt;br&gt;
+mi castillo, mi escudo, mi ángel&lt;br&gt;
+águila de quinientas virtudes&lt;br&gt;
+reguilete infinito de colores&lt;br&gt;
+piedra de orgullo inexorable&lt;br&gt;
+árbol terrestre que toca el cielo&lt;br&gt;
+sosiego inminente&lt;br&gt;
+calor solar&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>N-Gram Model of Optimal Policy on Interpretable Abstractions</title>
-      <link>http://localhost:56604/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</link>
+      <link>http://localhost:1313/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:56604/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</guid>
-      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
-&lt;p&gt;In praxis learning&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.&lt;/p&gt;
+      <guid>http://localhost:1313/n-gram-model-of-optimal-policy-on-interpretable-abstractions/</guid>
+      <description>&lt;aside id=&#34;toc&#34;&gt;
+    &lt;details&gt;
+        &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
+        &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#n-gram-modeling&#34;&gt;$N$-Gram Modeling&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#rules-of-thumb&#34;&gt;Rules of Thumb&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#markov-abstractions&#34;&gt;Markov Abstractions&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#model&#34;&gt;Model&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#training&#34;&gt;Training&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#sources&#34;&gt;Sources&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#sinks&#34;&gt;Sinks&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#inference&#34;&gt;Inference&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#remarks&#34;&gt;Remarks&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#explorations&#34;&gt;Explorations&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Generally, the choice of functional form of a policy model and of the domain that it operates on forms the basis of interpretability. Domains that are the image of class-valued abstractions of the observable state space are desireable because humans excel at visual classification tasks that map onto (largely) discrete characteristics. Hence, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;h3 id=&#34;n-gram-modeling&#34;&gt;$N$-Gram Modeling&lt;/h3&gt;
 &lt;p&gt;$n$-gram models were developed as a rudimentary statistical model of language. Assuming an $n^{th}$-order &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_property&#34;&gt;Markov property&lt;/a&gt; on the probability of a word $w_{t + 1}$ at discrete time $t + 1$ given a history $\langle w_i \rangle_{i \in [1, \, t]}$,&lt;/p&gt;
 $$
 \begin{equation}
@@ -33,45 +100,47 @@ $$
 \end{equation}
 $$&lt;p&gt;straightforward &lt;a href=&#34;https://en.wikipedia.org/wiki/Maximum_likelihood_estimation&#34;&gt;maximum likelihood estimation&lt;/a&gt; shows that this probability is the proportion of times that the sequence $\langle w_{t-n}, \, \ldots, w_t \rangle$ appears before $w_{t + 1}$ in observations. This is can be seen as frequentist inference, making the probability measure intuitive.&lt;/p&gt;
 &lt;p&gt;When applied to a set of symbols (words) $S$, such a model implies a Markov chain over the product $S^n = S \times \cdots \times S$. It follows that the chain&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_matrix&#34;&gt;stochastic matrix&lt;/a&gt; $\Pi$ is an element of $\mathbb{R}^{k \times k^n}$ with $k = |S|$, so the number of learnable parameters grows exponentially with the order of the model for a fixed $S$.&lt;/p&gt;
-&lt;p&gt;As a result of upholding the Markov property, $n$-gram models are stationary&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. This flaw makes them incompatible with natural language to any useful extent, and is directly addressed by modern language models through mechanisms like &lt;a href=&#34;https://en.wikipedia.org/wiki/Attention_(machine_learning)&#34;&gt;attention&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As a result of upholding the Markov property, $n$-gram models are stationary&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This flaw makes them incompatible with natural language to any useful extent, and is directly addressed by modern language models through mechanisms like &lt;a href=&#34;https://en.wikipedia.org/wiki/Attention_(machine_learning)&#34;&gt;attention&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;rules-of-thumb&#34;&gt;Rules of Thumb&lt;/h3&gt;
 &lt;p&gt;Many heuristics taught in strategic decision-making can be described to be conditionals on the result of classification exercises. For example, there is a rule of thumb in Chess which calls for protecting one&amp;rsquo;s own king if it is open.&lt;/p&gt;
 &lt;p&gt;When implementing this heuristic, a player performs classification via a mapping $\phi : S \to \{\text{Yes}, \, \text{No}\}$ from the set of board states to an answer to the heuristic&amp;rsquo;s condition, where experience insists that if a player&amp;rsquo;s $\phi$ is sufficiently close to ground truth, they obtain a performance improvement in expectation.&lt;/p&gt;
 &lt;p&gt;Naturally, the complexity involved in evaluating a classification $\phi_h(s)$ for some state $s \in S$ should be minimal so that its heuristic $h$ can be implemented without computer assistance. In many cases, their simplicity to humans (i.e., how intuitive they are) directly translates to the simplicity of implementing them in other models of computation. Put simply, it is generally easy to program such functions.&lt;/p&gt;
-&lt;p&gt;However, humans can obtain an &lt;em&gt;unexplainable&lt;/em&gt; intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area &amp;lsquo;crowdedness&amp;rsquo; in Chess). This can be seen loosely as &lt;a href=&#34;https://en.wikipedia.org/wiki/Feature_learning&#34;&gt;feature learning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, humans can obtain an &lt;em&gt;unexplainable&lt;/em&gt; intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area &amp;lsquo;crowdedness&amp;rsquo; in Chess). This can be seen as &lt;a href=&#34;https://en.wikipedia.org/wiki/Feature_learning&#34;&gt;representation learning&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But even in these cases, it is relatively simple to train a model which replicates a human&amp;rsquo;s capacity to perform classification for their own expert-level heuristics by having them label training datasets by hand. Hence, one can generally assume access to efficient classifiers for human-interpretable features.&lt;/p&gt;
-&lt;h3 id=&#34;abstract-strategy&#34;&gt;Abstract Strategy&lt;/h3&gt;
-&lt;p&gt;Given a morphism (an abstraction) $\alpha : S \to \tilde{S}$ over a state set $S$, the lack of an injectivity constraint could produce a situation where for an arbitrary policy $\pi : S \to S$ satisfying $\pi(s) = a$ and $\pi(s^\prime) = b$ with distinct $a, \, b, \, s, \, s^\prime \in S$,&lt;/p&gt;
+&lt;h3 id=&#34;markov-abstractions&#34;&gt;Markov Abstractions&lt;/h3&gt;
+&lt;p&gt;Given an abstraction $\phi : S \to Z$ over a state set $S$, the lack of an injectivity constraint could produce a situation where, for a policy $\pi_S : S \to S$ with $\pi(s) = a$ and $\pi(s^\prime) = b$ on distinct $a, \, b, \, s, \, s^\prime \in S$,&lt;/p&gt;
 $$
 \begin{equation}
-  \alpha(s) = \alpha(s^\prime) \;\; \text{and} \;\; \alpha(a) \neq \alpha(b).
+  \phi(s) = \phi(s^\prime) \;\; \text{and} \;\; \phi(a) \neq \phi(b).
 \end{equation}
-$$&lt;p&gt;Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an &amp;lsquo;abstract strategy&amp;rsquo;) which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to &amp;lsquo;remember&amp;rsquo; the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.&lt;/p&gt;
+$$&lt;p&gt;Hence, learning a counterpart $\pi_Z : Z \to Z$ which preserves the information in $\pi_S$ could be impossible, as $\pi_Z(\alpha(s)) = \pi_Z(\alpha(s^\prime))$ would have to &amp;lsquo;retain&amp;rsquo; the information of both $\pi_S(s) = a$ and $\pi_S(s^\prime) = b$. Such an abstraction $\phi$ is said to not be Markov, as its image contains insufficient information to induce a dynamics that corresponds to the behavior specified by $\pi_S$ in $S$.&lt;/p&gt;
+&lt;p&gt;In the context of interpretable rules of thumb, reducing the state space $S$ to significantly smaller abstract spaces (e.g., taking decision in $\{\text{Yes}, \, \text{No}\}$ while implementing a heuristic) nearly guarantees that the abstraction which mediated the reduction is not Markov&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;model&#34;&gt;Model&lt;/h2&gt;
-&lt;p&gt;Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,&lt;/p&gt;
+&lt;p&gt;Let $\langle \phi^{(\alpha)} : S \to Z^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi_S : S \to S$ a policy over $S$. We propose modeling class-conditional transition probability distributions,&lt;/p&gt;
 $$
 \begin{equation}
   P^{(\alpha)}_{t+1}(k) = P[\phi^{(\alpha)}(\pi^{t + 1}(s)) = k \; | \; \phi^{(\alpha)}(\pi^t(s)) = k_t, \, \ldots, \, \phi^{(\alpha)}(\pi^0(s)) = k_0],
 \end{equation}
-$$&lt;p&gt;of the elements $k_i \in S^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
-This yields a collection of stochastic matrices $\langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ with&lt;/p&gt;
+$$&lt;p&gt;of the elements $k_i \in Z^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
+This yields a collection of stochastic matrices $\langle  \Pi^{(\alpha)} \rangle_{\alpha \in \Alpha}$ with&lt;/p&gt;
 $$
 \Pi^{(\alpha)}_{i, j} = P[\, i \text{ is observed at time } t \; | \; j \text{ is observed immediately before}\,],
-$$&lt;p&gt;where $i \in S^{(\alpha)}$ and $j \in (S^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore&lt;/p&gt;
+$$&lt;p&gt;where $i \in Z^{(\alpha)}$ and $j \in (Z^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore&lt;/p&gt;
 $$
 \begin{equation}
-  |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
+  |M| = \sum_{\alpha \in \Alpha} |Z^{(\alpha)}|^n \, (|Z^{(\alpha)}| - 1).
 \end{equation}
-$$&lt;hr&gt;
+$$&lt;p&gt;The finalized abstract policy $\pi_Z$ would use this model to operate on $Z = \large{\times_{\alpha \in \Alpha}} Z^{(\alpha)}$ (see the &lt;a href=&#34;#inference&#34;&gt;inference section&lt;/a&gt; for a high-level overview of evaluation). By operating on the cross-product of multiple sufficiently independent heuristics, $\pi_Z$ could closely approximate $\pi_S$ while remaining interpretable.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;training&#34;&gt;Training&lt;/h2&gt;
 &lt;p&gt;The parameter space for a model $M$ of order $n$ is precisely&lt;/p&gt;
 $$
 \begin{equation}
   \Theta =
   \large{\times_{\alpha \in \Alpha}}
-  \large{\times_{k \in S^{(\alpha)}}}
-  \bold{S}^{|S^{(\alpha)}|^n},
+  \large{\times_{k \in Z^{(\alpha)}}}
+  \bold{S}^{|Z^{(\alpha)}|^n},
 \end{equation}
 $$&lt;p&gt;(where $\bold{S}^d$ denotes the $d$-dimensional unit sphere). Finding optimal parameters $\theta^* \in \Theta$ follows standard procedure as in any $n$-gram model. Hence, we simply provide the generic closed-form solution written in terms of the objects at hand,&lt;/p&gt;
 $$
@@ -97,7 +166,7 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
 &lt;p&gt;In many traditional definitions of a policy $\pi$, there may exist elements $s^\prime_i$ of $S$ over which $\pi$ is not defined, as they are terminal in the game under representation. These are sinks in the dynamics of $\pi$, and should never be considered as part of a history while computing model parameters.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;inference&#34;&gt;Inference&lt;/h2&gt;
-&lt;p&gt;When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.&lt;/p&gt;
+&lt;p&gt;When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the MLE objective of maximizing the probability that their action is observed across all abstract state space transitions.&lt;/p&gt;
 &lt;p&gt;While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;remarks&#34;&gt;Remarks&lt;/h2&gt;
@@ -116,10 +185,10 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;Automated synthesis of artifacts that improve unassisted human performance from machine representations of perfect or near-perfect game-theoretic strategy.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A stationary model&amp;rsquo;s probability assignments are invariant with respect to shifts in the time index.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;A stationary model&amp;rsquo;s probability assignments are invariant with respect to shifts in the time index.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Which is a way of saying that rules of thumb are not globally applicable.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -130,103 +199,53 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
     
     <item>
       <title>Representation Concepts in Game-Theoretic Systems</title>
-      <link>http://localhost:56604/representation-concepts-in-game-theoretic-systems/</link>
+      <link>http://localhost:1313/representation-concepts-in-game-theoretic-systems/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:56604/representation-concepts-in-game-theoretic-systems/</guid>
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+      <guid>http://localhost:1313/representation-concepts-in-game-theoretic-systems/</guid>
+      <description>&lt;aside id=&#34;toc&#34;&gt;
+    &lt;details&gt;
+        &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
+        &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#materials&#34;&gt;Materials&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#errata&#34;&gt;Errata&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#game-theory&#34;&gt;Game theory&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#computer-science&#34;&gt;Computer science&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#representation&#34;&gt;Representation&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#rulesets&#34;&gt;Rulesets&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#abstraction&#34;&gt;Abstraction&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#design&#34;&gt;Design&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#interface-items&#34;&gt;Interface items&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#parallel-dp&#34;&gt;Parallel DP&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#meta-content&#34;&gt;Meta-content&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;I gave an introductory talk about how computer systems represent, compute, and store noteworthy attributes about a particular class of games. This was part of &lt;a href=&#34;http://kyleburke.info/sprouts/&#34;&gt;Sprouts &amp;lsquo;24&lt;/a&gt;, an undergraduate-oriented conference primarily dedicated to combinatorial game theory.&lt;/p&gt;
-&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;Here, I share the materials I used during my presentation and share a longer-form (but very different) exploration of the topic I covered. Generically, it can be useful for all problems where one must run a domain-specific algorithm on a graph that is not materialized in memory, but can be traversed in linear time from a starting node and a set of functions that derive adjacent edges and nodes from existing ones (a so-called &lt;a href=&#34;https://en.wikipedia.org/wiki/Implicit_graph&#34;&gt;implicit graph&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;As a concrete case of this abstract class of problems, I present concepts that support the process of finding a Nash Equilibrium for a specific subclass of games through cousins of the minimax algorithm. However, these concepts are also applicable to other such problems (e.g., the membership problem&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; for decidable subclasses of context-free grammars).&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;materials&#34;&gt;Materials&lt;/h1&gt;
+&lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
 &lt;p&gt;The slides I used during my talk can be found below. Anyone can use them without my permission.&lt;/p&gt;
-&lt;script type=&#34;text/javascript&#34; src= &#39;/js/pdf-js/build/pdf.js&#39;&gt;&lt;/script&gt;
-
-&lt;style&gt;
-  #embed-pdf-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 20vh;
-     
-  }
-
-  .pdf-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-
-  #the-canvas {
-    border: 1px solid black;
-    direction: ltr;
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-
-
-  .pdf-loadingWrapper {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 350px;
-  }
-
-  .pdf-loading {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 3px solid #d2d0d0;;
-    border-radius: 50%;
-    border-top-color: #383838;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
-  }
-
-  
-
-
-
-  #overlayText {
-    word-wrap: break-word;
-    display: grid;
-    justify-content: end;
-  }
-
-  #overlayText a {
-    position: relative;
-    top: 10px;
-    right: 4px;
-    color: #000;
-    margin: auto;
-    background-color: #eeeeee;
-    padding: 0.3em 1em;
-    border: solid 2px;
-    border-radius: 12px;
-    border-color: #00000030;
-    text-decoration: none;
-  }
-
-  #overlayText svg {
-    height: clamp(1em, 2vw, 1.4em);
-    width:  clamp(1em, 2vw, 1.4em);
-  }
-
-
-
-  @keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  @-webkit-keyframes spin {
-    to { -webkit-transform: rotate(360deg); }
-  }
-  &lt;/style&gt;&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
+&lt;div class=&#34;embed-pdf-container&#34; id=&#34;embed-pdf-container-de1ff50c&#34;&gt;
     &lt;div class=&#34;pdf-loadingWrapper&#34; id=&#34;pdf-loadingWrapper-de1ff50c&#34;&gt;
         &lt;div class=&#34;pdf-loading&#34; id=&#34;pdf-loading-de1ff50c&#34;&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -239,11 +258,11 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
     &lt;span&gt;
       &lt;span class=&#34;pdf-pagenum&#34; id=&#34;pdf-pagenum-de1ff50c&#34;&gt;&lt;/span&gt; / &lt;span class=&#34;pdf-pagecount&#34; id=&#34;pdf-pagecount-de1ff50c&#34;&gt;&lt;/span&gt;
     &lt;/span&gt;
-    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:56604/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
+    &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-de1ff50c&#34; href=&#34;http://localhost:1313/pdf/slides-sprouts-2024.pdf&#34;&gt;[pdf]&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;noscript&gt;
-View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:56604/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
+View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-de1ff50c&#34; href=&#34;http://localhost:1313/pdf/slides-sprouts-2024.pdf&#34;&gt;here&lt;/a&gt;.
 &lt;/noscript&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
@@ -259,7 +278,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == &#39;&#39;)
-      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:56604\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = &#34;http:\/\/localhost:1313\/&#34; + &#39;js/pdf-js/build/pdf.worker.js&#39;;
 
     
     var pdfDoc = null,
@@ -391,7 +410,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;li&gt;In slide 28, the partition should not necessarily minimize the sum of the conductance of all cuts that produce the partition. Instead, the ideal partition would be a solution to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_partition#:~:text=%5B4%5D-,Problem,-%5Bedit%5D&#34;&gt;balanced partition problem&lt;/a&gt;, where optimal parameters are determined from hardware-related constraints (such as the cost of inter-process communication). The goal is to balance parallelism with its own overhead.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;In the interest of accessibility, I will briefly cover useful basics in game theory and computer science that seldom find their way into students&amp;rsquo; syllabi or are otherwise worth refreshing. If you think you can safely skip this, you are probably right.&lt;/p&gt;
 &lt;h3 id=&#34;game-theory&#34;&gt;Game theory&lt;/h3&gt;
 &lt;p&gt;The generic setup of a game is some amount of &amp;ldquo;players&amp;rdquo; taking actions according to their own interests or preferences, potentially affecting other players in the process. From the point of view of a single player, a game is an optimization problem that seeks to find an &amp;ldquo;optimal strategy&amp;rdquo; from the information available to them. This is an assumption known as &amp;ldquo;individual rationality&amp;rdquo; that pervades most of game theory.&lt;/p&gt;
@@ -430,7 +449,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -485,7 +504,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;p&gt;For the sake of expressibility, complexity is usually expressed in terms of &lt;a href=&#34;https://en.wikipedia.org/wiki/Asymptotic_analysis&#34;&gt;asymptotic characteristics&lt;/a&gt;. In particular, symbolisms like &lt;a href=&#34;https://web.mit.edu/16.070/www/lecture/big_o.pdf&#34;&gt;Big-O notation&lt;/a&gt; help compare the asymptotic complexity of different algorithms.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_problem&#34;&gt;Computational problems&lt;/a&gt; can be put into &lt;a href=&#34;https://en.wikipedia.org/wiki/Complexity_class&#34;&gt;complexity classes&lt;/a&gt;. For example, the problem of finding a mixed-strategy NE, known as $\text{N}\small{\text{ASH}}$, is in the time complexity class &lt;a href=&#34;https://en.wikipedia.org/wiki/FNP_(complexity)&#34;&gt;$\text{FNP}$&lt;/a&gt;, which has led many people to look for other solution concepts that are more computationally favorable&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;. The equivalent problem for the class of games we are considering, however, is in &lt;a href=&#34;https://en.wikipedia.org/wiki/FP_(complexity)&#34;&gt;$FP$&lt;/a&gt;. In other words, $\text{N}\small{\text{ASH}}$ can be solved &lt;a href=&#34;https://en.wikipedia.org/wiki/Algorithmic_efficiency&#34;&gt;efficiently&lt;/a&gt; on this restricted domain of games&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;representation&#34;&gt;Representation&lt;/h1&gt;
+&lt;h2 id=&#34;representation&#34;&gt;Representation&lt;/h2&gt;
 &lt;p&gt;One can find solutions to instances of many search and decision problems over games without incurring large computational expenses. This is possible by deriving a logical analysis on a case-by-case basis, using the mathematical properties of the components of the game in question.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
@@ -499,7 +518,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -541,7 +560,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -585,7 +604,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -626,7 +645,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -668,7 +687,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -754,7 +773,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -790,7 +809,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -846,7 +865,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -870,7 +889,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;design&#34;&gt;Design&lt;/h1&gt;
+&lt;h2 id=&#34;design&#34;&gt;Design&lt;/h2&gt;
 &lt;p&gt;So far, discussion has brought us to implicit graphs and abstractions through the lens of game theory. The objective of this section will be to motivate these concepts beyond game theory, while supplying references to concrete programming ideas.&lt;/p&gt;
 &lt;p&gt;To do this, we will cover a representation of an implicit graph in a real programming language, apply it to a new problem domain, and make improvements that bring real-world utility. Examples will still be given in terms of games, as they also happen to fit under our new focus. In doing so, we will design a solution to a broad problem using our new toolset items.&lt;/p&gt;
 &lt;h3 id=&#34;interface-items&#34;&gt;Interface items&lt;/h3&gt;
@@ -916,7 +935,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1009,7 +1028,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1120,7 +1139,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1187,7 +1206,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
 &lt;div
     class=&#34;hint-box&#34;
     style=&#34;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
         margin: 25px 0;
@@ -1221,7 +1240,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
 &lt;/div&gt;
 &lt;p&gt;These general steps skip some details, but they present an arbitrarily parallel stack-free traversal that can be implemented over a single shared data structure whose size scales in the order of $\mathcal{\Theta}(|S|)$ (ignoring structures related to partitions, whose size is assumed to be negligible). This kind of map-like &lt;a href=&#34;https://en.wikipedia.org/wiki/Thread_safety&#34;&gt;thread-safe&lt;/a&gt; functionality is available in many database implementations which automatically bring the added benefit of disk usage, making this method applicable to &amp;ldquo;bigger&amp;rdquo; problems.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;meta-content&#34;&gt;Meta-content&lt;/h1&gt;
+&lt;h2 id=&#34;meta-content&#34;&gt;Meta-content&lt;/h2&gt;
 &lt;p&gt;The section titled &amp;ldquo;Representation&amp;rdquo; got us to stumble across the new concepts of implicit graphs and abstractions by looking at different forms for game representations. The following section extrapolated these ideas to the domain of dynamic programming, and showed how it is possible to incorporate them into the design of solutions to real-world problems.&lt;/p&gt;
 &lt;p&gt;Something interesting is that games made their way into the second section, despite being decidedly out of scope at that point. In a dying hope of getting this article back on track, I will point out that the particular example of parallelizing DP algorithms was conveniently chosen because it is used to &lt;a href=&#34;https://en.wikipedia.org/wiki/Solved_game&#34;&gt;solve&lt;/a&gt; bigger games faster than was previously possible (through DP algorithms that consume representations of them).&lt;/p&gt;
 &lt;p&gt;This way, I can say that this whole article was in fact about game-theoretic systems. But we both know that it was really about implicit graphs and abstractions. Maybe, if we squint our eyes, it can be about both topics. Either way, I hope the lack of clarity was more stimulating than it was confusing.&lt;/p&gt;
