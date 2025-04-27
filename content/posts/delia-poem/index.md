@@ -13,7 +13,7 @@ dame las palabras que me corresponden\
 sacude desde tu sigilo mi sangre\
 hazme llegar tu amor\
 soledad eterna y vida corta\
-no te vayas a olvidar de mi\
+no te vayas a olvidar de mí\
 madre que a ciegas todo lo ve\
 corazón de parota, palabras de luz\
 eres la cumbre de este desierto\
