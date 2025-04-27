@@ -1,5 +1,6 @@
 ---
 title: N-Gram Model of Optimal Policy on Interpretable Abstractions
+category: technical
 date: 2025-02-21
 math: true
 ---
@@ -8,11 +9,13 @@ math: true
 
 ## Abstract
 
-In praxis learning[^praxis-learning], choosing an interpretable functional form as a policy approximation model is essential. Equally important is to ensure that it is well-defined defined over interpretable domains. Such domains are often the result of class-valued abstractions of the observable state space, as visual classification is a task that humans excel at. Motivated by this fact, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.
+Generally, the choice of functional form of a policy model and of the domain that it operates on forms the basis of interpretability. Domains that are the image of class-valued abstractions of the observable state space are desireable because humans excel at visual classification tasks that map onto (largely) discrete characteristics. Hence, we provide an interpretable functional form that is valid over multiclass spaces in the form of an $n$-gram model approximation of dynamics under optimal policy.
 
 ---
 
 ## Background
+
+### $N$-Gram Modeling
 
 $n$-gram models were developed as a rudimentary statistical model of language. Assuming an $n^{th}$-order [Markov property](https://en.wikipedia.org/wiki/Markov_property) on the probability of a word $w_{t + 1}$ at discrete time $t + 1$ given a history $\langle w_i \rangle_{i \in [1, \\, t]}$,
 
@@ -37,27 +40,29 @@ When implementing this heuristic, a player performs classification via a mapping
 
 Naturally, the complexity involved in evaluating a classification $\phi_h(s)$ for some state $s \in S$ should be minimal so that its heuristic $h$ can be implemented without computer assistance. In many cases, their simplicity to humans (i.e., how intuitive they are) directly translates to the simplicity of implementing them in other models of computation. Put simply, it is generally easy to program such functions.
 
-However, humans can obtain an _unexplainable_ intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area 'crowdedness' in Chess). This can be seen loosely as [feature learning](https://en.wikipedia.org/wiki/Feature_learning).
+However, humans can obtain an _unexplainable_ intuitive understanding of a game. In such cases, the classification exercises they carry out for their expert heuristics are mappings onto a set of abstract characteristics (e.g., area 'crowdedness' in Chess). This can be seen as [representation learning](https://en.wikipedia.org/wiki/Feature_learning).
 
 But even in these cases, it is relatively simple to train a model which replicates a human's capacity to perform classification for their own expert-level heuristics by having them label training datasets by hand. Hence, one can generally assume access to efficient classifiers for human-interpretable features.
 
-### Abstract Strategy
+### Markov Abstractions
 
-Given a morphism (an abstraction) $\alpha : S \to \tilde{S}$ over a state set $S$, the lack of an injectivity constraint could produce a situation where for an arbitrary policy $\pi : S \to S$ satisfying $\pi(s) = a$ and $\pi(s^\prime) = b$ with distinct $a, \\, b, \\, s, \\, s^\prime \in S$,
+Given an abstraction $\phi : S \to Z$ over a state set $S$, the lack of an injectivity constraint could produce a situation where, for a policy $\pi_S : S \to S$ with $\pi(s) = a$ and $\pi(s^\prime) = b$ on distinct $a, \\, b, \\, s, \\, s^\prime \in S$,
 
 $$
 \begin{equation}
-  \alpha(s) = \alpha(s^\prime) \;\; \text{and} \;\; \alpha(a) \neq \alpha(b).
+  \phi(s) = \phi(s^\prime) \;\; \text{and} \;\; \phi(a) \neq \phi(b).
 \end{equation}
 $$
 
-Therefore, attempting to obtain a counterpart $\tilde{\pi} : \tilde{S} \to \tilde{S}$ (an 'abstract strategy') which preserves the information in $\pi$ is oftentimes not possible, as $\tilde{\pi}(\alpha(s)) = \tilde{\pi}(\alpha(s^\prime))$ would have to 'remember' the distinct $\pi(s) = a$ and $\pi(s^\prime) = b$.
+Hence, learning a counterpart $\pi_Z : Z \to Z$ which preserves the information in $\pi_S$ could be impossible, as $\pi_Z(\alpha(s)) = \pi_Z(\alpha(s^\prime))$ would have to 'retain' the information of both $\pi_S(s) = a$ and $\pi_S(s^\prime) = b$. Such an abstraction $\phi$ is said to not be Markov, as its image contains insufficient information to induce a dynamics that corresponds to the behavior specified by $\pi_S$ in $S$.
+
+In the context of interpretable rules of thumb, reducing the state space $S$ to significantly smaller abstract spaces (e.g., taking decision in $\\{\text{Yes}, \\, \text{No}\\}$ while implementing a heuristic) nearly guarantees that the abstraction which mediated the reduction is not Markov[^markov-heuristics].
 
 ---
 
 ## Model
 
-Let $\langle \phi^{(\alpha)} : S \to S^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi : S \to S$ a policy over $S$. Observing $(2)$, we propose modeling class-conditional transition probability distributions,
+Let $\langle \phi^{(\alpha)} : S \to Z^{(\alpha)} \rangle_{\alpha \in \Alpha}$ be a collection of abstractions enumerated in $\Alpha$, and $\pi_S : S \to S$ a policy over $S$. We propose modeling class-conditional transition probability distributions,
 
 $$
 \begin{equation}
@@ -65,20 +70,22 @@ $$
 \end{equation}
 $$
 
-of the elements $k_i \in S^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
-This yields a collection of stochastic matrices $\langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ with
+of the elements $k_i \in Z^{(\alpha)}$ via an $n$-gram model. This effectively establishes sequences in $\phi^{(\alpha)}(S)$ via repeated aplication of $\pi$ within $S$ (following the dynamics of $\pi$), so that in the above equation, we allow $\pi^t(s) = \pi_t(\pi_{t-1}(\ldots\pi_1(s)))$.
+This yields a collection of stochastic matrices $\langle  \Pi^{(\alpha)} \rangle_{\alpha \in \Alpha}$ with
 
 $$
 \Pi^{(\alpha)}_{i, j} = P[\, i \text{ is observed at time } t \; | \; j \text{ is observed immediately before}\,],
 $$
 
-where $i \in S^{(\alpha)}$ and $j \in (S^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore
+where $i \in Z^{(\alpha)}$ and $j \in (Z^{(\alpha)})^n$. The amount of learnable parameters (i.e., the size) of such a model $M = \langle  \Pi^{(a)} \rangle_{\alpha \in \Alpha}$ is therefore
 
 $$
 \begin{equation}
-  |M| = \sum_{\alpha \in \Alpha} |S^{(\alpha)}|^n \, (|S^{(\alpha)}| - 1).
+  |M| = \sum_{\alpha \in \Alpha} |Z^{(\alpha)}|^n \, (|Z^{(\alpha)}| - 1).
 \end{equation}
 $$
+
+The finalized abstract policy $\pi_Z$ would use this model to operate on $Z = \large{\times_{\alpha \in \Alpha}} Z^{(\alpha)}$ (see the [inference section](#inference) for a high-level overview of evaluation). By operating on the cross-product of multiple sufficiently independent heuristics, $\pi_Z$ could closely approximate $\pi_S$ while remaining interpretable.
 
 ---
 
@@ -90,8 +97,8 @@ $$
 \begin{equation}
   \Theta =
   \large{\times_{\alpha \in \Alpha}}
-  \large{\times_{k \in S^{(\alpha)}}}
-  \bold{S}^{|S^{(\alpha)}|^n},
+  \large{\times_{k \in Z^{(\alpha)}}}
+  \bold{S}^{|Z^{(\alpha)}|^n},
 \end{equation}
 $$
 
@@ -132,7 +139,7 @@ In many traditional definitions of a policy $\pi$, there may exist elements $s^\
 
 ## Inference
 
-When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the objective of maximizing the probability that their action is observed across all abstract state space transitions $S^{(\alpha)}$; this is maximum likelihood estimation.
+When at a state $s \in S$, a human player can consider the set of next possible states $t(s)$ (where the transition function $t : S \to \mathcal{P}(S)$ is set-valued). Optimally, combinatorial optimization would be done across all elements $s^\prime \in t(s)$ under the MLE objective of maximizing the probability that their action is observed across all abstract state space transitions.
 
 While this is possible to an extent due to the simplicity of the abstractions in consideration (which map onto small sets of classes, reducing maximization objectives during MLE), the true value of the model is in the subjective analysis of each $\Pi^{(\alpha)}$. Additionally, quantitative techniques (such as finding the static distribution and convergence rate of these matrices) may illustrate interpretable patterns in the dynamics of $\pi$, depending on $\langle \phi^{(\alpha)} \rangle$.
 
@@ -160,3 +167,5 @@ Thank you to my good friend Humberto Gutierrez for spending late nights discussi
 [^praxis-learning]: Automated synthesis of artifacts that improve unassisted human performance from machine representations of perfect or near-perfect game-theoretic strategy.
 
 [^stationary]: A stationary model's probability assignments are invariant with respect to shifts in the time index.
+
+[^markov-heuristics]: Which is a way of saying that rules of thumb are not globally applicable.

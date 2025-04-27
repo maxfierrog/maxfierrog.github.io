@@ -4,7 +4,9 @@ summary: A list of music pieces I love and optionally explanations of why.
 date: 2024-02-19
 ---
 
-{{< figure src="https://i.scdn.co/image/ab67616d0000b2739b5c7536dbc2dd98fede7754" width="256" attr="\"Harmonielehre\" by John Adams" align=center target="_blank" >}}
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273fc825d57fe8933e012c2ad62" width="256" attr="\"Technicolor\" by Covet" align=center target="_blank" >}}
+
+{{< figure src="https://i.scdn.co/image/ab67616d00001e0285b0cc512745fc2d9f7d3b87" width="256" attr="\"Lund Quartet\" by the Lund Quartet" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2736d5c90793ffa469ced01ca38" width="256" attr="\"Glassworks\" by Philip Glass" align=center target="_blank" >}}
 
@@ -16,13 +18,13 @@ date: 2024-02-19
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273ca41a947c13b78749c4953b1" width="256" attr="\"Lateralus\" by Tool" align=center target="_blank" >}}
 
+{{< figure src="https://i.scdn.co/image/ab67616d0000b273b550c53b4dc7c0c30efcb574" width="256" attr="Bach's Goldberg Variations" align=center target="_blank" >}}
+
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2738d47f69b6e1b5e7202e49ea0" width="256" attr="Tchaikovsky's Symphony No. 6" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b2732a05b124cd97397315615e22" width="256" attr="\"Voluma\" by León Larregui" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b27352cd51946404b5ef1f923140" width="256" attr="Piazzolla's Suite del Ángel" align=center target="_blank" >}}
-
-{{< figure src="https://i.scdn.co/image/ab67616d0000b273b550c53b4dc7c0c30efcb574" width="256" attr="Bach's Goldberg Variations" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d00001e02e379b684061a1d2de65c9494" width="256" attr="Debussy's Préludes, Book 1" align=center target="_blank" >}}
 

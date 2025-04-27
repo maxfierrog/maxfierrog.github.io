@@ -1,5 +1,6 @@
 ---
 title: "Representation Concepts in Game-Theoretic Systems"
+category: technical
 date: 2024-04-20
 math: true
 ---
