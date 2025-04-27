@@ -1,5 +1,5 @@
 ---
-title: "Poem 1. Dedicado a Delia"
+title: "Poem 1. \"Dedicado a Delia\""
 category: personal 
 date: 2025-04-27
 ---
