@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta name="description" content="Max&#39;s personal site">
+    
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://localhost:1313/the-elo-rating-system-through-likelihood-gradient-ascent/" />
+    <title>The Elo Rating System through Likelihood Gradient Ascent</title>
+</head>
+<body><header id="banner">
+    <a href="http://localhost:1313/"
+        ><img src="/logo.svg" alt="Logo" class="site-logo"
+    /></a>
+    <h2><a href="http://localhost:1313/">Max Fierro</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/about/" title="about"
+                    >about</a
+                >
+            </li><li>
+                <a href="/resume/" title="resume"
+                    >resume</a
+                >
+            </li><li>
+                <a href="/index.xml" title=""
+                    >rss</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>The Elo Rating System through Likelihood Gradient Ascent</h1>
+        <div>
+                <time>January 9, 2025</time>
+            </div>
+    </header><aside id="toc">
+    <details>
+        <summary>&nbsp;<strong> Table of contents</strong></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#background">Background</a>
+      <ul>
+        <li><a href="#mathematical-orderings">Mathematical Orderings</a></li>
+        <li><a href="#elo-ratings-and-updates">Elo Ratings and Updates</a></li>
+        <li><a href="#maximum-likelihood-estimation">Maximum Likelihood Estimation</a></li>
+      </ul>
+    </li>
+    <li><a href="#derivation">Derivation</a>
+      <ul>
+        <li><a href="#map-estimation-1">MAP Estimation</a></li>
+        <li><a href="#discussion">Discussion</a></li>
+      </ul>
+    </li>
+    <li><a href="#appendix">Appendix</a>
+      <ul>
+        <li><a href="#gaussian-convolution">Gaussian Convolution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+</aside>
+
+<h2 id="abstract">Abstract</h2>
+<p>Probability and optimization are strong monsters. The <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo rating system</a>, used to estimate performance in <a href="https://en.wikipedia.org/wiki/FIDE_rankings">competitive chess</a>, <a href="https://www.vox.com/2019/2/7/18210998/tinder-algorithm-swiping-tips-dating-app-science">online dating</a>, and <a href="https://lmsys.org/blog/2023-05-03-arena/">AI agents</a>, is an under-the-hood reminder of this fact that operates within many of the systems that need to establish comparative metrics. This piece is my contribution to the endless pile of explainers on the topic. I exercise an emphasis on bayesian statistics and optimization that should ring a bell for anyone familiar with the basics of machine learning.</p>
+<hr>
+<h2 id="background">Background</h2>
+<h3 id="mathematical-orderings">Mathematical Orderings</h3>
+<p>At the risk of including a needless dependency on the topic of this piece, I introduce you to the idea of an ordering.
+Colloquially, we take this to mean an arrangement (i.e., <a href="https://en.wikipedia.org/wiki/Permutation">a permutation</a>) of a set of things.
+We will replace that with its formal meaning, which is a specific kind of <a href="https://en.wikipedia.org/wiki/Binary_relation">binary relation</a>.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A <strong>binary relation</strong> $R$ from a set $X$ to another $Y$ is a subset of $X \times Y$, where it is possible that $X = Y$.</p>
+</div>
+</div>
+<p>This should seem odd, as a subset is in no obvious way reminiscent of a permutation. But introducing some new syntax to indicate membership in a relation,</p>
+$$
+  (x, y) \in R \vdash xRy,
+$$<p>we are an example away from making sense. In particular, consider $R = \, &lt;$ (less-than). When we say things like &ldquo;$x &lt; y$,&rdquo; we are in fact using syntactic sugar for &ldquo;$(x, y) \in \, &lt;$.&rdquo; With this in mind, we can take a look at <a href="https://en.wikipedia.org/wiki/Partially_ordered_set">partial orders</a>.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A <strong>partial order</strong> $R$ is a binary relation over a set $X$ and itself which satisfies the following:</p>
+<ol>
+<li>Reflexivity. This means that $\forall x \in X, \, xRx$.</li>
+<li>Antisymmetry. This means that $\forall (x, y) \in X^2, \, xRy \wedge yRx \implies x = y$.</li>
+<li>Transitivity. This means that $\forall (x, y, z) \in X^3, \, xRy \wedge yRz \implies xRz$.</li>
+</ol>
+</div>
+</div>
+<p>The canonical example of a partial order is $\subseteq$ over $\mathcal P(S)$. Importantly, a partial order over a set does not imply a permutation over it, because of the possibility for two elements $x$ and $y$ to be <em>unrelated</em>, or in other words, for $\neg xRy$ and $\neg yRx$. In a <a href="https://en.wikipedia.org/wiki/Total_order">total order</a>, we simply do not allow this.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A <strong>total order</strong> $R$ is a partial order that is also total, which means that $\forall (x, y) \in X^2, \, xRy \vee yRx$.</p>
+</div>
+</div>
+<p>The canonical example of a total order is $\leq$ over $\mathbb{R}$. With a total order, there is a single valid ordering $\bold{x}$ (i.e. arrangement or permutation) over its set $X$ such that $x_iRx_{i + 1}$ for all $i = 0, \ldots, |X| - 1$. One more variation we can make on the idea of an order is that of a <a href="https://en.wikipedia.org/wiki/Weak_ordering">weak order</a>.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A <strong>weak order</strong> $R$ is a total order that is not necessarily antisymmetric.</p>
+</div>
+</div>
+<p>In other words, it is possible that for distinct elements $x$ and $y$, both $xRy$ and $yRx$. This is conceptually aligned with allowing &ldquo;ties&rdquo; in any resulting ordering, potentially sacrificing their uniqueness.</p>
+<h3 id="elo-ratings-and-updates">Elo Ratings and Updates</h3>
+<p>We can take a look at the question that <a href="https://en.wikipedia.org/wiki/Arpad_Elo">Arpad Elo</a> (kind of) answered: How can you compare the skill level of two chess players?</p>
+<style>
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+</style>
+<div class="halign-container">
+<figure>
+    <img loading="lazy" src="arpad_elo.jpg"
+         alt="Arpad Elo (August 25, 1903 – November 5, 1992)" width="256"/> <figcaption>
+            <p>Arpad Elo (August 25, 1903 – November 5, 1992)</p>
+        </figcaption>
+</figure>
+
+</div>
+
+<p>His proposed procedure is straightforward. Each player $i \in N$ will have a real-valued rating $r_i$, which will be a proxy for their skill level. These ratings will be initialized at some predetermined value for all players. Then, when there is a match between player $i$ and $j$, the following updates are made:</p>
+$$
+\begin{align*}
+&r_j \gets r_j + k(s_j - e_j), \\
+&r_i \gets r_i + k(s_i - e_i),
+\end{align*}
+$$<p>where<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>,</p>
+$$
+e_p = \frac{1}{1 + e^{-(r_p - r_{\text{other}})}}, \;\;\;\;
+s_p = 
+\begin{cases}
+1 &\text{if \(p\) wins},\\
+0.5 &\text{if draw},\\
+0 &\text{if \(p\) loses},\\
+\end{cases}
+$$<p>and $k$ is a constant chosen arbitrarily. So, as players accrue matches with other players, their ratings are updated according to the above rules with the hope that they will eventually stabilize. Now, the difference between players&rsquo; ratings can be used to compare their skill levels via the ordering $\leq$ on $\mathbb{R}$.</p>
+<h3 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h3>
+<p><a href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">Maximum likelihood estimation (MLE)</a> is a method used to fit distribution parameters to samples. The setup for MLE is a random variable $Y$ of known distribution $\mathcal{D_\theta}$ (parameterized by $\theta$), with access to <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables">IID</a> samples $\langle y_i \rangle \sim \mathcal{D}_\theta$. The objective is to estimate $\hat\theta$ such that the <a href="https://en.wikipedia.org/wiki/Likelihood_function">likelihood function</a> $\mathcal{L}$ is maximized,</p>
+$$
+\begin{equation}
+    \hat\theta_\mathrm{MLE} 
+    = \argmax_\theta \, \mathcal{L}(\theta; \langle y_i \rangle) 
+    = \argmax_\theta \, \prod_i \mathbb{P}_\theta[Y = y_i].
+\end{equation}
+$$<p>In other words, MLE is the optimization procedure associated with finding the distribution parameters that were most likely to generate observed data, provided that we know or assume its distribution.</p>
+<h4 id="map-estimation">MAP Estimation</h4>
+<p>When there is access to a (known or assumed) prior $p(\theta)$ on the distribution of parameters, we can fold it into our optimization process by doing MLE on the posterior distribution, which by <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes&rsquo; theorem</a>,</p>
+$$
+\begin{align*}
+    p(\theta \mid \langle y_i\rangle) 
+    &= \frac{p(\langle y_i \rangle \mid \theta) p(\theta)}{p(\langle y_i \rangle)} 
+    \; \propto \; \underbrace{p(\langle y_i \rangle \mid \theta)}_{\displaystyle{\mathcal{L}(\theta; \langle y_i \rangle)}} p(\theta).
+\end{align*}
+$$<p>The resulting parameters $\hat\theta_\mathrm{MAP}$ are then a <a href="https://en.wikipedia.org/wiki/Maximum_a_posteriori_estimation">maximum a posteriori (MAP)</a> estimate,</p>
+$$
+\begin{align*}
+    \hat\theta_{\mathrm{MAP}}
+    &= \argmax_\theta\;p\bigl(\theta \mid \langle y_i\rangle\bigr) \\
+    &= \argmax_\theta\;\Bigl[\mathcal{L}\bigl(\theta;\langle y_i\rangle\bigr)\,p(\theta)\Bigr] \\
+    &= \argmax_\theta\;\Bigl[\prod_{i=1}^n \mathbb{P}_\theta\bigl[Y=y_i\bigr] \times p(\theta)\Bigr].
+\end{align*}
+$$<h4 id="optimization">Optimization</h4>
+<p>Sometimes, it is possible to find closed-form solutions for $\hat\theta_\mathrm{MAP}$ and $\hat\theta_\mathrm{MLE}$ through convex optimization. For example, samples with gaussian noise lead to the closed-form solution of the <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">OLS problem</a> through the process of MLE.</p>
+<p>However, most of the time the resulting optimization objective of MLE (and hence also MAP estimation) is not convex. Here, gradient-based approaches (along with all other non-convex optimization techniques) are helpful for finding local maxima of the likelihood objective.</p>
+<hr>
+<h2 id="derivation">Derivation</h2>
+<p>The derivation presented here will depart from the usual in hopes of contributing some kind of novelty. We begin with the game-theory-native idea of payoff, which we will take to be a numeric value representing a player&rsquo;s utility differential with respect to the start of a game $G$,</p>
+$$
+    \text{payoff of player i} = p_i.
+$$<p>Next, we will consider player performance. Just as Elo, we take the performance of a player $i$ on a game $G$ to be a real-valued random variable $X_i$, independent to other players.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Observation</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Perhaps Elo motivated this decision after noticing the variance of his own performance over the chess board.</p>
+</div>
+</div>
+<p>Then, we will expand our setup by allowing players to outperform others, which we will present through the difference between the performance of two players during $G$ (which is another RV),</p>
+$$
+    \delta_{i, \, j} = X_i - X_j.
+$$<p>We will also establish a relationship between $\delta_{i , \, j}$ and $p_i$. For this purpose, we introduce a game-specific mapping $g$ with a noise term $\epsilon \sim \mathcal{N}(0, \sigma_\epsilon^2)$, which together form the generative process of payoffs:</p>
+$$
+    p_i = g(\delta_{i, \, j}) + \epsilon.
+$$<p>Finally, we will assert a prior on the distribution of $X_i$, which we will refer to as $\mathcal{D}(\theta_i)$ without yet deciding on a particular distribution (just that it is parameterized by $\theta_i$). This prior $\pi(x)$ will be global for all players, and its distribution parameters will be $\theta_\pi$.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>While this is a global prior, notice that none of the following breaks if it were player-specific from the start.</p>
+</div>
+</div>
+<p>So far, none of this has helped us answer the question that Elo answered. For that, we will introduce one last artifact on top of our setup; each player $i$ will have a &ldquo;rating&rdquo; $r_i$, which we will ultimately use to order players by skill in our system or organization:</p>
+$$
+    r_i = \mathbb{E}[X_i].
+$$<h3 id="map-estimation-1">MAP Estimation</h3>
+<p>Clearly, since our goal is to know players&rsquo; ratings, the only additional information we will need to get them are the distribution parameters $\theta_i$. Of course, at a lack of observations, we can assert from our prior</p>
+$$
+    r_i = \mathbb{E}_{X \, \sim \, \pi}[X].
+$$<p>But what if at the end of a game $G$ between players $i$ and $j$, we observe <a href="https://en.wikipedia.org/wiki/Without_loss_of_generality">WLOG</a> the payoff $p_i$? Here, we will be wishing that $g$ is neatly invertible. Assuming it is, we arrive at the following MLE for their difference in performance via application of $(1)$:</p>
+$$
+\begin{equation}
+    \hat\delta_{i, \, j}
+    = \argmax_{\delta} \exp\!\Bigl(-\frac{(p_i-g(\delta))^2}{2\sigma_\epsilon^2}\Bigr)
+    = g^{-1}(p_i).
+\end{equation}
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Notice <strong>we did not use a prior</strong> when estimating $\hat\delta_{i, , j}$. This assumption is due to Elo; we will not use players&rsquo; history when calculating their performance for a single game. This is the design decision that, by omission, accounts for sudden changes in player skill (as a result of learning, etc.).</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>We just estimated the difference between the performance of the players from the payoff of a single player. The invertibility of $g$ has the hidden implication that <strong>it is strictly monotonic</strong>; no two differences in performance lead to the same payoff, and the greater the difference, the greater the payoff for the outperforming player.</p>
+</div>
+</div>
+<p>Knowing this, we can perform a bayesian update to our prior through MAP estimation. Writing down the joint posterior of the parameters of $X_i$ and $X_j$,</p>
+$$
+\begin{equation}
+    p(\theta_i, \, \theta_j  \mid \hat\delta_{i, \, j}) 
+    \propto 
+    \underbrace{
+        p(\hat\delta_{i, \, j} \mid \theta_i, \, \theta_j)
+    }_{
+        \displaystyle{p(\hat\delta_{i, \, j} \mid X_i - X_j)}
+    }
+    p(\theta_i)p(\theta_j).
+\end{equation}
+$$<p>Notice that we already have access to priors $p(\theta_i)$ and $p(\theta_j)$; those are quite simply $\pi(\theta_i)$ and $\pi(\theta_j)$, which we assume per our initial setup.</p>
+<h4 id="gaussian-performance">Gaussian Performance</h4>
+<p>We proceed by considering the case where $X_i \sim \mathcal{N}(r_i, \, \sigma_i^2)$, such that $\theta_i = (r_i, \, \sigma_i^2)$. That is, player performance is gaussian-distributed,</p>
+$$
+\begin{equation}
+    p_{X_i}(x_i \mid \theta_i)
+    = \frac{1}{\sqrt{2\pi} \, \sigma_i}
+      \exp\!\Bigl(-\frac{(x_i - r_i)^2}{2\,\sigma_i^2}\Bigr).
+\end{equation}
+$$<p>Our next goal is to set up an analytic function for the likelihood $p(\hat\delta_{i, \, j} \mid \theta_i, \, \theta_j)$. We observe that we have access to the conditional density of $\hat\delta_{i, \, j}$</p>
+$$
+\begin{equation}
+    p(\hat\delta_{i, \, j} \mid x_i, \, x_j)
+    = \frac{1}{\sqrt{2\pi}\,\sigma_\varepsilon}
+      \exp\!\Bigl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - (x_i - x_j)\bigr)^2}{2\,\sigma_\varepsilon^2}\Bigr)
+      \;|g'(\hat\delta_{i, \, j})|
+\end{equation}
+$$<p>by using $(2)$ implicitly through the change of variables</p>
+$$
+    p(\hat\delta_{i, \, j} \mid x_i, \, x_j)
+    = p_{p_i}\bigl(g(\hat\delta_{i, \, j}) \mid x_i, \, x_j \bigr)
+    \;\Bigl|\frac{d}{d\hat\delta_{i, \, j}}\,g(\hat\delta_{i, \, j})\Bigr|,
+$$<p>where we take</p>
+$$
+    p\bigl(p_i \mid x_i, \, x_j \bigr)
+    = \frac{1}{\sqrt{2\pi}\,\sigma_\varepsilon}
+      \exp\!\Bigl(-\frac{\bigl(p_i - g(x_i - x_j)\bigr)^2}{2\,\sigma_\varepsilon^2}\Bigr).
+$$<p>Now, we can use $(4)$ and $(5)$ to derive the desired likelihood by marginalizing,</p>
+$$
+\begin{align*}
+    p\bigl(\hat\delta_{i, \, j} \mid \theta_i,\theta_j\bigr)
+    &= \iint
+       p\bigl(\hat\delta_{i, \, j}\mid x_i,x_j\bigr)\;
+       p_{X_i}(x_i \mid \theta_i)\;p_{X_j}(x_j \mid \theta_j)\,
+       dx_i\,dx_j \\
+    &= \iint
+       \frac{1}{\sqrt{2\pi}\,\sigma_\varepsilon}
+       \exp\!\Bigl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - (x_i - x_j)\bigr)^2}
+                         {2\,\sigma_\varepsilon^2}\Bigr)\,
+       \bigl|g'(\hat\delta_{i, \, j})\bigr|
+    \\[-2pt]
+    &\quad\;\times\,
+       \frac{1}{\sqrt{2\pi}\,\sigma_i}
+       \exp\!\Bigl(-\frac{(x_i - r_i)^2}{2\,\sigma_i^2}\Bigr)
+       \;\frac{1}{\sqrt{2\pi}\,\sigma_j}
+       \exp\!\Bigl(-\frac{(x_j - r_j)^2}{2\,\sigma_j^2}\Bigr)
+    \,dx_i\,dx_j.
+    \\[6pt]
+\end{align*}
+$$<p>After another cup of coffee, we arrive at the following version of our joint likelihood $p\bigl(\hat\delta_{i, , j} \mid \theta_i,\theta_j\bigr)$,</p>
+$$
+\begin{aligned}
+    &= \int
+       \frac{1}{\sqrt{2\pi}\,\sigma_\varepsilon}
+       \exp\!\Bigl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - d\bigr)^2}{2\,\sigma_\varepsilon^2}\Bigr)
+       \;|g'(\hat\delta_{i, \, j})|\; \\
+    &\quad\;\quad\;\times \frac{1}{\sqrt{2\pi(\sigma_i^2+\sigma_j^2)}}
+       \exp\!\Bigl(-\frac{(d - (r_i - r_j))^2}{2(\sigma_i^2+\sigma_j^2)}\Bigr)
+    \,dd
+\end{aligned}
+$$<p>where $d = x_i - x_j$ (hinted at in equation $(3)$) is possible because $X_i - X_j \sim \mathcal{N}(r_i - r_j, \sigma_i^2 + \sigma_j^2)$. Finally, we obtain the following after remembering an <a href="#gaussian-convolution">important fact</a> from signal processing,</p>
+$$
+\begin{align}
+    \mathcal{J}_\mathrm{MLE}(\theta_i, \, \theta_j; \, \hat\delta_{i, \, j})
+    = \frac{|g'(\hat\delta_{i, \, j})|}{\sqrt{2\pi\,\bigl(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2\bigr)}}\,
+        \exp\!\Biggl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - (r_i - r_j)\bigr)^2}
+                             {2\,\bigl(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2\bigr)}\Biggr).
+\end{align}
+$$<p>Wonderful. We then attend to the reflexes drilled into our brains from machine learning, and find the gradient of the log-likelihood with respect to learned&hellip; ahem, the ratings $\bold{r} = [r_i, \, r_j]^\top$:</p>
+$$
+\begin{equation}
+    \nabla_\bold{r}\log\mathcal{J}_\mathrm{MLE}(\theta_i, \, \theta_j; \, \hat\delta_{i, \, j}) = 
+    \begin{bmatrix}
+        \displaystyle\frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2} \\[8pt]
+        \\
+        \displaystyle-\frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
+    \end{bmatrix}.
+\end{equation}
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>By taking the $\log$ of the joint likelihood we achieve nothing, but we respect a very important tradition<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+</div>
+</div>
+<p>Using $\nabla_\bold{r}\log\mathcal{J}(\theta_i, \, \theta_j; \, \hat\delta_{i, \, j})$ as it stands to adjust $\bold{r}$ would be tantamount to MLE on $\bold{r}$. To turn this into a proper MAP estimate we must also fold in our prior terms into $(6)$, which we assume to be gaussian:</p>
+$$
+\begin{aligned}
+    \mathcal{J}_\mathrm{MAP}(\theta_i, \, \theta_j; \, \hat\delta_{i, \, j})
+    &= \frac{\lvert g'(\hat\delta_{i,j})\rvert}
+           {\sqrt{2\pi\,\bigl(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2\bigr)}}
+      \exp\!\Bigl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - (r_i - r_j)\bigr)^2}
+                       {2\,\bigl(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2\bigr)}\Bigr)\\
+    &\quad\;\times\;
+      \frac{1}{\sqrt{2\pi}\,\sigma_\pi}
+      \exp\!\Bigl(-\frac{(r_i - r_\pi)^2}{2\,\sigma_\pi^2}\Bigr)
+      \;\times\;
+      \frac{1}{\sqrt{2\pi}\,\sigma_\pi}
+      \exp\!\Bigl(-\frac{(r_j - r_\pi)^2}{2\,\sigma_\pi^2}\Bigr).
+\end{aligned}
+$$<p>Being again unable to ignore our instincts,</p>
+$$
+\begin{equation}
+    \nabla_{\mathbf r}\log \mathcal{J}_{\mathrm{MAP}}(\theta_i,\theta_j;\hat\delta_{i,j})
+    = \begin{bmatrix}
+    \displaystyle
+    \frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
+    \;-\;\frac{r_i - r_\pi}{\sigma_\pi^2}
+    \\\\
+    \displaystyle
+    -\frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
+    \;-\;\frac{r_j - r_\pi}{\sigma_\pi^2}
+    \end{bmatrix}.
+\end{equation}
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Checkpoint</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Let us take a step back for a second, and roughly see what is on the table. Intuitively, we are:</p>
+<ol>
+<li><strong>Observing</strong> a materialized payoff $p_i$.</li>
+<li><strong>Inverting</strong> $g$ to recover the latent skill gap $\hat\delta_{i, \, j}$ that was most likely to produce $p_i$.</li>
+<li><strong>Comparing</strong> that inferred gap to our current belief of the skill gap $r_i - r_j$.</li>
+<li><strong>Deriving</strong> the change to $r_i$ and $r_j$ would bring our belief closer to $\hat\delta_{i, \, j}$.</li>
+</ol>
+</div>
+</div>
+<p>Then, the gradient-ascent update with step size $k$,</p>
+$$
+\begin{equation}
+    \bold{r}_{t + 1} 
+    \gets 
+    \bold{r}_{t} 
+    + k\nabla_{\bold{r}}\log\mathcal{J}_\mathrm{MAP}(\theta_i, \, \theta_j; \, \hat\delta_{i, \, j}),
+\end{equation}
+$$<p>offers a complete recovery (and generalization) of the Elo update after an observed payoff $p_i$.</p>
+<h3 id="discussion">Discussion</h3>
+<h4 id="procedural-discrepancy">Procedural Discrepancy</h4>
+<p>Usually, implementations of Elo updates do not consider a prior. Instead, they simply initialize parameters at some default amount, then do MLE (as opposed to MAP estimation) to produce gradient updates. I decided to display the full MAP estimate because I think it is more principled; if you believe that ratings &ldquo;start off&rdquo; at some amount, that constitutes a bayesian prior in my eyes.</p>
+<h4 id="distribution-discrepancy">Distribution Discrepancy</h4>
+<p>The Elo rating system assumes a logistic distribution on player performance, not gaussian. However, the above procedure will invariantly recover Elo updates as presented in the <a href="#elo-ratings-and-updates">background section</a> with both distributions (at least in form).</p>
+<h4 id="fixed-parameters">Fixed Parameters</h4>
+<p>In theory, one could estimate the variance parameters using the exact same procedure, by taking the gradient of the joint likelihood with respect to them in addition to the means (the ratings). Surprisingly, people do things similar to this &ndash; although not in this particular way. See the <a href="https://en.wikipedia.org/wiki/Glicko_rating_system">Glicko rating system</a>.</p>
+<h4 id="redundancy-with-g">Redundancy with $g$</h4>
+<p>You may have noticed that throughout our derivations (most notably in equations $(7)$ and $(8)$) there are $g(\hat\delta_{i, \, j})$ terms that can be safely replaced with $p_i$ by definition, and can be therefore seen as redundant. This is a completely accurate observation.</p>
+<p>I decided to make $g$ explicit to make the fundamental link between payoffs and performance differentials also explicit, which is something I consider to be a lot more principled. In fact, $g$ does not need to be strictly monotonic, as we never explicitly evaluate $g^{-1}(\small\bullet)$. However, not satisfying this property may result in a lack of parameter identifiability, which is easy to forget if you discard the symbol early on.</p>
+<h4 id="weak-ordering">Weak Ordering</h4>
+<p>It is important to acknowledge that mapping player skill to $\mathbb{R}$ and then using $\leq$ to order players is a fundamentally misguided approach to how the world works. In doing so, we establish a weak ordering among players, but completely ignore that some players have qualities that make them strong against some players and weak against others (in a manner that is potentially cyclic).</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Example</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>To illustrate this, consider three players of rock-paper-scissors. One always plays rock, one always plays paper, and the other scissors. You will find that there is no way of assigning them a real number such that the player with the highest number beats both of the other players in expectation.</p>
+</div>
+</div>
+<p>Still, sometimes we are forced to make rankings which make sense <em>in expectation</em>. In the real world, there is sufficient variance in player attributes that there are actors that can consistently beat some others. Here, systems such as Elo&rsquo;s bring real utility. But as a human, you should trust your intuition more than some potentially senseless number.</p>
+<h4 id="outcome-prediciton">Outcome Prediciton</h4>
+<p>Further expanding on the inadequacy of ranking players via weak order, consider the very plausible machine learning task of outcome prediction, say, for the game of <a href="https://en.wikipedia.org/wiki/Basketball">Basketball</a>.</p>
+<p>It is tempting to, for example, train a network $f_\theta : \mathbb{R}^n \to \mathbb{R}$ on $n$-dimensional encodings of teams to predict a scalar value, where you then train in tandem over historic game outcomes $\langle ((a, b), \, y)_i \rangle_{i \in D}$.</p>
+<p>Here, teams $a, \, b \in \mathbb{R}^n$ played each other and achieved outcome $y \in \{-1, 1\}$ for each match $i \in D$. One could optimize under the following loss,</p>
+$$
+    \mathcal{L}((a, \, b), \, y; \, \theta) 
+    = \log\exp\bigl( 1 + y(f_\theta(a) - f_\theta(b))\bigr) 
+    + \lambda(f_\theta(a) + f_\theta(b)),
+$$<p>where the regularization term helps with stability. Then, $f_\theta$ would essentially become a rating estimator. Whoever does this, however, will have the same fundamental problem as the Elo system; a weak order cannot capture the potentialy cyclic structure of actors&rsquo; dominance on each other.</p>
+<p>The solution, of course, is to instead train another model $f_\theta : \mathbb{R}^{2n} \to \mathbb{R}$ that admits pairings as an input via concatentaion, and implements typical binary cross-entropy loss:</p>
+$$
+    \mathcal{L}((a, \, b), \, y; \, \theta) 
+    = -\bold{I}_y\,\log\bigl(\sigma(f_\theta(a \Vert b))\bigr) - (1 - \bold{I}_y)\,\log\bigl(1-\sigma(f_\theta(a \Vert b))\bigr).
+$$<p>However, there is no free lunch &ndash; when training over <em>pairs</em> of teams in $T$, the sample space of the task grows with the size of $T \times T$, naturally increasing the amount of out-of-distribution data for your model quadratically. Of course, this problem was ignored by the first formulation too, just in a different way.</p>
+<hr>
+<h2 id="appendix">Appendix</h2>
+<h3 id="gaussian-convolution">Gaussian Convolution</h3>
+<p>Here, I justify equation $(6)$ by instantiating a proof of the fact that the convolution of two gaussians is another gaussian determined by the parameters of the original gaussians.</p>
+<h4 id="proof">Proof</h4>
+<p>This was made via ChatGPT with <code>o4-mini-high</code> and adjusted by me, because you can probably find it in a textbook somewhere. Let</p>
+$$
+    f(d)=\frac{1}{\sqrt{2\pi}\,\sigma_1}\exp\!\Bigl(-\frac{(d-\mu_1)^2}{2\,\sigma_1^2}\Bigr),
+    \quad
+    g(d)=\frac{1}{\sqrt{2\pi}\,\sigma_2}\exp\!\Bigl(-\frac{(d-\mu_2)^2}{2\,\sigma_2^2}\Bigr).
+$$<p>We wish to show</p>
+$$
+    \int_{-\infty}^{\infty} f(d)\,g(d)\,dd
+    =\frac{1}{\sqrt{2\pi\,(\sigma_1^2+\sigma_2^2)}}\,
+    \exp\!\Bigl(-\frac{(\mu_1-\mu_2)^2}{2\,(\sigma_1^2+\sigma_2^2)}\Bigr).
+$$<p>Set $A=\sigma_1^2$ and $B=\sigma_2^2$. Then,</p>
+$$
+    f(d)\,g(d)
+    =\frac{1}{2\pi\sqrt{AB}}
+    \exp\!\Bigl(-\tfrac12\bigl[\tfrac{(d-\mu_1)^2}{A}+\tfrac{(d-\mu_2)^2}{B}\bigr]\Bigr).
+$$<p>Combine quadratic terms:</p>
+$$
+    B(d-\mu_1)^2 + A(d-\mu_2)^2
+    =(A+B)\Bigl(d-\frac{B\mu_1 + A\mu_2}{A+B}\Bigr)^2
+    +\frac{AB}{A+B}(\mu_1-\mu_2)^2.
+$$<p>Define</p>
+$$
+    m=\frac{B\mu_1 + A\mu_2}{A+B},
+    \quad
+    C=\frac{AB}{A+B}.
+$$<p>Then,</p>
+$$
+    \int f(d)\,g(d)\,dd
+    =\frac{1}{2\pi\sqrt{AB}}
+    \int
+    \exp\!\Bigl(-\tfrac12\bigl[\tfrac{(d-m)^2}{C}+\tfrac{(\mu_1-\mu_2)^2}{A+B}\bigr]\Bigr)
+    \,dd.
+$$<p>Factor out the constant term and use</p>
+$$
+    \int \exp\Bigl(-\frac{(d-m)^2}{2C}\Bigr) \, dd
+    =\sqrt{2\pi\,C}.
+$$<p>Hence,</p>
+$$
+\begin{aligned}
+    \int f(d)\,g(d)\,dd
+    &=\frac{\sqrt{2\pi\,C}}{2\pi\sqrt{AB}}
+    \exp\!\Bigl(-\frac{(\mu_1-\mu_2)^2}{2\,(A+B)}\Bigr)\\
+    &=\frac{1}{\sqrt{2\pi\,(A+B)}}
+    \exp\!\Bigl(-\frac{(\mu_1-\mu_2)^2}{2\,(A+B)}\Bigr). \quad \square
+\end{aligned}
+$$<h4 id="instantiation">Instantiation</h4>
+<p>Consider the expression which $(6)$ was derived from,</p>
+$$
+\begin{aligned}
+    &\int
+       \frac{1}{\sqrt{2\pi}\,\sigma_\varepsilon}
+       \exp\!
+       \overbrace{
+        \Bigl(-\frac{\bigl(g(\hat\delta_{i, \, j}) - d\bigr)^2}{2\,\sigma_\varepsilon^2}\Bigr)
+       }^{
+        \text{Quadratic term is symmetric.}
+       }
+       \;|g'(\hat\delta_{i, \, j})|\; \\
+    &\quad\;\quad\;\times \frac{1}{\sqrt{2\pi(\sigma_i^2+\sigma_j^2)}}
+       \exp\!\Bigl(-\frac{(d - (r_i - r_j))^2}{2(\sigma_i^2+\sigma_j^2)}\Bigr)
+    \,dd.
+\end{aligned}
+$$<p>Now, use the substitutions</p>
+$$
+    \mu_1 = g(\hat\delta_{i, \, j}),
+    \quad
+    \mu_2 = r_i - r_j,
+    \quad
+    A = \sigma_\varepsilon^2,
+    \quad
+    B = \sigma_i^2 + \sigma_j^2,
+$$<p>and re-attach the Jacobian factor $|g^\prime(\hat\delta_{i, \, j})|$ to recover</p>
+$$
+\mathcal{J}(\theta_i,\theta_j;\hat\delta_{i, \, j})
+=\frac{|g'(\hat\delta_{i, \, j})|}
+      {\sqrt{2\pi\,(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2)}}\,
+  \exp\!\Bigl(-\frac{(g(\hat\delta_{i, \, j}) - (r_i - r_j))^2}
+                       {2\,(\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2)}\Bigr).
+$$<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>I modified a term in $e_p$ to exclude scaling factors, to make it look less crazy. These scaling factors make the resulting ratings quite practical by allowing one to make comparisons like &ldquo;player $i$ is 10x better than $j$ if $i$&rsquo;s rating is 400 points higher.&rdquo;&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Taking the $\log$ makes it easier to deal with multiple samples, as it turns the product in $(1)$ into a sum. But here, we only use one sample, so it is useless. However, tradition is important for learning.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+
+        </main><footer id="footer">
+    Copyright © 2024 Max Fierro
+</footer>
+</body>
+</html>

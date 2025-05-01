@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta name="description" content="Max&#39;s personal site">
+    
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://localhost:1313/likelihood-maximization-perspective-on-the-elo-rating-system/" />
+    <title>Likelihood Maximization Perspective on the Elo Rating System</title>
+</head>
+<body><header id="banner">
+    <a href="http://localhost:1313/"
+        ><img src="/logo.svg" alt="Logo" class="site-logo"
+    /></a>
+    <h2><a href="http://localhost:1313/">Max Fierro</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/about/" title="about"
+                    >about</a
+                >
+            </li><li>
+                <a href="/resume/" title="resume"
+                    >resume</a
+                >
+            </li><li>
+                <a href="/index.xml" title=""
+                    >rss</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Likelihood Maximization Perspective on the Elo Rating System</h1>
+        <div>
+                <time>January 9, 2025</time>
+            </div>
+    </header><h1 id="abstract">Abstract</h1>
+<p>TODO</p>
+<hr>
+<h1 id="background">Background</h1>
+<p>TODO</p>
+<h3 id="the-elo-rating-system">The Elo rating system</h3>
+<p>TODO</p>
+<h3 id="likelihood-maximization">Likelihood maximization</h3>
+<p>TODO</p>
+<hr>
+<h1 id="derivation">Derivation</h1>
+<p>Let $\bold{r} = [ r_1, \, \ldots, \, r_n ]^\top$ be a vector encoding a player rating profile. Now, allow $\bold{X} \sim \mathcal{N}(\bold{r}, \sigma^2I)$ to be a multivariate gaussian of the players&rsquo; performance on a given match.</p>
+<p>TODO: Note how to generalize to $n &gt; 2$ players.</p>
+<p>We obtain the likelihood function of a match outcome $O$, a bernoulli random variable on the event of $X_1 &gt; X_2$ (indicating that the performance of player 1 was dominant),</p>
+$$
+\mathcal{L}(O; \\, \bold{r}) = \mathbb{P}[X_1 - X_2 > 0 \\; | \\; \bold{r}].
+$$<p>Given that $\bold{X}$ is gaussian,</p>
+<p>TODO: Derivation</p>
+</article>
+
+        </main><footer id="footer">
+    Copyright © 2024 Max Fierro
+</footer>
+</body>
+</html>

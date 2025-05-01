@@ -17,7 +17,7 @@
     
     
     <item>
-      <title>Poem 1. Dedicado a Delia</title>
+      <title>Poem 1. &#34;Dedicado a Delia&#34;</title>
       <link>http://localhost:1313/poem-1.-dedicado-a-delia/</link>
       <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
       
@@ -31,7 +31,7 @@ dame las palabras que me corresponden&lt;br&gt;
 sacude desde tu sigilo mi sangre&lt;br&gt;
 hazme llegar tu amor&lt;br&gt;
 soledad eterna y vida corta&lt;br&gt;
-no te vayas a olvidar de mi&lt;br&gt;
+no te vayas a olvidar de mí&lt;br&gt;
 madre que a ciegas todo lo ve&lt;br&gt;
 corazón de parota, palabras de luz&lt;br&gt;
 eres la cumbre de este desierto&lt;br&gt;
@@ -193,6 +193,37 @@ $$&lt;p&gt;and $N$ is the number of length-$(n + 1)$ contiguous subsequences in 
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Maximum Likelihood Perspective on Elo Rating System</title>
+      <link>http://localhost:1313/maximum-likelihood-perspective-on-elo-rating-system/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/maximum-likelihood-perspective-on-elo-rating-system/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;the-elo-rating-system&#34;&gt;The Elo rating system&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;likelihood-maximization&#34;&gt;Likelihood maximization&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;derivation&#34;&gt;Derivation&lt;/h1&gt;
+&lt;p&gt;Let $\bold{r} = [ r_1, \, \ldots, \, r_n ]^\top$ be a vector encoding a player rating profile. Now, allow $\bold{X} \sim \mathcal{N}(\bold{r}, \sigma^2I)$ to be a multivariate gaussian of the players&amp;rsquo; performance on a given match.&lt;/p&gt;
+&lt;p&gt;TODO: Note how to generalize to $n &amp;gt; 2$ players.&lt;/p&gt;
+&lt;p&gt;We obtain the likelihood function of a match outcome $O$, a bernoulli random variable on the event of $X_1 &amp;gt; X_2$ (indicating that the performance of player 1 was dominant),&lt;/p&gt;
+$$
+\mathcal{L}(O; \\, \bold{r}) = \mathbb{P}[X_1 - X_2 &gt; 0 \\; | \\; \bold{r}].
+$$&lt;p&gt;Given that $\bold{X}$ is gaussian,&lt;/p&gt;
+&lt;p&gt;TODO: Derivation&lt;/p&gt;
 </description>
     </item>
     
