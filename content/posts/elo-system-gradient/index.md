@@ -406,7 +406,7 @@ Usually, implementations of Elo updates do not consider a prior. Instead, they s
 
 #### Distribution Discrepancy 
 
-The Elo rating system assumes a logistic distribution on player performance, not gaussian. However, the above procedure will invariantly recover Elo updates as presented in the [background section](#elo-ratings-and-updates) with both distributions (at least in form).
+The Elo rating system assumes a logistic distribution on player performance, not gaussian. However, the above procedure will invariantly recover Elo updates as presented in the [background section](#elo-ratings-and-updates) with both distributions (at least in form). I thought it would be somewhat interesting to make it gaussian.
 
 #### Fixed Parameters
 

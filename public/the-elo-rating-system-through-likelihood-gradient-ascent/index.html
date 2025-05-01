@@ -683,7 +683,7 @@ $$<p>offers a complete recovery (and generalization) of the Elo update after an 
 <h4 id="procedural-discrepancy">Procedural Discrepancy</h4>
 <p>Usually, implementations of Elo updates do not consider a prior. Instead, they simply initialize parameters at some default amount, then do MLE (as opposed to MAP estimation) to produce gradient updates. I decided to display the full MAP estimate because I think it is more principled; if you believe that ratings &ldquo;start off&rdquo; at some amount, that constitutes a bayesian prior in my eyes.</p>
 <h4 id="distribution-discrepancy">Distribution Discrepancy</h4>
-<p>The Elo rating system assumes a logistic distribution on player performance, not gaussian. However, the above procedure will invariantly recover Elo updates as presented in the <a href="#elo-ratings-and-updates">background section</a> with both distributions (at least in form).</p>
+<p>The Elo rating system assumes a logistic distribution on player performance, not gaussian. However, the above procedure will invariantly recover Elo updates as presented in the <a href="#elo-ratings-and-updates">background section</a> with both distributions (at least in form). I thought it would be somewhat interesting to make it gaussian.</p>
 <h4 id="fixed-parameters">Fixed Parameters</h4>
 <p>In theory, one could estimate the variance parameters using the exact same procedure, by taking the gradient of the joint likelihood with respect to them in addition to the means (the ratings). Surprisingly, people do things similar to this &ndash; although not in this particular way. See the <a href="https://en.wikipedia.org/wiki/Glicko_rating_system">Glicko rating system</a>.</p>
 <h4 id="redundancy-with-g">Redundancy with $g$</h4>
