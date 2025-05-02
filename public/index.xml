@@ -113,7 +113,7 @@ We will replace that with its formal meaning, which is a specific kind of &lt;a 
 &lt;p&gt;This should seem odd, as a subset is in no obvious way reminiscent of a permutation. But introducing some new syntax to indicate membership in a relation,&lt;/p&gt;
 $$
   (x, y) \in R \vdash xRy,
-$$&lt;p&gt;we are an example away from making sense. In particular, consider $R = \, &amp;lt;$ (less-than). When we say things like &amp;ldquo;$x &amp;lt; y$,&amp;rdquo; we are in fact using syntactic sugar for &amp;ldquo;$(x, y) \in \, &amp;lt;$.&amp;rdquo; With this in mind, we can take a look at &lt;a href=&#34;https://en.wikipedia.org/wiki/Partially_ordered_set&#34;&gt;partial orders&lt;/a&gt;.&lt;/p&gt;
+$$&lt;p&gt;we are an example away from making sense. In particular, consider $R = \, \leq$ (less-than). When we say things like &amp;ldquo;$x \leq y$,&amp;rdquo; we are in fact using syntactic sugar for &amp;ldquo;$(x, y) \in \, \leq$.&amp;rdquo; With this in mind, we can take a look at &lt;a href=&#34;https://en.wikipedia.org/wiki/Partially_ordered_set&#34;&gt;partial orders&lt;/a&gt;.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;

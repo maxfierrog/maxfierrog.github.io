@@ -34,7 +34,7 @@ $$
   (x, y) \in R \vdash xRy,
 $$
 
-we are an example away from making sense. In particular, consider $R = \\, <$ (less-than). When we say things like "$x < y$," we are in fact using syntactic sugar for "$(x, y) \in \\, <$." With this in mind, we can take a look at [partial orders](https://en.wikipedia.org/wiki/Partially_ordered_set).
+we are an example away from making sense. In particular, consider $R = \\, \leq$ (less-than). When we say things like "$x \leq y$," we are in fact using syntactic sugar for "$(x, y) \in \\, \leq$." With this in mind, we can take a look at [partial orders](https://en.wikipedia.org/wiki/Partially_ordered_set).
 
 {{% hint title="Definition" %}}
 
