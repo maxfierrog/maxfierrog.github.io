@@ -4,6 +4,8 @@ summary: A list of music pieces I love and optionally explanations of why.
 date: 2024-02-19
 ---
 
+{{< figure src="https://i.scdn.co/image/ab67616d00001e028bf9eeb9ba4d440fec819dff" width="256" attr="\"demo three\" by life" align=center target="_blank" >}}
+
 {{< figure src="https://i.scdn.co/image/ab67616d0000b273fc825d57fe8933e012c2ad62" width="256" attr="\"Technicolor\" by Covet" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d00001e0285b0cc512745fc2d9f7d3b87" width="256" attr="\"Lund Quartet\" by the Lund Quartet" align=center target="_blank" >}}
