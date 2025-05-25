@@ -204,7 +204,7 @@ $$
 
 {{% hint title="Note" %}}
 
-Notice **we did not use a prior** when estimating $\hat\delta_{i, \, j}$. This assumption is due to Elo; we will not use players' history when calculating their performance for a single game. This is the design decision that, by omission, accounts for sudden changes in player skill (as a result of learning, etc.).
+Notice **we did not use a prior** when estimating $\hat\delta_{i, \\, j}$. This assumption is due to Elo; we will not use players' history when calculating their performance for a single game. This is the design decision that, by omission, accounts for sudden changes in player skill (as a result of learning, etc.).
 
 {{% /hint %}}
 
@@ -361,16 +361,22 @@ Being again unable to ignore our instincts,
 
 $$
 \begin{equation}
-    \nabla_{\mathbf r}\log \mathcal{J}_{\mathrm{MAP}}(\theta_i,\theta_j;\hat\delta_{i,j})
+    \nabla_{\mathbf r}\log \mathcal{J}_{\mathrm{MAP}}(\theta_i,\theta_j;\hat\delta_{i, \, j})
     = \begin{bmatrix}
     \displaystyle
-    \frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
-    \;-\;\frac{r_i - r_\pi}{\sigma_\pi^2}
+    \frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
     \\\\
     \displaystyle
-    -\frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
-    \;-\;\frac{r_j - r_\pi}{\sigma_\pi^2}
-    \end{bmatrix}.
+    -\frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+    \displaystyle
+\frac{r_i - r_\pi}{\sigma_\pi^2}
+\\\\
+    \displaystyle
+\frac{r_j - r_\pi}{\sigma_\pi^2}
+    \end{bmatrix}
 \end{equation}
 $$
 
