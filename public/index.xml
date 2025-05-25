@@ -607,7 +607,7 @@ $$
 \\\\
     \displaystyle
 \frac{r_j - r_\pi}{\sigma_\pi^2}
-    \end{bmatrix}
+    \end{bmatrix}.
 \end{equation}
 $$&lt;style&gt;
     .box-body &gt; :last-child {

@@ -376,7 +376,7 @@ $$
 \\\\
     \displaystyle
 \frac{r_j - r_\pi}{\sigma_\pi^2}
-    \end{bmatrix}
+    \end{bmatrix}.
 \end{equation}
 $$
 
