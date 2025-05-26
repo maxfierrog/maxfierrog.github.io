@@ -50,7 +50,7 @@ In progress:
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
-New York, NY -- May 2025 (Current) 
+New York, NY -- Since May 2025 
 
 {{< collapse "summary"="Details..." >}}
 
@@ -119,11 +119,11 @@ In addition to these collective achievements, in my specific capacity as team le
 
 ### Senior Endpoint Engineer @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
 
-Berkeley, CA -- Since Feb 2024
+Berkeley, CA -- Feb 2024 to Nov 2024
 
 {{< collapse "summary"="Details..." >}}
 
-After leading the Endpoint Engineering team for about 2 years, I transitioned to a Senior role to enjoy additional time for pursuing my research interests. I focus on supporting my team in additional onboarding as well as other ongoing efforts, such as improving our implementation of mobile device management.
+After leading the Endpoint Engineering team for about 2 years, I transitioned to a Senior role to enjoy additional time for pursuing my research interests. I focused on supporting my team in additional onboarding as well as other ongoing efforts, such as improving our implementation of mobile device management.
 
 []() <!-- This is for rendering the above as a <p> element -->
 
