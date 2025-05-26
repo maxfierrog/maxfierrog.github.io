@@ -1,7 +1,7 @@
 ---
 title: "Resume"
 summary: Long-form summary of my life's work and achievements.
-date: 2024-12-19
+date: 2025-05-25
 weight: 1
 ---
 
