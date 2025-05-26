@@ -7,7 +7,7 @@ weight: 1
 
 ## Introduction
 
-I am a fourth-year undergraduate at [UC Berkeley](https://www.berkeley.edu/) invested in mathematics and computer science. Primarily, I am a systems programmer and machine learning practitioner. I apply these aptitudes to research projects within computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/). I have also spent the previous three summers at [Meta](https://about.meta.com/) working on ML infrastructure among other things, and accrued significant leadership experience in two years as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
+I am a fourth-year undergraduate at [UC Berkeley](https://www.berkeley.edu/) invested in mathematics and computer science. Primarily, I am a systems programmer and machine learning practitioner. I apply these aptitudes to research projects within computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/). I have also spent a few summers at [Meta](https://about.meta.com/) working on ML infrastructure among other things, and accrued significant leadership experience in two years as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
 
 ---
 
@@ -47,6 +47,18 @@ In progress:
 ---
 
 ## Professional History
+
+### Software Engineer Intern @ [Meta](https://about.meta.com/)
+
+New York, NY -- May 2025 (Current) 
+
+{{< collapse "summary"="Details..." >}}
+
+Part of the Systems Experimentation team.
+
+[]() <!-- This is for rendering the above as a <p> element -->
+
+{{< /collapse >}}
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
