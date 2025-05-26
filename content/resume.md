@@ -123,7 +123,7 @@ Berkeley, CA -- Feb 2024 to Nov 2024
 
 {{< collapse "summary"="Details..." >}}
 
-After leading the Endpoint Engineering team for about 2 years, I transitioned to a Senior role to enjoy additional time for pursuing my research interests. I focused on supporting my team in additional onboarding as well as other ongoing efforts, such as improving our implementation of mobile device management.
+After leading the Endpoint Engineering team for about 2 years, I transitioned to a Senior role to enjoy additional time for pursuing my research interests. I focused on supporting my team with additional onboarding in addition to other efforts, such as improving mobile device management.
 
 []() <!-- This is for rendering the above as a <p> element -->
 
