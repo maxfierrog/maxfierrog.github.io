@@ -27,6 +27,7 @@ _**B.A. Computer Science** - In progress_
 * `CS 186` _Introduction to Database Systems_ ([Prof. Cheung](https://people.eecs.berkeley.edu/~akcheung/))
 * `CS 162` **_Operating Systems & Systems Programming_** ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
 * `CS 189` **_Introduction to Machine Learning_** ([Prof. Listgarten](http://www.jennifer.listgarten.com/), [Prof. Saremi](https://www.linkedin.com/in/saeed-saremi-71935916/))
+* `CS C182` **_Deep Neural Networks_** ([Prof. Sahai](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
 
 <!-- -->
 
@@ -35,18 +36,13 @@ _**B.A. Computer Science** - In progress_
 * `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
 * `MATH 110` **_Abstract Linear Algebra_** ([Prof. Frenkel](https://www.edwardfrenkel.com/))
 
-In progress:
-
-* `CS 182` _Deep Neural Networks_ ([Prof. Sahai](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
-* `MATH 113` _Abstract Algebra_ ([Prof. Utiralova](https://math.berkeley.edu/~sashau/))
-
-**Courses **in bold** are favorites of mine!*
+**Courses **in bold** are favorites of mine!* 
 
 {{< /collapse >}}
 
 ---
 
-## Professional History
+## Professional History 
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
@@ -54,7 +50,7 @@ New York, NY -- Since May 2025
 
 {{< collapse "summary"="Details..." >}}
 
-Part of the Systems Experimentation team.
+Part of the Systems Experimentation team. 
 
 []() <!-- This is for rendering the above as a <p> element -->
 
@@ -66,7 +62,7 @@ New York, NY -- May 2024 to Aug 2024
 
 {{< collapse "summary"="Details..." >}}
 
-Improved automatic tuning of hyper- and production parameters for models that are online-trained by lowering the overhead of trial-based experimentation, which is used in their automatic tuning routines. Examples of these models are those that estimate the probability of a user's click on a given ad on their feed. Tuning these parameters helps minimize both loss and compute-related cost overhead.
+Improved automatic tuning of hyper- and production parameters for models that are online-trained by lowering the overhead of trial-based experimentation, which is used in their automatic tuning routines. Examples of these models are those that estimate the probability of a user's click on a given ad on their feed. Tuning these parameters helps minimize both loss and compute-related cost overhead. 
 
 This mostly looked like writing [typed Python](https://pyre-check.org/) and working with a very wide breadth of internal tooling, including HPC schedulers, database services, and [distributed computing frameworks](https://engineering.fb.com/2016/05/09/core-infra/introducing-fblearner-flow-facebook-s-ai-backbone/).
 
@@ -90,7 +86,7 @@ Menlo Park, CA -- Jun 2022 to Aug 2022
 
 {{< collapse "summary"="Details..." >}}
 
-I was taught large-scale application design and developed my own project with the guidance of two (incredibly didactic and supportive) software engineers. While I barely touched Meta's codebase (by the program's design), I did learn a lot about the work of the team I was placed into, which helped [WhatsApp](https://www.whatsapp.com/) transfer and archive data.
+I was taught large-scale application design and developed my own project with the guidance of two (incredibly didactic and supportive) software engineers. While I barely touched Meta's codebase (by the program's design), I did learn a lot about the work of the team I was placed into, which helped [WhatsApp](https://www.whatsapp.com/) transfer and archive data. 
 
 The main project I worked on was an iOS task-based project management application I called [Process](https://github.com/maxfierrog/process) whose main feature was a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of task-to-task dependencies (as opposed to just a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) or list) on a recursive user interface. It is built on a [Firebase](https://firebase.google.com/)-d backend and [SwiftUI](https://developer.apple.com/xcode/swiftui/) frontend (in hindsight, should have used [Neo4j](https://neo4j.com/)'s graph DB instead).
 
@@ -119,7 +115,7 @@ In addition to these collective achievements, in my specific capacity as team le
 
 ### Senior Endpoint Engineer @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
 
-Berkeley, CA -- Feb 2024 to Nov 2024
+Berkeley, CA -- Feb 2024 to Nov 2024 
 
 {{< collapse "summary"="Details..." >}}
 
@@ -131,7 +127,7 @@ After leading the Endpoint Engineering team for about 2 years, I transitioned to
 
 ### Technology Consultant @ [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT)
 
-Berkeley, CA -- Aug 2021 to Mar 2022
+Berkeley, CA -- Aug 2021 to Mar 2022 
 
 {{< collapse "summary"="Details..." >}}
 

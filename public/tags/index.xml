@@ -16,6 +16,23 @@
     
     
     <item>
+      <title>Poem 2. &#34;Occidental&#34;</title>
+      <link>http://localhost:1313/poem-2.-occidental/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/poem-2.-occidental/</guid>
+      <description>&lt;p&gt;El negro de la noche es el final del infinito;&lt;br&gt;
+la verdad me llega a la velocidad de la luz.&lt;br&gt;
+Son trayectorias que trazan entre los átomos,&lt;br&gt;
+son curvas que desnudan misterios paralelos.&lt;br&gt;
+Es hipótesis de tiempo escrita en el espacio,&lt;br&gt;
+es información que se filtra entre la materia.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>The Elo Rating System through Likelihood Gradient Ascent</title>
       <link>http://localhost:1313/the-elo-rating-system-through-likelihood-gradient-ascent/</link>
       <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
@@ -95,7 +112,7 @@ We will replace that with its formal meaning, which is a specific kind of &lt;a 
 &lt;p&gt;This should seem odd, as a subset is in no obvious way reminiscent of a permutation. But introducing some new syntax to indicate membership in a relation,&lt;/p&gt;
 $$
   (x, y) \in R \vdash xRy,
-$$&lt;p&gt;we are an example away from making sense. In particular, consider $R = \, &amp;lt;$ (less-than). When we say things like &amp;ldquo;$x &amp;lt; y$,&amp;rdquo; we are in fact using syntactic sugar for &amp;ldquo;$(x, y) \in \, &amp;lt;$.&amp;rdquo; With this in mind, we can take a look at &lt;a href=&#34;https://en.wikipedia.org/wiki/Partially_ordered_set&#34;&gt;partial orders&lt;/a&gt;.&lt;/p&gt;
+$$&lt;p&gt;we are an example away from making sense. In particular, consider $R = \, \leq$ (less-than). When we say things like &amp;ldquo;$x \leq y$,&amp;rdquo; we are in fact using syntactic sugar for &amp;ldquo;$(x, y) \in \, \leq$.&amp;rdquo; With this in mind, we can take a look at &lt;a href=&#34;https://en.wikipedia.org/wiki/Partially_ordered_set&#34;&gt;partial orders&lt;/a&gt;.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -395,7 +412,7 @@ $$&lt;style&gt;
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Notice &lt;strong&gt;we did not use a prior&lt;/strong&gt; when estimating $\hat\delta_{i, , j}$. This assumption is due to Elo; we will not use players&amp;rsquo; history when calculating their performance for a single game. This is the design decision that, by omission, accounts for sudden changes in player skill (as a result of learning, etc.).&lt;/p&gt;
+&lt;p&gt;Notice &lt;strong&gt;we did not use a prior&lt;/strong&gt; when estimating $\hat\delta_{i, \, j}$. This assumption is due to Elo; we will not use players&amp;rsquo; history when calculating their performance for a single game. This is the design decision that, by omission, accounts for sudden changes in player skill (as a result of learning, etc.).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
@@ -574,15 +591,21 @@ $$
 $$&lt;p&gt;Being again unable to ignore our instincts,&lt;/p&gt;
 $$
 \begin{equation}
-    \nabla_{\mathbf r}\log \mathcal{J}_{\mathrm{MAP}}(\theta_i,\theta_j;\hat\delta_{i,j})
+    \nabla_{\mathbf r}\log \mathcal{J}_{\mathrm{MAP}}(\theta_i,\theta_j;\hat\delta_{i, \, j})
     = \begin{bmatrix}
     \displaystyle
-    \frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
-    \;-\;\frac{r_i - r_\pi}{\sigma_\pi^2}
+    \frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
     \\\\
     \displaystyle
-    -\frac{g(\hat\delta_{i,j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
-    \;-\;\frac{r_j - r_\pi}{\sigma_\pi^2}
+    -\frac{g(\hat\delta_{i, \, j}) - (r_i - r_j)}{\sigma_\varepsilon^2 + \sigma_i^2 + \sigma_j^2}
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+    \displaystyle
+\frac{r_i - r_\pi}{\sigma_\pi^2}
+\\\\
+    \displaystyle
+\frac{r_j - r_\pi}{\sigma_\pi^2}
     \end{bmatrix}.
 \end{equation}
 $$&lt;style&gt;
@@ -795,51 +818,34 @@ $$&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
     
     
     <item>
-      <title>Poem 1. &#34;Dedicado a Delia&#34;</title>
-      <link>http://localhost:1313/poem-1.-dedicado-a-delia/</link>
+      <title>Poem 1. &#34;Delia&#34;</title>
+      <link>http://localhost:1313/poem-1.-delia/</link>
       <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/poem-1.-dedicado-a-delia/</guid>
-      <description>&lt;p&gt;madre que no te suelta el estandarte&lt;br&gt;
-madre de selva que te cubre como yedra&lt;br&gt;
-me arrulla desde la penumbra&lt;br&gt;
-me susurra el nombre de Dios&lt;br&gt;
-ya quítame de aquí que me muero, madre&lt;br&gt;
-dame las palabras que me corresponden&lt;br&gt;
-sacude desde tu sigilo mi sangre&lt;br&gt;
-hazme llegar tu amor&lt;br&gt;
-soledad eterna y vida corta&lt;br&gt;
-no te vayas a olvidar de mí&lt;br&gt;
-madre que a ciegas todo lo ve&lt;br&gt;
-corazón de parota, palabras de luz&lt;br&gt;
-eres la cumbre de este desierto&lt;br&gt;
-autora del método mío&lt;br&gt;
-madre de todo&lt;br&gt;
-mi primer amor, también el último&lt;br&gt;
-mi castillo, mi escudo, mi ángel&lt;br&gt;
-águila de quinientas virtudes&lt;br&gt;
-reguilete infinito de colores&lt;br&gt;
-piedra de orgullo inexorable&lt;br&gt;
-árbol terrestre que toca el cielo&lt;br&gt;
-sosiego inminente&lt;br&gt;
-calor solar&lt;/p&gt;
-</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Poem 2. &#34;Occidental&#34;</title>
-      <link>http://localhost:1313/poem-2.-occidental/</link>
-      <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/poem-2.-occidental/</guid>
-      <description>&lt;p&gt;El negro de la noche es el final del infinito;
-la verdad me llega a la velocidad de la luz.
-Son trayectorias que trazan entre los átomos,
-son curvas que desnudan misterios paralelos.
-Es hipótesis de tiempo escrita en el espacio,
-es información que se filtra entre la materia.&lt;/p&gt;
+      <guid>http://localhost:1313/poem-1.-delia/</guid>
+      <description>&lt;p&gt;Madre que no te suelta el estandarte,&lt;br&gt;
+madre de selva que te cubre como yedra;&lt;br&gt;
+me arrulla desde la penumbra,&lt;br&gt;
+me susurra el nombre de Dios.&lt;br&gt;
+Ya quítame de aquí que me muero, madre,&lt;br&gt;
+dame las palabras que me corresponden,&lt;br&gt;
+sacude desde tu sigilo mi sangre,&lt;br&gt;
+hazme llegar tu amor.&lt;br&gt;
+Soledad eterna y vida corta,&lt;br&gt;
+no te vayas a olvidar de mí.&lt;br&gt;
+Madre que a ciegas todo lo ve;&lt;br&gt;
+corazón de parota, palabras de luz.&lt;br&gt;
+Eres la cumbre de este desierto,&lt;br&gt;
+autora del método mío,&lt;br&gt;
+madre de todo.&lt;br&gt;
+Mi primer amor, también el último,&lt;br&gt;
+mi castillo, mi escudo, mi ángel.&lt;br&gt;
+Águila de quinientas virtudes,&lt;br&gt;
+reguilete infinito de colores,&lt;br&gt;
+piedra de orgullo inexorable.&lt;br&gt;
+Arbol terrestre que toca el cielo,&lt;br&gt;
+sosiego inminente,&lt;br&gt;
+calor solar.&lt;/p&gt;
 </description>
     </item>
     
