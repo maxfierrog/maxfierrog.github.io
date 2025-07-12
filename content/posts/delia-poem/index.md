@@ -29,5 +29,6 @@ reguilete infinito de colores,\
 piedra de orgullo inexorable.
 
 Árbol terrestre que toca el cielo;\
-sosiego inminente y calor solar.
+sosiego inminente,\
+calor solar.
 
