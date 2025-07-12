@@ -16,6 +16,6 @@ son transparentes, por tu transparencia.
 
 Cómo te extraño, querida amiga;\
 que convertiste nuestra vivienda en hogar,\
-y cuidas siempre de mí, así como yo de ti.\
+y cuidas siempre de mí, así cómo yo de ti.\
 Pronto nos veremos otra vez.
 
