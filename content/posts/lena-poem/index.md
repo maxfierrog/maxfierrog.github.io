@@ -11,7 +11,7 @@ la luz penetraba el helecho
 en ese entonces, los dos éramos niños y 
   nos ceñía la juventud de nuestra familia,
 ese hogar llevaba tu color, 
-            que en ese jardín estando 
+            y en ese jardín estando 
   nos vestía el espacio de una piel
     más radiante y transparente 
 
