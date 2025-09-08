@@ -7,7 +7,7 @@ weight: 1
 
 ## Introduction
 
-I am a fourth-year undergraduate at [UC Berkeley](https://www.berkeley.edu/) invested in mathematics and computer science. Primarily, I am a systems programmer and machine learning practitioner. I apply these aptitudes to research projects within computational game theory, advised by [Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/). I have also spent a few summers at [Meta](https://about.meta.com/) working on ML infrastructure among other things, and accrued significant leadership experience in two years as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
+I am graduating from [UC Berkeley](https://www.berkeley.edu/) intellectually invested in mathematics and computer science. I am a systems programmer and machine learning practitioner by trade. With these aptitudes, I pursue projects in the intersection of machine learning and game theory. I also spent four summers at [Meta](https://about.meta.com/) (working on ML infrastructure, among other things) and have two years of leadership experience as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
 
 ---
 
@@ -15,28 +15,35 @@ I am a fourth-year undergraduate at [UC Berkeley](https://www.berkeley.edu/) inv
 
 ### University of California, Berkeley
 
-_**B.A. Computer Science** - In progress_
+**B.A. Computer Science** -- Aug 2021 to Dec 2025
 
 {{< collapse "summary"="Coursework..." >}}
 
 * `CS 70` _Discrete Mathematics & Probability Theory_ ([Prof. Rao](https://www2.eecs.berkeley.edu/Faculty/Homepages/rao.html#main-content), [Prof. Ayazifar](https://www2.eecs.berkeley.edu/Faculty/Homepages/ayazifar.html#main-content))
-* `CS 61A`  _Structure & Interpretation of Computer Programs_ ([Prof. DeNero](https://denero.org/))
-* `CS 61B` _Data Structures & Algorithms_ ([Prof. Hilfinger](https://www2.eecs.berkeley.edu/Faculty/Homepages/hilfinger.html#main-content))
+* `CS 61A`  _Structure & Interpretation of Computer Programs_ ([<u>Prof. DeNero</u>](https://denero.org/))
+* `CS 61B` _Data Structures & Algorithms_ ([<u>Prof. Hilfinger</u>](https://www2.eecs.berkeley.edu/Faculty/Homepages/hilfinger.html#main-content))
 * `CS 61C` **_Great Ideas in Computer Architecture_** ([Prof. Garcia](https://people.eecs.berkeley.edu/~ddgarcia/))
-* `CS 170` **_Efficient Algorithms & Intractable Problems_** ([Prof. Haghtalab](https://people.eecs.berkeley.edu/~nika/), [Prof. Wright](https://www2.eecs.berkeley.edu/Faculty/Homepages/jswright.html#main-content))
+* `CS 170` **_Efficient Algorithms & Intractable Problems_** ([<u>Prof. Haghtalab</u>](https://people.eecs.berkeley.edu/~nika/), [Prof. Wright](https://www2.eecs.berkeley.edu/Faculty/Homepages/jswright.html#main-content))
 * `CS 186` _Introduction to Database Systems_ ([Prof. Cheung](https://people.eecs.berkeley.edu/~akcheung/))
-* `CS 162` **_Operating Systems & Systems Programming_** ([Prof. Kubiatowicz](https://people.eecs.berkeley.edu/~kubitron/))
-* `CS 189` **_Introduction to Machine Learning_** ([Prof. Listgarten](http://www.jennifer.listgarten.com/), [Prof. Saremi](https://www.linkedin.com/in/saeed-saremi-71935916/))
-* `CS C182` **_Deep Neural Networks_** ([Prof. Sahai](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
+* `CS 162` **_Operating Systems & Systems Programming_** ([<u>Prof. Kubiatowicz</u>](https://people.eecs.berkeley.edu/~kubitron/))
+* `CS 189` **_Introduction to Machine Learning_** ([<u>Prof. Listgarten</u>](http://www.jennifer.listgarten.com/), [Prof. Saremi](https://www.linkedin.com/in/saeed-saremi-71935916/))
+* `CS 182` **_Designing, Visualizing and Understanding Deep Neural Networks_** ([<u>Prof. Sahai</u>](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
+* `CS 272` **_Foundations of Learning, Decisions, and Games_** [Audited] ([<u>Prof. Haghtalab</u>](https://people.eecs.berkeley.edu/~nika/))
+
+<!-- -->
+
+* `EE 126` _Probability and Random Processes_ ([Prof. Khanna](https://www2.eecs.berkeley.edu/Faculty/Homepages/pkhanna.html))
+* `EE 120` **_Signals and Systems_** ([<u>Prof. Dimakis</u>](https://people.eecs.berkeley.edu/~alexdimakis/))
 
 <!-- -->
 
 * `MATH 1A` _Calculus I_ ([Prof. Vojta](https://math.berkeley.edu/~vojta/))
-* `MATH 1B` _Calculus II_ ([Prof. Paulin](https://math.berkeley.edu/~apaulin/))
+* `MATH 1B` _Calculus II_ ([<u>Prof. Paulin</u>](https://math.berkeley.edu/~apaulin/))
 * `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
-* `MATH 110` **_Abstract Linear Algebra_** ([Prof. Frenkel](https://www.edwardfrenkel.com/))
+* `MATH 110` **_Abstract Linear Algebra_** ([<u>Prof. Frenkel</u>](https://www.edwardfrenkel.com/))
+* `MATH 113` _Abstract Algebra_ [Audited] ([Prof. Utiralova](https://math.berkeley.edu/~sashau/))
 
-**Courses **in bold** are favorites of mine!* 
+**Courses **in bold** and professors <u>underlined</u> are favorites of mine!* 
 
 {{< /collapse >}}
 
@@ -46,11 +53,15 @@ _**B.A. Computer Science** - In progress_
 
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
-New York, NY -- Since May 2025 
+New York, NY -- May 2025 to Aug 2025
 
 {{< collapse "summary"="Details..." >}}
 
-Part of the Systems Experimentation team. 
+Experimentation products at Meta (e.g. [ServiceLab](https://www.usenix.org/system/files/osdi24-chow.pdf)) rely on common experimentation infrastructure in the form of a unified platform. This platform underwent migration to a modularized alternative in the interest of extensibility into the use cases of new experimentation products (among other things). 
+
+As part of the Systems Experimentation team, I migrated a feature that allowed experimentation products to track the status of collections of individual trials under an SLA of eventual consistency and retry-based fault tolerance. This required the design and implementation of distributed workflows written in Python and Rust, extensions to our external API, and close rollout monitoring via internal observability tooling.
+
+I also detailed a state log data pipeline and model-predictive workflow controller to optimize actions (such as retries) according to our SLOs. This took the form of a ~15 page RFC that I presented to the team.
 
 []() <!-- This is for rendering the above as a <p> element -->
 

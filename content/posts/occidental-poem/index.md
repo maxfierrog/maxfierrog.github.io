@@ -11,4 +11,3 @@ Es hipótesis de tiempo escrita en el espacio,
 es información que se filtra entre la materia.
 ```
 
-
