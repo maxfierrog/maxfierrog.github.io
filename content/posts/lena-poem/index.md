@@ -6,14 +6,14 @@ date: 2025-09-08
 
 ```
 entrevista criatura echada en la baldosa,
-la luz penetraba el helecho 
-    en cuyo follaje te resguardabas:
+la luz penetraba el follaje 
+    del helecho donde te resguardabas:
 en ese entonces, los dos éramos niños y 
   nos ceñía la juventud de nuestra familia,
 ese hogar llevaba tu color, 
-            y en ese jardín estando 
+        y en ese jardín
   nos vestía el espacio de una piel
-    más radiante y transparente 
+            más radiante y transparente 
 
 criatura entrevista entre las décadas,
   tiempo tenaz que fluye a mi costado:
@@ -21,7 +21,6 @@ criatura entrevista entre las décadas,
              ya no soy joven,
    mi familia ya no es joven
     ahora que tú no estás, 
-      matryoshka Lena,
         te resguardo dentro de mí,
       y en ti siempre se encontrarán 
     aquellas joyas de nuestra juventud
