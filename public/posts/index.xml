@@ -49,6 +49,104 @@ la luz que compartimos
     
     
     <item>
+      <title>The Kernel of the Convolution Kernel and Reproducing Kernel</title>
+      <link>http://localhost:1313/the-kernel-of-the-convolution-kernel-and-reproducing-kernel/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/the-kernel-of-the-convolution-kernel-and-reproducing-kernel/</guid>
+      <description>&lt;aside id=&#34;toc&#34;&gt;
+    &lt;details&gt;
+        &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
+        &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#semantics&#34;&gt;Semantics&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#basis-sets&#34;&gt;Basis Sets&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#signals-and-systems&#34;&gt;Signals and Systems&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#kernel-methods&#34;&gt;Kernel Methods&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://linear.axler.net/LADR4e.pdf&#34;&gt;Linear algebra&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Signal_processing&#34;&gt;signal processing&lt;/a&gt;, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Machine_learning&#34;&gt;machine learning&lt;/a&gt; methods are (one of many groups of) topics that enjoy beautiful relationships enclosed in a dense shell of mathematics. Within the shell, one finds a kernel of surprisingly diverse perspectives which are simply a pleasure to entertain. This article hopes to give the reader a romantic and thematic glimpse of the truths in this particular kernel.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;I follow an essay-like structure including an introduction, body, and conclusion. The introduction sets the stage starting from &amp;ldquo;class-style&amp;rdquo; knowledge, assuming a first course in linear algebra, signal processing, and machine learning. For readers lacking this background, I leave pointers to free resources.&lt;/p&gt;
+&lt;p&gt;The introduction will arrive at the &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_map&#34;&gt;linear-operator&lt;/a&gt; perspective of &lt;a href=&#34;https://en.wikipedia.org/wiki/Multidimensional_system&#34;&gt;systems of many dimensions&lt;/a&gt;, defining system properties like &lt;a href=&#34;https://en.wikipedia.org/wiki/Time-invariant_system&#34;&gt;time-invariance&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_system&#34;&gt;causality&lt;/a&gt; in terms of &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor&#34;&gt;tensor&lt;/a&gt; representations. This will result in the marriage of many linear algebra and signal processing concepts. These perspectives will help in the body, where I present a unified perspective of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Convolution&#34;&gt;convolution kernel&lt;/a&gt; and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces&#34;&gt;reproducing kernel&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This section is no more than a refresher on select topics. I will not make an attempt to explain them completely. If this is what you need, I recommend you explore these (completely free) resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kernel methods.&lt;/strong&gt; &lt;a href=&#34;https://cs.nyu.edu/~mohri/mlbook/&#34;&gt;&lt;em&gt;Foundations of Machine Learning&lt;/em&gt;&lt;/a&gt; by Mohri, Rostamizadeh, and Talwalkar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Signals and Systems.&lt;/strong&gt; &lt;a href=&#34;https://ss2-2e.eecs.umich.edu/&#34;&gt;&lt;em&gt;Signals &amp;amp; Systems: Theory and Applications&lt;/em&gt;&lt;/a&gt; by Ulaby and Yagle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear algebra.&lt;/strong&gt; &lt;a href=&#34;https://linear.axler.net/&#34;&gt;&lt;em&gt;Linear Algebra Done Right&lt;/em&gt;&lt;/a&gt; by Axler.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;semantics&#34;&gt;Semantics&lt;/h3&gt;
+&lt;h3 id=&#34;basis-sets&#34;&gt;Basis Sets&lt;/h3&gt;
+&lt;p&gt;In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of &lt;em&gt;Linear Algebra Done Right&lt;/em&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Here, the restriction of vector spaces to the finite-dimensional case was one the most mathematically respectful ways to negotiate generality with practical pedagogy. However, the spirit of linear algebra is alive way beyond the finite-dimensional case.&lt;/p&gt;
+&lt;h4 id=&#34;hamel-bases&#34;&gt;Hamel Bases&lt;/h4&gt;
+&lt;p&gt;Most engineers are familiar with the concept of a (Hamel) basis of a vector space. If we have a vector space $V$ over a field $\mathbb{F}$ and a Hamel basis $\mathcal{B}$, then &amp;ldquo;$\mathcal{B}$ spans $V$&amp;rdquo; translates to&lt;/p&gt;
+$$
+\begin{equation}
+    \forall v \in V, \; v = \sum_{b_i \, \in \, \mathcal{B}} c_i \cdot b_i \; \text{with} \; c_i \in \mathbb{F}.
+\end{equation}
+$$&lt;p&gt;Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have finite terms. Note that this is allowed even in cases where $\mathcal{B}$ is infinite (or in other words, where $V$ is infinite-dimensional), as one does not necessarily assign nonzero coefficients $c_i$ to each element of $\mathcal{B}$.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;The vector space of polynomials (of finite terms) with coefficients in a field $\mathbb{F}$,&lt;/p&gt;
+$$
+\mathbb{F}[x] = \left\{ \sum_{i=0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
+$$&lt;p&gt;has the infinite basis $\mathcal{B} = \{1, x, x^2, x^3, \dots \}$. Each of its elements, however, is the linear combination of a finite number of basis elements&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;signals-and-systems&#34;&gt;Signals and Systems&lt;/h3&gt;
+&lt;h3 id=&#34;kernel-methods&#34;&gt;Kernel Methods&lt;/h3&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Poem 5. &#34;Zoe&#34;</title>
       <link>http://localhost:1313/poem-5.-zoe/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>

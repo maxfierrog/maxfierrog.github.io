@@ -16,6 +16,50 @@
     
     
     <item>
+      <title>Perspective into Tensors, Signals, and Kernel Methods</title>
+      <link>http://localhost:1313/perspective-into-tensors-signals-and-kernel-methods/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/perspective-into-tensors-signals-and-kernel-methods/</guid>
+      <description>&lt;aside id=&#34;toc&#34;&gt;
+    &lt;details&gt;
+        &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
+        &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#vector-spaces&#34;&gt;Vector Spaces&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#signals-and-systems&#34;&gt;Signals and Systems&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#kernel-methods&#34;&gt;Kernel Methods&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    &lt;/details&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://linear.axler.net/LADR4e.pdf&#34;&gt;Linear algebra&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Signal_processing&#34;&gt;signal processing&lt;/a&gt;, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Machine_learning&#34;&gt;machine learning&lt;/a&gt; are (one of many groups of) topics that enjoy a beautiful relationship protected by a nutshell of mathematics. Inside we can find a kernel of perspectives which are simply a pleasure to entertain. Here, I provide the &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_map&#34;&gt;linear-operator&lt;/a&gt; perspective into &lt;a href=&#34;https://en.wikipedia.org/wiki/Multidimensional_system&#34;&gt;systems of many dimensions&lt;/a&gt;, characterizing properties like &lt;a href=&#34;https://en.wikipedia.org/wiki/Time-invariant_system&#34;&gt;time-invariance&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_system&#34;&gt;causality&lt;/a&gt; via &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor&#34;&gt;tensor&lt;/a&gt; representations. I finish with an original perspective that connects the &lt;a href=&#34;https://en.wikipedia.org/wiki/Convolution&#34;&gt;convolution kernel&lt;/a&gt; to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces&#34;&gt;reproducing kernel&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;This section is no more than a refresher on select topics. I will not make an attempt to explain them completely. If this is what you need, I recommend you explore these (completely free) resources:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vector spaces.&lt;/strong&gt; &lt;a href=&#34;https://linear.axler.net/&#34;&gt;&lt;em&gt;Linear Algebra Done Right&lt;/em&gt;&lt;/a&gt; by Axler.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Signals and Systems.&lt;/strong&gt; &lt;a href=&#34;https://ss2-2e.eecs.umich.edu/&#34;&gt;&lt;em&gt;Signals &amp;amp; Systems: Theory and Applications&lt;/em&gt;&lt;/a&gt; by Ulaby and
+Yagle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kernel methods.&lt;/strong&gt; &lt;a href=&#34;https://cs.nyu.edu/~mohri/mlbook/&#34;&gt;&lt;em&gt;Foundations of Machine Learning&lt;/em&gt;&lt;/a&gt; by Mohri, Rostamizadeh, and Talwalkar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;vector-spaces&#34;&gt;Vector Spaces&lt;/h3&gt;
+&lt;h3 id=&#34;signals-and-systems&#34;&gt;Signals and Systems&lt;/h3&gt;
+&lt;h3 id=&#34;kernel-methods&#34;&gt;Kernel Methods&lt;/h3&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Poem 6. &#34;Lena&#34;</title>
       <link>http://localhost:1313/poem-6.-lena/</link>
       <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
