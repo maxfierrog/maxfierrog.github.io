@@ -75,7 +75,8 @@
     <li><a href="#overview">Overview</a></li>
     <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#bases-of-vector-spaces">Bases of Vector Spaces</a></li>
+        <li><a href="#vector-spaces">Vector Spaces</a></li>
+        <li><a href="#multilinear-algebra">Multilinear Algebra</a></li>
         <li><a href="#signals-and-systems">Signals and Systems</a></li>
         <li><a href="#kernel-methods">Kernel Methods</a></li>
       </ul>
@@ -112,7 +113,7 @@
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >Clarification</strong
+        >2.1. Clarification</strong
     >
     <hr
         style="
@@ -137,7 +138,7 @@
 <li><strong>Signals and Systems.</strong> <a href="https://ss2-2e.eecs.umich.edu/"><em>Signals &amp; Systems: Theory and Applications</em></a> by Ulaby and Yagle.</li>
 <li><strong>Linear algebra.</strong> <a href="https://linear.axler.net/"><em>Linear Algebra Done Right</em></a> by Axler.</li>
 </ul>
-<h3 id="bases-of-vector-spaces">Bases of Vector Spaces</h3>
+<h3 id="vector-spaces">Vector Spaces</h3>
 <p>In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of <em>Linear Algebra Done Right</em>:</p>
 <blockquote>
 <p>Linear algebra is the study of linear maps on finite-dimensional vector spaces.</p></blockquote>
@@ -169,7 +170,7 @@ $$<p>Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have finite
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >Example</strong
+        >3.1. Example</strong
     >
     <hr
         style="
@@ -182,7 +183,7 @@ $$<p>Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have finite
     <div style="font-size: 0.92em" class="box-body">
 <p>The vector space of polynomials (of finite terms) with coefficients in a field $\mathbb{F}$,</p>
 $$
-\mathbb{F}[x] = \left\{ \sum_{i=0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
+\mathbb{F}[x] = \left\{ \sum_{i \, = \, 0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
 $$<p>has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \{1, x, x^2, x^3, \dots \}$. Each of its elements, however, is the linear combination of a finite number of basis elements. For example, the polynomial</p>
 $$ 
 p(x) = 3 + 4x^2 + x^3
@@ -235,7 +236,7 @@ $$<p>Here we imposed a (canonical) representation such that, for example, $x^2 =
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >Note</strong
+        >3.2. Note</strong
     >
     <hr
         style="
@@ -252,9 +253,9 @@ $$<p>Here we imposed a (canonical) representation such that, for example, $x^2 =
 <p>For some vector spaces that do not have a countable Hamel basis, one can relax the definition of a basis itself to obtain one that is countable. Specifically, we redefine the phrase &ldquo;$\mathcal{B}$ spans $V$&rdquo; to</p>
 $$
 \begin{equation}
-    \forall v \in V, \; v = \sum_{i \, = \, 0}^{\infty} c_i b_i \;\; \text{s.t.} \;\; c_i \in \mathbb{F}, \, b_i \in \mathcal{B}.
+    \forall v \in V, \; v = \lim_{ n \to \infty } \, \sum_{i \, = \, 0}^{n} c_i b_i \;\; \text{s.t.} \;\; c_i \in \mathbb{F}, \, b_i \in \mathcal{B}.
 \end{equation}
-$$<p>If the above is true for a vector space $V$ over $\mathbb{F}$, then $\mathcal{B}$ is a Schauder basis of said space. The critical difference to a Hamel basis is of course the generality afforded by the possiblity of infinite terms for the sum in $(2)$, giving us a new countably infinite flavor of linear combination.</p>
+$$<p>If the above is true for a vector space $V$ over $\mathbb{F}$, then $\mathcal{B}$ is a Schauder basis of said space. The critical difference to a Hamel basis is of course the generality afforded by the possiblity of infinite terms for the sum in $(2)$, giving us a new countably-infinite flavor of linear combination.</p>
 <style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
@@ -275,7 +276,7 @@ $$<p>If the above is true for a vector space $V$ over $\mathbb{F}$, then $\mathc
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >Example</strong
+        >3.3. Example</strong
     >
     <hr
         style="
@@ -286,10 +287,10 @@ $$<p>If the above is true for a vector space $V$ over $\mathbb{F}$, then $\mathc
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>The vector space of square-summable sequences,</p>
+<p>The vector space of square-summable sequences of real numbers,</p>
 $$
-\ell^2 = \left\{ (x_1, x_2, x_3, \dots) \;:\; \sum_{n=1}^\infty |x_n|^2 < \infty \right\},
-$$<p>has no Hamel basis because, no matter how you define one, you can come up with an element of $\ell^2$ which requires a decomposition into an infinite number of basis elements (which is not allowed). However, it does have the countably infinite Schauder basis</p>
+\ell^2 = \left\{ (x_1, x_2, x_3, \dots) \;:\; \sum_{n \, = \, 1}^\infty |x_n|^2 < \infty \right\},
+$$<p>has no Hamel basis because, no matter how you define one, you can come up with an element of $\ell^2$ which requires a decomposition into an infinite number of basis elements (which is not allowed). However, it does have the countably-infinite Schauder basis</p>
 $$
 \mathcal{B}_{\ell^2} = \left\{ 
 \left(
@@ -312,9 +313,341 @@ $$
 \right), \,
 {\dots}
 \right\}.
-$$<p>This is quite remarkable, as the uncountably infinite $\ell^2$ is spanned by the countably infinite $\mathcal{B}_{\ell^2}$. Allowing infinite linear combinations bridges this countability barrier via convergence.</p>
+$$</div>
+</div>
+<h4 id="taxonomy-of-spaces">Taxonomy of Spaces</h4>
+<p>Hidden in $(2)$ is the requirement that all such sums over basis elements converge. But the definition of a vector space does not include any operation that computes the &ldquo;closeness&rdquo; of two vectors, so additional concepts are needed to make sense of convergence. Abstractly, one needs to equip the vector space of interest with a <a href="https://en.wikipedia.org/wiki/Topological_space#topology">topology</a>. The way of doing so that we will consider is by assuming a <a href="https://en.wikipedia.org/wiki/Norm_(mathematics)">norm</a> over the space, such that we can concretely declare the definition of an infinite series</p>
+$$
+\begin{equation}
+    \lim_{n \to \infty} \left\| x - \sum_{k \, = \, 1}^n a_k \right\| = 0 \iff x = \sum_{k \, = \, 1}^{\infty} a_k.
+\end{equation}
+$$<p>Vector spaces that have a norm are called normed vector spaces. If a normed vector space is <a href="https://en.wikipedia.org/wiki/Complete_metric_space">complete</a> under the norm-induced <a href="https://en.wikipedia.org/wiki/Metric_space">metric</a> $d : (x_1, \, x_2) \mapsto ||x_1 - x_2||$, then it is also called a <a href="https://en.wikipedia.org/wiki/Banach_space">Banach space</a>.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.4. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this piece, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a complete space (such as $\ell^2$).</p>
 </div>
 </div>
+<p>If a Banach space is also equipped with an <a href="https://en.wikipedia.org/wiki/Inner_product_space">inner product</a> in such a way that $\langle x, \, x \rangle = ||x||^2$, then it is also called a <a href="https://en.wikipedia.org/wiki/Inner_product_space">Hilbert space</a>. With the understanding that a vector space with an inner product defined is called an inner-product space, we arrive at the following:</p>
+$$
+\begin{equation}
+\begin{aligned}
+\text{Vector} & \text{ spaces} \\[0.2em]
+&\supset
+\Bigg\{
+  \begin{aligned}
+  & \text{Normed vector spaces} \;\supset\; \text{Banach spaces} \\
+  & \text{Inner-product vector spaces}
+  \end{aligned}\\[1.2em]
+&\supset \text{Hilbert spaces} = (\text{Banach spaces} \, \cap \, \text{Inner-product spaces}).
+\end{aligned}
+\end{equation}
+$$<h4 id="continuous-bases">Continuous Bases</h4>
+<p>The last thing we will consider are vector spaces of uncountably-infinite dimension. So far, we have been comfortable in using syntax such as &ldquo;$x = [ 1, \, 2, \, \ldots ]^\top$&rdquo; to refer to vectors of countably-infinite dimension. This will no longer be possible with uncountably-infinite dimensions, so we must revisit our notation.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.5. Reminder</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A vector $v$ is an abstract object, and is independent of a choice of basis. To write $v$ as a tuple $[c_1, \dots, c_n]$, one must choose a basis ${b_1, \, \dots, \, b_n}$ and expand (in the finite-dimensional case)</p>
+$$
+v = \sum_{i \, = \, 1}^n c_i b_i.
+$$<p>Hence, $[1, \, 2, \, 3]^\top$ means “the coefficients of $v$ in this basis.”
+Changing the basis changes the coefficients, but not the vector itself. This also applies to infinite-dimensional cases.</p>
+</div>
+</div>
+<p>Observing that, once a basis is chosen, a vector in a vector space $V$ over a field $\mathbb{F}$ is determined by the coefficients in its representation as a linear combination of basis vectors, we can introduce a new type of linear combination to evolve the translation of &ldquo;$\mathcal{B}$ spans $V$&rdquo; to involve a <a href="https://en.wikipedia.org/wiki/Lebesgue_integral">Lebesgue integral</a>,</p>
+$$
+\begin{equation}
+    \forall v \in V, \; v = \int_{\mathcal{\Omega}} c(\omega) b(\omega) \, d\mu(\omega) \;\; \text{s.t.} \;\; c : \Omega \to \mathbb{F}, \, b : \Omega \to \mathcal{B},
+\end{equation}
+$$<p>where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intuitively replaces the index $i$ from $(2)$, where there is a map $c$ &ldquo;choosing&rdquo; a coefficient $c(\omega)$ and a map $b$ &ldquo;choosing&rdquo; a basis element $b(\omega)$ per index $\omega$. This way, once a map $b : \Omega \to \mathcal{B}$ and a measure $\mu$ over $\Omega$ have been agreed upon, a vector can still be represented by &ldquo;its coefficients,&rdquo; which is just the map $c$.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.6. Example</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>We can consider the Hilbert space of all square-integrable functions</p>
+$$
+L^2(\mathbb{R}) = 
+\Bigl\{\, f:\mathbb{R} \to \mathbb{C} \; \big| \; \int_{-\infty}^{\infty} |f(t)|^2 \, dt < \infty \,\Bigr\},
+$$<p>with the inner product $\langle f_1(t), \, f_2(t) \rangle = \int_{\mathbb{R}} f_1(t) \overline{f_2(t)} \, dt$. A natural choice of &ldquo;continuous basis&rdquo; for $L^2(\mathbb{R})$ is the family of complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,</p>
+$$
+f(t) = \int_{\mathbb{R}} c(\omega)b(\omega) \, d\mu(\omega) = \int_{-\infty}^{\infty} c(\omega)\, b_\omega(t)\, d\omega.
+$$<p>The measure $d\omega$ is the typical Lebesgue measure on $\mathbb{R}$. Here, we see that any $f \in L^2(\mathbb{R})$ can be expressed as a continuous linear combination of basis elements in the form $e^{2 \pi i \omega t}$ which, to reiterate, are other functions parameterized by $t$ and indexed by $\omega \in \mathbb{R}$. In this case, the <a href="https://en.wikipedia.org/wiki/Fourier_transform">Fourier transform</a> of $f(t)$ provides $c(\omega)$:</p>
+$$
+c(\omega) = \int_{-\infty}^{\infty} f(t) \, \overline{b_\omega(t)} \, dt
+= \int_{-\infty}^{\infty} f(t)\, e^{-2 \pi i \omega t} \, dt.
+$$<p>In a finite-dimensional case, we would compute $\langle v, \, e_n \rangle$ to observe the &ldquo;contribution&rdquo; of the basis element $e_n$ in the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:</p>
+$$
+c(\omega) = \langle f(t), \, b_\omega(t) \rangle.
+$$<p>It is not difficult to show algebraically that the Fourier transform $\mathcal{F} : L^2(\mathbb{R}) \to L^2(\mathbb{R})$ is a linear operator over this Hilbert space. (So if it were countably-infinite dimensional, it would have a matrix representation.)</p>
+</div>
+</div>
+<h4 id="overview-1">Overview</h4>
+<p>We have expanded a finite-dimensional view of vector spaces to potentially allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^2$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered the conepts of Banach and Hilbert spaces.</p>
+<style>
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+</style>
+<div class="halign-container">
+<figure>
+    <img loading="lazy" src="david-hilbert.jpg"
+         alt="David Hilbert (January 23, 1862 – February 14, 1943)" width="256"/> <figcaption>
+            <p>David Hilbert (January 23, 1862 – February 14, 1943)</p>
+        </figcaption>
+</figure>
+
+</div>
+
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.7. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>In fact, $(1)$ is a special case of $(2)$, which is a special case of $(5)$. Therefore, it is truly a relaxation of the linear combination; at no point did we lock ourselves out of any vector spaces we could already span. Namely, in the case of $(5)$ and $(2)$ for a given vector space $V$,</p>
+$$
+\Omega = \mathbb{N} \iff \forall v \in V, \; v = \int_{\Omega} c(\omega)b(\omega) \, d{\mu}(\omega) = \sum_{i \, = \, 0}^{\infty} c_i b_i.
+$$<p>In the case of $(2)$ and $(5)$, when all vectors in $V$ are a linear combination of a finite number of basis elements (as is the case for $\mathbb{F}[x]$),</p>
+$$
+\forall v \in V, \; v = \sum_{i \, = \, 0}^{\infty} c_i b_i = \sum_{i \, = \, 0}^{k} c_i b_i \;\; \text{s.t.} \;\; k \in \mathbb{N}.
+$$</div>
+</div>
+<h3 id="multilinear-algebra">Multilinear Algebra</h3>
+<p>Perhaps one of the largest contributors to the intellectual moat around topics in machine learning is the concept of a tensor. Besides their typical characterization as &ldquo;nested arrays,&rdquo; I will provide a perspective that places them in the context of vector spaces and linear maps &ndash; that is, of linear algebra.</p>
+<h4 id="vectors-and-matrices">Vectors and Matrices</h4>
+<p>A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:</p>
+$$
+v = 
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}, \quad 
+M = 
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}.
+$$<p>To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and a linear map. To tell the complate story behind this, I will establish three resources below and explain afterward.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.8. Remark</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The set of linear maps from a vector space $V$ over the field $\mathbb{F}$ to another vector space $W$ (over the same field) forms a vector space over $\mathbb{F}$. That is,</p>
+$$
+\mathcal{L}(V, W) = \left\{ \, T : V \to W \; | \; T \text{ is linear} \right\}
+$$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators on $V$, which is simply $\mathcal{L}(V, V)$, as $\mathcal{L}(V)$.</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.9. Remark</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim(V) = n$ and $\dim(W) = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.10. Remark</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>A vector $v \in V$ can be regarded as a linear map from the field $\mathbb{F}$ into $V$, defined by</p>
+$$
+\varphi_v : \mathbb{F} \to V, \;\; \varphi_v(\lambda) = \lambda v.
+$$<p>When a basis for $V$ is fixed, the map $\varphi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &ldquo;coordinates&rdquo; of $v$.</p>
+</div>
+</div>
+<h4 id="linear-functionals">Linear Functionals</h4>
+<h4 id="dual-vector-spaces">Dual Vector Spaces</h4>
 <h3 id="signals-and-systems">Signals and Systems</h3>
 <h3 id="kernel-methods">Kernel Methods</h3>
 <div class="footnotes" role="doc-endnotes">

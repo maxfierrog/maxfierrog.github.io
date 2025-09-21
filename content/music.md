@@ -4,6 +4,7 @@ summary: A list of music pieces I love and optionally explanations of why.
 date: 2024-02-19
 ---
 
+{{< figure src="https://i.scdn.co/image/ab67616d0000b2738e59495684817f8385a1d1b5" width="256" attr="\"You Must Believe In Spring\" by Bill Evans" align=center target="_blank" >}}
 
 {{< figure src="https://i.scdn.co/image/ab67616d0000b27303c6fc1303e40be3e048bb97" width="256" attr="\"Tremors in the Static\" by Vega Trails" align=center target="_blank" >}}
 
