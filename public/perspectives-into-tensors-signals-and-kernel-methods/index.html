@@ -523,7 +523,7 @@ $$
 $$</div>
 </div>
 <h3 id="multilinear-algebra">Multilinear Algebra</h3>
-<p>Perhaps one of the largest contributors to the intellectual moat around topics in machine learning is the concept of a tensor. Besides their typical characterization as &ldquo;nested arrays,&rdquo; I will provide a perspective that places them in the context of vector spaces and linear maps &ndash; that is, of linear algebra.</p>
+<p>TODO</p>
 <h4 id="vectors-and-matrices">Vectors and Matrices</h4>
 <p>A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:</p>
 $$
@@ -537,7 +537,7 @@ M =
 1 & 2 \\
 3 & 4
 \end{bmatrix}.
-$$<p>To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and a linear map. To tell the complate story behind this, I will establish three resources below and explain afterward.</p>
+$$<p>To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and a linear map. For a richer support, I will establish three resources below and explain their relationship afterward.</p>
 <style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
@@ -640,9 +640,9 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>A vector $v \in V$ can be regarded as a linear map from the field $\mathbb{F}$ into $V$, defined by</p>
+<p>A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the vector space $\mathbb{F}^1$ into $V$, via</p>
 $$
-\varphi_v : \mathbb{F} \to V, \;\; \varphi_v(\lambda) = \lambda v.
+\varphi_v : \mathbb{F}^1 \to V, \;\; \varphi_v(\lambda) = \lambda v.
 $$<p>When a basis for $V$ is fixed, the map $\varphi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &ldquo;coordinates&rdquo; of $v$.</p>
 </div>
 </div>

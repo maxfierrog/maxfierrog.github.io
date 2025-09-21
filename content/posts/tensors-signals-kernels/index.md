@@ -287,7 +287,7 @@ $$
 
 ### Multilinear Algebra 
 
-Perhaps one of the largest contributors to the intellectual moat around topics in machine learning is the concept of a tensor. Besides their typical characterization as "nested arrays," I will provide a perspective that places them in the context of vector spaces and linear maps -- that is, of linear algebra. 
+TODO
 
 #### Vectors and Matrices
 
@@ -306,7 +306,7 @@ M =
 \end{bmatrix}.
 $$
 
-To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are _both_ matrices, each of which simultaneously identifies a vector and a linear map. To tell the complate story behind this, I will establish three resources below and explain afterward.
+To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are _both_ matrices, each of which simultaneously identifies a vector and a linear map. For a richer support, I will establish three resources below and explain their relationship afterward.
 
 {{% hint title="3.8. Remark" %}}
 
@@ -329,10 +329,10 @@ There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ s
 {{% hint title="3.10. Remark" %}}
 
 
-A vector $v \in V$ can be regarded as a linear map from the field $\mathbb{F}$ into $V$, defined by
+A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the vector space $\mathbb{F}^1$ into $V$, via 
 
 $$
-\varphi_v : \mathbb{F} \to V, \;\; \varphi_v(\lambda) = \lambda v.
+\varphi_v : \mathbb{F}^1 \to V, \;\; \varphi_v(\lambda) = \lambda v.
 $$
 
 When a basis for $V$ is fixed, the map $\varphi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of "coordinates" of $v$. 
