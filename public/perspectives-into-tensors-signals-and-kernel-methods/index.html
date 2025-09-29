@@ -76,7 +76,7 @@
     <li><a href="#introduction">Introduction</a>
       <ul>
         <li><a href="#vector-spaces">Vector Spaces</a></li>
-        <li><a href="#multilinear-algebra">Multilinear Algebra</a></li>
+        <li><a href="#tensor-spaces">Tensor Spaces</a></li>
         <li><a href="#signals-and-systems">Signals and Systems</a></li>
         <li><a href="#kernel-methods">Kernel Methods</a></li>
       </ul>
@@ -522,11 +522,12 @@ $$
 \forall v \in V, \; v = \sum_{i \, = \, 0}^{\infty} c_i b_i = \sum_{i \, = \, 0}^{k} c_i b_i \;\; \text{s.t.} \;\; k \in \mathbb{N}.
 $$</div>
 </div>
-<h3 id="multilinear-algebra">Multilinear Algebra</h3>
-<p>TODO</p>
+<h3 id="tensor-spaces">Tensor Spaces</h3>
+<p>As a computer scientist, I was introduced to tensors as &ldquo;multidimensional arrays&rdquo; in a class while talking about representations for multi-channel media such as images. Like most other common first approaches to the topic, it is practically sufficient but conceptually incomplete. The truth is that this incompleteness is seldom resolved in the remainder of most students&rsquo; academic journey. Here, I offer a resolution.</p>
 <h4 id="vectors-and-matrices">Vectors and Matrices</h4>
 <p>A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:</p>
 $$
+\begin{equation}
 v = 
 \begin{bmatrix}
 1 \\
@@ -537,6 +538,7 @@ M =
 1 & 2 \\
 3 & 4
 \end{bmatrix}.
+\end{equation}
 $$<p>To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and a linear map. For a richer support, I will establish three resources below and explain their relationship afterward.</p>
 <style>
     .box-body > :last-child {
@@ -606,7 +608,7 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim(V) = n$ and $\dim(W) = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.</p>
+<p>There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim V = n$ and $\dim W = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.</p>
 </div>
 </div>
 <style>
@@ -640,14 +642,228 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the vector space $\mathbb{F}^1$ into $V$, via</p>
+<p>A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the space $\mathbb{F}^1$ into $V$, via</p>
 $$
-\varphi_v : \mathbb{F}^1 \to V, \;\; \varphi_v(\lambda) = \lambda v.
-$$<p>When a basis for $V$ is fixed, the map $\varphi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &ldquo;coordinates&rdquo; of $v$.</p>
+\psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda
+$$<p>When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &ldquo;coordinates&rdquo; of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,</p>
+$$
+\psi_v(\lambda) = 
+\begin{bmatrix}
+v_1 \\
+v_2 \\
+\vdots \\
+v_{(\dim V)}
+\end{bmatrix}
+\begin{bmatrix}
+\lambda_1
+\end{bmatrix} =
+\begin{bmatrix}
+\lambda_1 v_1 \\
+\lambda_1 v_2 \\
+\vdots \\
+\lambda_1 v_{(\dim V)}
+\end{bmatrix} = 
+\lambda_1 v.
+$$</div>
+</div>
+<p>This sets up a clear organization of vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence</p>
+$$
+\text{Linear maps} \cong \text{Vectors}.
+$$<p>Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so in finite dimensions ($\cong^!$)</p>
+$$
+\text{Matrices} \cong^! \text{Linear maps}.
+$$<p>Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, <strong>turning the linear map into the central object of our understanding of linear algebra.</strong> In summary,</p>
+$$
+\begin{equation}
+    \text{Matrices} \cong^! \text{Linear maps} \cong \text{Vectors}.
+\end{equation}
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.11. Critical Remark</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Although true, the statement of 3.10 is quite tricky. In particular, consider the case when you have a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$, given bases. According to 3.8 that map is a vector, but according to 3.10 it is identified by some <em>other</em> linear map $\psi_v$, which is identified by some <em>other</em> column matrix $M^\prime$,</p>
+$$
+M 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}^{-1}} T 
+\xrightarrow{\displaystyle\Psi_{\mathcal{L}(V, W)}} \psi_v 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}} M^\prime.
+$$<p>The basis-conscious bijection $\Phi_\mathcal{B} : \mathcal{L}(V, W) \to \mathbb{F}^{(\dim W) \times (\dim V)}$ lives up to 3.9, but we silently adopted the canonical translation $\Psi_U$ of arbitrary vectors into linear maps in 3.10,</p>
+$$
+\Psi_U : U \to \mathcal{L}(\mathbb{F}^1, U) \;\; \text{s.t.} \;\; \Psi_U(u) = \psi_u \; \forall \, u \in U.
+$$<p>This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ &ldquo;canonical.&rdquo; In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.</p>
 </div>
 </div>
-<h4 id="linear-functionals">Linear Functionals</h4>
-<h4 id="dual-vector-spaces">Dual Vector Spaces</h4>
+<h4 id="linear-forms">Linear Forms</h4>
+<p>In a way that is &ldquo;dual&rdquo; to the statements of 3.10 and 3.11, one could look at another representation which, while not as obvious as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,</p>
+$$
+\Psi_U^* : U \to \mathcal{L}(U, \mathbb{F}^1) \;\; \text{s.t.} \;\; \Psi_U^*(u) = \varphi_u \; \forall \, u \in U.
+$$<p>That is, for each vector $u \in U$, we can choose to represent it as a linear map $\varphi_u : U \to \mathbb{F}^1$. Back to the line of thought in 3.10, we see that when a basis is fixed, any such $\varphi_u$ can be identified by a $1 \times n$ matrix (again by 3.8). This can be illustrated quite simply for finite dimensions:</p>
+$$
+\varphi_u(v) = 
+\begin{bmatrix}
+u_1 \quad
+u_2 \quad
+\dots \quad
+u_{(\dim U)}
+\end{bmatrix}
+\begin{bmatrix}
+v_1 \\
+v_2 \\
+\vdots \\
+v_{(\dim U)}
+\end{bmatrix} =
+\begin{bmatrix}
+\sum_{i \, = \, 1}^{\dim U} u_i v_i
+\end{bmatrix}.
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.12. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Just as stated in 3.11 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ from row matrices in the case of vector spaces $U$ of infinite dimension does not always work, as matrix representations sometimes make no sense there. Hence, the concrete choice of $\Psi_U^*$ may require deeper consideration (e.g. in uncountably-infinite dimensions).</p>
+</div>
+</div>
+<h4 id="dual-spaces">Dual Spaces</h4>
+<p>All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of <a href="https://en.wikipedia.org/wiki/Linear_form">linear forms</a> on the space $U$. After 3.8, this is no more than the vector space</p>
+$$
+ U^* = \{ \, \varphi : U \to \mathbb{F}^1 \; | \; \varphi \text{ is linear} \}.
+$$<p>This is called the <a href="https://en.wikipedia.org/wiki/Dual_space">dual vector space</a> of $U$, which receives the special notation $U^*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^*$ (which are the covectors of elements of $U$) can be represented by row matrices (wherever matrices make sense).</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.13. Remark</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>In any Hilbert space $H$, for every continuous linear form $\varphi \in H^*$, there is a unique vector $u \in H$ with</p>
+$$
+ \forall \, v \in H, \; \varphi(v) = \langle u, v \rangle.
+$$<p>Furthermore, $||u|| = ||\varphi||$. This gives a natural identification between elements of $H$ and $H^*$ by the canonical bijection $J : u \mapsto \varphi$. Here, we say &ldquo;canonical&rdquo; because it is provided uniquely by the inner product. This is the statement of the <a href="https://en.wikipedia.org/wiki/Riesz_representation_theorem">Riesz representation theorem</a>.</p>
+</div>
+</div>
+<p>It is not difficult to see that for any vector space $V$ over a field $\mathbb{F}$, in fact, $\Psi_V$ and $\Psi_V^*$ are both bijections. Since they are canonical (in the sense that they are naturally defined), we can dare write</p>
+$$
+V = \mathcal{L}(\mathbb{F}^1, V) \;\; \text{and} \;\; V^* = \mathcal{L}(V, \mathbb{F}^1).
+$$<h4 id="multilinearity">Multilinearity</h4>
+<p>We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where</p>
+$$
+T : V_1 \times V_2 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, v_2, \, \ldots, \, v_n) = w,
+$$<p>we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the newly altered $T^\prime : V_i \to W$ a linear map. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called <a href="https://en.wikipedia.org/wiki/Multilinear_map">multilinear maps</a>.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.14. Example</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Matrix-vector multiplication can be seen as a bilinear ($2$-linear) map,</p>
+$$
+B : M_{m \times n}(\mathbb{F}) \times \mathbb{F}^n \to \mathbb{F}^m.
+$$<p>This is with the understanding that $m$-by-$n$ matrices with entries in $\mathbb{F}$, in other words $M_{m \times n}(\mathbb{F})$, indeed form a vector space over the same field $\mathbb{F}$. One can verify that fixing either argument (the vector or the matrix) forms a linear map with the other argument.</p>
+</div>
+</div>
+<p>We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has the codomain of $\mathbb{F}$ itself, it is called an $n$-linear form (where all maps like this are called <a href="https://en.wikipedia.org/wiki/Multilinear_form">multilinear forms</a>).</p>
 <h3 id="signals-and-systems">Signals and Systems</h3>
 <h3 id="kernel-methods">Kernel Methods</h3>
 <div class="footnotes" role="doc-endnotes">

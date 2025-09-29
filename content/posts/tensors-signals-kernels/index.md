@@ -237,7 +237,6 @@ L^2(\mathbb{R}) =
 \Bigl\{\, f:\mathbb{R} \to \mathbb{C} \; \big| \; \int_{-\infty}^{\infty} |f(t)|^2 \, dt < \infty \,\Bigr\},
 $$
 
-
 with the inner product $\langle f_1(t), \\, f_2(t) \rangle = \int_{\mathbb{R}} f_1(t) \overline{f_2(t)} \\, dt$. A natural choice of "continuous basis" for $L^2(\mathbb{R})$ is the family of complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,
 
 $$
@@ -285,15 +284,16 @@ $$
 
 {{% /hint %}}
 
-### Multilinear Algebra 
+### Tensor Spaces
 
-TODO
+As a computer scientist, I was introduced to tensors as "multidimensional arrays" in a class while talking about representations for multi-channel media such as images. Like most other common first approaches to the topic, it is practically sufficient but conceptually incomplete. The truth is that this incompleteness is seldom resolved in the remainder of most students' academic journey. Here, I offer a resolution.
 
 #### Vectors and Matrices
 
 A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:
 
 $$
+\begin{equation}
 v = 
 \begin{bmatrix}
 1 \\
@@ -304,6 +304,7 @@ M =
 1 & 2 \\
 3 & 4
 \end{bmatrix}.
+\end{equation}
 $$
 
 To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are _both_ matrices, each of which simultaneously identifies a vector and a linear map. For a richer support, I will establish three resources below and explain their relationship afterward.
@@ -322,26 +323,169 @@ is a vector space over $\mathbb{F}$. We denote the case of linear operators on $
 
 {{% hint title="3.9. Remark" %}}
 
-There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim(V) = n$ and $\dim(W) = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.
+There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim V = n$ and $\dim W = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.
 
 {{% /hint %}}
 
 {{% hint title="3.10. Remark" %}}
 
-
-A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the vector space $\mathbb{F}^1$ into $V$, via 
+A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the space $\mathbb{F}^1$ into $V$, via 
 
 $$
-\varphi_v : \mathbb{F}^1 \to V, \;\; \varphi_v(\lambda) = \lambda v.
+\psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda
 $$
 
-When a basis for $V$ is fixed, the map $\varphi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of "coordinates" of $v$. 
+When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of "coordinates" of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,
+
+$$
+\psi_v(\lambda) = 
+\begin{bmatrix}
+v_1 \\
+v_2 \\
+\vdots \\
+v_{(\dim V)}
+\end{bmatrix}
+\begin{bmatrix}
+\lambda_1
+\end{bmatrix} =
+\begin{bmatrix}
+\lambda_1 v_1 \\
+\lambda_1 v_2 \\
+\vdots \\
+\lambda_1 v_{(\dim V)}
+\end{bmatrix} = 
+\lambda_1 v.
+$$
 
 {{% /hint %}}
 
-#### Linear Functionals 
+This sets up a clear organization of vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence 
 
-#### Dual Vector Spaces 
+$$
+\text{Linear maps} \cong \text{Vectors}.
+$$
+
+Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so in finite dimensions ($\cong^\!$)
+
+$$
+\text{Matrices} \cong^! \text{Linear maps}.
+$$
+
+Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, **turning the linear map into the central object of our understanding of linear algebra.** In summary,
+
+$$
+\begin{equation}
+    \text{Matrices} \cong^! \text{Linear maps} \cong \text{Vectors}.
+\end{equation}
+$$
+
+{{% hint title="3.11. Critical Remark" %}}
+
+Although true, the statement of 3.10 is quite tricky. In particular, consider the case when you have a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$, given bases. According to 3.8 that map is a vector, but according to 3.10 it is identified by some _other_ linear map $\psi_v$, which is identified by some _other_ column matrix $M^\prime$,
+
+$$
+M 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}^{-1}} T 
+\xrightarrow{\displaystyle\Psi_{\mathcal{L}(V, W)}} \psi_v 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}} M^\prime.
+$$
+
+The basis-conscious bijection $\Phi_\mathcal{B} : \mathcal{L}(V, W) \to \mathbb{F}^{(\dim W) \times (\dim V)}$ lives up to 3.9, but we silently adopted the canonical translation $\Psi_U$ of arbitrary vectors into linear maps in 3.10,
+
+$$
+\Psi_U : U \to \mathcal{L}(\mathbb{F}^1, U) \;\; \text{s.t.} \;\; \Psi_U(u) = \psi_u \; \forall \, u \in U.
+$$
+
+This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ "canonical." In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.
+
+{{% /hint %}}
+
+#### Linear Forms 
+
+In a way that is "dual" to the statements of 3.10 and 3.11, one could look at another representation which, while not as obvious as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,
+
+$$
+\Psi_U^* : U \to \mathcal{L}(U, \mathbb{F}^1) \;\; \text{s.t.} \;\; \Psi_U^*(u) = \varphi_u \; \forall \, u \in U.
+$$
+
+That is, for each vector $u \in U$, we can choose to represent it as a linear map $\varphi_u : U \to \mathbb{F}^1$. Back to the line of thought in 3.10, we see that when a basis is fixed, any such $\varphi_u$ can be identified by a $1 \times n$ matrix (again by 3.8). This can be illustrated quite simply for finite dimensions:
+
+$$
+\varphi_u(v) = 
+\begin{bmatrix}
+u_1 \quad
+u_2 \quad
+\dots \quad
+u_{(\dim U)}
+\end{bmatrix}
+\begin{bmatrix}
+v_1 \\
+v_2 \\
+\vdots \\
+v_{(\dim U)}
+\end{bmatrix} =
+\begin{bmatrix}
+\sum_{i \, = \, 1}^{\dim U} u_i v_i
+\end{bmatrix}.
+$$
+
+{{% hint title="3.12. Note" %}}
+
+Just as stated in 3.11 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ from row matrices in the case of vector spaces $U$ of infinite dimension does not always work, as matrix representations sometimes make no sense there. Hence, the concrete choice of $\Psi_U^\*$ may require deeper consideration (e.g. in uncountably-infinite dimensions).
+
+{{% /hint %}}
+
+#### Dual Spaces 
+
+All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of [linear forms](https://en.wikipedia.org/wiki/Linear_form) on the space $U$. After 3.8, this is no more than the vector space 
+
+$$
+ U^* = \{ \, \varphi : U \to \mathbb{F}^1 \; | \; \varphi \text{ is linear} \}.
+$$
+
+This is called the [dual vector space](https://en.wikipedia.org/wiki/Dual_space) of $U$, which receives the special notation $U^\*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^\*$ (which are the covectors of elements of $U$) can be represented by row matrices (wherever matrices make sense).
+
+{{% hint title="3.13. Remark" %}}
+
+In any Hilbert space $H$, for every continuous linear form $\varphi \in H^*$, there is a unique vector $u \in H$ with
+
+$$
+ \forall \, v \in H, \; \varphi(v) = \langle u, v \rangle.
+$$
+
+Furthermore, $||u|| = ||\varphi||$. This gives a natural identification between elements of $H$ and $H^*$ by the canonical bijection $J : u \mapsto \varphi$. Here, we say "canonical" because it is provided uniquely by the inner product. This is the statement of the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem).
+
+{{% /hint %}}
+
+It is not difficult to see that for any vector space $V$ over a field $\mathbb{F}$, in fact, $\Psi_V$ and $\Psi_V^\*$ are both bijections. Since they are canonical (in the sense that they are naturally defined), we can dare write
+
+$$
+V = \mathcal{L}(\mathbb{F}^1, V) \;\; \text{and} \;\; V^* = \mathcal{L}(V, \mathbb{F}^1).
+$$
+
+#### Multilinearity
+
+We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where 
+
+$$
+T : V_1 \times V_2 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, v_2, \, \ldots, \, v_n) = w,
+$$
+
+we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the newly altered $T^\prime : V_i \to W$ a linear map. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called [multilinear maps](https://en.wikipedia.org/wiki/Multilinear_map). 
+
+{{% hint title="3.14. Example" %}}
+
+Matrix-vector multiplication can be seen as a bilinear ($2$-linear) map,
+
+$$
+B : M_{m \times n}(\mathbb{F}) \times \mathbb{F}^n \to \mathbb{F}^m.
+$$
+
+This is with the understanding that $m$-by-$n$ matrices with entries in $\mathbb{F}$, in other words $M_{m \times n}(\mathbb{F})$, indeed form a vector space over the same field $\mathbb{F}$. One can verify that fixing either argument (the vector or the matrix) forms a linear map with the other argument.
+
+{{% /hint %}}
+
+We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has the codomain of $\mathbb{F}$ itself, it is called an $n$-linear form (where all maps like this are called [multilinear forms](https://en.wikipedia.org/wiki/Multilinear_form)).
 
 ### Signals and Systems 
 
