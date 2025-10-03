@@ -523,7 +523,10 @@ $$
 $$</div>
 </div>
 <h3 id="tensor-spaces">Tensor Spaces</h3>
-<p>As a computer scientist, I was introduced to tensors as &ldquo;multidimensional arrays&rdquo; in a class while talking about representations for multi-channel media such as images. Like most other common first approaches to the topic, it is practically sufficient but conceptually incomplete. The truth is that this incompleteness is seldom resolved in the remainder of most students&rsquo; academic journey. Here, I offer a resolution.</p>
+<p>Let us revisit the opening scene of <em>Linear Algebra Done Right</em>:</p>
+<blockquote>
+<p>Linear algebra is the study of linear maps on finite-dimensional vector spaces.</p></blockquote>
+<p>Another thing to note (apart from the restriction to finite dimensions) is the lack of matrices and vectors in this description. This section will live up to this witholding; we will first look for a linear-map-centric view of the objects in linear algebra and, afterwards, gain an understanding of tensor spaces.</p>
 <h4 id="vectors-and-matrices">Vectors and Matrices</h4>
 <p>A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:</p>
 $$
@@ -539,7 +542,7 @@ M =
 3 & 4
 \end{bmatrix}.
 \end{equation}
-$$<p>To talk about multilinear algebra and to gain a principled understanding of tensors, I will expose the idea that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and a linear map. For a richer support, I will establish three resources below and explain their relationship afterward.</p>
+$$<p>I assert that $v$ and $M$ are <em>both</em> matrices, each of which simultaneously identifies a vector and linear map. For richer support, I will establish three resources below and explain their relationship afterward.</p>
 <style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
@@ -560,7 +563,7 @@ $$<p>To talk about multilinear algebra and to gain a principled understanding of
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >3.8. Remark</strong
+        >3.8. Note</strong
     >
     <hr
         style="
@@ -597,7 +600,7 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >3.9. Remark</strong
+        >3.9. Note</strong
     >
     <hr
         style="
@@ -608,7 +611,7 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{m \times n}$ such that $\dim V = n$ and $\dim W = m$, where $V$ and $W$ are vector spaces over the field $\mathbb{F}$. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.</p>
+<p>There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.</p>
 </div>
 </div>
 <style>
@@ -631,7 +634,7 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >3.10. Remark</strong
+        >3.10. Note</strong
     >
     <hr
         style="
@@ -644,7 +647,7 @@ $$<p>is a vector space over $\mathbb{F}$. We denote the case of linear operators
     <div style="font-size: 0.92em" class="box-body">
 <p>A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the space $\mathbb{F}^1$ into $V$, via</p>
 $$
-\psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda
+\psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda.
 $$<p>When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &ldquo;coordinates&rdquo; of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,</p>
 $$
 \psi_v(\lambda) = 
@@ -672,11 +675,21 @@ $$
 $$<p>Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so in finite dimensions ($\cong^!$)</p>
 $$
 \text{Matrices} \cong^! \text{Linear maps}.
-$$<p>Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, <strong>turning the linear map into the central object of our understanding of linear algebra.</strong> In summary,</p>
+$$<p>Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, turning the linear map into the central object of our understanding of linear algebra. In summary,</p>
 $$
 \begin{equation}
     \text{Matrices} \cong^! \text{Linear maps} \cong \text{Vectors}.
 \end{equation}
+$$<h4 id="vector-translation">Vector Translation</h4>
+<p>The statement of 3.10 is neuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some <em>other</em> linear map $\psi_v$, which is identified by some <em>other</em> column matrix $M^\prime$,</p>
+$$
+M 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}^{-1}} T 
+\xrightarrow{\displaystyle\Psi_{\mathcal{L}(V, W)}} \psi_v 
+\xrightarrow{\displaystyle\Phi_\mathcal{B}} M^\prime.
+$$<p>In this diagram, the basis-conscious bijection $\Phi_\mathcal{B} : \mathcal{L}(V, W) \to \mathbb{F}^{(\dim W) \times (\dim V)}$ lives up to 3.9, but we silently adopted the canonical translation $\Psi_U$ of arbitrary vectors into linear maps in 3.10,</p>
+$$
+\Psi_U : U \to \mathcal{L}(\mathbb{F}^1, U) \;\; \text{s.t.} \;\; \Psi_U(u) = \psi_u \; \forall \, u \in U.
 $$<style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
@@ -697,7 +710,7 @@ $$<style>
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >3.11. Critical Remark</strong
+        >3.11. Note</strong
     >
     <hr
         style="
@@ -708,16 +721,7 @@ $$<style>
         "
     />
     <div style="font-size: 0.92em" class="box-body">
-<p>Although true, the statement of 3.10 is quite tricky. In particular, consider the case when you have a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$, given bases. According to 3.8 that map is a vector, but according to 3.10 it is identified by some <em>other</em> linear map $\psi_v$, which is identified by some <em>other</em> column matrix $M^\prime$,</p>
-$$
-M 
-\xrightarrow{\displaystyle\Phi_\mathcal{B}^{-1}} T 
-\xrightarrow{\displaystyle\Psi_{\mathcal{L}(V, W)}} \psi_v 
-\xrightarrow{\displaystyle\Phi_\mathcal{B}} M^\prime.
-$$<p>The basis-conscious bijection $\Phi_\mathcal{B} : \mathcal{L}(V, W) \to \mathbb{F}^{(\dim W) \times (\dim V)}$ lives up to 3.9, but we silently adopted the canonical translation $\Psi_U$ of arbitrary vectors into linear maps in 3.10,</p>
-$$
-\Psi_U : U \to \mathcal{L}(\mathbb{F}^1, U) \;\; \text{s.t.} \;\; \Psi_U(u) = \psi_u \; \forall \, u \in U.
-$$<p>This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ &ldquo;canonical.&rdquo; In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.</p>
+<p>This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ &ldquo;canonical.&rdquo; In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.</p>
 </div>
 </div>
 <h4 id="linear-forms">Linear Forms</h4>
@@ -780,7 +784,7 @@ $$<style>
 <p>All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of <a href="https://en.wikipedia.org/wiki/Linear_form">linear forms</a> on the space $U$. After 3.8, this is no more than the vector space</p>
 $$
  U^* = \{ \, \varphi : U \to \mathbb{F}^1 \; | \; \varphi \text{ is linear} \}.
-$$<p>This is called the <a href="https://en.wikipedia.org/wiki/Dual_space">dual vector space</a> of $U$, which receives the special notation $U^*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^*$ (which are the covectors of elements of $U$) can be represented by row matrices (wherever matrices make sense).</p>
+$$<p>This is called the <a href="https://en.wikipedia.org/wiki/Dual_space">dual vector space</a> of $U$, which receives the special notation $U^*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^*$ (which are called covectors) can be represented by row matrices (wherever matrices make sense).</p>
 <style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
@@ -801,7 +805,7 @@ $$<p>This is called the <a href="https://en.wikipedia.org/wiki/Dual_space">dual 
     "
 >
     <strong style="display: block; margin-bottom: 5px"
-        >3.13. Remark</strong
+        >3.13. Note</strong
     >
     <hr
         style="
@@ -818,9 +822,9 @@ $$
 $$<p>Furthermore, $||u|| = ||\varphi||$. This gives a natural identification between elements of $H$ and $H^*$ by the canonical bijection $J : u \mapsto \varphi$. Here, we say &ldquo;canonical&rdquo; because it is provided uniquely by the inner product. This is the statement of the <a href="https://en.wikipedia.org/wiki/Riesz_representation_theorem">Riesz representation theorem</a>.</p>
 </div>
 </div>
-<p>It is not difficult to see that for any vector space $V$ over a field $\mathbb{F}$, in fact, $\Psi_V$ and $\Psi_V^*$ are both bijections. Since they are canonical (in the sense that they are naturally defined), we can dare write</p>
+<p>It is not difficult to see that for any vector space $V$ over a field $\mathbb{F}$, in fact, $\Psi_V$ and $\Psi_V^*$ are both bijections. Since they are canonical (in the sense that they are naturally defined), it is only right to assert that</p>
 $$
-V = \mathcal{L}(\mathbb{F}^1, V) \;\; \text{and} \;\; V^* = \mathcal{L}(V, \mathbb{F}^1).
+V \cong \mathcal{L}(\mathbb{F}^1, V) \;\; \text{and} \;\; V^* \cong \mathcal{L}(V, \mathbb{F}^1).
 $$<h4 id="multilinearity">Multilinearity</h4>
 <p>We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where</p>
 $$
@@ -864,7 +868,428 @@ $$<p>This is with the understanding that $m$-by-$n$ matrices with entries in $\m
 </div>
 </div>
 <p>We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has the codomain of $\mathbb{F}$ itself, it is called an $n$-linear form (where all maps like this are called <a href="https://en.wikipedia.org/wiki/Multilinear_form">multilinear forms</a>).</p>
-<h3 id="signals-and-systems">Signals and Systems</h3>
+<h4 id="tensor-product">Tensor Product</h4>
+<p>If one has two vector spaces $V$ and $W$ over the same field, one can naturally talk about their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, one can talk about a third vector space $V \otimes W$ (called the <a href="https://en.wikipedia.org/wiki/Tensor_product">tensor product</a> of $V$ and $W$) which, while having just as much expressiveness as $V \times W$, of course has the added benefit of being a vector space itself.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.15. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the <a href="https://en.wikipedia.org/wiki/Universal_property">universal property</a> of the tensor product, which justifies the phrase &ldquo;just as much expressiveness.&rdquo;</p>
+</div>
+</div>
+<p>Every tensor product $V \otimes W$ is equipped with such a bilinear map $\varphi : V \times W \to V \otimes W$ that allows the construction of vectors in $V \otimes W$. The <a href="https://en.wikipedia.org/wiki/Outer_product">outer product</a> is an example of this in finite dimensions, but in other cases one must be more creative. Confusingly, this map $\varphi$ is also called a tensor product, and $\otimes$ is predominantly used instead of $\varphi$ in notation. Summarizing,</p>
+$$
+\forall (v, w) \in V \times W, \; \varphi(v, w) = v \otimes w \quad \text{where} \quad v \otimes w \in V \otimes W.
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.16. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Even if the tensor product among vectors is not strictly commutative, there are canonical isomorphisms among permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,</p>
+$$
+V_1 \otimes \cdots \otimes V_n \;\cong\; V_{\sigma(1)} \otimes \cdots \otimes V_{\sigma(n)}.
+$$<p>Due to this symmetry, we often write tensor products as if they were commutative without loss of generality. But when one talks about actual computation or representations, order will probably matter.</p>
+</div>
+</div>
+<p>Totally, through 3.15 and 3.16, the tensor product is precisely designed to &ldquo;linearize&rdquo; multilinear maps. To elaborate, for any multilinear map $h : V_1 \times V_2 \times \dots \times V_n \to W$, there exists a unique linear map</p>
+$$
+\tilde h : \bigotimes_i V_i \to W \;\; \text{s.t.} \;\; \tilde h(v_1 \otimes \cdots \otimes v_n) = h(v_1, \ldots, v_n).
+$$<h4 id="more-matrices">More Matrices</h4>
+<p>Being now able to identify every multilinear map with a unique linear map over a tensor product space, it is possible to assert that 3.8, 3.9, and 3.10 also apply to tensor product spaces. I will reiterate the notes, dressing them up specifically for the case of tensor product spaces.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.17. Specialization of 3.8</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The set of linear maps from a tensor product space $\bigotimes_i V_i$ over the field $\mathbb{F}$ to another vector space $W$ over $\mathbb{F}$ forms a vector space over $\mathbb{F}$. Symbolically,</p>
+$$
+\mathcal{L}({\textstyle\bigotimes}_i V_i, W) = \left\{ \, T : \bigotimes_i V_i \to W \;\; \bigg| \;\; T \text{ is linear}  \right\}
+$$<p>is a vector space over $\mathbb{F}$. We denote the operator case as $\mathcal{L}(\bigotimes_i V_i) = \mathcal{L}(\bigotimes_i V_i, \, \bigotimes_i V_i)$.</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.18. Specialization of 3.9</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>There is a bijection between $\mathcal{L}(\bigotimes_i V_i, W)$ and $\mathbb{F}^{\times_i (\dim V_i)} \times \mathbb{F}^{(\dim W)}$ when $V$ and $W$ are finite-dimensional vector spaces over $\mathbb{F}$. That is, for each linear map from a tensor product over spaces $V_1, \, \ldots, \, V_n$ and into $W$ (all over a field $\mathbb{F}$), there is one matrix with axis lengths $(\dim V_1, \, \ldots, \, \dim V_n, \, \dim W)$ with entries in $\mathbb{F}$.</p>
+</div>
+</div>
+<p>Often, $(\dim V_1, \, \ldots, \, \dim V_n, \, \dim W)$ from 3.18 is referred to as the shape of the matrix. Each entry of the shape tuple can be viewed as the sidelength of a pictographical embedding of the matrix in $\mathbb{R}^{n + 1}$. For example, the matrix in $\mathbb{R}^{2 \times 3}$</p>
+$$
+M = 
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{bmatrix}
+$$<p>is said to have shape $(2, 3)$ &ndash; once it is &ldquo;drawn on paper,&rdquo; its &ldquo;sidelengths&rdquo; are $2$ and $3$. Keeping the spirit of &ldquo;pictographical&rdquo; representation, people often call this a $2$-dimensional array, as it can be neatly &ldquo;drawn&rdquo; on two dimensions. But concretely, this matrix corresponds to a $6$-dimensional linear map. This ambiguity is often resolved by calling each shape entry an &ldquo;axis&rdquo; instead of a dimension, understanding that it refers to the visual axis of $\mathbb{R}^n$ where we would pictographically embed it.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.19. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Software libraries that represent matrices often make the choice of calling them either $n$-dimensional arrays or simply tensors in an effort to maintain generality. Arguably, these terms are both misnomers. Personally, I think they should have just called them all matrices.</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.20. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Appending a trailing \(1\) to the shape of a matrix does not change the underlying object. Concretely, a matrix of shape \((\alpha_1, \, \ldots, \, \alpha_n)\) can be naturally identified with one of shape \((\beta_1, \, \ldots, \, \beta_n)\) when $\prod_i \alpha_i = \prod_i \beta_i$. This is a result of the isomorphisms included in the scope of</p>
+$$
+\prod_i \dim \Alpha_i = \prod_i \dim \Beta_i \iff \bigotimes_i \Alpha_i \;\cong\; \bigotimes_i \Beta_i \, .
+$$</div>
+</div>
+<p>Some bijections of the form $f : \bigotimes_i \Alpha_i \to \bigotimes_i \Beta_i$ are often referred to as &ldquo;reshapings.&rdquo; This concept is hard to formalize, but pictographically graspable. For example, this is one way to reshape $M$:</p>
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{bmatrix}
+\xrightarrow{f}
+\begin{bmatrix}
+1 & 2 & 3 & 4 & 5 & 6 \\
+\end{bmatrix}
+\xrightarrow{g}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+5 & 6 \\
+\end{bmatrix}.
+$$<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.21. Specialization of 3.10</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Every vector $v$ in a tensor product space $\bigotimes_i V_i$ can be seen as a linear map from the sapce $\mathbb{F}^1$ into $\bigotimes_i V_i$ through the definition</p>
+$$
+\psi_v : \mathbb{F}^1 \to \bigotimes_i V_i \, , \;\; \psi_v(\lambda) = v \lambda.
+$$<p>With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \, \bigotimes_i V_i)$ (as an instance of note 3.17). However, in the context of tensor product spaces, it is common to represent $\psi_v$ using a matrix of shape $(\dim V_1, \, \ldots, \, \dim V_n)$ (invoking 3.20). This is done to facilitate descriptions of computations involving the vector in question.</p>
+</div>
+</div>
+<h4 id="actual-tensors">Actual Tensors</h4>
+<p>Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. But traditionally, a <a href="https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)">tensor</a> is a linear map associated with a vector space $V$ over $\mathbb{F}$ of the form</p>
+$$
+\begin{equation}
+ T_{n}^{\, m} : (\times^n \, V) \times (\times^m \, V^*) \to \mathbb{F}.
+\end{equation}
+$$<p>Here, $(m, \, n)$ is called the &ldquo;type&rdquo; of the tensor $T$. Perhaps the most important restriction of this definition is that we are only talking about a single vector space $V$, making it invalid to call $\mathbb{R}^2 \otimes \mathbb{R}^3 \to \mathbb{R}$ a tensor (without first invoking some isomorphism).</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.22. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.23. Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The vector-valued tensor product $\otimes : V \times W \to V \otimes W$ provides the isomorphism</p>
+$$
+\{f : V \times W \to Z \; | \; f \text{ is linear} \} \cong \{g : V \otimes W \to Z \; | \; g \text{ is linear} \}
+$$<p>as a corollary of 3.15. Furthermore, it is canonical in the sense that the vector-valued tensor product is static. In the case of $V = W$, $\; \{g : V \otimes V \to \mathbb{F}^1 \; | \; g \text{ is linear} \} = \mathcal{L}(V \otimes V, \mathbb{F}^1) = (V \otimes V)^* \cong V^* \otimes V^*$. With this we can see that for all instances of $(8)$,</p>
+$$
+T_n^{\, m} \in \left( \otimes^m \, V \right) \otimes \left( \otimes^n \, V^* \right).
+$$</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.24. Examples</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>Let us observe the types of some known tensors of form $T : (\times^n \, V) \to \mathbb{F}$.</p>
+<ol>
+<li>Any scalar $\lambda : \varnothing \to \mathbb{F}$ is a tensor of type $(0, \, 0)$.</li>
+<li>Any norm $|| \cdot || : v \mapsto ||v||$ is a tensor of type $(0, \, 1)$.</li>
+<li>Any quadratic form $q : v \mapsto v^\top A v$ is a tensor of type $(0, \, 1)$.</li>
+<li>Any inner product $\langle \cdot, \cdot \rangle : (v, w) \mapsto \mathbb{F}$ is a tensor of type $(0, \, 2)$.</li>
+</ol>
+</div>
+</div>
+<p>All the tensors in 3.24 are scalar-valued. Now I will show how we can see that vector-valued linear maps are also tensors. Consider a tensor-valued multilinear map of the form</p>
+$$
+T : (\times^a \, V) \times (\times^b \, V^*) \to \left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right).
+$$<p>By showing that $T$ identifies a tensor, we will also show that an arbitrary linear map defined using a single vector space $V$ identifies a tensor (including tensor-valued maps, via 3.23). First, we define</p>
+$$
+\begin{align*}
+\tilde T : \; & (\times^a \, V) \times (\times^b \, V^*) \times (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^* \to \mathbb{F} \\
+& \text{s.t.} \;\; \tilde T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b,  \, \varphi) = \varphi(T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b)),
+\end{align*}
+$$<p>where $v_i \in V$, $w_i \in V^*$, and $\varphi \in (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^*$. Thanks to 3.15, there is a unique</p>
+$$
+\begin{align*}
+\hat T : (\otimes^a \, V) \otimes (\otimes^b \, V^*) \; \otimes & \; (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^* \to \mathbb{F} \\
+& \text{s.t.} \;\; \hat T(v) = \tilde T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b, \, \varphi).
+\end{align*}
+$$<p>Cleaning up, we can see that the form of $\hat T$ is precisely that of a tensor of type $(b + c, \, a + d)$,</p>
+$$
+\hat T : \; (\otimes^{a + d} \, V) \otimes (\otimes^{b + c} \, V^*)  \to \mathbb{F} \;\; \text{s.t.} \;\;
+\hat T \in \left( \otimes^{b + c} \, V \right) \otimes \left( \otimes^{a + d} \, V^* \right).
+$$<h3 id="signals-and-systems">Signals and Systems</h3>
 <h3 id="kernel-methods">Kernel Methods</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
