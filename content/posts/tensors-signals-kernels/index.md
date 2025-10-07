@@ -110,6 +110,10 @@ Here we imposed a (canonical) representation such that, for example, $x^2 = \lef
 
 {{% /hint %}}
 
+{{< hcenter >}}
+{{< figure src="vera-molnar-molndrian-1974.png" width="512" caption="Vera Molnár, 'Molndrian' (1974)" >}}
+{{< /hcenter >}}
+
 #### Schauder Bases
 
 Interpreting Axler strictly, $\mathbb{F}[x]$ is already beyond linear algebra because it is of [semi-infinite](https://en.wikipedia.org/wiki/Semi-infinite) dimension. But definitionally, it is a perfectly valid vector space. Just as finite dimensionality is not necessary in order to access the theorems of linear algebra, having a countable Hamel basis is also not necessary; all vector spaces do have a Hamel basis[^axiom-choice], but not all of them have a countable one.
@@ -383,6 +387,20 @@ $$
 \end{equation}
 $$
 
+{{% hint title="3.11. Note" %}}
+
+We have started to use the symbol $\cong$. In this context, stating $A \cong B$ implies that there is a linear [isomorphism](https://en.wikipedia.org/wiki/Isomorphism) between $A$ and $B$. Exactly, this means that there exists some linear map $\phi : A \to B$ that is a bijection. 
+
+This is complete as a definition of the symbol $\cong$. However, its use in the rest of this piece will often reference a choice of $\phi$ that is [canonical](https://en.wikipedia.org/wiki/Canonical_map). This means that if you see $A \cong B$, there is probably an "standard" way to obtain a $b \in B$ from one unique $a \in A$ (and vice versa) -- here, we can informally say that if $\phi(a) = b$ then $a$ "is" $b$, but it is more precise to say that $a$ "identifies" $b$. Oftentimes, $\phi$ will not be made explicit.
+
+For example, choosing a basis $\mathcal{B}$ for a space $V$ gives the canonical isomorphism $\mathbb{F}^{(\dim V)\times(\dim V)} \cong \mathcal{L}(V)$. In this case, it makes sense to say that "a matrix is a linear transformation." But without a choice of basis there is no "standard" bijection $\Phi_\mathcal{B} : \mathcal{L}(V) \to \mathbb{F}^{(\dim V) \times (\dim V)}$ (no way to bijectively identify maps from matrices).
+ 
+{{% /hint %}}
+
+{{< hcenter >}}
+{{< figure src="vera-molnar-untitled-square-1974.png" width="512" caption="Vera Molnár, Untitled (1974)" >}}
+{{< /hcenter >}}
+
 #### Vector Translation
 
 The statement of 3.10 is neuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some _other_ linear map $\psi_v$, which is identified by some _other_ column matrix $M^\prime$,
@@ -400,7 +418,7 @@ $$
 \Psi_U : U \to \mathcal{L}(\mathbb{F}^1, U) \;\; \text{s.t.} \;\; \Psi_U(u) = \psi_u \; \forall \, u \in U.
 $$
 
-{{% hint title="3.11. Note" %}}
+{{% hint title="3.12. Note" %}}
 
 This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ "canonical." In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.
 
@@ -408,7 +426,7 @@ This makes sense when the vector space $U$ is finite-dimensional, as is the case
 
 #### Linear Forms 
 
-In a way that is "dual" to the statements of 3.10 and 3.11, one could look at another representation which, while not as obvious as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,
+In a way that is "dual" to the statement 3.10, one could look at another representation which, while not as standard as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,
 
 $$
 \Psi_U^* : U \to \mathcal{L}(U, \mathbb{F}^1) \;\; \text{s.t.} \;\; \Psi_U^*(u) = \varphi_u \; \forall \, u \in U.
@@ -435,9 +453,9 @@ v_{(\dim U)}
 \end{bmatrix}.
 $$
 
-{{% hint title="3.12. Note" %}}
+{{% hint title="3.13. Note" %}}
 
-Just as stated in 3.11 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ from row matrices in the case of vector spaces $U$ of infinite dimension does not always work, as matrix representations sometimes make no sense there. Hence, the concrete choice of $\Psi_U^\*$ may require deeper consideration (e.g. in uncountably-infinite dimensions).
+Just as stated in 3.12 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ from row matrices in the case of vector spaces $U$ of infinite dimension does not always work, as matrix representations sometimes make no sense there. Hence, the concrete choice of $\Psi_U^\*$ may require deeper consideration (e.g. in uncountably-infinite dimensions).
 
 {{% /hint %}}
 
@@ -451,7 +469,7 @@ $$
 
 This is called the [dual vector space](https://en.wikipedia.org/wiki/Dual_space) of $U$, which receives the special notation $U^\*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^\*$ (which are called covectors) can be represented by row matrices (wherever matrices make sense).
 
-{{% hint title="3.13. Note" %}}
+{{% hint title="3.14. Note" %}}
 
 In any Hilbert space $H$, for every continuous linear form $\varphi \in H^*$, there is a unique vector $u \in H$ with
 
@@ -469,6 +487,10 @@ $$
 V \cong \mathcal{L}(\mathbb{F}^1, V) \;\; \text{and} \;\; V^* \cong \mathcal{L}(V, \mathbb{F}^1).
 $$
 
+{{< hcenter >}}
+{{< figure src="frigyes-riesz.jpg" width="256" caption="Frigyes Riesz (January 22, 1880 – February 28, 1956)" >}}
+{{< /hcenter >}}
+
 #### Multilinearity
 
 We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where 
@@ -477,9 +499,13 @@ $$
 T : V_1 \times V_2 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, v_2, \, \ldots, \, v_n) = w,
 $$
 
-we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the newly altered $T^\prime : V_i \to W$ a linear map. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called [multilinear maps](https://en.wikipedia.org/wiki/Multilinear_map). 
+we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called [multilinear maps](https://en.wikipedia.org/wiki/Multilinear_map). The set of multilinear maps of this form is denoted
 
-{{% hint title="3.14. Example" %}}
+$$
+\mathcal{L}(V_1, \, \ldots, \, V_n; \, W) = \{\, T : V_1 \times \dots \times V_n \to W \; | \; \text{ T is linear} \}.
+$$
+
+{{% hint title="3.15. Example" %}}
 
 Matrix-vector multiplication can be seen as a bilinear ($2$-linear) map,
 
@@ -497,7 +523,7 @@ We may also extend linear forms with the same treatment that led us to multiline
 
 If one has two vector spaces $V$ and $W$ over the same field, one can naturally talk about their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, one can talk about a third vector space $V \otimes W$ (called the [tensor product](https://en.wikipedia.org/wiki/Tensor_product) of $V$ and $W$) which, while having just as much expressiveness as $V \times W$, of course has the added benefit of being a vector space itself.
 
-{{% hint title="3.15. Note" %}}
+{{% hint title="3.16. Note" %}}
 
 Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the [universal property](https://en.wikipedia.org/wiki/Universal_property) of the tensor product, which justifies the phrase "just as much expressiveness."
 
@@ -509,7 +535,7 @@ $$
 \forall (v, w) \in V \times W, \; \varphi(v, w) = v \otimes w \quad \text{where} \quad v \otimes w \in V \otimes W.
 $$
 
-{{% hint title="3.16. Note" %}}
+{{% hint title="3.17. Note" %}}
 
 Even if the tensor product among vectors is not strictly commutative, there are canonical isomorphisms among permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,
 
@@ -521,7 +547,7 @@ Due to this symmetry, we often write tensor products as if they were commutative
 
 {{% /hint %}}
 
-Totally, through 3.15 and 3.16, the tensor product is precisely designed to "linearize" multilinear maps. To elaborate, for any multilinear map $h : V_1 \times V_2 \times \dots \times V_n \to W$, there exists a unique linear map
+Totally, through 3.16 and 3.17, the tensor product is precisely designed to "linearize" multilinear maps. To elaborate, for any multilinear map $h \in \mathcal{L}(V_1, \\, \ldots, \\, V_n; \\, W)$, there exists a unique linear map[^sub-indices]
 
 $$
 \tilde h : \bigotimes_i V_i \to W \;\; \text{s.t.} \;\; \tilde h(v_1 \otimes \cdots \otimes v_n) = h(v_1, \ldots, v_n).
@@ -531,7 +557,7 @@ $$
 
 Being now able to identify every multilinear map with a unique linear map over a tensor product space, it is possible to assert that 3.8, 3.9, and 3.10 also apply to tensor product spaces. I will reiterate the notes, dressing them up specifically for the case of tensor product spaces.
 
-{{% hint title="3.17. Specialization of 3.8" %}}
+{{% hint title="3.18. Specialization of 3.8" %}}
 
 The set of linear maps from a tensor product space $\bigotimes_i V_i$ over the field $\mathbb{F}$ to another vector space $W$ over $\mathbb{F}$ forms a vector space over $\mathbb{F}$. Symbolically,
 
@@ -543,13 +569,13 @@ is a vector space over $\mathbb{F}$. We denote the operator case as $\mathcal{L}
 
 {{% /hint %}}
 
-{{% hint title="3.18. Specialization of 3.9" %}}
+{{% hint title="3.19. Specialization of 3.9" %}}
 
 There is a bijection between $\mathcal{L}(\bigotimes_i V_i, W)$ and $\mathbb{F}^{\times_i (\dim V_i)} \times \mathbb{F}^{(\dim W)}$ when $V$ and $W$ are finite-dimensional vector spaces over $\mathbb{F}$. That is, for each linear map from a tensor product over spaces $V_1, \\, \ldots, \\, V_n$ and into $W$ (all over a field $\mathbb{F}$), there is one matrix with axis lengths $(\dim V_1, \\, \ldots, \\, \dim V_n, \\, \dim W)$ with entries in $\mathbb{F}$.
 
 {{% /hint %}}
 
-Often, $(\dim V_1, \\, \ldots, \\, \dim V_n, \\, \dim W)$ from 3.18 is referred to as the shape of the matrix. Each entry of the shape tuple can be viewed as the sidelength of a pictographical embedding of the matrix in $\mathbb{R}^{n + 1}$. For example, the matrix in $\mathbb{R}^{2 \times 3}$
+Often, $(\dim V_1, \\, \ldots, \\, \dim V_n, \\, \dim W)$ from 3.19 is referred to as the shape of the matrix. Each entry of the shape tuple can be viewed as the sidelength of a pictographical embedding of the matrix in $\mathbb{R}^{n + 1}$. For example, the matrix in $\mathbb{R}^{2 \times 3}$
 
 $$
 M = 
@@ -561,13 +587,13 @@ $$
 
 is said to have shape $(2, 3)$ -- once it is "drawn on paper," its "sidelengths" are $2$ and $3$. Keeping the spirit of "pictographical" representation, people often call this a $2$-dimensional array, as it can be neatly "drawn" on two dimensions. But concretely, this matrix corresponds to a $6$-dimensional linear map. This ambiguity is often resolved by calling each shape entry an "axis" instead of a dimension, understanding that it refers to the visual axis of $\mathbb{R}^n$ where we would pictographically embed it.
 
-{{% hint title="3.19. Note" %}}
+{{% hint title="3.20. Note" %}}
 
 Software libraries that represent matrices often make the choice of calling them either $n$-dimensional arrays or simply tensors in an effort to maintain generality. Arguably, these terms are both misnomers. Personally, I think they should have just called them all matrices.
 
 {{% /hint %}}
 
-{{% hint title="3.20. Note" %}}
+{{% hint title="3.21. Note" %}}
 
 Appending a trailing \(1\) to the shape of a matrix does not change the underlying object. Concretely, a matrix of shape \((\alpha_1, \, \ldots, \, \alpha_n)\) can be naturally identified with one of shape \((\beta_1, \, \ldots, \, \beta_n)\) when $\prod_i \alpha_i = \prod_i \beta_i$. This is a result of the isomorphisms included in the scope of
 
@@ -596,7 +622,7 @@ $$
 \end{bmatrix}.
 $$
 
-{{% hint title="3.21. Specialization of 3.10" %}}
+{{% hint title="3.22. Specialization of 3.10" %}}
 
 Every vector $v$ in a tensor product space $\bigotimes_i V_i$ can be seen as a linear map from the sapce $\mathbb{F}^1$ into $\bigotimes_i V_i$ through the definition
 
@@ -604,89 +630,262 @@ $$
 \psi_v : \mathbb{F}^1 \to \bigotimes_i V_i \, , \;\; \psi_v(\lambda) = v \lambda.
 $$
 
-With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \\, \bigotimes_i V_i)$ (as an instance of note 3.17). However, in the context of tensor product spaces, it is common to represent $\psi_v$ using a matrix of shape $(\dim V_1, \\, \ldots, \\, \dim V_n)$ (invoking 3.20). This is done to facilitate descriptions of computations involving the vector in question.
+With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \\, \bigotimes_i V_i)$ (as an instance of note 3.19). However, in the context of tensor product spaces, it is common to represent $\psi_v$ using a matrix of shape $(\dim V_1, \\, \ldots, \\, \dim V_n)$ (invoking 3.21). This is done to facilitate descriptions of computations involving the vector in question.
 
 {{% /hint %}}
 
-#### Actual Tensors 
+#### Homogeneous Tensors 
 
-Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. But traditionally, a [tensor](https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)) is a linear map associated with a vector space $V$ over $\mathbb{F}$ of the form
+Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. But traditionally, a [tensor](https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)) is a linear map associated with a single vector space $V$ over $\mathbb{F}$ of the form
 
 $$
 \begin{equation}
- T_{n}^{\, m} : (\times^n \, V) \times (\times^m \, V^*) \to \mathbb{F}.
+ T_{n}^{\, m} : (\times^m \, V^*) \times (\times^n \, V) \to \mathbb{F}.
 \end{equation}
 $$
 
-Here, $(m, \\, n)$ is called the "type" of the tensor $T$. Perhaps the most important restriction of this definition is that we are only talking about a single vector space $V$, making it invalid to call $\mathbb{R}^2 \otimes \mathbb{R}^3 \to \mathbb{R}$ a tensor (without first invoking some isomorphism).
-
-{{% hint title="3.22. Note" %}}
-
-
-{{% /hint %}}
+Here, $(m, \\, n)$ is called the "type" of the tensor $T$. This makes a map like $m : \mathbb{R}^2 \times \mathbb{R}^4 \to \mathbb{R}$ strictly not interpretable as a tensor, as $m$ itself is not of tensor form, and there is no standard bijection that can help us view it as a tensor. That is, we cannot always identify a tensor with a multilinear map.
 
 {{% hint title="3.23. Note" %}}
 
-The vector-valued tensor product $\otimes : V \times W \to V \otimes W$ provides the isomorphism 
+The tensor space of type $(m, \\, n)$ defined over a vector space $V$ is denoted[^parenthesized-indices]
 
 $$
-\{f : V \times W \to Z \; | \; f \text{ is linear} \} \cong \{g : V \otimes W \to Z \; | \; g \text{ is linear} \}
-$$
-
-as a corollary of 3.15. Furthermore, it is canonical in the sense that the vector-valued tensor product is static. In the case of $V = W$, $\\; \\{g : V \otimes V \to \mathbb{F}^1 \\; | \\; g \text{ is linear} \\} = \mathcal{L}(V \otimes V, \mathbb{F}^1) = (V \otimes V)^* \cong V^* \otimes V^*$. With this we can see that for all instances of $(8)$,
-
-$$
-T_n^{\, m} \in \left( \otimes^m \, V \right) \otimes \left( \otimes^n \, V^* \right).
+T_{n}^{\, m}(V) = \mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, \mathbb{F}).
 $$
 
 {{% /hint %}}
 
-
 {{% hint title="3.24. Examples" %}}
 
-Let us observe the types of some known tensors of form $T : (\times^n \\, V) \to \mathbb{F}$.
+Let us observe the types of some known tensors of form $T_{n}^{\, 0} : (\times^n \\, V) \to \mathbb{F}$.
 
-1. Any scalar $\lambda : \varnothing \to \mathbb{F}$ is a tensor of type $(0, \\, 0)$.
-2. Any norm $|| \cdot || : v \mapsto ||v||$ is a tensor of type $(0, \\, 1)$.
-3. Any quadratic form $q : v \mapsto v^\top A v$ is a tensor of type $(0, \\, 1)$.
+1. Any scalar $\lambda : a \mapsto \lambda a$ is a tensor of type $(0, \\, 0)$.
+2. Any linear form $\varphi : v \mapsto \varphi(v)$ is a tensor of type $(0, \\, 1)$.
+3. Any quadratic form $q : (v, w) \mapsto v^\top A w$ is a tensor of type $(0, \\, 2)$.
 4. Any inner product $\langle \cdot, \cdot \rangle : (v, w) \mapsto \mathbb{F}$ is a tensor of type $(0, \\, 2)$.
  
 {{% /hint %}}
 
-All the tensors in 3.24 are scalar-valued. Now I will show how we can see that vector-valued linear maps are also tensors. Consider a tensor-valued multilinear map of the form
+{{< hcenter >}}
+{{< figure src="vera-molnar-structures-of-squares-1974.png" width="512" caption="Vera Molnár, 'Structures of Squares' (1974)" >}}
+{{< /hcenter >}}
+
+#### Tensor Identification
+
+When the definition of a multilinear map involves many vector spaces, there will continue to be a lack of such a canonical isomorphism. But if we consider arbitrary multilinear maps defined over a single vector space $V$ over a field $\mathbb{F}$ (even those without a codomain $\mathbb{F}$ ), we will see that canonically
 
 $$
-T : (\times^a \, V) \times (\times^b \, V^*) \to \left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right).
+\begin{equation}
+\mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, ( \otimes^a \, V ) \otimes ( \otimes^b \, V^* ))
+\cong
+\left( \otimes^{m + a} \, V \right) \otimes \left( \otimes^{n + b} \, V^* \right),
+\end{equation}
 $$
 
-By showing that $T$ identifies a tensor, we will also show that an arbitrary linear map defined using a single vector space $V$ identifies a tensor (including tensor-valued maps, via 3.23). First, we define
+where we always interpret $\times^0 \\, V = \mathbb{F}$ and $\otimes^0 \\, V = \mathbb{F}^1$ (as always, with $\mathbb{F} \cong \mathbb{F}^1$). This essentially claims we can uniquely identify vector-valued multilinear maps defined over a single vector space $V$ with vectors in a tensor product space defined only over $V$.
+
+{{% hint title="3.25. Note" %}}
+
+As a result of 3.16, for all vector spaces $V$, $W$, and $Z$,
+
+$$
+\mathcal{L}(V \otimes W, \, Z) \cong\ \mathcal{L}(V, \, W; \, Z).
+$$
+
+{{% /hint %}}
+
+{{% hint title="3.26. Note" %}}
+
+Any finite-dimensional vector space is canonically isomorphic to its own dual due the standard bijection
+
+$$
+\Phi : V \to V^* \;\; \text{s.t.} \;\; \Phi[v](w) = \langle v, w \rangle,
+$$
+
+where $u, w \in V$ (when $V$ is not an inner-product space one defaults to the standard dot product). However, many infinite-dimensional inner-product spaces have duals which cannot be spanned using this strategy. The exception is Hilbert spaces, where 3.14 provides the bijection $J$ (still through the inner product).
+
+{{% /hint %}}
+
+{{% hint title="3.27. Note" %}}
+
+For any Hilbert space or finite-dimensional vector space $V$, we have that $V^\* \otimes V^\* \cong (V \otimes V)^\*$ canonically. This is supported by the following standard choice of bijection
+
+$$
+\Phi : V^* \otimes V^* \to (V \otimes V)^* \;\; \text{s.t.} \;\; \Phi[\psi \otimes \varphi](v \otimes w) \mapsto \psi(v) \varphi(w),
+$$
+
+where $\psi, \varphi \in V^\*$ and $v, w \in V$. To be clear, $\Phi[\psi \otimes \varphi]$ is in $(V \otimes V)^\*$ and has the form $V \otimes V \to \mathbb{F}$.
+
+{{% /hint %}}
+
+To show $(9)$, our strategy will be to consider an arbitrary multilinear map $T$ in the set
+
+$$
+\mathcal{L}_{(m, \, n)}^{\, (a, \, b)}(V) = 
+\mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, ( \otimes^a \, V ) \otimes ( \otimes^b \, V^* )).
+$$
+
+We will introduce a bijection $\tilde \Gamma$ that identifies a unique tensor of type $(m + a, \\, n + b)$ for each $T$. Then, we will introduce another bijection $\hat \Gamma$ to show that $T_{n + b}^{\\, m + a}(V)$ is isomorphic to $\left( \otimes^{m + a} \\, V \right) \otimes \left( \otimes^{n + b} \\, V^* \right)$. Summarizing, we will construct an invertible trip 
+
+$$
+\mathcal{L}_{(m, \, n)}^{\, (a, \, b)}(V) 
+\xrightarrow{\displaystyle \tilde \Gamma} 
+T_{n + b}^{\, m + a}(V) 
+\xrightarrow{\displaystyle \hat \Gamma} 
+\left( \otimes^{m + a} \, V \right) \otimes \left( \otimes^{n + b} \, V^* \right).
+$$
+
+{{% hint title="3.28. Demonstration" %}}
+
+Let us first consider $\tilde \Gamma$. Given a $T \in \mathcal{L}_{(n, \\, m)}^{\\, (a, \\, b)}(V)$, define $\tilde T^\prime$ where
 
 $$
 \begin{align*}
-\tilde T : \; & (\times^a \, V) \times (\times^b \, V^*) \times (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^* \to \mathbb{F} \\
-& \text{s.t.} \;\; \tilde T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b,  \, \varphi) = \varphi(T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b)),
+\tilde T^\prime : \; & (\times^m \, V^*) \times (\times^n \, V) \times (\left( \otimes^a \, V \right) \otimes \left( \otimes^b \, V^* \right))^* \to \mathbb{F} \\
+& \text{s.t.} \;\; \tilde T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n,  \, \varphi) = \varphi(T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n)),
 \end{align*}
 $$
 
-where $v_i \in V$, $w_i \in V^\*$, and $\varphi \in (\left( \otimes^c \\, V \right) \otimes \left( \otimes^d \\, V^* \right))^*$. Thanks to 3.15, there is a unique
+where $v_i \in V^\*$, $w_i \in V$, and $\varphi \in (\left( \otimes^c \\, V \right) \otimes \left( \otimes^d \\, V^* \right))^*$ is the covector of $T(v_1, \\, \ldots, \\, v_m, \\, w_1, \\, \ldots, \\, w_n)$ (which can be canonically determined by 3.14). Then, observe that
 
 $$
 \begin{align*}
-\hat T : (\otimes^a \, V) \otimes (\otimes^b \, V^*) \; \otimes & \; (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^* \to \mathbb{F} \\
-& \text{s.t.} \;\; \hat T(v) = \tilde T(v_1, \, \ldots, \, v_a, \, w_1, \, \ldots, \, w_b, \, \varphi).
+\mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, & \,\, V_{(1)}, \, \dots, \, V_{(n)}, \, (( \otimes^a \, V ) \otimes ( \otimes^b \, V^* ))^*; \, \mathbb{F}) \\
+&\overset{\text{3.27}}{\cong} 
+\mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \,\, V_{(1)}, \, \dots, \, V_{(n)}, \, ( \otimes^a \, V^* ) \otimes ( \otimes^b \, V ); \, \mathbb{F}) \\
+&\overset{\text{3.25}}{\cong} 
+\mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m + a)}^*, \,\, V_{(1)}, \, \dots, \, V_{(n + b)}; \, \mathbb{F}).
 \end{align*}
 $$
 
-Cleaning up, we can see that the form of $\hat T$ is precisely that of a tensor of type $(b + c, \\, a + d)$,
+Using this, a map $\tilde T$ can be uniquely constructed from $\tilde T^\prime$ (invoking 3.25 and 3.17 for argument order), where 
 
 $$
-\hat T : \; (\otimes^{a + d} \, V) \otimes (\otimes^{b + c} \, V^*)  \to \mathbb{F} \;\; \text{s.t.} \;\;
-\hat T \in \left( \otimes^{b + c} \, V \right) \otimes \left( \otimes^{a + d} \, V^* \right).
+\tilde T : (\times^{m + a} \, V^*) \times (\times^{n + b} \, V)\to \mathbb{F}.
 $$
+
+This finalizes the definition of $\tilde \Gamma : T \mapsto \tilde T$. Each step of this process is bijective, therefore $\tilde \Gamma$ is bijective.
+
+{{% /hint %}}
+
+{{% hint title="3.29. Demonstration" %}}
+
+Now we can consider $\hat \Gamma$. Define the tensor $T \in T_{n + b}^{\, m + a}(V)$ such that by definition
+
+$$
+T : (\times^{m + a} \, V^*) \times (\times^{n + b} \, V) \to \mathbb{F}.
+$$
+
+By repeated application of 3.25, we can always use $T$ to construct a unique
+
+$$
+\hat T^\prime : (\otimes^{m + a} \, V^*) \otimes (\otimes^{n + b} \, V) \to \mathbb{F}.
+$$
+
+This is clearly a linear form. In other words, $\hat T^\prime \in ((\otimes^{m + a} \\, V^*) \otimes (\otimes^{n + b} \\, V))^\*$. But by 3.27, there is a unique 
+
+$$
+\hat T \in (\otimes^{m + a} \, V^*) \otimes (\otimes^{n + b} \, V)
+$$
+
+for each $\hat T^\prime$ we could construct. This finalizes the definition of $\hat \Gamma : T \mapsto \hat T$. Each step above is bijective, so $\hat \Gamma$ is itself a bijection.
+
+{{% /hint %}}
+
+We have shown that vector-valued multilinear maps defined on a single vector space (such as operators) do identify tensors uniquely, despite not being of tensor form. Also, we have shown how tensors uniquely identify elements of tensor product spaces. Hence, it is normal refer to all of these objects as tensors.
+
+{{% hint title="3.30. Examples" %}}
+
+Equation $(9)$ provides a formula for identifying the tensor type of elements in $\mathcal{L}_{(m, \\, n)}^{\\, (a, \\, b)}(V)$. Indeed, tensor type acts like an algebraic signature for these objects.
+
+1. Linear operators $T : V \to V$ identify type $(1, 1)$ tensors.
+2. The tensor product $\otimes : V \times V \to V \otimes V$ identifies a type $(2, 2)$ tensor.
+
+For linear operators (represented by square matrices), we can apply $(9)$ and observe they identify elements of $V \otimes V^\*$ as they are of type $(1, 1)$. Then, square matrix multiplication represents the map
+
+$$
+T : (V \otimes V^*) \times (V \otimes V^*) \to (V \otimes V^*) \;\; \text{s.t.} \;\; T(A, \, B) = AB,
+$$
+
+where $A, B \in \mathcal{L}(V)$. But due to 3.25, we can reform $T : (\times^2 \\, V^\*) \times (\times^2 \\, V) \to V \otimes V^\*$. Applying $(9)$ one more time, we observe that this is a type $(3, 3)$ tensor. This illustrates how the tensor type of a multilinear map defined over other tensor product spaces can be computed. 
+
+{{% /hint %}}
+
+#### Heterogeneous Tensors 
+
+We have used algebraic pathways to extend the idea of a tensor beyond scalar-valued multilinear maps. Our primary tool was the canonical isomorphism, which allowed us to ignore many specifics in all cases. Now, we will widen the concept of a tensor to involve many vector spaces with linear maps of form
+
+$$
+\begin{equation}
+T_{B}^{\, A} : (\times_A \, V_i^*) \times (\times_B \, V_i) \to \mathbb{F}.
+\end{equation}
+$$
+
+Here, we reference two indexed collections of vector spaces (over the same field $\mathbb{F}$), $\langle V_i \rangle_A$ and $\langle V_i \rangle_B$. We differentiate these tensors by calling them heterogeneous, since they involve different vector spaces. They share much theory with the homogeneous case, resulting in the isomorphism
+
+$$
+\begin{equation}
+\mathcal{L}(\langle V_i^* \rangle_{A}, \, \langle V_i \rangle_{B}; \, ( \otimes_{C} \, V_i^* ) \otimes ( \otimes_{D} \, V_i ))
+\cong
+\left( \otimes_{A \cup D} \, V_i \right) \otimes \left( \otimes_{B \cup C} \, V_i^* \right).
+\end{equation}
+$$
+
+{{% hint title="3.31. Explanation" %}}
+
+For the sake of brevity, this will be hand-wavy. The main insight is to quotient $\mathcal{V} = A \cup B \cup C \cup D$ by simple equality. For each partition in $\mathcal{V}_k \in (\mathcal{V}/=)$ of vector spaces associated with a map
+
+$$
+T \in \mathcal{L}(\langle V_i^* \rangle_{A}, \, \langle V_i \rangle_{B}; \, ( \otimes_{C} \, V_i ) \otimes ( \otimes_{D} \, V_i )),
+$$
+
+fix an argument for all other vector spaces $\mathcal{V} \setminus \mathcal{V}_k$, creating a new multilinear map
+
+$$
+\tilde T_k \in \mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, ( \otimes^a \, V ) \otimes ( \otimes^b \, V^* )),
+$$
+
+where $\mathcal{V}_k = [V]$ in $(\mathcal{V} / =)$ and $|\mathcal{V}_k| = a + b + m + n$ (skipping additional bookeeping). By 3.28 and 3.29, $\tilde T_k$ identifies a homogeneous tensor. Since all $\tilde T_k$ can be uniquely transformed this way, we can define a new $\bar T$ that has the cartesian product of their domains as its own domain with codomain $\mathbb{F}$ (by multilinearity). Finally, 3.25 gives the desired form (the RHS of $(11)$). These steps were through isomorphisms, hence $(11)$.
+
+{{% /hint %}}
+
+{{% hint title="3.32. Note" %}}
+
+Much like $(9)$ relies on finite-dimensionality of the vector space in question for homogeneous tensors (or that it be a Hilbert space), the same restriction is needed in $(11)$ for all vector spaces in heterogeneous tensor forms.
+
+{{% /hint %}}
+
+It is still possible to consider tensor type in the heterogeneous case -- one simply has to keep track of one type tuple per $[V] \in (\mathcal{V}/=)$ (see 3.31). If there are $K$ such equivalence classes, a tensor type may be
+
+$$
+(m_1, \, \ldots, \, m_K, \, n_1, \, \ldots, \, n_K).
+$$
+
+With heterogeneous tensors, one must also carry a mapping of type index to corresponding vector space. Without this, we would not know which vector space each type tuple $(m_i, \\, n_i)$ corresponds to. So when it is not clear from context, we simply say that the type is $(A, \\, B)$ as implied from the syntax of $(10)$.
+
+{{< hcenter >}}
+{{< figure src="vera-molnar-untitled-1974.png" width="512" caption="Vera Molnár, Untitled (1974)" >}}
+{{< /hcenter >}}
+
+#### Tensor Contractions 
+
+0. Tensor contraction
+1. Einstein notation (mention einsum)
+2. Penrose diagrams 
+
+#### Overview
+
+
 
 ### Signals and Systems 
 
 ### Kernel Methods
 
-
 [^axiom-choice]: When considering infinite-dimensional vector spaces, this statement is true if and only if one admits the axiom of choice. Perhaps this was another motivation of Axler's restriction to finite-dimensional vector spaces.
+
+[^sub-indices]: Non-parenthesized sub-indices imply that the item is part of an indexed set -- $a_i$ may not be equal to $a_j$.
+
+[^parenthesized-indices]: Parenthesized sub-indices are only used to indicate argument index. That is, $a_{(i)} = a_{(j)}$ for all $i$ and $j$.
+
+
