@@ -10,7 +10,7 @@ calidez que fluye por mi cuello
   derriba mi cabeza;
 te recuerdo en mis lágrimas,
   cierro mis ojos, y te veo
-  a través de mis lágrimas;
+  entre formas familiares;
 siento que te abrazo,
   existes entre mis brazos
   abrazándose a sí mismos,
@@ -23,7 +23,6 @@ en mi mente
     del tiempo,
   te junto en un cáliz
     hecho con mis manos,
-    que poco a poco
-  derrama nuestra sangre,
-derrama nuestras lágrimas
+    que poco a poco 
+  te derrama:
 ```

@@ -793,7 +793,7 @@ for each $\hat T^\prime$ we could construct. This finalizes the definition of $\
 
 {{% /hint %}}
 
-We have shown that vector-valued multilinear maps defined on a single vector space (such as operators) do identify tensors uniquely, despite not being of tensor form. Also, we have shown how tensors uniquely identify elements of tensor product spaces. Hence, it is normal refer to all of these objects as tensors.
+We have shown that vector-valued multilinear maps defined on a single vector space (such as operators) do identify tensors uniquely, despite not being of tensor form. Also, we have shown how tensors uniquely identify elements of tensor product spaces defined on a single vector space. This is why it is normal refer to all of these objects as tensors.
 
 {{% hint title="3.30. Examples" %}}
 
@@ -870,9 +870,42 @@ With heterogeneous tensors, one must also carry a mapping of type index to corre
 
 #### Tensor Contractions 
 
+The statements of $(9)$ and $(11)$ may initially seem like a cryptic justification of our choice of vocabulary; they justify why we use the word "tensor" so liberally, with the most general use being in reference to an element of a heterogeneous tensor product space (up to isomorphism).
+
+But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. They imply that all tensors can be "used" both as vectors and as multilinear maps -- they are both multi-argument functions and possible inputs to other multi-argument functions. To better understand this, we will take a look at [partial application](https://en.wikipedia.org/wiki/Partial_application) in this context.
+
+{{% hint title="3.33. Example" %}}
+
+Consider the quadratic form $q : (v, w) \mapsto v^\top A w$, which from 3.24 is a (homogeneous) tensor of type $(0, 2)$. It is a multilinear map of the form $q : V \times V \to \mathbb{F}$. If we fix the argument $v$, we can obtain $\hat q : w \mapsto v^\top A w$, which is a $1$-linear map of form $\hat q : V \to \mathbb{F}$ and a tensor of type $(0, 1)$.
+
+{{% /hint %}}
+
+In this example, we combined a multilinear map and a vector to obtain another multilinear map via partial application. Taking note that all the objects involved in this process are tensors, we can study how partial application is related to the type of the tensors involved.
+
+{{% hint title="3.34. Note" %}}
+
+Let $T$ be a homogeneous tensor of type $(m, n)$ on a vector space $V$. Partial application of $k$ of its arguments in $V$ and $h$ of its arguments in $V^\*$ will result in a new tensor $\hat T$ of type $(m - h, \\, n - k)$. Further, observe that by 3.25 one can construct a unique bilinear form $\tilde T$ from $T$ where an equivalent partial application can be done in a single argument, such that for a unique $z \in (\otimes^h \\, V^*) \otimes (\otimes^k \\, V)$,
+
+$$
+\begin{align*}
+\tilde T : (\otimes^{m - h} \, V^*) \otimes (\otimes^{n - k} \, V) & \times (\otimes^h \, V^*) \otimes (\otimes^k \, V) \to \mathbb{F} \;\; \text{s.t.}\\
+ \;\; \hat T(v_1, \, \ldots, \, v_{m - h}, \, w_1, \, \ldots, \, w_{n - k}) &= \tilde T(v_1 \otimes \ldots \otimes v_{m - h} \otimes w_1 \otimes \ldots \otimes w_{n - k}, \, z).
+\end{align*}
+$$
+
+Above, $z$ is exactly the tensor product of the vectors that were used as arguments during partial application on$T$ in order to obtain $\hat T$. Note that $z$, by statement $(9)$, identifies another tensor of type $(h, k)$.
+
+{{% /hint %}}
+
+The note above explains why (in the homogeneus case) partial application of multiple tensor arguments is in fact partial application of another tensor as an arguent on a uniquely associated bilinear map. This view shows how natural it is to think of partial application as a process that transforms two tensors into a third.
+
 0. Tensor contraction
 1. Einstein notation (mention einsum)
 2. Penrose diagrams 
+
+{{< hcenter >}}
+{{< figure src="roger-penrose.png" width="256" caption="Sir Roger Penrose (born August 8, 1931)" >}}
+{{< /hcenter >}}
 
 #### Overview
 
