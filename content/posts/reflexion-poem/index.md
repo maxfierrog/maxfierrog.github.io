@@ -2,7 +2,6 @@
 title: "Poem 9. \"Reflexiones\""
 category: personal 
 date: 2025-10-13
-draft: false 
 ---
 
 ```

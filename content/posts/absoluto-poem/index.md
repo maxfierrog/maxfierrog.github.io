@@ -32,10 +32,4 @@ ser que se yergue
    tu mirada me ve 
   y me concreta,
     me cristaliza:
-
-tu mirada se ve a si misma,
-  se superpone con la mía,
-  cual cristal en simetría;
-y ese encuentro 
-    brilla como un astro:
 ```
