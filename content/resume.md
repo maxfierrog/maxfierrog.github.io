@@ -28,7 +28,6 @@ I am graduating from [UC Berkeley](https://www.berkeley.edu/) intellectually inv
 * `CS 162` **_Operating Systems & Systems Programming_** ([<u>Prof. Kubiatowicz</u>](https://people.eecs.berkeley.edu/~kubitron/))
 * `CS 189` **_Introduction to Machine Learning_** ([<u>Prof. Listgarten</u>](http://www.jennifer.listgarten.com/), [Prof. Saremi](https://www.linkedin.com/in/saeed-saremi-71935916/))
 * `CS 182` **_Designing, Visualizing and Understanding Deep Neural Networks_** ([<u>Prof. Sahai</u>](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html))
-* `CS 272` **_Foundations of Learning, Decisions, and Games_** [Audited] ([<u>Prof. Haghtalab</u>](https://people.eecs.berkeley.edu/~nika/))
 
 <!-- -->
 
