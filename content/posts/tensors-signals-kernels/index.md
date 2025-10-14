@@ -3,7 +3,7 @@ title: "Perspectives into Tensors, Signals, and Kernel Methods"
 category: technical
 date: 2025-09-08
 math: true
-draft: true 
+draft: false 
 ---
 
 {{< toc >}}
@@ -673,7 +673,7 @@ Let us observe the types of some known tensors of form $T_{n}^{\, 0} : (\times^n
 
 #### Tensor Identification
 
-When the definition of a multilinear map involves many vector spaces, there will continue to be a lack of such a canonical isomorphism. But if we consider arbitrary multilinear maps defined over a single vector space $V$ over a field $\mathbb{F}$ (even those without a codomain $\mathbb{F}$ ), we will see that canonically
+When the definition of a multilinear map involves many vector spaces, there will continue to be a lack of such a canonical isomorphism (at least using the insights we currently have). But if we consider arbitrary multilinear maps defined over a single vector space $V$ over a field $\mathbb{F}$ (even those without a codomain $\mathbb{F}$ ), we will see that canonically
 
 $$
 \begin{equation}
@@ -703,7 +703,7 @@ $$
 \Phi : V \to V^* \;\; \text{s.t.} \;\; \Phi[v](w) = \langle v, w \rangle,
 $$
 
-where $u, w \in V$ (when $V$ is not an inner-product space one defaults to the standard dot product). However, many infinite-dimensional inner-product spaces have duals which cannot be spanned using this strategy. The exception is Hilbert spaces, where 3.14 provides the bijection $J$ (still through the inner product).
+where $u, w \in V$ (when $V$ is not an inner-product space one defaults to the standard dot product). However, many infinite-dimensional inner-product spaces have duals which cannot be spanned using this strategy. One exception is the set of Hilbert spaces, where 3.14 provides the bijection $J$ (still through the inner product).
 
 {{% /hint %}}
 
@@ -786,7 +786,7 @@ $$
 This is clearly a linear form. In other words, $\hat T^\prime \in ((\otimes^{m + a} \\, V^*) \otimes (\otimes^{n + b} \\, V))^\*$. But by 3.27, there is a unique 
 
 $$
-\hat T \in (\otimes^{m + a} \, V^*) \otimes (\otimes^{n + b} \, V)
+\hat T \in (\otimes^{m + a} \, V) \otimes (\otimes^{n + b} \, V^*)
 $$
 
 for each $\hat T^\prime$ we could construct. This finalizes the definition of $\hat \Gamma : T \mapsto \hat T$. Each step above is bijective, so $\hat \Gamma$ is itself a bijection.
@@ -840,7 +840,7 @@ $$
 T \in \mathcal{L}(\langle V_i^* \rangle_{A}, \, \langle V_i \rangle_{B}; \, ( \otimes_{C} \, V_i ) \otimes ( \otimes_{D} \, V_i )),
 $$
 
-fix an argument for all other vector spaces $\mathcal{V} \setminus \mathcal{V}_k$, creating a new multilinear map
+fix an argument for all vector spaces in $\mathcal{V} \setminus \mathcal{V}_k$, creating a new multilinear map
 
 $$
 \tilde T_k \in \mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, ( \otimes^a \, V ) \otimes ( \otimes^b \, V^* )),
@@ -872,36 +872,128 @@ With heterogeneous tensors, one must also carry a mapping of type index to corre
 
 The statements of $(9)$ and $(11)$ may initially seem like a cryptic justification of our choice of vocabulary; they justify why we use the word "tensor" so liberally, with the most general use being in reference to an element of a heterogeneous tensor product space (up to isomorphism).
 
-But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. They imply that all tensors can be "used" both as vectors and as multilinear maps -- they are both multi-argument functions and possible inputs to other multi-argument functions. To better understand this, we will take a look at [partial application](https://en.wikipedia.org/wiki/Partial_application) in this context.
+But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. These isomorphisms specify an "exchange rate" between inputs and outputs of homogeneus and heterogeneous tensors. Concretely, one may algebraically "trade" a tensor input in $V$ for a tensor product evaluation with a canonical element of $V^\*$ in the output as many times as desired while maintaining type.
 
 {{% hint title="3.33. Example" %}}
 
-Consider the quadratic form $q : (v, w) \mapsto v^\top A w$, which from 3.24 is a (homogeneous) tensor of type $(0, 2)$. It is a multilinear map of the form $q : V \times V \to \mathbb{F}$. If we fix the argument $v$, we can obtain $\hat q : w \mapsto v^\top A w$, which is a $1$-linear map of form $\hat q : V \to \mathbb{F}$ and a tensor of type $(0, 1)$.
+Consider a vector $v \in V$. Earlier, 3.10 showed that this can be seen as a linear map $\psi_v : \mathbb{F} \to V$. Indeed, we can say that $v$ is a vector of type $(1, 0)$ by application of $(9)$ (which helps identify $\psi_v$ with a map in the form of $(8)$, providing its unique tensor type). Informally, we traded an application of $\cdot \otimes V$ in the codomain $V$ (turning it into $\mathbb{F}$ via $\otimes^0 \\, V \cong \mathbb{F}$) for an argument in $V^\*$ to the domain $\mathbb{F}$ (recall $\times^0 \\, V \cong \mathbb{F}$) to finally identify
+
+$$
+\hat \psi_v : V^* \to \mathbb{F} \;\; \left( \, \text{s.t.} \;\; \hat \psi_v :  \times^{(0 \, + \, 1)} \, V^* \to \otimes^{(1 \, - \, 1)} \, V \, \right).
+$$
 
 {{% /hint %}}
 
-In this example, we combined a multilinear map and a vector to obtain another multilinear map via partial application. Taking note that all the objects involved in this process are tensors, we can study how partial application is related to the type of the tensors involved.
+This becomes especially powerful in the context of composition. Indeed, we can legally do "trades" of this kind (even disregarding argument order by 3.17) to reorganize and compose tensors as needed. In other words, we may be able to compose the same two tensors in surprisingly many different ways after we use these "trades" to view each of them as one of many different linear maps they can represent.
 
-{{% hint title="3.34. Note" %}}
+{{% hint title="3.34. Example" %}}
 
-Let $T$ be a homogeneous tensor of type $(m, n)$ on a vector space $V$. Partial application of $k$ of its arguments in $V$ and $h$ of its arguments in $V^\*$ will result in a new tensor $\hat T$ of type $(m - h, \\, n - k)$. Further, observe that by 3.25 one can construct a unique bilinear form $\tilde T$ from $T$ where an equivalent partial application can be done in a single argument, such that for a unique $z \in (\otimes^h \\, V^*) \otimes (\otimes^k \\, V)$,
+Consider two linear operators $f, \\, g \in \mathcal{L}(V)$. They are of form $V \to V$ and have type $(1, 1)$. Without loss of generality, apply $(9)$ to $f$ and $g$ to identify 
+
+$$
+\hat g : \mathbb{F} \to V^* \otimes V \;\; \text{and} \;\; \hat f : V^* \otimes V \to \mathbb{F}.
+$$
+
+(Recall that 3.25 allows us to identify $\hat f$ from the form $V^\* \times V \to \mathbb{F}$.) Then, we may compose $\hat f \circ \hat g$, which is a tensor of type $(0, 0)$ (the type of a scalar). But we could have just as easily identified
+
+$$
+\tilde g : V^* \otimes V \to \mathbb{F} \;\; \text{and} \;\; \tilde f : \mathbb{F} \to V^* \otimes V,
+$$
+
+in which case $\tilde f \circ \tilde g$ would be a tensor of type $(2, 2)$. As a final case, we could compose $f$ and $g$ as defined to obtain $f \circ g$, a tensor of type $(1, 1)$. Hence, can obtain tensors of type $(0, 0)$, $(1, 1)$, and $(2, 2)$ from $f$ and $g$ via canonical identification and simple composition. We can even continue doing "trades" in these three tensors (without composition), allowing us to reach the types $(a, b)$ where $a + b \in \\{0, \\, 2, \\, 4 \\}$.
+
+{{% /hint %}}
+
+In the example of 3.34, the map $\otimes : (f, \\, g) \mapsto \tilde f \circ \tilde g$ receives the special name of tensor outer product. It is defined for any two tensors, just as the tensor product (which it is a special case of) is defined on any two tensor product spaces. Taking the outer product of two tensors of type $(a, b)$ and $(c, d)$ results in one more of type $(a + c, \\, b + d)$.
+
+Likewise, the map $\langle \cdot, \\, \cdot \rangle : (f, \\, g) \mapsto \hat f \circ \hat g$ is simply a special case of an inner product. As such, it only made sense in 3.34 as it admitted two tensors that live in the same tensor product space. In such cases, the inner product of two tensors of (necessarily equal) type $(a, b)$ is a scalar of type $(0, 0)$.
+
+{{% hint title="3.35. Note" %}}
+
+Let us take inspiration in the extreme effect that the outer and inner products have in the types of their outputs, using the same tensors $f$ and $g$ as in the example of 3.34. We know from $(9)$ that we can identify 
+
+$$
+T_g, \, T_f \in V \otimes V^*
+$$
+
+from $f$ and $g$ (canonically). We will see that we can obtain the types $(2, 2)$, $(1, 1)$, and $(0, 0)$ without invoking composition, giving us a new perspective on tensor operations. First, the outer product identifies $\hat f \circ \hat g$ with the tensor of type $(2, 2)$ obtained by $T_f \otimes T_g \in V \otimes V^\* \otimes V \otimes V^\*$.
+
+The next key concept is the evaluation map, which is made canonical by convention. It is defined as the tensor $\text{ev}_U : U^* \otimes U \to \mathbb{F}$ of type $(1, 1)$ such that $\text{ev}_U(\varphi \otimes u) = \varphi(u)$. We can use it to obtain another map
 
 $$
 \begin{align*}
-\tilde T : (\otimes^{m - h} \, V^*) \otimes (\otimes^{n - k} \, V) & \times (\otimes^h \, V^*) \otimes (\otimes^k \, V) \to \mathbb{F} \;\; \text{s.t.}\\
- \;\; \hat T(v_1, \, \ldots, \, v_{m - h}, \, w_1, \, \ldots, \, w_{n - k}) &= \tilde T(v_1 \otimes \ldots \otimes v_{m - h} \otimes w_1 \otimes \ldots \otimes w_{n - k}, \, z).
+(\text{id}_V \otimes \text{ev}_V \otimes \text{id}_{V^*}) & : V \otimes V^* \otimes V \otimes V^* \to V^* \otimes V \\
+& \text{s.t.} \;\; (\text{id}_V \otimes \text{ev}_V \otimes \text{id}_{V^*})(v \otimes \varphi \otimes w \otimes \phi) = \varphi(w) (v \otimes \phi),
 \end{align*}
 $$
 
-Above, $z$ is exactly the tensor product of the vectors that were used as arguments during partial application on$T$ in order to obtain $\hat T$. Note that $z$, by statement $(9)$, identifies another tensor of type $(h, k)$.
+where the tensor $(\text{id}_U \otimes \text{ev}_U \otimes \text{id}_U)(T_f \otimes T_g)$ corresponds exactly to $f \circ g$ and is of type $(1, 1)$. Similarly, applying the evaluation map a second time decreases tensor type uniformly, where we can use
+
+$$
+\begin{align*}
+(\text{ev}_V \otimes \text{ev}_V) : V^* & \otimes V \otimes V^* \otimes V \to \mathbb{F} \\
+& \text{s.t.} \;\; (\text{ev}_V \otimes \text{ev}_V)(v \otimes \varphi \otimes w \otimes \phi) = \varphi(w) \phi(v)
+\end{align*}
+$$
+
+with 3.17 (to disregard argument order) to get $(\text{ev}_V \otimes \text{ev}_V)(T_f \otimes T_g)$, corresponding exactly to $\tilde f \circ \tilde g$, whose type is $(0, 0)$ (a scalar). The pattern is becomes clear -- the evaluation map provides a canonical way to obtain a tensor of type $(a - 1, \\, b - 1)$ from another of type $(a, \\, b)$, annihilating one vector-covector argument pair of our choosing (when the input tensor is viewed as a multilinear map). After, we may still perform "trades" on the resulting tensors (independently of any idea of composition, as described in 3.33).
 
 {{% /hint %}}
 
-The note above explains why (in the homogeneus case) partial application of multiple tensor arguments is in fact partial application of another tensor as an arguent on a uniquely associated bilinear map. This view shows how natural it is to think of partial application as a process that transforms two tensors into a third.
+The process of "evaluation" (perhaps done over many vector-covector argument pairs simultaneously) as described in 3.35 is known as a [tensor contraction](https://en.wikipedia.org/wiki/Tensor_contraction). Note that it can involve any number of tensors, as the atomic step is the evaluation of $\text{ev}_V$ with respect to a single vector-covector pair of arguments involved in the group of tensors. The collection of tensors involved in a contraction is referred to as a [tensor network](https://en.wikipedia.org/wiki/Tensor_network). The result of a contraction is of course a single tensor, which can be seen to "compose" the tensors in the network in arbitrarily complex ways (through the perspective in 3.34).
 
-0. Tensor contraction
-1. Einstein notation (mention einsum)
-2. Penrose diagrams 
+{{% hint title="3.36. Note" %}}
+
+Remember that $(9)$ and $(11)$ rely on the assumption that $V^\* \cong V$ exists and is canonical, as with any Hilbert space (per 3.14) or finite-dimensional vector space. This is what underlies 3.34 (the perspective of "trades and compositions") and 3.35 (the perspective of "contractions through evaluations"). The idea of "trading" described in 3.33 was central in these contexts.
+
+While assuming a canonical $V^* \cong V$ provides a way to perform "trades" which we semantically interpret to be uniquely correct (the bijection underlying the isomorphism), many applications introduce special tensors of type $(2, 0)$ or $(0, 2)$ with the sole purpose of using them as adapters, enabling "trades" via contractions with them, for example, to contract a tensor of type $(0, 7)$ with an adapter of type $(2, 0)$ to obtain another of type $(1, 6)$.
+
+{{% /hint %}}
+
+#### Heterogeneous Contractions
+
+We have mostly ignored heterogeneous tensor spaces. Now, the framework of contractions offers a great opportunity to pull them back onto our train of thought. We have implied two stages for finding the type of a tensor contraction. First, consider the tensor product of all the spaces involved. Then, repeatedly utilize the canonical map $\text{ev}_V$, once per pair of dual spaces involved in the contraction.  
+
+{{% hint title="3.37. Note" %}}
+
+For a homogeneous tensor network involving tensors $T_1, \\, \ldots, \\, T_n$ with $T_i$ of shape $(a_i, b_i)$, the tensor product of all the tensors in the network is
+
+$$
+\otimes_i \, T_i \in \otimes_i \, ((\otimes^{a_i} V) \otimes (\otimes^{b_i} V^*)) \;\; \text{s.t.} \;\; T_i \in T_{b_i}^{\, a_i}(V)
+$$
+
+thanks to $(9)$. Applying 3.17 to reorganize, we see that $\otimes_i \\, T_i$ is of type $(\Sigma_i a_i , \\, \Sigma_i b_i)$. We then continue to use 3.17 and compose $\text{ev}_V$ with $\text{id}_V$ to construct mappings that perform arbitrary contractions just as done in 3.35, where together with "trades," we may achieve a contraction with any type in
+
+$$
+\{ \, (a, b) \; : \; a + b = 2k \;\; \text{s.t.} \;\; 0 \leq k \leq \min(\Sigma_i a_i , \, \Sigma_i b_i) \, \}.
+$$
+
+{{% /hint %}}
+
+Here, we notice that we can use specialized maps $\text{ev}_X$ for appearances of each different vector space $X$ in a heterogeneous tensor contraction. While I will not formulate a heterogeneous equivalent of 3.37 (as it would be exceedingly verbose), we can see that for a tensor of type 
+
+$$
+(\{A_{(1)}^*, \, \ldots, \, B_{(1)}^*, \ldots \}, \{A_{(1)}, \, \ldots, \, B_{(1)}, \ldots \}),
+$$
+
+a contraction is determined by a collection of pairs $\\{ (X_{(i)}^*, \\, X_{(j)}), \\, \ldots \\}$ where maps $\text{ev}_X$ are to be used in the manner of 3.35. It requires a significant amount of bookeeping, but its soundness is visible through an argument completely analogous to 3.31. Likewise, we can apply "trading" as in 3.33 for "like terms" in their domain and codomain (pairs of vector spaces dual to each other among their factors).
+
+{{% hint title="3.38. Note" %}}
+
+Bookeeping heterogeneous tensor contractions is a big practical problem. In particular, many machine learning workloads which consider heterogeneous tensors (often typed over vector spaces $\langle \mathbb{R}^d \rangle\_{d \\, \in \\, D}$) are made difficult from the need of ensuring that tensor contractions are well-formed before their coordinates can be computed.
+
+{{% /hint %}}
+
+
+#### Syntax Standards 
+
+An appealing model of tensor operations was offered by [Sir Roger Penrose](https://en.wikipedia.org/wiki/Roger_Penrose) in 1971 within the illustrated writeup [Applications of Negative-Dimensional Tensors](https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf). There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as [Penrose graphical notation](https://en.wikipedia.org/wiki/Penrose_graphical_notation). It is delightful for any abstract treatment of tensors (like our own so far).
+
+{{% hint title="3.39. Example" %}}
+
+In Penrose graphical notation, individual tensors are represented as nodes in a graph sometimes distinguished by geometric shapes for ease of reference. The type of the tensor being represented is indicated by its number of outgoing edges. The system differentiates a "cartesian" case by the availability of a bijection $\Phi : V \to V^*$. (We have been assuming this -- see 3.36). In the cartesian case, edge direction does not matter. Otherwise, a tensor of type $(a, b)$ will have $a$ upwards pointing edges and $b$ downward pointing edges. Contractions are set by connecting corresponding edges.
+
+{{% /hint %}}
 
 {{< hcenter >}}
 {{< figure src="roger-penrose.png" width="256" caption="Sir Roger Penrose (born August 8, 1931)" >}}
