@@ -3,7 +3,7 @@ title: "Perspectives into Tensors, Signals, and Kernel Methods"
 category: technical
 date: 2025-09-08
 math: true
-draft: false 
+draft: true 
 ---
 
 {{< toc >}}
