@@ -10,7 +10,7 @@ draft: true
 
 ## Abstract
 
-Linear algebra, signal processing, and machine learning methods are (one of many groups of) topics that enjoy beautiful relationships enclosed in a dense shell of mathematics. Within the shell, one finds a kernel of surprisingly diverse perspectives which are simply a pleasure to entertain. This article hopes to give the reader a romantic and thematic glimpse of the truths in this particular group of topics.
+Linear algebra, signal processing, and machine learning methods are (one of many groups of) topics that enjoy beautiful relationships enclosed in a dense shell of mathematics. Within the shell, one finds a kernel of surprisingly diverse perspectives which are simply a pleasure to entertain. This article hopes to give the reader a thematic glimpse of some ideas in this particular group of topics, deprioritizing content density. 
 
 ---
 
@@ -18,20 +18,11 @@ Linear algebra, signal processing, and machine learning methods are (one of many
 
 I follow an essay-like structure including an introduction, body, and conclusion. The introduction sets the stage building from "class-style" knowledge, assuming a first course in linear algebra, signal processing, and machine learning. For readers lacking this background, I leave pointers to free resources.
 
-The introduction arrives at the [linear operator](https://en.wikipedia.org/wiki/Linear_map) perspective of [systems of many dimensions](https://en.wikipedia.org/wiki/Multidimensional_system), defining system properties like [time-invariance](https://en.wikipedia.org/wiki/Time-invariant_system) and [causality](https://en.wikipedia.org/wiki/Causal_system) in terms of [tensor](https://en.wikipedia.org/wiki/Tensor) representations. This results in the marriage of many linear algebra and signal processing concepts. These perspectives then help the body, where I present a cross-cutting perspective of the [convolution kernel](https://en.wikipedia.org/wiki/Convolution) and the [reproducing kernel](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces).
+The introduction arrives at the [linear operator](https://en.wikipedia.org/wiki/Linear_map) perspective of [systems of many dimensions](https://en.wikipedia.org/wiki/Multidimensional_system), taking system properties like [time-invariance](https://en.wikipedia.org/wiki/Time-invariant_system) and [causality](https://en.wikipedia.org/wiki/Causal_system) in terms of [tensor](https://en.wikipedia.org/wiki/Tensor) representations. These perspectives then help the body (a cross-cutting perspective of the [convolution kernel](https://en.wikipedia.org/wiki/Convolution) and the [reproducing kernel](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces)).
 
-Finally, the conclusion provides some subjective thematization to the concepts emphasized in the rest of the piece, summarizing mathematical details and indulging in a little bit of sensationalism. An attempt is made of providing pointers to further reading on adjacent concepts.
+{{% hint title="2.1. Note" %}}
 
-
-{{% hint title="2.1. Clarification" %}}
-
-The word "kernel" is criminally polysemous in mathematics, and it will be used a lot in this piece. I mostly use the word under two semantics: The convolution kernel from signal processing and the reproducing kernel from machine learning. All other instances of the word should simply refer to its english meaning.
-
-However, a primary objective of this piece is to reach a perspective of the convolution and reproducing kernels that allows them to be seen through a common lense. So an acute reader may interpret this as an explanation of why they are both called "kernel," assuming that they were both named that way because they represent the same kind of mathematical object in some profound way.
-
-What is interesting is that they both received their names for a superficial reason -- because the symbols that represent them show up inside other symbols. One could imagine that people started calling them "kernel" independently just to avoid saying the phrase "that term in in the middle" while pointing at a blackboard.
-
-As such, the connecting view of the convolution and reproducing kernels that we will work towards only applies to these two kernels (convolution and reproducing). If these were the only two kernels in mathematics, maybe one could now say that they are named the same for a profound reason. But there are numerous other kinds of kernels for which the constructions in this piece simply do not apply.
+The word "kernel" is criminally polysemous in mathematics, and it will be used a lot in this piece. I mostly use the word under two semantics: The convolution kernel from signal processing and the reproducing kernel from machine learning. All other instances of the word should simply refer to its english meaning.[^kernel-semantics]
 
 {{% /hint %}}
 
@@ -45,7 +36,7 @@ This section provides not much more than a definition-based refresher on select 
 * **Signals and Systems.** [_Signals & Systems: Theory and Applications_](https://ss2-2e.eecs.umich.edu/) by Ulaby and Yagle.
 * **Linear algebra.** [_Linear Algebra Done Right_](https://linear.axler.net/) by Axler.
 
-### Vector Spaces 
+### Abstract Vector Spaces 
 
 In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of _Linear Algebra Done Right_:
 
@@ -136,16 +127,16 @@ If the above is true for a vector space $V$ over $\mathbb{F}$, then $\mathcal{B}
 
 {{% hint title="3.3. Example" %}}
 
-The vector space of square-summable sequences of real numbers,
+The vector space of $p$-summable (with $p > 0$) sequences of real numbers,
 
 $$
-\ell^2 = \left\{ (x_1, x_2, x_3, \dots) \;:\; \sum_{n \, = \, 1}^\infty |x_n|^2 < \infty \right\},
+\ell^p = \left\{ (x_1, x_2, x_3, \dots) \;:\; \sum_{n \, = \, 1}^\infty |x_n|^p < \infty \right\},
 $$
 
-has no Hamel basis because, no matter how you define one, you can come up with an element of $\ell^2$ which requires a decomposition into an infinite number of basis elements (which is not allowed). However, it does have the countably-infinite Schauder basis
+has no Hamel basis because, no matter how you define one, you can come up with an element of $\ell^p$ which requires a decomposition into an infinite number of basis elements (which is not allowed). However, it does have the countably-infinite Schauder basis
 
 $$
-\mathcal{B}_{\ell^2} = \left\{ 
+\mathcal{B}_{\ell^p} = \left\{ 
 \left(
  1, \,
  0, \,
@@ -180,15 +171,23 @@ $$
 \end{equation}
 $$
 
-Vector spaces that have a norm are called normed vector spaces. If a normed vector space is [complete](https://en.wikipedia.org/wiki/Complete_metric_space) under the norm-induced [metric](https://en.wikipedia.org/wiki/Metric_space) $d : (x_1, \\, x_2) \mapsto ||x_1 - x_2||$, then it is also called a [Banach space](https://en.wikipedia.org/wiki/Banach_space). 
+Vector spaces that have a norm are called normed vector spaces. If a normed vector space is [complete](https://en.wikipedia.org/wiki/Complete_metric_space) under the norm-induced [metric](https://en.wikipedia.org/wiki/Metric_space) $d : (x_1, \\, x_2) \mapsto \\| x_1 - x_2 \\|$, then it is also called a [Banach space](https://en.wikipedia.org/wiki/Banach_space). With the example of $\ell^p$, we have completeness through the conventional $\ell^p$-norm, defined with
+
+$$
+\|x\|_p =
+\begin{cases}
+\; \left( \displaystyle\sum_{n=1}^\infty |x_n|^p \right)^{1/p} & \text{if} \;\; 1 \le p < \infty, \\[1.8em]
+\;\; \sup_{n} |x_n| & \text{if} \;\; p = \infty.
+\end{cases}
+$$
 
 {{% hint title="3.4. Note" %}}
 
-Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this piece, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a complete space (such as $\ell^2$).
+Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this piece, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a complete space (such as $\ell^p$).
 
 {{% /hint %}}
 
-If a Banach space is also equipped with an [inner product](https://en.wikipedia.org/wiki/Inner_product_space) in such a way that $\langle x, \\, x \rangle = ||x||^2$, then it is also called a [Hilbert space](https://en.wikipedia.org/wiki/Inner_product_space). With the understanding that a vector space with an inner product defined is called an inner-product space, we arrive at the following:
+If a Banach space is also equipped with an [inner product](https://en.wikipedia.org/wiki/Inner_product_space) in such a way that $\langle x, \\, x \rangle = \\| x \\|^2$, then it is also called a [Hilbert space](https://en.wikipedia.org/wiki/Inner_product_space). With the understanding that a vector space with an inner product defined is called an inner-product space, we arrive at the following:
 
 $$
 \begin{equation}
@@ -234,14 +233,31 @@ where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intu
 
 {{% hint title="3.6. Example" %}}
 
-We can consider the Hilbert space of all square-integrable functions
+We can consider the Banach space of all $p$-integrable (with $p > 0$) functions on a measurable set $X$
 
 $$
-L^2(\mathbb{R}) = 
-\Bigl\{\, f:\mathbb{R} \to \mathbb{C} \; \big| \; \int_{-\infty}^{\infty} |f(t)|^2 \, dt < \infty \,\Bigr\},
+L^p(X, \, \mu) = 
+\Bigl\{\, f: X \to \mathbb{C} \; \text{measurable} \; \big| \; \int_{X} |f(x)|^p \, d\mu(x) < \infty \,\Bigr\}.
 $$
 
-with the inner product $\langle f_1(t), \\, f_2(t) \rangle = \int_{\mathbb{R}} f_1(t) \overline{f_2(t)} \\, dt$. A natural choice of "continuous basis" for $L^2(\mathbb{R})$ is the family of complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,
+Much like the $\ell^p$-norm is standard for $\ell^p$, the $L^p$-norm is standard for $L^p$. It is defined in the same way, with the only difference being the promotion of the sum to a Lebesgue integral on $X$ using the measure $\mu$
+
+$$
+\|f\|_p =
+\begin{cases}
+\; \left( \displaystyle\int_{X} |f(x)|^p \, d\mu(x) \right)^{1/p} & \text{if} \;\; 1 \le p < \infty, \\[1.4em]
+\;\; \sup_x |f(x)| & \text{if} \;\; p = \infty.
+\end{cases}
+$$
+
+Notice that if $X = \mathbb{N}$ and $\mu$ is the counting measure, $L^p(X, \\, \mu)$ becomes $\ell^p$ and the $L^p$-norm is the $\ell^p$-norm.
+In the important case of $L^2(\mathbb{R})$, the inner product defined by
+
+$$
+\langle f_1(x), \, f_2(x) \rangle = \int_{\mathbb{R}} f_1(x) \overline{f_2(x)} \, dx
+$$
+
+actually ensures that $\langle f, f \rangle = \\| f \\|\_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of "continuous basis" for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,
 
 $$
 f(t) = \int_{\mathbb{R}} c(\omega)b(\omega) \, d\mu(\omega) = \int_{-\infty}^{\infty} c(\omega)\, b_\omega(t)\, d\omega.
@@ -266,7 +282,7 @@ It is not difficult to show algebraically that the Fourier transform $\mathcal{F
 
 #### Overview
 
-We have expanded a finite-dimensional view of vector spaces to potentially allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^2$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered the conepts of Banach and Hilbert spaces.
+We have expanded a finite-dimensional view of vector spaces to potentially allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^p$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered the conepts of Banach and Hilbert spaces.
 
 {{< hcenter >}}
 {{< figure src="david-hilbert.jpg" width="256" caption="David Hilbert (January 23, 1862 – February 14, 1943)" >}}
@@ -288,7 +304,7 @@ $$
 
 {{% /hint %}}
 
-### Tensor Spaces
+### Abstract Tensor Spaces
 
 Let us revisit the opening scene of _Linear Algebra Done Right_:
 
@@ -477,7 +493,7 @@ $$
  \forall \, v \in H, \; \varphi(v) = \langle u, v \rangle.
 $$
 
-Furthermore, $||u|| = ||\varphi||$. This gives a natural identification between elements of $H$ and $H^*$ by the canonical bijection $J : u \mapsto \varphi$. Here, we say "canonical" because it is provided uniquely by the inner product. This is the statement of the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem).
+Furthermore, $\\| u \\| = \\| \varphi \\|$. This gives a natural identification between elements of $H$ and $H^*$ by the canonical bijection $J : u \mapsto \varphi$. Here, we say "canonical" because it is provided uniquely by the inner product. This is the statement of the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem).
 
 {{% /hint %}}
 
@@ -644,7 +660,7 @@ $$
 \end{equation}
 $$
 
-Here, $(m, \\, n)$ is called the "type" of the tensor $T$. This makes a map like $m : \mathbb{R}^2 \times \mathbb{R}^4 \to \mathbb{R}$ strictly not interpretable as a tensor, as $m$ itself is not of tensor form, and there is no standard bijection that can help us view it as a tensor. That is, we cannot always identify a tensor with a multilinear map.
+Here, $(m, \\, n)$ is named the "type" of the tensor $T$, where $m + n$ is referred to as $\text{rank}(T)$. This makes a map like $m : \mathbb{R}^2 \times \mathbb{R}^4 \to \mathbb{R}$ not identifiable as a tensor, as it is not of tensor form and, critically, there is no standard bijection to coerce its form into $(8)$ -- there is no canonical isomorphism to help us.
 
 {{% hint title="3.23. Note" %}}
 
@@ -856,13 +872,13 @@ Much like $(9)$ relies on finite-dimensionality of the vector space in question 
 
 {{% /hint %}}
 
-It is still possible to consider tensor type in the heterogeneous case -- one simply has to keep track of one type tuple per $[V] \in (\mathcal{V}/=)$ (see 3.31). If there are $K$ such equivalence classes, a tensor type may be
+It is still possible to consider tensor type in the heterogeneous case -- one simply has to keep track of one type tuple per $[V] \in (\mathcal{V}/=)$ (see 3.31). This embodies a perspective where heterogeneous tensors are informally "superpositions" of homogeneous tensors (via the tensor product). Observing this, we can write the type of a heterogeneous tensor $T$ as
 
 $$
-(m_1, \, \ldots, \, m_K, \, n_1, \, \ldots, \, n_K).
+\langle (m_V, \, n_V) \rangle_{[V] \, \in \, (\mathcal{V} /= )} \;\; \text{s.t.} \;\; \text{rank}(T) = \langle \, \text{rank}_V(T) \, \rangle_{[V] \, \in \, (\mathcal{V} /= )} \;\; \big( \, \text{rank}_V(T) = m_V + n_V \, \big).
 $$
 
-With heterogeneous tensors, one must also carry a mapping of type index to corresponding vector space. Without this, we would not know which vector space each type tuple $(m_i, \\, n_i)$ corresponds to. So when it is not clear from context, we simply say that the type is $(A, \\, B)$ as implied from the syntax of $(10)$.
+With heterogeneous tensors, one must also carry a mapping of type index to corresponding vector space. Without this, we would not know which vector space each type tuple $(m_i, \\, n_i)$ corresponds to. So when it is not clear to use the above syntax, we just write the type as $(A, \\, B)$ as implied from $(10)$.
 
 {{< hcenter >}}
 {{< figure src="vera-molnar-untitled-1974.png" width="512" caption="Vera Molnár, Untitled (1974)" >}}
@@ -944,9 +960,9 @@ The process of "evaluation" (perhaps done over many vector-covector argument pai
 
 {{% hint title="3.36. Note" %}}
 
-Remember that $(9)$ and $(11)$ rely on the assumption that $V^\* \cong V$ exists and is canonical, as with any Hilbert space (per 3.14) or finite-dimensional vector space. This is what underlies 3.34 (the perspective of "trades and compositions") and 3.35 (the perspective of "contractions through evaluations"). The idea of "trading" described in 3.33 was central in these contexts.
+Remember that $(9)$ and $(11)$ rely on the assumption that $V^\* \cong V$ exists and is canonical, as with any Hilbert space (per 3.14) or finite-dimensional vector space. This works because the inner product, which supports the bijection underlying the isomorphism, is assumed to be canonical (see 3.14 for the bijection it enables). 
 
-While assuming a canonical $V^* \cong V$ provides a way to perform "trades" which we semantically interpret to be uniquely correct (the bijection underlying the isomorphism), many applications introduce special tensors of type $(2, 0)$ or $(0, 2)$ with the sole purpose of using them as adapters, enabling "trades" via contractions with them, for example, to contract a tensor of type $(0, 7)$ with an adapter of type $(2, 0)$ to obtain another of type $(1, 6)$.
+While assuming a canonical $V^* \cong V$ provides a map to perform "trades" which we semantically interpret to be uniquely correct in a completely abstract context (the bijection underlying the isomorphism), many applications introduce (non-canonical) tensors which enable "trades" via contractions with them. This is often done implicitly by de-canonicalizing the standard inner product in a set and replacing it with another cooler version (see 3.40).
 
 {{% /hint %}}
 
@@ -962,10 +978,10 @@ $$
 \otimes_i \, T_i \in \otimes_i \, ((\otimes^{a_i} V) \otimes (\otimes^{b_i} V^*)) \;\; \text{s.t.} \;\; T_i \in T_{b_i}^{\, a_i}(V)
 $$
 
-thanks to $(9)$. Applying 3.17 to reorganize, we see that $\otimes_i \\, T_i$ is of type $(\Sigma_i a_i , \\, \Sigma_i b_i)$. We then continue to use 3.17 and compose $\text{ev}_V$ with $\text{id}_V$ to construct mappings that perform arbitrary contractions just as done in 3.35, where together with "trades," we may achieve a contraction with any type in
+thanks to $(9)$. Applying 3.17 to reorganize, we see that $\otimes_i \\, T_i$ is of type $(\Sigma_i a_i , \\, \Sigma_i b_i)$. We then continue to use 3.17 and compose $\text{ev}_V$ with $\text{id}_V$ to construct mappings that perform arbitrary contractions just as done in 3.35, where together with "trades," we may achieve a contraction with any type
 
 $$
-\{ \, (a, b) \; : \; a + b = 2k \;\; \text{s.t.} \;\; 0 \leq k \leq \min(\Sigma_i a_i , \, \Sigma_i b_i) \, \}.
+(a, b) \;\; \text{s.t.} \;\; a + b = \text{rank(T)} - 2k, \;\; 0 \leq k \leq \lfloor \text{rank}(T) \, / \, 2 \rfloor.
 $$
 
 {{% /hint %}}
@@ -985,19 +1001,104 @@ Bookeeping heterogeneous tensor contractions is a big practical problem. In part
 {{% /hint %}}
 
 
-#### Syntax Standards 
+#### Syntax and Applications 
 
 An appealing model of tensor operations was offered by [Sir Roger Penrose](https://en.wikipedia.org/wiki/Roger_Penrose) in 1971 within the illustrated writeup [Applications of Negative-Dimensional Tensors](https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf). There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as [Penrose graphical notation](https://en.wikipedia.org/wiki/Penrose_graphical_notation). It is delightful for any abstract treatment of tensors (like our own so far).
 
 {{% hint title="3.39. Example" %}}
 
-In Penrose graphical notation, individual tensors are represented as nodes in a graph sometimes distinguished by geometric shapes for ease of reference. The type of the tensor being represented is indicated by its number of outgoing edges. The system differentiates a "cartesian" case by the availability of a bijection $\Phi : V \to V^*$. (We have been assuming this -- see 3.36). In the cartesian case, edge direction does not matter. Otherwise, a tensor of type $(a, b)$ will have $a$ upwards pointing edges and $b$ downward pointing edges. Contractions are set by connecting corresponding edges.
+In Penrose graphical notation, individual tensors are represented as nodes in a graph sometimes distinguished by geometric shapes for ease of reference. The rank of the tensor being represented is indicated by its number of outgoing edges. The system differentiates a "cartesian" case by the availability of a bijection $\Phi : V \to V^*$. (We have been assuming this -- see 3.36). In the cartesian case, edge direction does not matter. Otherwise, a tensor of type $(a, b)$ will have $a$ upwards pointing edges and $b$ downward pointing edges. Contractions are set by connecting corresponding edges.
+
+{{< hcenter >}}
+{{< figure src="penrose-diagram.png" width="256" caption="" >}}
+{{< /hcenter >}}
+
+Above we see a cartesian Penrose diagram, representing a contraction involving two tensors $A$ (a square) and $B$ (a circle) with $\text{rank}(A) = 2$ and $\text{rank}(B) = 3$. For example, $A$ may be in $\mathcal{L}(V)$ and $B$ in $\mathcal{L}(V, \\, V; \\, V)$, such that their contraction (a tensor of rank 3) may also  be in $\mathcal{L}(V, \\, V; \\, V)$, representing a "modification" of B with one A "feeding" into one of its inputs and another A "being fed" its output.
 
 {{% /hint %}}
 
 {{< hcenter >}}
 {{< figure src="roger-penrose.png" width="256" caption="Sir Roger Penrose (born August 8, 1931)" >}}
 {{< /hcenter >}}
+
+By ignoring any details needed to determine tensor instances, Penrose notation enjoys better ergonomics for working with abstract tensors. But before Penrose (and the study of abstract tensors spaces itself), the early appearances of these objects first appeared in service of fields like [differential geometry](https://en.wikipedia.org/wiki/Differential_geometry), only being baptized as "tensors" at a later time by physicists.
+
+{{% hint title="3.40. Example" %}}
+
+Recall 3.36, which remarked that some applications would introduce a special tensor as a canonical bijection in the stead of a canonical link $V \cong V^\*$ to help manage "trades." An early example is the [metric tensor](https://en.wikipedia.org/wiki/Metric_tensor) defined in the field of differential (Riemannian) geometry. Consider a sphere embedded in $\mathbb{R}^3$, which is the set 
+
+$$
+\mathcal{E}(S^2) = \left\{ p \in \mathbb{R}^3 : \|p\|_2 = r \right\}.
+$$
+
+Here, $r$ is the radius of the sphere and $\\| \cdot \\|\_2$ is the $\ell^2$-norm. Above, $S^2$ is a [manifold](https://en.wikipedia.org/wiki/Manifold), and not a vector space -- this is a completely different mathematical environment. It would be difficult to attempt a complete explanation of manifolds now, so I will summarize. A manifold $\mathcal{M}$ is in aggregate
+
+* an underlying set $M$ with a topology $\tau$ (so it is also a [topological space](https://en.wikipedia.org/wiki/Topological_space)),
+* an index $\mathcal{A} = \langle \\, \varphi_\alpha : U_\alpha \to \mathbb{R}^n \\, \rangle_{\alpha \\, \in \\, A}$ of [homeomorphisms](https://en.wikipedia.org/wiki/Homeomorphism) with $\cup_\alpha \\, U_\alpha = M$,
+* and compatibility and smoothness guarantees ensuring coherence.
+
+Above, $\mathcal{A}$ is called an atlas. This name is very accurate -- just as a [real-world atlas](https://en.wikipedia.org/wiki/Atlas) is a collection of charts that represent patches of big places in a flat page until the entire place is mapped, $\mathcal{A}$ also contains [charts](https://en.wikipedia.org/wiki/Atlas_(topology)) $\varphi_\alpha$ that represent local patches $U_\alpha$ of $\Mu$ in a "flat" space $\mathbb{R}^n$. The key insight is that we can "traverse the entire world" of $M$ by moving between patches, allowing us to describe $M$'s local geometry in Euclidean terms, with global consistency ensured by the compatibility of the charts.
+
+If we can "move between" the patches of $M$ smoothly using atlas charts, we call $\mathcal{M}$ a [differentiable manifold](https://en.wikipedia.org/wiki/Differentiable_manifold). This lets us do calculus on $M$, describing characteristics (like curvature) that would be otherwise inaccessible. Usually, manifolds are defined in an ambient space which they are a subset of. For example, $S^2 \subset \mathbb{R^3}$. But an [intrinsic](https://en.wikipedia.org/wiki/Manifold#:~:text=Intrinsic%20and%20extrinsic%20view%5Bedit%5D) treatment of manifolds is also possible, such that $S^2$ exists independently of $\mathbb{R}^3$. Here,
+
+$$
+\mathcal{E} : S^2 \hookrightarrow \mathbb{R}^3 \;\; \text{s.t.} \;\; \mathcal{E}(p) = [x, \, y, \, z]^\top
+$$
+
+is an [embedding](https://en.wikipedia.org/wiki/Embedding) mapping a point $p$ in $S^2$ to another point in $\mathbb{R}^3$, decoupling the concepts. This comes with the added benefit of being able to identify points in $S^2$ with more ergonomic "coordinates." In particular, we can do a conversion to polar coordinates $P = \\{ x \in [0, \pi] \times [0, 2 \pi ) \\}$ where, even though there is no smooth global map $S^2 \to P$ (you cannot continuously deform a sphere into a plane), each chart we define over $P$ is smooth. This is the benefit of our "patchwork" strategy, so we define all $\varphi_\alpha(p)$ as restrictions $\mathcal{E} |\_{U_\alpha}(p)$ of
+
+$$
+\mathcal{E} : S^2 \hookrightarrow \mathbb{R}^3 \;\; \text{s.t.} \;\; \mathcal{E}(p) = \Phi(\Psi(p)) = \Phi(\theta, \, \phi) = r
+\begin{bmatrix}
+\sin\theta \cos\phi \\
+\sin\theta \sin\phi \\
+\cos\theta
+\end{bmatrix}
+$$
+
+where $\Psi : S^2 \to P$ is a bijection between $S^2$ and the set of polar coordinates $P \in \mathbb{R}^2$. Now, we can analyze how distances in $P$ (which have an easy relationship to distances in $S^2$ by design) translate to distances in the ambient space $\mathbb{R}^3$. In doing so, we will "pull back" the Euclidean metric of $\mathbb{R}^3$ to get another that describes $S^2$, while our charts work entirely in the background as theoretical aid (while we use $\mathcal{E} = \Phi \circ \Psi$). We call
+
+
+$$
+\mathcal{J} \mathcal{\Phi} : T_{(\theta, \, \phi)}P \to T_{\Phi(\theta, \, \phi)}\mathbb{R}^3 \;\; \text{s.t.} \;\; 
+\mathcal{J} \mathcal{\Phi} = r \begin{bmatrix}
+\cos\theta \cos\phi & -\sin\theta \sin\phi \\
+\cos\theta \sin\phi & \sin\theta \cos\phi \\
+-\sin\theta & 0
+\end{bmatrix}
+$$
+
+(which is just the Jacobian of $\Phi$) the [pushforward](https://en.wikipedia.org/wiki/Pushforward_(differential)) differential (where we denote the vector space tangent to $p$ in the manifold $M$ with $T_p M$). This map tells us how a tiny differential change from one point in $P$ is translated to another tiny differential change around its image in $\mathbb{R}^3$ under our embedding of $S^2$, which appears linear. Note that $\mathcal{J} \mathcal{\Phi}$ gives a rank $2$ matrix, since you can only "move" in two directions on the surface $S^2$. Finally, 
+
+$$
+\langle \mathcal{J} \mathcal{\Phi}(v), \, \mathcal{J} \mathcal{\Phi}(w) \rangle_{\mathbb{R}^3} 
+= v^\top (\mathcal{J} \mathcal{\Phi})^\top (\mathcal{J} \mathcal{\Phi}) \, w
+= \begin{bmatrix}
+v_\phi & v_\theta
+\end{bmatrix}
+\begin{bmatrix}
+r^2 & 0 \\
+0 & r^2 \sin^2 \theta
+\end{bmatrix}
+\begin{bmatrix}
+w_\phi \\
+w_\theta
+\end{bmatrix}
+$$
+
+provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \\, \mathcal{J} \mathcal{\Phi}(w) \rangle_{\mathbb{R}^3}$ which, for two points differential to a point $c = (\phi, \\, \theta)$ in $P$ (and hence in $S^2$ via $\Psi$), determines their geometric relationship (as it is an inner product). This defines a [tensor field](https://en.wikipedia.org/wiki/Tensor_field) $G$ that assigns one such tensor $g_c = G(c)$ of type $(0, 2)$ per $T_c P$ which fixes the geometry of $\mathcal{M}$ independently of the ambient space $\mathbb{R}^3$. Here, $g_c$ is the (pointwise) [pullback](https://en.wikipedia.org/wiki/Pullback_(differential_geometry)) of the $\mathbb{R}^3$ metric (given by $\langle \cdot, \cdot \rangle_{\mathbb{R}^3}$) to $S^2$ and we say that $\mathbb{R}^3$ "induced" a metric on $S^2$. 
+
+{{% /hint %}}
+
+In the above example,  $T_p M$ has no abstract canonical isomorphism to its own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm. 
+
+The dominant model for tensor operations in coordinates is indisputably [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation). Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^\*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer [Ricci-Curbastro](https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro), but it was made popular by [Einstein]() when he published a novel use of it in physics with his [field equations](https://en.wikipedia.org/wiki/Einstein_field_equations) in 1915.
+
+{{% hint title="3.41. Note" %}}
+
+TODO
+
+{{% /hint %}}
 
 #### Overview
 
@@ -1006,6 +1107,9 @@ In Penrose graphical notation, individual tensors are represented as nodes in a 
 ### Signals and Systems 
 
 ### Kernel Methods
+
+[^kernel-semantics]: These two "kernels" received their names for a superficial reason -- because the symbols that represent them show up inside other symbols. One could imagine that people started calling them "kernel" independently just to avoid saying the phrase "that term in in the middle" while pointing at a blackboard. As such, the connecting view of the convolution and reproducing kernels in this piece does not "generalize" to kernels in other contexts (many of which received their names the same non-profound reason). 
+
 
 [^axiom-choice]: When considering infinite-dimensional vector spaces, this statement is true if and only if one admits the axiom of choice. Perhaps this was another motivation of Axler's restriction to finite-dimensional vector spaces.
 
