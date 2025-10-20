@@ -347,7 +347,7 @@ is a vector space over $\mathbb{F}$. We denote the case of linear operators on $
 
 {{% hint title="3.9. Note" %}}
 
-There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.
+There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way.
 
 {{% /hint %}}
 
@@ -587,7 +587,7 @@ is a vector space over $\mathbb{F}$. We denote the operator case as $\mathcal{L}
 
 {{% hint title="3.19. Specialization of 3.9" %}}
 
-There is a bijection between $\mathcal{L}(\bigotimes_i V_i, W)$ and $\mathbb{F}^{\times_i (\dim V_i)} \times \mathbb{F}^{(\dim W)}$ when $V$ and $W$ are finite-dimensional vector spaces over $\mathbb{F}$. That is, for each linear map from a tensor product over spaces $V_1, \\, \ldots, \\, V_n$ and into $W$ (all over a field $\mathbb{F}$), there is one matrix with axis lengths $(\dim V_1, \\, \ldots, \\, \dim V_n, \\, \dim W)$ with entries in $\mathbb{F}$.
+The basis-induced isomorphism $\mathcal{L}(\bigotimes_i V_i, W) \cong \mathbb{F}^{(\times_i \dim V_i) \times (\dim W)}$ (where $V$ and $W$ are finite-dimensional over $\mathbb{F}$) exists, but is canonical only through a generalization of matrix multiplication (seen in 3.41). To be clear, 3.9 is still true in that $\mathcal{L}(\bigotimes_i V_i, W) \cong \mathbb{F}^{(\Pi_i \dim V_i) \times (\dim W)}$, but it is not canonical for tensor product spaces. 
 
 {{% /hint %}}
 
@@ -1092,11 +1092,54 @@ provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \
 
 In the above example,  $T_p M$ has no abstract canonical isomorphism to its own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm. 
 
-The dominant model for tensor operations in coordinates is indisputably [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation). Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^\*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer [Ricci-Curbastro](https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro), but it was made popular by [Einstein]() when he published a novel use of it in physics with his [field equations](https://en.wikipedia.org/wiki/Einstein_field_equations) in 1915.
+The dominant model for tensor operations in coordinates is indisputably [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation). Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^\*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer [Ricci-Curbastro](https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro), but it was made popular by [Einstein](https://en.wikipedia.org/wiki/Albert_Einstein) when he published a novel use of it in physics with his [field equations](https://en.wikipedia.org/wiki/Einstein_field_equations) in 1915.
 
 {{% hint title="3.41. Note" %}}
 
-TODO
+Einstein notation is very well-motivated. It will be easier to see how we could come up with it ourselves. Let us consider a tensor $m$ of type $(1, 1)$ in multilinear map form by attempting to represent it as a matrix,
+
+$$
+m : V \to V \;\; \text{s.t.} \;\; M_\mathcal{B}(m) = 
+\begin{bmatrix}
+ m_{1,1} & m_{1,2} & m_{1,3} \\
+ m_{2,1} & m_{2,2} & m_{2,3} \\
+ m_{3,1} & m_{3,2} & m_{3,3}
+\end{bmatrix}.
+$$
+
+Here, $M_\mathcal{B}(m)$ is simply the matrix representation of $m$ under the basis $\mathcal{B}$. Through 3.19, we observe that we can do this precisely because there is a function from entry indices to values which makes matrix multiplication work precisely as we expect it to, which is
+
+$$
+\text{entry}_m(i, j) = m_{i,j}.
+$$
+
+From a computational perspective, this is a unique proxy for $m$ when considering maps in $\mathcal{L}(V, W)$ (via 3.9). For example, the [Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm) $\\| m \\|\_F = \sum_{(i, j)} |m_{i,j}|^2$ makes use of this notation. While this made sense for a linear map of form $V \to W$, issues arise for tensors of other forms. Consider $g_c$ from 3.40, 
+
+$$
+g_{(\theta, \phi)}(v, w) \mapsto
+\begin{bmatrix}
+v_\phi & v_\theta
+\end{bmatrix}
+\begin{bmatrix}
+r^2 & 0 \\
+0 & r^2 \sin^2 \theta
+\end{bmatrix}
+\begin{bmatrix}
+w_\phi \\
+w_\theta
+\end{bmatrix},
+\;\; \text{s.t.} \;\;
+M_\mathcal{B}(g_{({\theta}, {\phi})}) = 
+\begin{bmatrix}
+r^2 & 0 \\
+0 & r^2 \sin^2 \theta
+\end{bmatrix}.
+$$
+
+If given only the matrix $M_\mathcal{B}(g_{({\theta}, {\phi})})$, there would be no way of knowing it represents the map of (inner-product) form $g_{(\theta, \phi)} : P \times P \to \mathbb{R}$ (and not an operator in $\mathcal{L}(V, V)$) precisely because it is canonical to interpret it as a map in $\mathcal{L}(V, V)$. To emphasize, this is canonical simply to make matrix-vector multiplication work as usual.
+
+Hence, one must revisit matrix multiplication to have a basis-induced canonical isomorphism between tensors and matrices (see 3.19). To this end, we will adopt the tensor contraction in coordinates as matrix multiplication for tensors. We will treat 3.19 as a given; a rank-$n$ tensor will be represented as a matrix with $n$ axes (such that $n$ indices identify an entry).
+
 
 {{% /hint %}}
 
