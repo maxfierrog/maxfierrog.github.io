@@ -1979,6 +1979,23 @@ $$<p>a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, \, X_{
 <h4 id="syntax-and-applications">Syntax and Applications</h4>
 <p>An appealing model of tensor operations was offered by <a href="https://en.wikipedia.org/wiki/Roger_Penrose">Sir Roger Penrose</a> in 1971 within the illustrated writeup <a href="https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf">Applications of Negative-Dimensional Tensors</a>. There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as <a href="https://en.wikipedia.org/wiki/Penrose_graphical_notation">Penrose graphical notation</a>. It is delightful for any abstract treatment of tensors (like our own so far).</p>
 <style>
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+</style>
+<div class="halign-container">
+<figure>
+    <img loading="lazy" src="roger-penrose.png"
+         alt="Sir Roger Penrose (born August 8, 1931)" width="256"/> <figcaption>
+            <p>Sir Roger Penrose (born August 8, 1931)</p>
+        </figcaption>
+</figure>
+
+</div>
+
+<style>
     .box-body > :last-child {
         margin-bottom: 0 !important;
     }
@@ -2025,23 +2042,6 @@ $$<p>a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, \, X_{
 <p>Above we see a cartesian Penrose diagram, representing a contraction involving two tensors $A$ (a square) and $B$ (a circle) with $\text{rank}(A) = 2$ and $\text{rank}(B) = 3$. For example, $A$ may be in $\mathcal{L}(V)$ and $B$ in $\mathcal{L}(V, \, V; \, V)$, such that their contraction (a tensor of rank 3) may also  be in $\mathcal{L}(V, \, V; \, V)$, representing a &ldquo;modification&rdquo; of B with one A &ldquo;feeding&rdquo; into one of its inputs and another A &ldquo;being fed&rdquo; its output.</p>
 </div>
 </div>
-<style>
-    .halign-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;  
-    }
-</style>
-<div class="halign-container">
-<figure>
-    <img loading="lazy" src="roger-penrose.png"
-         alt="Sir Roger Penrose (born August 8, 1931)" width="256"/> <figcaption>
-            <p>Sir Roger Penrose (born August 8, 1931)</p>
-        </figcaption>
-</figure>
-
-</div>
-
 <p>By ignoring any details needed to determine tensor instances, Penrose notation enjoys better ergonomics for working with abstract tensors. But before Penrose (and the study of abstract tensors spaces itself), the early appearances of these objects first appeared in service of fields like <a href="https://en.wikipedia.org/wiki/Differential_geometry">differential geometry</a>, only being baptized as &ldquo;tensors&rdquo; at a later time by physicists.</p>
 <style>
     .box-body > :last-child {
@@ -2121,7 +2121,24 @@ w_\theta
 $$<p>provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \, \mathcal{J} \mathcal{\Phi}(w) \rangle_{\mathbb{R}^3}$ which, for two points differential to a point $c = (\phi, \, \theta)$ in $P$ (and hence in $S^2$ via $\Psi$), determines their geometric relationship (as it is an inner product). This defines a <a href="https://en.wikipedia.org/wiki/Tensor_field">tensor field</a> $G$ that assigns one such tensor $g_c = G(c)$ of type $(0, 2)$ per $T_c P$ which fixes the geometry of $\mathcal{M}$ independently of the ambient space $\mathbb{R}^3$. Here, $g_c$ is the (pointwise) <a href="https://en.wikipedia.org/wiki/Pullback_(differential_geometry)">pullback</a> of the $\mathbb{R}^3$ metric (given by $\langle \cdot, \cdot \rangle_{\mathbb{R}^3}$) to $S^2$ and we say that $\mathbb{R}^3$ &ldquo;induced&rdquo; a metric on $S^2$.</p>
 </div>
 </div>
-<p>In the above example,  $T_p M$ has no abstract canonical isomorphism to its own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.</p>
+<style>
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+</style>
+<div class="halign-container">
+<figure>
+    <img loading="lazy" src="mark-wilson-1e90-1990.png"
+         alt="Mark Wilson, &#39;1e90&#39; (1990)" width="512"/> <figcaption>
+            <p>Mark Wilson, '1e90' (1990)</p>
+        </figcaption>
+</figure>
+
+</div>
+
+<p>In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.</p>
 <p>The dominant model for tensor operations in coordinates is indisputably <a href="https://en.wikipedia.org/wiki/Einstein_notation">Einstein notation</a>. Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer <a href="https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro">Ricci-Curbastro</a>, but it was made popular by <a href="https://en.wikipedia.org/wiki/Albert_Einstein">Einstein</a> when he published a novel use of it in physics with his <a href="https://en.wikipedia.org/wiki/Einstein_field_equations">field equations</a> in 1915.</p>
 <style>
     .box-body > :last-child {
@@ -2165,9 +2182,9 @@ m : V \to V \;\; \text{s.t.} \;\; M_\mathcal{B}(m) =
 $$<p>Here, $M_\mathcal{B}(m)$ is simply the matrix representation of $m$ under the basis $\mathcal{B}$. Through 3.19, we observe that we can do this precisely because there is a function from entry indices to values which makes matrix multiplication work precisely as we expect it to, which is</p>
 $$
 \text{entry}_m(i, j) = m_{i,j}.
-$$<p>From a computational perspective, this is a unique proxy for $m$ when considering maps in $\mathcal{L}(V, W)$ (via 3.9). For example, the <a href="https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm">Frobenius norm</a> $\| m \|_F = \sum_{(i, j)} |m_{i,j}|^2$ makes use of this notation. While this made sense for a linear map of form $V \to W$, issues arise for tensors of other forms. Consider $g_c$ from 3.40,</p>
+$$<p>From a computational perspective, this is a unique proxy for $m$ when considering maps in $\mathcal{L}(V, W)$ (via 3.9). For example, the <a href="https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm">Frobenius norm</a> $\| m \|_F^2 = \sum_{(i, j)} |m_{i,j}|^2$ makes use of this notation. While this made sense for a linear map of form $V \to W$, issues arise for tensors of other forms. Consider $g_c$ from 3.40,</p>
 $$
-g_{(\theta, \phi)}(v, w) \mapsto
+g_{(\theta, \phi)}(v, w) = 
 \begin{bmatrix}
 v_\phi & v_\theta
 \end{bmatrix}
@@ -2178,18 +2195,159 @@ r^2 & 0 \\
 \begin{bmatrix}
 w_\phi \\
 w_\theta
-\end{bmatrix},
+\end{bmatrix}
 \;\; \text{s.t.} \;\;
 M_\mathcal{B}(g_{({\theta}, {\phi})}) = 
 \begin{bmatrix}
 r^2 & 0 \\
 0 & r^2 \sin^2 \theta
 \end{bmatrix}.
-$$<p>If given only the matrix $M_\mathcal{B}(g_{({\theta}, {\phi})})$, there would be no way of knowing it represents the map of (inner-product) form $g_{(\theta, \phi)} : P \times P \to \mathbb{R}$ (and not an operator in $\mathcal{L}(V, V)$) precisely because it is canonical to interpret it as a map in $\mathcal{L}(V, V)$. To emphasize, this is canonical simply to make matrix-vector multiplication work as usual.</p>
-<p>Hence, one must revisit matrix multiplication to have a basis-induced canonical isomorphism between tensors and matrices (see 3.19). To this end, we will adopt the tensor contraction in coordinates as matrix multiplication for tensors. We will treat 3.19 as a given; a rank-$n$ tensor will be represented as a matrix with $n$ axes (such that $n$ indices identify an entry).</p>
+$$<p>If given only the matrix $M_\mathcal{B}(g_{({\theta}, {\phi})})$, there would be no way of knowing it represents the map of (inner-product) form $g_{(\theta, \phi)} : P \times P \to \mathbb{R}$ (and not an operator in $\mathcal{L}(V, V)$) precisely because it is canonical to interpret it as a map in $\mathcal{L}(V, V)$. This interpretation is only canonical because matrix-vector multiplication is defined with</p>
+$$
+(Av)_i = \sum_{j} A_{ij} v_j.
+$$<p>Hence, one must revisit matrix multiplication to have a basis-induced canonical isomorphism between tensors and matrices (see 3.19). To this end, we will adopt the tensor contraction in coordinates as matrix multiplication for tensors. A rank-$n$ tensor will be represented as a matrix with $n$ axes (such that $n$ indices identify an entry), such that for a tensor $t$ of type $(a, b)$,</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}}
+$$<p>denotes an entry of its matrix representation. Taking the tensor product of $t$ with a new tensor $g$ of type $(c, d)$ is very simple, as each entry of the product (by the same logic) requires $a + c$ upper and $b + d$ lower indices to be found. So we simply denote their tensor product</p>
+$$
+t \otimes g = 
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$<p>To perform contractions as specified in 3.35, one does a weighted sum across a pair of indices, one upper and one lower (which may belong to different tensors in a tensor product). For example, one could contract $\alpha_a$ with the index $\delta_1$ in the product $t \otimes g$ to obtain</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1}} \, 
+g_{\delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$<p>Note that in the homogeneous case, one can always do this for any upper-lower index pair. The heterogeneous case just requires knowing which upper indices can be contracted with which lower indices (which can be done by tracking which index pairs correspond to duals of the same vector space). Finally, tensors of equal type may be summed entrywise,</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}} +
+{\large q_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}} = 
+{\large h_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}},
+$$<p>with the understanding that the tensor product is distributive over tensor sums. This completes the system that Ricci-Curbastro outlined, allowing an axiomatic treatment for tensors in coordinates. The convention to eschew summation notation in contractions (only implying it when a symbol appears twice as an index) was introduced and popularized by Einstein (effectively his only contribution to <a href="https://en.wikipedia.org/wiki/Ricci_calculus">Ricci calculus</a>):</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$<p>Note that at any point we can find an entry in the matrix representation by replacing all indices with values. This means that Einstein notation is simply element-wise treatment of tensor matrices, with careful consideration of contraction compatibility by use of upper and lower indices. Here, &ldquo;trades&rdquo; translate to index raising or lowering, where (depending on context) one may be allowed to</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}} \xrightarrow{\text{raise } \beta_b}
+{\large t_{\beta_1 \, \cdots \, \beta_{b - 1}}^{\alpha_1 \, \cdots \, \alpha_a \, \beta_b}} \xrightarrow{\text{lower } \beta_b}
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}}.
+$$<p>If allowed to raise or lower indices (which is context-dependent as seen in 3.36 and 3.40), a contraction can be done on two lower or upper indices. So summation (and legality of index lowering or raising) remains implied in cases where $V \cong V^*$ canonically (which Penrose called &ldquo;cartesian&rdquo; in ATS). For example,</p>
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }}.
+$$</div>
+</div>
+<p>Notice that the &ldquo;reduction&rdquo; done by way of summation in a tensor contraction can use any operation with the effect of <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)">folding</a> a collection (returning a single value from multiple values of the same type), although this may break any and all algebraic invariants (depending on context). This could look like</p>
+$$
+w_{abc}^{ik} = \text{reduce}_j \left( v_{a b c}^{i j k} \right).
+$$<p>Since the user is giving up all algebraic gurantees, they may annihilate any index (upper or lower). This is simply treating the tensor matrix as data. But it shows that Einstein notation maintains its richness beyond pure tensor algebra, and is even generalizable to infinite-dimensional tensors via wise choices of $\text{reduce}$.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >3.42. Example</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The cornerstone of the <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">transformer model</a> is generally regarded to be the <a href="https://en.wikipedia.org/wiki/Attention_(machine_learning)">attention mechanism</a>. This is no more than a tensor-valued function $\mathbf{A} : \mathbb{R}^{d \times n} \to \mathbb{R}^{d_v \times n}$ with tunable parameters, generally defined as</p>
+$$
+\mathbf{A}(X) = \text{softmax}\left(\frac{(KX)^\top (QX)}{\sqrt{d_k}}\right) VX.
+$$<p>Here, $X \in \mathbb{R}^{d \times n}$, and the matrices $Q \in \mathbb{R}^{d_k \times d}$ (query projection matrix), $K \in \mathbb{R}^{d_k \times d}$ (key projection matrix), and $V \in \mathbb{R}^{d_v \times d}$ (value projection matrix) are optimized. You rarely see it in Einstein notation as an equation of heterogeneous tensors, which helps when $X$ has many channels to mix (indexed by $c$),</p>
+$$
+\mathbf{A}(X)_{t}^{ic} = \text{softmax} \left(\frac{g_{jm} K_p^j X_s^{pc} Q_q^m X_t^{qc}}{\sqrt{d_k}}\right) V_k^i X_s^{kc}.
+$$<p>I replaced the row-wise dot product application $(KX)^\top (QX)$ with an explicit metric tensor $g_{jm}$, which brings a subtle geometric interpretation to the foreground just by way of notation. Observing this could have motivated us to add another metric tensor $m_{c_1 c_2}$ to capture channel-wise relationships while mixing,</p>
+$$
+\mathbf{A}(X)_{t}^{ic} = \text{softmax} \left(\frac{g_{jm} m_{c_1 c_2} K_p^j X_s^{pc_1} Q_q^m X_t^{qc_2}}{\sqrt{d_k}}\right) V_k^i X_s^{kc}.
+$$<p>With the <a href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html"><code>einsum</code> NumPy API</a>, we can write the above in Python still using Einstein notation. For simplicity, only a single-channel $X$ will be considered. Below, the strategy for determining the tensor <code>g</code> is left unspecified.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># einsum treats all indices as lower (or upper)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># i.e. assumes raising/lowering is generally OK</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">KX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;jk,ks-&gt;js&#39;</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="c1"># keys</span>
+</span></span><span class="line"><span class="cl"><span class="n">QX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ml,lt-&gt;mt&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="c1"># queries</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># attention scores (similarity under g)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;jm,js,mt-&gt;st&#39;</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">KX</span><span class="p">,</span> <span class="n">QX</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">scores</span> <span class="o">=</span> <span class="n">sim</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scores</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">weights</span> <span class="o">=</span> <span class="n">weights</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">VX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ij,jt-&gt;it&#39;</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="c1"># values</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;is,st-&gt;it&#39;</span><span class="p">,</span> <span class="n">VX</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
 </div>
 </div>
 <h4 id="overview-2">Overview</h4>
+<p>We began this section by organizing the concepts of matrices, linear maps, and vectors. We then took a look at linear forms and dual spaces, being careful of infinite-dimensional cases. Later, we expanded the concept of linearity to multilinear maps, and showed how the tensor product &ldquo;linearizes&rdquo; them. That way, we saw how the way we organized matrices, vectors, and linear maps early on applied to tensor product spaces in very natural ways. Finally, tensors allowed us to speak about these objects as unified under a single umbrella woven by tight isomorphisms.</p>
+<p>Although this trajectory was predominantly abstract, we were also exposed to practical notation and uses of tensors in coordinates, with examples from the early history of tensors in differential geometry and from modern applications in deep learning. These examples showed that tensors can be found at many points of the spectrum between raw data and abstract algebraic objects, and that their theory is robust to a wide range of uses &ndash; some more disrespectful than others, but never enough to erase their basic qualities.</p>
+<style>
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+</style>
+<div class="halign-container">
+<figure>
+    <img loading="lazy" src="mark-wilson-e67109-2012.png"
+         alt="Mark Wilson, &#39;e67109&#39; (2012)" width="512"/> <figcaption>
+            <p>Mark Wilson, 'e67109' (2012)</p>
+        </figcaption>
+</figure>
+
+</div>
+
 <h3 id="signals-and-systems">Signals and Systems</h3>
 <h3 id="kernel-methods">Kernel Methods</h3>
 <div class="footnotes" role="doc-endnotes">
