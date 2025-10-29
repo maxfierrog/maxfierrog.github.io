@@ -5,7 +5,7 @@ date: 2025-10-13
 ---
 
 ```
-soledades entre columnas de piedra
+son soledades entre columnas de piedra
 vacíos entre las personas del mundo
 las cumbres de la tierra, sus árboles 
 venas de fuego que mueren en el mar

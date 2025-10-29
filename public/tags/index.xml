@@ -137,7 +137,7 @@ ser que se yergue
     &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
       &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#abstract-vector-spaces&#34;&gt;Abstract Vector Spaces&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#linear-combinations&#34;&gt;Linear Combinations&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#abstract-tensor-spaces&#34;&gt;Abstract Tensor Spaces&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#signals-and-systems&#34;&gt;Signals and Systems&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#kernel-methods&#34;&gt;Kernel Methods&lt;/a&gt;&lt;/li&gt;
@@ -196,7 +196,7 @@ ser que se yergue
 &lt;li&gt;&lt;strong&gt;Signals and Systems.&lt;/strong&gt; &lt;a href=&#34;https://ss2-2e.eecs.umich.edu/&#34;&gt;&lt;em&gt;Signals &amp;amp; Systems: Theory and Applications&lt;/em&gt;&lt;/a&gt; by Ulaby and Yagle.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Linear algebra.&lt;/strong&gt; &lt;a href=&#34;https://linear.axler.net/&#34;&gt;&lt;em&gt;Linear Algebra Done Right&lt;/em&gt;&lt;/a&gt; by Axler.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;abstract-vector-spaces&#34;&gt;Abstract Vector Spaces&lt;/h3&gt;
+&lt;h3 id=&#34;linear-combinations&#34;&gt;Linear Combinations&lt;/h3&gt;
 &lt;p&gt;In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of &lt;em&gt;Linear Algebra Done Right&lt;/em&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;&lt;/blockquote&gt;
@@ -242,10 +242,7 @@ $$&lt;p&gt;Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have 
 &lt;p&gt;The vector space of polynomials (of finite terms) with coefficients in a field $\mathbb{F}$,&lt;/p&gt;
 $$
 \mathbb{F}[x] = \left\{ \sum_{i \, = \, 0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
-$$&lt;p&gt;has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \{1, x, x^2, x^3, \dots \}$. Each of its elements, however, is the linear combination of a finite number of basis elements. For example, the polynomial&lt;/p&gt;
-$$ 
-p(x) = 3 + 4x^2 + x^3
-$$&lt;p&gt;can be expressed as a (finite) linear combination of basis elements,&lt;/p&gt;
+$$&lt;p&gt;has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \{1, x, x^2, x^3, \dots \}$. Each of its elements, however, is the linear combination of a finite number of basis elements. For example, $p(x) = 3 + 4x^2 + x^3$ can be expressed as the combination&lt;/p&gt;
 $$
 p(x) = 3
 \begin{bmatrix}
@@ -365,7 +362,7 @@ $$&lt;p&gt;If the above is true for a vector space $V$ over $\mathbb{F}$, then $
 &lt;p&gt;The vector space of $p$-summable (with $p &amp;gt; 0$) sequences of real numbers,&lt;/p&gt;
 $$
 \ell^p = \left\{ (x_1, x_2, x_3, \dots) \;:\; \sum_{n \, = \, 1}^\infty |x_n|^p &lt; \infty \right\},
-$$&lt;p&gt;has no Hamel basis because, no matter how you define one, you can come up with an element of $\ell^p$ which requires a decomposition into an infinite number of basis elements (which is not allowed). However, it does have the countably-infinite Schauder basis&lt;/p&gt;
+$$&lt;p&gt;has no Hamel basis because, no matter how you define one, there is an element of $\ell^p$ requiring decomposition into an infinite number of basis elements (which is not allowed). But it does have the following countably-infinite Schauder basis:&lt;/p&gt;
 $$
 \mathcal{B}_{\ell^p} = \left\{ 
 \left(
@@ -546,9 +543,10 @@ $$
 $$&lt;p&gt;actually ensures that $\langle f, f \rangle = \| f \|_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of &amp;ldquo;continuous basis&amp;rdquo; for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,&lt;/p&gt;
 $$
 f(t) = \int_{\mathbb{R}} c(\omega)b(\omega) \, d\mu(\omega) = \int_{-\infty}^{\infty} c(\omega)\, b_\omega(t)\, d\omega.
-$$&lt;p&gt;The measure $d\omega$ is the typical Lebesgue measure on $\mathbb{R}$. Here, we see that any $f \in L^2(\mathbb{R})$ can be expressed as a continuous linear combination of basis elements in the form $e^{2 \pi i \omega t}$ which, to reiterate, are other functions parameterized by $t$ and indexed by $\omega \in \mathbb{R}$. In this case, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fourier_transform&#34;&gt;Fourier transform&lt;/a&gt; of $f(t)$ provides $c(\omega)$:&lt;/p&gt;
+$$&lt;p&gt;The measure $d\omega$ is the typical Lebesgue measure on $\mathbb{R}$. Here, we see that any $f \in L^2(\mathbb{R})$ can be expressed as a continuous linear combination of basis elements in the form $e^{2 \pi i \omega t}$ which, to reiterate, are other functions parameterized by $t$ and indexed by $\omega \in \mathbb{R}$. In this case, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fourier_transform&#34;&gt;Fourier transform&lt;/a&gt; of $f(t)$ is in fact $c(\omega)$:&lt;/p&gt;
 $$
-c(\omega) = \int_{-\infty}^{\infty} f(t) \, \overline{b_\omega(t)} \, dt
+c(\omega) =
+\int_{-\infty}^{\infty} f(t) \, \overline{b_\omega(t)} \, dt
 = \int_{-\infty}^{\infty} f(t)\, e^{-2 \pi i \omega t} \, dt.
 $$&lt;p&gt;In a finite-dimensional case, we would compute $\langle v, \, e_n \rangle$ to observe the &amp;ldquo;contribution&amp;rdquo; of the basis element $e_n$ in the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:&lt;/p&gt;
 $$
@@ -703,7 +701,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$.&lt;/p&gt;
+&lt;p&gt;There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
@@ -740,12 +738,11 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
 &lt;p&gt;A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the space $\mathbb{F}^1$ into $V$, via&lt;/p&gt;
 $$
 \psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda.
-$$&lt;p&gt;When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9). This matrix is the familiar column of &amp;ldquo;coordinates&amp;rdquo; of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,&lt;/p&gt;
+$$&lt;p&gt;When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9) &amp;ndash; the familiar column of &amp;ldquo;coordinates&amp;rdquo; of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,&lt;/p&gt;
 $$
 \psi_v(\lambda) = 
 \begin{bmatrix}
 v_1 \\
-v_2 \\
 \vdots \\
 v_{(\dim V)}
 \end{bmatrix}
@@ -754,7 +751,6 @@ v_{(\dim V)}
 \end{bmatrix} =
 \begin{bmatrix}
 \lambda_1 v_1 \\
-\lambda_1 v_2 \\
 \vdots \\
 \lambda_1 v_{(\dim V)}
 \end{bmatrix} = 
@@ -990,7 +986,7 @@ $$&lt;style&gt;
 &lt;h4 id=&#34;multilinearity&#34;&gt;Multilinearity&lt;/h4&gt;
 &lt;p&gt;We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where&lt;/p&gt;
 $$
-T : V_1 \times V_2 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, v_2, \, \ldots, \, v_n) = w,
+T : V_1 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, \ldots, \, v_n) = w,
 $$&lt;p&gt;we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called &lt;a href=&#34;https://en.wikipedia.org/wiki/Multilinear_map&#34;&gt;multilinear maps&lt;/a&gt;. The set of multilinear maps of this form is denoted&lt;/p&gt;
 $$
 \mathcal{L}(V_1, \, \ldots, \, V_n; \, W) = \{\, T : V_1 \times \dots \times V_n \to W \; | \; \text{ T is linear} \}.
@@ -1181,7 +1177,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the operator case as $
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;There is a bijection between $\mathcal{L}(\bigotimes_i V_i, W)$ and $\mathbb{F}^{\times_i (\dim V_i)} \times \mathbb{F}^{(\dim W)}$ when $V$ and $W$ are finite-dimensional vector spaces over $\mathbb{F}$. That is, for each linear map from a tensor product over spaces $V_1, \, \ldots, \, V_n$ and into $W$ (all over a field $\mathbb{F}$), there is one matrix with axis lengths $(\dim V_1, \, \ldots, \, \dim V_n, \, \dim W)$ with entries in $\mathbb{F}$.&lt;/p&gt;
+&lt;p&gt;The basis-induced isomorphism $\mathcal{L}(\bigotimes_i V_i, W) \cong \mathbb{F}^{(\times_i \dim V_i) \times (\dim W)}$ (where $V$ and $W$ are finite-dimensional over $\mathbb{F}$) exists, but is canonical only through a generalization of matrix multiplication (seen in 3.41). To be clear, 3.9 is still true in that $\mathcal{L}(\bigotimes_i V_i, W) \cong \mathbb{F}^{(\Pi_i \dim V_i) \times (\dim W)}$, but it is not canonical for tensor product spaces.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Often, $(\dim V_1, \, \ldots, \, \dim V_n, \, \dim W)$ from 3.19 is referred to as the shape of the matrix. Each entry of the shape tuple can be viewed as the sidelength of a pictographical embedding of the matrix in $\mathbb{R}^{n + 1}$. For example, the matrix in $\mathbb{R}^{2 \times 3}$&lt;/p&gt;
@@ -1257,7 +1253,7 @@ $$&lt;p&gt;is said to have shape $(2, 3)$ &amp;ndash; once it is &amp;ldquo;draw
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Appending a trailing \(1\) to the shape of a matrix does not change the underlying object. Concretely, a matrix of shape \((\alpha_1, \, \ldots, \, \alpha_n)\) can be naturally identified with one of shape \((\beta_1, \, \ldots, \, \beta_n)\) when $\prod_i \alpha_i = \prod_i \beta_i$. This is a result of the isomorphisms included in the scope of&lt;/p&gt;
+&lt;p&gt;Appending a trailing \(1\) to the shape of a matrix does not change the underlying object. Concretely, a matrix of shape \((\alpha_1, \, \ldots, \, \alpha_n)\) can be naturally identified with one of shape \((\beta_1, \, \ldots, \, \beta_n)\) when $\prod_i \alpha_i = \prod_i \beta_i$. This is a result of the (finite-dimensional) isomorphisms included in the scope of&lt;/p&gt;
 $$
 \prod_i \dim \Alpha_i = \prod_i \dim \Beta_i \iff \bigotimes_i \Alpha_i \;\cong\; \bigotimes_i \Beta_i \, .
 $$&lt;/div&gt;
@@ -1312,16 +1308,16 @@ $$&lt;style&gt;
 &lt;p&gt;Every vector $v$ in a tensor product space $\bigotimes_i V_i$ can be seen as a linear map from the sapce $\mathbb{F}^1$ into $\bigotimes_i V_i$ through the definition&lt;/p&gt;
 $$
 \psi_v : \mathbb{F}^1 \to \bigotimes_i V_i \, , \;\; \psi_v(\lambda) = v \lambda.
-$$&lt;p&gt;With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \, \bigotimes_i V_i)$ (as an instance of note 3.19). However, in the context of tensor product spaces, it is common to represent $\psi_v$ using a matrix of shape $(\dim V_1, \, \ldots, \, \dim V_n)$ (invoking 3.21). This is done to facilitate descriptions of computations involving the vector in question.&lt;/p&gt;
+$$&lt;p&gt;With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \, \Pi_i V_i)$ (invoking 3.19). But for tensor product spaces, it is canonical to represent $\psi_v$ using a matrix of shape $(\dim V_1, \, \ldots, \, \dim V_n)$ (invoking 3.21). We will see why in 3.41.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;homogeneous-tensors&#34;&gt;Homogeneous Tensors&lt;/h4&gt;
-&lt;p&gt;Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. But traditionally, a &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)&#34;&gt;tensor&lt;/a&gt; is a linear map associated with a single vector space $V$ over $\mathbb{F}$ of the form&lt;/p&gt;
+&lt;p&gt;Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. Prior to taking that perspective, we will understand &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)&#34;&gt;tensors&lt;/a&gt; as linear maps associated with a single vector space $V$ over $\mathbb{F}$ of the form&lt;/p&gt;
 $$
 \begin{equation}
  T_{n}^{\, m} : (\times^m \, V^*) \times (\times^n \, V) \to \mathbb{F}.
 \end{equation}
-$$&lt;p&gt;Here, $(m, \, n)$ is named the &amp;ldquo;type&amp;rdquo; of the tensor $T$, where $m + n$ is referred to as $\text{rank}(T)$. This makes a map like $m : \mathbb{R}^2 \times \mathbb{R}^4 \to \mathbb{R}$ not identifiable as a tensor, as it is not of tensor form and, critically, there is no standard bijection to coerce its form into $(8)$ &amp;ndash; there is no canonical isomorphism to help us.&lt;/p&gt;
+$$&lt;p&gt;Here, $(m, \, n)$ is named the &amp;ldquo;type&amp;rdquo; of the tensor $T$, where $m + n$ is referred to as $\text{rank}(T)$. This makes a $2$-linear map like $m : \mathbb{R}^2 \times \mathbb{R}^4 \to \mathbb{R}$ not (yet) identifiable as a tensor, since it is not of tensor form and there is no canonical isomorphism to help us coerce its form into $(8)$.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -1455,7 +1451,7 @@ $$&lt;p&gt;where we always interpret $\times^0 \, V = \mathbb{F}$ and $\otimes^0
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;As a result of 3.16, for all vector spaces $V$, $W$, and $Z$,&lt;/p&gt;
+&lt;p&gt;As a result of 3.16, for all vector spaces $V$, $W$, and $Z$, the tensor product canonicalizes&lt;/p&gt;
 $$
 \mathcal{L}(V \otimes W, \, Z) \cong\ \mathcal{L}(V, \, W; \, Z).
 $$&lt;/div&gt;
@@ -1491,10 +1487,10 @@ $$&lt;/div&gt;
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Any finite-dimensional vector space is canonically isomorphic to its own dual due the standard bijection&lt;/p&gt;
+&lt;p&gt;Due to 3.14, any Hilbert space is canonically isomorphic to its own dual by the bijection&lt;/p&gt;
 $$
-\Phi : V \to V^* \;\; \text{s.t.} \;\; \Phi[v](w) = \langle v, w \rangle,
-$$&lt;p&gt;where $u, w \in V$ (when $V$ is not an inner-product space one defaults to the standard dot product). However, many infinite-dimensional inner-product spaces have duals which cannot be spanned using this strategy. One exception is the set of Hilbert spaces, where 3.14 provides the bijection $J$ (still through the inner product).&lt;/p&gt;
+\Phi : V \to V^* \;\; \text{s.t.} \;\; \Phi[v](w) = \langle v, w \rangle_V
+$$&lt;p&gt;where $u, w \in V$. Above, $\Phi$ is exactly $J$ fom 3.14 and is canonical by convention in abstract contexts. Outside of an entirely abstract context, one only needs to &amp;ldquo;manually&amp;rdquo; specify a canonical $\Phi$ to make $V \cong V^*$ canonical (this is a subtle point which will be important for 3.36).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
@@ -1528,7 +1524,7 @@ $$&lt;p&gt;where $u, w \in V$ (when $V$ is not an inner-product space one defaul
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;For any Hilbert space or finite-dimensional vector space $V$, we have that $V^* \otimes V^* \cong (V \otimes V)^*$ canonically. This is supported by the following standard choice of bijection&lt;/p&gt;
+&lt;p&gt;For any Hilbert space $V$, we have that $V^* \otimes V^* \cong (V \otimes V)^*$ canonically. This is supported by the following standard choice of bijection&lt;/p&gt;
 $$
 \Phi : V^* \otimes V^* \to (V \otimes V)^* \;\; \text{s.t.} \;\; \Phi[\psi \otimes \varphi](v \otimes w) \mapsto \psi(v) \varphi(w),
 $$&lt;p&gt;where $\psi, \varphi \in V^*$ and $v, w \in V$. To be clear, $\Phi[\psi \otimes \varphi]$ is in $(V \otimes V)^*$ and has the form $V \otimes V \to \mathbb{F}$.&lt;/p&gt;
@@ -1582,7 +1578,7 @@ $$
 \tilde T^\prime : \; &amp; (\times^m \, V^*) \times (\times^n \, V) \times (\left( \otimes^a \, V \right) \otimes \left( \otimes^b \, V^* \right))^* \to \mathbb{F} \\
 &amp; \text{s.t.} \;\; \tilde T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n,  \, \varphi) = \varphi(T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n)),
 \end{align*}
-$$&lt;p&gt;where $v_i \in V^*$, $w_i \in V$, and $\varphi \in (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^*$ is the covector of $T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n)$ (which can be canonically determined by 3.14). Then, observe that&lt;/p&gt;
+$$&lt;p&gt;where $v_i \in V^*$, $w_i \in V$, and $\varphi \in (\left( \otimes^c \, V \right) \otimes \left( \otimes^d \, V^* \right))^*$ is the covector of $T(v_1, \, \ldots, \, v_m, \, w_1, \, \ldots, \, w_n)$ (which can be canonically determined by 3.26). Then, observe that&lt;/p&gt;
 $$
 \begin{align*}
 \mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, &amp; \,\, V_{(1)}, \, \dots, \, V_{(n)}, \, (( \otimes^a \, V ) \otimes ( \otimes^b \, V^* ))^*; \, \mathbb{F}) \\
@@ -1767,7 +1763,7 @@ $$&lt;p&gt;where $\mathcal{V}_k = [V]$ in $(\mathcal{V} / =)$ and $|\mathcal{V}_
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Much like $(9)$ relies on finite-dimensionality of the vector space in question for homogeneous tensors (or that it be a Hilbert space), the same restriction is needed in $(11)$ for all vector spaces in heterogeneous tensor forms.&lt;/p&gt;
+&lt;p&gt;Just like $(9)$ relies on a canonical isomorphism $V \cong V^*$ (see 3.26), $(11)$ requires an equivalent restriction for the vector spaces involved.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;It is still possible to consider tensor type in the heterogeneous case &amp;ndash; one simply has to keep track of one type tuple per $[V] \in (\mathcal{V}/=)$ (see 3.31). This embodies a perspective where heterogeneous tensors are informally &amp;ldquo;superpositions&amp;rdquo; of homogeneous tensors (via the tensor product). Observing this, we can write the type of a heterogeneous tensor $T$ as&lt;/p&gt;
@@ -1793,7 +1789,7 @@ $$&lt;p&gt;With heterogeneous tensors, one must also carry a mapping of type ind
 
 &lt;h4 id=&#34;tensor-contractions&#34;&gt;Tensor Contractions&lt;/h4&gt;
 &lt;p&gt;The statements of $(9)$ and $(11)$ may initially seem like a cryptic justification of our choice of vocabulary; they justify why we use the word &amp;ldquo;tensor&amp;rdquo; so liberally, with the most general use being in reference to an element of a heterogeneous tensor product space (up to isomorphism).&lt;/p&gt;
-&lt;p&gt;But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. These isomorphisms specify an &amp;ldquo;exchange rate&amp;rdquo; between inputs and outputs of homogeneus and heterogeneous tensors. Concretely, one may algebraically &amp;ldquo;trade&amp;rdquo; a tensor input in $V$ for a tensor product evaluation with a canonical element of $V^*$ in the output as many times as desired while maintaining type.&lt;/p&gt;
+&lt;p&gt;But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. These isomorphisms specify an &amp;ldquo;exchange rate&amp;rdquo; between inputs and outputs of homogeneus and heterogeneous tensors &amp;ndash; using 3.26, one can algebraically &amp;ldquo;trade&amp;rdquo; a tensor input in $V$ for a tensor product evaluation with a canonical element of $V^*$ in the output as many times as desired while maintaining type.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -1955,8 +1951,10 @@ $$&lt;p&gt;with 3.17 (to disregard argument order) to get $(\text{ev}_V \otimes 
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Remember that $(9)$ and $(11)$ rely on the assumption that $V^* \cong V$ exists and is canonical, as with any Hilbert space (per 3.14) or finite-dimensional vector space. This works because the inner product, which supports the bijection underlying the isomorphism, is assumed to be canonical (see 3.14 for the bijection it enables).&lt;/p&gt;
-&lt;p&gt;While assuming a canonical $V^* \cong V$ provides a map to perform &amp;ldquo;trades&amp;rdquo; which we semantically interpret to be uniquely correct in a completely abstract context (the bijection underlying the isomorphism), many applications introduce (non-canonical) tensors which enable &amp;ldquo;trades&amp;rdquo; via contractions with them. This is often done implicitly by de-canonicalizing the standard inner product in a set and replacing it with another cooler version (see 3.40).&lt;/p&gt;
+&lt;p&gt;Remember that $(9)$ and $(11)$ rely on the assumption that $V \cong V^*$ exists and is canonical. This allowed us to obtain tensor forms of &amp;ldquo;redistributed&amp;rdquo; type by &amp;ldquo;trading,&amp;rdquo;&lt;/p&gt;
+$$
+(a, b) \xrightarrow{c \text{ trades}} (a + c, b - c).
+$$&lt;p&gt;Recall 3.26, and that the canonicity of $V \cong V^*$ can be &amp;ldquo;manually&amp;rdquo; induced by providing a canonical bijection to underlie it. Many applications specify tensors which enable &amp;ldquo;trades&amp;rdquo; via contractions with them for this purpose. This is often done by replacing the standard inner product in a set with another bilinear map (see 3.40).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;heterogeneous-contractions&#34;&gt;Heterogeneous Contractions&lt;/h4&gt;
@@ -2035,11 +2033,28 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Bookeeping heterogeneous tensor contractions is a big practical problem. In particular, many machine learning workloads which consider heterogeneous tensors (often typed over vector spaces $\langle \mathbb{R}^d \rangle_{d \, \in \, D}$) are made difficult from the need of ensuring that tensor contractions are well-formed before their coordinates can be computed.&lt;/p&gt;
+&lt;p&gt;One subtlety of the heterogeneous tensor contraction is that different vector spaces in a heterogeneous tensor network may have different canonical bijections through which &amp;ldquo;trades&amp;rdquo; are done, making bookeeping harder.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;syntax-and-applications&#34;&gt;Syntax and Applications&lt;/h4&gt;
-&lt;p&gt;An appealing model of tensor operations was offered by &lt;a href=&#34;https://en.wikipedia.org/wiki/Roger_Penrose&#34;&gt;Sir Roger Penrose&lt;/a&gt; in 1971 within the illustrated writeup &lt;a href=&#34;https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf&#34;&gt;Applications of Negative-Dimensional Tensors&lt;/a&gt;. There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Penrose_graphical_notation&#34;&gt;Penrose graphical notation&lt;/a&gt;. It is delightful for any abstract treatment of tensors (like our own so far).&lt;/p&gt;
+&lt;p&gt;An appealing model of tensor operations was offered by &lt;a href=&#34;https://en.wikipedia.org/wiki/Roger_Penrose&#34;&gt;Sir Roger Penrose&lt;/a&gt; in 1971 within the illustrated writeup &lt;a href=&#34;https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf&#34;&gt;Applications of Negative-Dimensional Tensors&lt;/a&gt;. There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Penrose_graphical_notation&#34;&gt;Penrose graphical notation&lt;/a&gt;. It provides its users with a feeling of intuitive dominance on tensor algebra.&lt;/p&gt;
+&lt;style&gt;
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;halign-container&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;roger-penrose.png&#34;
+         alt=&#34;Sir Roger Penrose (born August 8, 1931)&#34; width=&#34;256&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Sir Roger Penrose (born August 8, 1931)&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -2060,7 +2075,7 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
     &#34;
 &gt;
     &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
-        &gt;3.39. Example&lt;/strong
+        &gt;3.39. Note&lt;/strong
     &gt;
     &lt;hr
         style=&#34;
@@ -2071,39 +2086,9 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;In Penrose graphical notation, individual tensors are represented as nodes in a graph sometimes distinguished by geometric shapes for ease of reference. The rank of the tensor being represented is indicated by its number of outgoing edges. The system differentiates a &amp;ldquo;cartesian&amp;rdquo; case by the availability of a bijection $\Phi : V \to V^*$. (We have been assuming this &amp;ndash; see 3.36). In the cartesian case, edge direction does not matter. Otherwise, a tensor of type $(a, b)$ will have $a$ upwards pointing edges and $b$ downward pointing edges. Contractions are set by connecting corresponding edges.&lt;/p&gt;
-&lt;style&gt;
-    .halign-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;  
-    }
-&lt;/style&gt;
-&lt;div class=&#34;halign-container&#34;&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;penrose-diagram.png&#34; width=&#34;256&#34;/&gt; 
-&lt;/figure&gt;
-&lt;/div&gt;
-&lt;p&gt;Above we see a cartesian Penrose diagram, representing a contraction involving two tensors $A$ (a square) and $B$ (a circle) with $\text{rank}(A) = 2$ and $\text{rank}(B) = 3$. For example, $A$ may be in $\mathcal{L}(V)$ and $B$ in $\mathcal{L}(V, \, V; \, V)$, such that their contraction (a tensor of rank 3) may also  be in $\mathcal{L}(V, \, V; \, V)$, representing a &amp;ldquo;modification&amp;rdquo; of B with one A &amp;ldquo;feeding&amp;rdquo; into one of its inputs and another A &amp;ldquo;being fed&amp;rdquo; its output.&lt;/p&gt;
+&lt;p&gt;Many recent online sources give loose overviews of graphical notataion, for example &lt;a href=&#34;https://tensornetwork.org/diagrams/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.tensors.net/intro&#34;&gt;here&lt;/a&gt;. However, they miss out on subtle details that this section has set the stage for. The &lt;a href=&#34;https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf&#34;&gt;original monograph&lt;/a&gt; does include the aforementioned details, so I encourage you to read it after 3.42 (a notational prerequisite). Note the connection between what Penrose calls a &amp;ldquo;Cartesian ATS&amp;rdquo; and the availability of a canonical $V \cong V^*$ in 3.36, showing the way in which &amp;ldquo;trades&amp;rdquo; as we understand them are done in graphical notation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;style&gt;
-    .halign-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;  
-    }
-&lt;/style&gt;
-&lt;div class=&#34;halign-container&#34;&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;roger-penrose.png&#34;
-         alt=&#34;Sir Roger Penrose (born August 8, 1931)&#34; width=&#34;256&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;Sir Roger Penrose (born August 8, 1931)&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;/div&gt;
-
 &lt;p&gt;By ignoring any details needed to determine tensor instances, Penrose notation enjoys better ergonomics for working with abstract tensors. But before Penrose (and the study of abstract tensors spaces itself), the early appearances of these objects first appeared in service of fields like &lt;a href=&#34;https://en.wikipedia.org/wiki/Differential_geometry&#34;&gt;differential geometry&lt;/a&gt;, only being baptized as &amp;ldquo;tensors&amp;rdquo; at a later time by physicists.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
@@ -2183,8 +2168,25 @@ w_\theta
 $$&lt;p&gt;provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \, \mathcal{J} \mathcal{\Phi}(w) \rangle_{\mathbb{R}^3}$ which, for two points differential to a point $c = (\phi, \, \theta)$ in $P$ (and hence in $S^2$ via $\Psi$), determines their geometric relationship (as it is an inner product). This defines a &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_field&#34;&gt;tensor field&lt;/a&gt; $G$ that assigns one such tensor $g_c = G(c)$ of type $(0, 2)$ per $T_c P$ which fixes the geometry of $\mathcal{M}$ independently of the ambient space $\mathbb{R}^3$. Here, $g_c$ is the (pointwise) &lt;a href=&#34;https://en.wikipedia.org/wiki/Pullback_(differential_geometry)&#34;&gt;pullback&lt;/a&gt; of the $\mathbb{R}^3$ metric (given by $\langle \cdot, \cdot \rangle_{\mathbb{R}^3}$) to $S^2$ and we say that $\mathbb{R}^3$ &amp;ldquo;induced&amp;rdquo; a metric on $S^2$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;In the above example,  $T_p M$ has no abstract canonical isomorphism to its own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.&lt;/p&gt;
-&lt;p&gt;The dominant model for tensor operations in coordinates is indisputably &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_notation&#34;&gt;Einstein notation&lt;/a&gt;. Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer &lt;a href=&#34;https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro&#34;&gt;Ricci-Curbastro&lt;/a&gt;, but it was made popular by &lt;a href=&#34;&#34;&gt;Einstein&lt;/a&gt; when he published a novel use of it in physics with his &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_field_equations&#34;&gt;field equations&lt;/a&gt; in 1915.&lt;/p&gt;
+&lt;style&gt;
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;halign-container&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;mark-wilson-1e90-1990.png&#34;
+         alt=&#34;Mark Wilson, &amp;#39;1e90&amp;#39; (1990)&#34; width=&#34;512&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Mark Wilson, &#39;1e90&#39; (1990)&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.&lt;/p&gt;
+&lt;p&gt;The dominant model for tensor operations in coordinates is indisputably &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_notation&#34;&gt;Einstein notation&lt;/a&gt;. Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer &lt;a href=&#34;https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro&#34;&gt;Ricci-Curbastro&lt;/a&gt;, but it was made popular by &lt;a href=&#34;https://en.wikipedia.org/wiki/Albert_Einstein&#34;&gt;Einstein&lt;/a&gt; when he published a novel use of it in physics with his &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_field_equations&#34;&gt;field equations&lt;/a&gt; in 1915.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -2216,10 +2218,183 @@ $$&lt;p&gt;provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Recall the satatement of 3.19.&lt;/p&gt;
+&lt;p&gt;Einstein notation is very well-motivated. It will be easier to see how we could come up with it ourselves. Let us consider a tensor $m$ of type $(1, 1)$ in multilinear map form by attempting to represent it as a matrix,&lt;/p&gt;
+$$
+m : V \to V \;\; \text{s.t.} \;\; M_\mathcal{B}(m) = 
+\begin{bmatrix}
+ m_{1,1} &amp; m_{1,2} &amp; m_{1,3} \\
+ m_{2,1} &amp; m_{2,2} &amp; m_{2,3} \\
+ m_{3,1} &amp; m_{3,2} &amp; m_{3,3}
+\end{bmatrix}.
+$$&lt;p&gt;Here, $M_\mathcal{B}(m)$ is simply the matrix representation of $m$ under the basis $\mathcal{B}$. Through 3.19, we observe that we can do this precisely because there is a function from entry indices to values which makes matrix multiplication work precisely as we expect it to, which is&lt;/p&gt;
+$$
+\text{entry}_m(i, j) = m_{i,j}.
+$$&lt;p&gt;From a computational perspective, this is a unique proxy for $m$ when considering maps in $\mathcal{L}(V, W)$ (via 3.9). For example, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm&#34;&gt;Frobenius norm&lt;/a&gt; $\| m \|_F^2 = \sum_{(i, j)} |m_{i,j}|^2$ makes use of this notation. While this made sense for a linear map of form $V \to W$, issues arise for tensors of other forms. Consider $g_c$ from 3.40,&lt;/p&gt;
+$$
+g_{(\theta, \phi)}(v, w) = 
+\begin{bmatrix}
+v_\phi &amp; v_\theta
+\end{bmatrix}
+\begin{bmatrix}
+r^2 &amp; 0 \\
+0 &amp; r^2 \sin^2 \theta
+\end{bmatrix}
+\begin{bmatrix}
+w_\phi \\
+w_\theta
+\end{bmatrix}
+\;\; \text{s.t.} \;\;
+M_\mathcal{B}(g_{({\theta}, {\phi})}) = 
+\begin{bmatrix}
+r^2 &amp; 0 \\
+0 &amp; r^2 \sin^2 \theta
+\end{bmatrix}.
+$$&lt;p&gt;If given only the matrix $M_\mathcal{B}(g_{({\theta}, {\phi})})$, there would be no way of knowing it represents the map of (inner-product) form $g_{(\theta, \phi)} : P \times P \to \mathbb{R}$ (and not an operator in $\mathcal{L}(V, V)$) precisely because it is canonical to interpret it as a map in $\mathcal{L}(V, V)$. This interpretation is only canonical because matrix-vector multiplication is defined with&lt;/p&gt;
+$$
+(Av)_i = \sum_{j} A_{ij} v_j.
+$$&lt;p&gt;Hence, one must revisit matrix multiplication to have a basis-induced canonical isomorphism between tensors and matrices (see 3.19). To this end, we will adopt the tensor contraction in coordinates as matrix multiplication for tensors. A rank-$n$ tensor will be represented as a matrix with $n$ axes (such that $n$ indices identify an entry), such that for a tensor $t$ of type $(a, b)$,&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}}
+$$&lt;p&gt;denotes an entry of its matrix representation. Taking the tensor product of $t$ with a new tensor $g$ of type $(c, d)$ is very simple, as each entry of the product (by the same logic) requires $a + c$ upper and $b + d$ lower indices to be found. So we simply denote their tensor product&lt;/p&gt;
+$$
+t \otimes g = 
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$&lt;p&gt;To perform contractions as specified in 3.35, one does a weighted sum across a pair of indices, one upper and one lower (which may belong to different tensors in a tensor product). For example, one could contract $\alpha_a$ with the index $\delta_1$ in the product $t \otimes g$ to obtain&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1}} \, 
+g_{\delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$&lt;p&gt;Note that in the homogeneous case, one can always do this for any upper-lower index pair. The heterogeneous case just requires knowing which upper indices can be contracted with which lower indices (which can be done by tracking which index pairs correspond to duals of the same vector space). Finally, tensors of equal type may be summed entrywise,&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}} +
+{\large q_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}} = 
+{\large h_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}},
+$$&lt;p&gt;with the understanding that the tensor product is distributive over tensor sums. This completes the system that Ricci-Curbastro outlined, allowing an axiomatic treatment for tensors in coordinates. The convention to eschew summation notation in contractions (only implying it when a symbol appears twice as an index) was introduced and popularized by Einstein (effectively his only contribution to &lt;a href=&#34;https://en.wikipedia.org/wiki/Ricci_calculus&#34;&gt;Ricci calculus&lt;/a&gt;):&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+$$&lt;p&gt;Note that at any point we can find an entry in the matrix representation by replacing all indices with values. This means that Einstein notation is simply element-wise treatment of tensor matrices, with careful consideration of contraction compatibility by use of upper and lower indices. Here, &amp;ldquo;trades&amp;rdquo; translate to index raising or lowering, where (depending on context) one may be allowed to&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}} \xrightarrow{\text{raise } \beta_b}
+{\large t_{\beta_1 \, \cdots \, \beta_{b - 1}}^{\alpha_1 \, \cdots \, \alpha_a \, \beta_b}} \xrightarrow{\text{lower } \beta_b}
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}}.
+$$&lt;p&gt;If allowed to raise or lower indices (which is context-dependent as seen in 3.36 and 3.40), a contraction can be done on two lower or upper indices. So summation (and legality of index lowering or raising) remains implied in cases where $V \cong V^*$ canonically (which Penrose called &amp;ldquo;cartesian&amp;rdquo; in ATS). For example,&lt;/p&gt;
+$$
+{\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }} =
+\sum_k \,
+{\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }}.
+$$&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice that the &amp;ldquo;reduction&amp;rdquo; done by way of summation in a tensor contraction can use any operation with the effect of &lt;a href=&#34;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&#34;&gt;folding&lt;/a&gt; a collection (returning a single value from multiple values of the same type), although this may break any and all algebraic invariants (depending on context). This could look like&lt;/p&gt;
+$$
+w_{abc}^{ik} = \text{reduce}_j \left( v_{a b c}^{i j k} \right).
+$$&lt;p&gt;Since the user is giving up all algebraic gurantees, they may annihilate any index (upper or lower). This is simply treating the tensor matrix as data. But it shows that Einstein notation maintains its richness beyond pure tensor algebra, and is even generalizable to infinite-dimensional tensors via wise choices of $\text{reduce}$.&lt;/p&gt;
+&lt;style&gt;
+    .box-body &gt; :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body &gt; :first-child {
+        margin-top: 0 !important;
+    }
+&lt;/style&gt;
+&lt;div
+    class=&#34;hint-box&#34;
+    style=&#34;
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    &#34;
+&gt;
+    &lt;strong style=&#34;display: block; margin-bottom: 5px&#34;
+        &gt;3.42. Example&lt;/strong
+    &gt;
+    &lt;hr
+        style=&#34;
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        &#34;
+    /&gt;
+    &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
+&lt;p&gt;The cornerstone of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)&#34;&gt;transformer architecture&lt;/a&gt; is generally regarded to be the &lt;a href=&#34;https://en.wikipedia.org/wiki/Attention_(machine_learning)&#34;&gt;attention mechanism&lt;/a&gt;. This is no more than a tensor-valued function $\mathbf{A} : \mathbb{R}^{d \times n} \to \mathbb{R}^{d_v \times n}$ with tunable parameters, generally defined as&lt;/p&gt;
+$$
+\mathbf{A}(X) = \text{softmax}\left(\frac{(KX)^\top (QX)}{\sqrt{d_k}}\right) VX.
+$$&lt;p&gt;Here, $X \in \mathbb{R}^{d \times n}$, and the matrices $Q \in \mathbb{R}^{d_k \times d}$ (query projection matrix), $K \in \mathbb{R}^{d_k \times d}$ (key projection matrix), and $V \in \mathbb{R}^{d_v \times d}$ (value projection matrix) are optimized. You rarely see it in Einstein notation as an equation of heterogeneous tensors, which helps when $X$ has many channels to mix (indexed by $c$),&lt;/p&gt;
+$$
+\mathbf{A}(X)_{t}^{ic} = \text{softmax} \left(\frac{g_{jm} K_p^j X_s^{pc} Q_q^m X_t^{qc}}{\sqrt{d_k}}\right) V_k^i X_s^{kc}.
+$$&lt;p&gt;I replaced the row-wise dot product application $(KX)^\top (QX)$ with an explicit metric tensor $g_{jm}$, which brings a subtle geometric interpretation to the foreground just by way of notation. Observing this could have motivated us to add another metric tensor $m_{c_1 c_2}$ to capture channel-wise relationships while mixing,&lt;/p&gt;
+$$
+\mathbf{A}(X)_{t}^{ic} = \text{softmax} \left(\frac{g_{jm} m_{c_1 c_2} K_p^j X_s^{pc_1} Q_q^m X_t^{qc_2}}{\sqrt{d_k}}\right) V_k^i X_s^{kc}.
+$$&lt;p&gt;With the &lt;a href=&#34;https://numpy.org/doc/stable/reference/generated/numpy.einsum.html&#34;&gt;&lt;code&gt;einsum&lt;/code&gt; NumPy API&lt;/a&gt;, we can write the above in Python still using Einstein notation. For simplicity, only a single-channel $X$ will be considered. Below, the strategy for determining the tensor &lt;code&gt;g&lt;/code&gt; is left unspecified.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# einsum ignores whether indices are upper/lower &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# i.e. assumes raising/lowering is generally OK&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;KX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;einsum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;jk,ks-&amp;gt;js&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# keys&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;QX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;einsum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ml,lt-&amp;gt;mt&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# queries&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# attention scores (similarity under g)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sim&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;einsum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;jm,js,mt-&amp;gt;st&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;KX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;QX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;scores&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sim&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sqrt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;weights&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scores&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;scores&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;keepdims&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;weights&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;weights&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;weights&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;keepdims&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;VX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;einsum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ij,jt-&amp;gt;it&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# values&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;einsum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;is,st-&amp;gt;it&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;VX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;weights&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;overview-2&#34;&gt;Overview&lt;/h4&gt;
+&lt;p&gt;We began this section by organizing the concepts of matrices, linear maps, and vectors. We then took a look at linear forms and dual spaces, being careful of infinite-dimensional cases. Later, we expanded the concept of linearity to multilinear maps, and showed how the tensor product &amp;ldquo;linearizes&amp;rdquo; them. That way, we saw how the way we organized matrices, vectors, and linear maps early on applied to tensor product spaces in very natural ways. Finally, tensors allowed us to speak about these objects as unified under a single umbrella woven by tight isomorphisms.&lt;/p&gt;
+&lt;p&gt;Although this trajectory was predominantly abstract, we were also exposed to practical notation and uses of tensors in coordinates, with examples from the early history of tensors in differential geometry and from modern applications in deep learning. These examples showed that tensors can be found at many points of the spectrum between raw data and abstract algebraic objects, and that their theory is robust to a wide range of uses &amp;ndash; some more disrespectful than others, but never enough to erase their basic qualities.&lt;/p&gt;
+&lt;style&gt;
+    .halign-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;  
+    }
+&lt;/style&gt;
+&lt;div class=&#34;halign-container&#34;&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;mark-wilson-e67109-2012.png&#34;
+         alt=&#34;Mark Wilson, &amp;#39;e67109&amp;#39; (2012)&#34; width=&#34;512&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Mark Wilson, &#39;e67109&#39; (2012)&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
 &lt;h3 id=&#34;signals-and-systems&#34;&gt;Signals and Systems&lt;/h3&gt;
 &lt;h3 id=&#34;kernel-methods&#34;&gt;Kernel Methods&lt;/h3&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
