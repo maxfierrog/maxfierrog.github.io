@@ -6,7 +6,7 @@
     <description>Recent content on Max Fierro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,11 +17,41 @@
     
     
     <item>
-      <title>Poem 9. &#34;Reflexiones&#34;</title>
-      <link>http://localhost:1313/poem-9.-reflexiones/</link>
+      <title>Poem 10. &#34;Zopilotes&#34;</title>
+      <link>http://localhost:1313/poem-10.-zopilotes/</link>
+      <pubDate>Sun, 16 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/poem-10.-zopilotes/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    días de nada,
+semanas perdidas
+como perros en la calle:
+  los relojes del invierno
+     son noches sin cuerda,
+       estos días
+       estoy hecho de aire, o de polvo:
+ mis palabras se vuelan
+   y todo lo que pienso
+  se vuelve pétalos de loto,
+  escuelas de peces traslúcidos 
+       que pronto se desvanecen:
+ voy absorto por el mundo
+ por que me da vértigo la nada,
+     entonces pienso, 
+         defiendo mi ración 
+         de paraíso labriego,
+     que aquellos zopilotes 
+     van bajando del cielo:
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Poem 9. &#34;Reflexión&#34;</title>
+      <link>http://localhost:1313/poem-9.-reflexi%C3%B3n/</link>
       <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/poem-9.-reflexiones/</guid>
+      <guid>http://localhost:1313/poem-9.-reflexi%C3%B3n/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;son soledades entre columnas de piedra
 vacíos entre las personas del mundo
 las cumbres de la tierra, sus árboles 
@@ -246,7 +276,7 @@ Pronto nos veremos otra vez.
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Son trayectorias que trazan entre los átomos,
 son curvas que desnudan misterios paralelos.
 Es hipótesis de tiempo escrita en el espacio,
-es información que se filtra entre la materia.
+información que se filtra entre la materia.
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
@@ -310,7 +340,7 @@ We will replace that with its formal meaning, which is a specific kind of &lt;a 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -348,7 +378,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -388,7 +418,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -423,7 +453,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -527,7 +557,7 @@ $$&lt;p&gt;Next, we will consider player performance. Just as Elo, we take the p
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -568,7 +598,7 @@ $$&lt;p&gt;Finally, we will assert a prior on the distribution of $X_i$, which w
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -616,7 +646,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -650,7 +680,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -774,7 +804,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -843,7 +873,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -904,7 +934,7 @@ $$&lt;p&gt;offers a complete recovery (and generalization) of the Elo update aft
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1478,7 +1508,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1547,7 +1577,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1589,7 +1619,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1633,7 +1663,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1674,7 +1704,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1716,7 +1746,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1802,7 +1832,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1838,7 +1868,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1894,7 +1924,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1964,7 +1994,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2057,7 +2087,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2168,7 +2198,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2235,7 +2265,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;

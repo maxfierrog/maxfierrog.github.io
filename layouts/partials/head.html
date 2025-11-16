@@ -30,6 +30,10 @@
     
     {{ if .Params.math }}{{ partial "math.html" . }}{{ end }}
 
+    {{ if .Params.plots }}
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    {{ end }}
+
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 

@@ -5,21 +5,16 @@
 }
 
 html {
-    font-size: 57.5%;
+	font-size: 87.5%;
     scrollbar-color: #313a3d #dbdbdb;
 }
 
 body {
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-family: Helvetica, Arial;
-    color: #313a3d;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
     background: #dbdbdb;
-    line-height: 1.6;
-    overflow-wrap: break-word;
+    color: #313a3d;
+    width: 720px;
+    font-family: Helvetica, Arial;
+    margin: 0 auto;
 }
 
 /* No additional spacing when theres superscript, like with footnote links. */
@@ -31,12 +26,12 @@ sup {
 }
 
 header#banner {
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 header#banner .site-logo {
     margin-right: 3px;
-    height: 25px;
+    height: 22px;
     width: auto;
 }
 
@@ -51,8 +46,6 @@ header#banner a:hover {
 
 header#banner h2 {
     display: inline;
-    font-size: 21px;
-    font-size: 2.1rem;
     margin: 0 8px 0 0;
 }
 
@@ -62,7 +55,6 @@ header#banner nav {
 
 header#banner nav ul {
     list-style-type: none;
-    font-size: 1.05em;
     text-transform: lowercase;
     margin: 0;
     padding: 0;
@@ -96,9 +88,20 @@ main#content h6 {
     line-height: 1.15;
 }
 
+main#content h1 {
+    font-size: 1.5rem;
+}
+main#content h2 {
+    font-size: 1.4rem;
+}
 main#content h3 {
-    font-size: 19px;
-    font-size: 1.9rem;
+    font-size: 1.3rem;
+}
+main#content h4 {
+    font-size: 1.2rem;
+}
+main#content h4 {
+    font-size: 1.1rem;
 }
 
 main#content h1 + p,
@@ -107,18 +110,40 @@ main#content h3 + p,
 main#content h4 + p,
 main#content h5 + p,
 main#content h6 + p {
-    margin-top: 5px;
+    margin-top: 0.5rem;
 }
 
 main#content p {
     color: #394548;
     margin: 16px 0;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+	text-align: justify;
+	hyphens: auto;
+}
+
+main#content li {
+    color: #394548;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+	text-align: justify;
+	hyphens: auto;
+}
+
+main#content ul {
+    color: #394548;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+	text-align: justify;
+	hyphens: auto;
 }
 
 main#content hr {
-    height: 1px;
-    border: 0;
     background: #394548;
+	margin-left: -5%;
+    height: 1px;
+	width: 15%;
+    border: 0;
 }
 
 main#content abbr {
@@ -128,8 +153,6 @@ main#content abbr {
 /* index.html styles */
 main#content ul#posts {
     list-style-type: none;
-    font-size: 16px;
-    font-size: 1.6rem;
     margin-top: 0;
     padding: 0;
 }
@@ -140,7 +163,7 @@ main#content ul#posts li {
 }
 
 main#content ul#posts small {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: #767676;
     margin-left: 10px;
 }
@@ -160,16 +183,15 @@ main#content ul#posts li a:hover small {
 /* single.html styles */
 main#content header#post-header h1 {
     display: block;
-    font-size: 23px;
-    font-size: 2.3rem;
     line-height: 1.15;
 }
 
 /* The date below the post header */
 main#content header#post-header > div {
     display: block;
-    font-size: 0.85em;
+    font-size: 0.8rem;
     color: #767676;
+	margin: 0.5rem 0;
 }
 
 main#content #toc {
@@ -182,7 +204,6 @@ main#content #toc {
 }
 
 main#content #toc h4 {
-    font-size: 1.06em;
     color: #3d3d3d;
     margin: 0;
 }
@@ -198,7 +219,6 @@ main#content #toc nav#TableOfContents > ol {
 
 main#content #toc ul,
 main#content #toc ol {
-    font-size: 0.98em;
     margin: 0;
     padding: 0 0 0 30px;
 }
@@ -236,9 +256,8 @@ main#content figure img {
 }
 
 main#content figure figcaption {
-    font-size: 0.92em;
+    font-size: 0.8rem;
     font-style: italic;
-    line-height: 22px;
     text-align: center;
     margin-top: 6px;
     padding: 0 10px;
@@ -268,18 +287,17 @@ main#content blockquote {
 main#content code:not(pre > code) {
     background-color: #c0c0c0;
     border: 1px solid #808080;
-    font-size: 0.85em;
+    font-size: 0.8rem;
     padding: 2px 4px;
     border-radius: 2px;
 }
 
 main#content .footnotes {
-    font-size: 0.9em;
+    font-size: 0.8rem;
 }
 
 footer#footer {
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #737373;
     margin: 40px 0;

@@ -1,52 +1,63 @@
 ---
-title: "Perspectives into Tensors, Signals, and Kernel Methods"
+title: "Unifying Perspectives of Tensors, Signals, and Kernel Methods"
 category: technical
 date: 2025-09-08
-math: true
 draft: true 
+plots: false 
+math: true
 ---
 
 {{< toc >}}
 
 ## Abstract
 
-Linear algebra, signal processing, and machine learning methods are (one of many groups of) topics that enjoy beautiful relationships enclosed in a dense shell of mathematics. Within the shell, one finds a kernel of surprisingly diverse perspectives which are simply a pleasure to entertain. This article hopes to give the reader a thematic glimpse of some ideas in this particular group of topics, deprioritizing content density. 
+Tensor algebra, signal processing, and machine learning methods are (one of many groups of) topics with natural relationships enclosed in a dense shell of mathematics. This article approaches these topics individually through somewhat unusual logical paths, making an upfront payment in mathematical accessibility to arrive at perspectives which reveal romantic links between their concepts. All these perspectives are well-known, but it is rare to see many of them presented together in a structured narrative. 
 
 ---
 
 ## Overview 
 
-I follow an essay-like structure including an introduction, body, and conclusion. The introduction sets the stage building from "class-style" knowledge, assuming a first course in linear algebra, signal processing, and machine learning. For readers lacking this background, I leave pointers to free resources.
+This article has four primary parts, each on a particular topic. They are intended to be consumed in order. I assume eingineering-oriented first courses in linear algebra, signal processing, and machine learning. For readers in need of comprehensive review or first-time coverage, I leave these resources:
 
-The introduction arrives at the [linear operator](https://en.wikipedia.org/wiki/Linear_map) perspective of [systems of many dimensions](https://en.wikipedia.org/wiki/Multidimensional_system), taking system properties like [time-invariance](https://en.wikipedia.org/wiki/Time-invariant_system) and [causality](https://en.wikipedia.org/wiki/Causal_system) in terms of [tensor](https://en.wikipedia.org/wiki/Tensor) representations. These perspectives then help the body (a cross-cutting perspective of the [convolution kernel](https://en.wikipedia.org/wiki/Convolution) and the [reproducing kernel](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces)).
+* **Kernel methods.** [_Foundations of Machine Learning_](https://cs.nyu.edu/~mohri/mlbook/) by Mohri, Rostamizadeh, and Talwalkar,
+* **Signals and Systems.** [_Signals & Systems: Theory and Applications_](https://ss2-2e.eecs.umich.edu/) by Ulaby and Yagle,
+* **Linear algebra.** [_Linear Algebra Done Right_](https://linear.axler.net/) by Axler.
+
+### Dimensionality
+
+I begin by considering infinite-dimensional vector spaces. I demonstrate how the definition of span  can a be relaxed to allow the coordinate-based treatement of vector spaces of dimensions with different (infinite) cardinalities, and what the notion of a basis becomes under these relaxations. This leads us to Banach and Hilbert spaces while being a digestible way to ramp-up for the following sections.
+
+### Tensor Spaces
+
+I organize the semantics behind matrices, vectors, and linear maps. After introducing some preliminary concepts not usually covered in a first course in linear algebra (e.g. canonical isomorphisms), I provide an abstract introduction to tensors and tensor spaces, showing how they are "many things at once" up to (quite practical) isomorphism. After the abstract introduction, I share notation standards for coordinate-based and coordinate-free tensor algebra paired with real-world examples from differential geometry and deep learning.
 
 {{% hint title="2.1. Note" %}}
 
-The word "kernel" is criminally polysemous in mathematics, and it will be used a lot in this piece. I mostly use the word under two semantics: The convolution kernel from signal processing and the reproducing kernel from machine learning. All other instances of the word should simply refer to its english meaning.[^kernel-semantics]
+The logical procedures and syntax conventions of this section are shown to be valid for Hilbert spaces and tensor products thereof, although there are other infinite-dimensional cases where they also apply. But it would be too difficult to structure these nuances in a complete way, and they would not enjoy much overlap with subsequent topics regardless.
 
 {{% /hint %}}
 
+### Signals and Systems 
+
+TODO
+
+### Kernel Methods
+
+TODO
+
 ---
 
-## Introduction 
+## Dimensionality 
 
-This section provides not much more than a definition-based refresher on select topics from first courses in linear algebra, signal processing, and machine learning. For readers in need of comprehensive review or first-time coverage, I leave these free resources on said topics:
-
-* **Kernel methods.** [_Foundations of Machine Learning_](https://cs.nyu.edu/~mohri/mlbook/) by Mohri, Rostamizadeh, and Talwalkar.
-* **Signals and Systems.** [_Signals & Systems: Theory and Applications_](https://ss2-2e.eecs.umich.edu/) by Ulaby and Yagle.
-* **Linear algebra.** [_Linear Algebra Done Right_](https://linear.axler.net/) by Axler.
-
-### Linear Combinations 
-
-In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of _Linear Algebra Done Right_:
+In what could nowadays be seen as the canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of _Linear Algebra Done Right_:
 
 > Linear algebra is the study of linear maps on finite-dimensional vector spaces.
 
-Here, the restriction of vector spaces to the finite-dimensional case was one the most mathematically respectful ways to negotiate generality with practical pedagogy. However, the spirit of linear algebra is alive way beyond the finite-dimensional case.
+The restriction of vector spaces to the finite-dimensional case was one the most mathematically respectful ways to negotiate generality with practical pedagogy. But the spirit of linear algebra lives beyond the finite-dimensional case.
 
-#### Hamel Bases
+### Hamel Bases
 
-Most engineers are familiar with the concept of a (Hamel) basis of a vector space. If we have a vector space $V$ over a field $\mathbb{F}$ and a Hamel basis $\mathcal{B}$, then "$\mathcal{B}$ spans $V$" translates to
+Most engineers are familiar with the concept of a [Hamel basis](https://en.wikipedia.org/wiki/Basis_(linear_algebra)) of a vector space (even if they are not aware of this). For a vector space $V$ over a field $\mathbb{F}$ and a Hamel basis $\mathcal{B}$, then "$\mathcal{B}$ spans $V$" translates to the familiar
 
 $$
 \begin{equation}
@@ -54,7 +65,7 @@ $$
 \end{equation}
 $$
 
-Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have finite terms. Note that this is allowed even in cases where $\mathcal{B}$ is infinite (or in other words, where $V$ is infinite-dimensional), as one does not necessarily assign nonzero coefficients $c_i$ to each element of $\mathcal{B}$.
+Importantly, for $\mathcal{B}$ to be a Hamel basis, the sum in $(1)$ must have finite terms. Note that this is allowed even in cases where $\mathcal{B}$ is infinite (or in other words, where $V$ is infinite-dimensional), as one does not necessarily assign nonzero coefficients $c_i$ to each element of $\mathcal{B}$.
 
 {{% hint title="3.1. Example" %}}
 
@@ -64,7 +75,7 @@ $$
 \mathbb{F}[x] = \left\{ \sum_{i \, = \, 0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
 $$
 
-has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \\{1, x, x^2, x^3, \dots \\}$. Each of its elements, however, is the linear combination of a finite number of basis elements. For example, $p(x) = 3 + 4x^2 + x^3$ can be expressed as the combination
+has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \\{1, x, x^2, x^3, \dots \\}$. However, each of its elements is the linear combination of a finite number of basis elements. For example, the polynomial $p(x) = 3 + 4x^2 + x^3$ can be expressed as the linear combination
 
 $$
 p(x) = 3
@@ -91,7 +102,7 @@ p(x) = 3
 \end{bmatrix}.
 $$
 
-Here we imposed a (canonical) representation such that, for example, $x^2 = \left[ 0, \\, 0, \\, 1, \\, 0, \\, {\dots} \right]^\top$. We see that, despite each basis vector being infinite-dimensional, all polynomials are determined by a finite number of them. 
+Here we imposed a standard representation such that, for example, $x^2 = \left[ 0, \\, 0, \\, 1, \\, 0, \\, {\dots} \right]^\top$. We see that, despite each basis vector being infinite-dimensional, all polynomials are combine a finite number of them -- $\mathcal{B}_{\mathbb{F}[x]}$ is a Hamel basis.
 
 {{% /hint %}}
 
@@ -99,9 +110,9 @@ Here we imposed a (canonical) representation such that, for example, $x^2 = \lef
 {{< figure src="vera-molnar-molndrian-1974.png" width="512" caption="Vera Molnár, 'Molndrian' (1974)" >}}
 {{< /hcenter >}}
 
-#### Schauder Bases
+### Schauder Bases
 
-Interpreting Axler strictly, $\mathbb{F}[x]$ is already beyond linear algebra because it is of [semi-infinite](https://en.wikipedia.org/wiki/Semi-infinite) dimension. But definitionally, it is a perfectly valid vector space. Just as finite dimensionality is not necessary in order to access the theorems of linear algebra, having a countable Hamel basis is also not necessary; all vector spaces do have a Hamel basis[^axiom-choice], but not all of them have a countable one.
+Under a very strict interpretation of Axler, $\mathbb{F}[x]$ is already beyond linear algebra since it is of [semi-infinite](https://en.wikipedia.org/wiki/Semi-infinite) dimension. However, it is definitionally a perfectly valid vector space. Just as finite dimensionality is not necessary in order to access the theorems of linear algebra, having a countable Hamel basis is also not strictly necessary. While all vector spaces do have some Hamel basis[^axiom-choice], not all of them have a countable one.
 
 {{% hint title="3.2. Note" %}}
 
@@ -155,9 +166,9 @@ $$
 
 {{% /hint %}}
 
-#### Taxonomy of Spaces
+### Taxonomy of Spaces
 
-Hidden in $(2)$ is the requirement that all such sums over basis elements converge. But the definition of a vector space does not include any operation that computes the "closeness" of two vectors, so additional concepts are needed to make sense of convergence. Abstractly, one needs to equip the vector space of interest with a [topology](https://en.wikipedia.org/wiki/Topological_space#topology). The way of doing so that we will consider is by assuming a [norm](https://en.wikipedia.org/wiki/Norm_(mathematics)) over the space, such that we can concretely declare the definition of an infinite series
+Hidden in $(2)$ is the need for all infinite series over basis elements to converge for each vector in $V$. But standalone vector spaces do not include any operation that computes the "closeness" of two vectors, so additional concepts are needed to make sense of convergence. Abstractly, one needs to equip the vector space of interest with a [topology](https://en.wikipedia.org/wiki/Topological_space#topology). The way of doing so that we will consider is by assuming a [norm](https://en.wikipedia.org/wiki/Norm_(mathematics)) over the space, such that we can concretely declare the definition of an infinite series
 
 $$
 \begin{equation}
@@ -177,7 +188,7 @@ $$
 
 {{% hint title="3.4. Note" %}}
 
-Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this piece, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a complete space (such as $\ell^p$).
+Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this article, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a Banach space (such as $\ell^p$).
 
 {{% /hint %}}
 
@@ -198,20 +209,19 @@ $$
 \end{equation}
 $$
 
-#### Continuous Bases
+### Continuous Bases
 
-The last thing we will consider are vector spaces of uncountably-infinite dimension. So far, we have been comfortable in using syntax such as "$x = [ 1, \\, 2, \\, \ldots ]^\top$" to refer to vectors of countably-infinite dimension. This will no longer be possible with uncountably-infinite dimensions, so we must revisit our notation.
+We will now consider are vector spaces of uncountably-infinite dimension. We have been comfortable in our use of syntax like "$x = [ 1, \\, 2, \\, \ldots ]^\top$" to point at vectors of countably-infinite dimension. This will no longer be possible with uncountably-infinite dimensions, so we must revisit our notation.
 
 {{% hint title="3.5. Reminder" %}}
 
-A vector $v$ is an abstract object, and is independent of a choice of basis. To write $v$ as a tuple $[c_1, \dots, c_n]$, one must choose a basis $\{b_1, \\, \dots, \\, b_n\}$ and expand (in the finite-dimensional case) 
+A vector $v$ is an abstract object and exists independently of a choice of basis. To write $v$ as a tuple $[c_1, \dots, c_n]$, one must choose a basis $\{b_1, \\, \dots, \\, b_n\}$ and expand (in the finite-dimensional case) 
 
 $$
 v = \sum_{i \, = \, 1}^n c_i b_i.
 $$
 
-Hence, $[1, \\, 2, \\, 3]^\top$ means “the coefficients of $v$ in this basis.” 
-Changing the basis changes the coefficients, but not the vector itself. This also applies to infinite-dimensional cases.
+Hence, $[c_1, \ldots, c_n]^\top$ means “the coefficients of $v$ in basis $b_1, \\, \ldots, \\, b_n$.” Changing the basis can change the coefficients (sometimes referred to as coordinaates), but not the vector itself. This also applies to infinite-dimensional cases.
 
 {{% /hint %}}
 
@@ -223,7 +233,7 @@ $$
 \end{equation}
 $$
 
-where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intuitively replaces the index $i$ from $(2)$, where there is a map $c$ "choosing" a coefficient $c(\omega)$ and a map $b$ "choosing" a basis element $b(\omega)$ per index $\omega$. This way, once a map $b : \Omega \to \mathcal{B}$ and a measure $\mu$ over $\Omega$ have been agreed upon, a vector can still be represented by "its coefficients," which is just the map $c$.
+where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intuitively replaces the index $i$ from $(2)$, where there is a map $c$ "choosing" a coefficient $c(\omega)$ and a map $b$ "choosing" a basis element $b(\omega)$ per index $\omega$. This way, once a map $b : \Omega \to \mathcal{B}$ and a measure $\mu$ over $\Omega$ have been agreed upon, a vector can still be represented (intuitively) by "its coefficients," which are now encoded by the map $c$.
 
 {{% hint title="3.6. Example" %}}
 
@@ -234,7 +244,7 @@ L^p(X, \, \mu) =
 \Bigl\{\, f: X \to \mathbb{C} \; \text{measurable} \; \big| \; \int_{X} |f(x)|^p \, d\mu(x) < \infty \,\Bigr\}.
 $$
 
-Much like the $\ell^p$-norm is standard for $\ell^p$, the $L^p$-norm is standard for $L^p$. It is defined in the same way, with the only difference being the promotion of the sum to a Lebesgue integral on $X$ using the measure $\mu$
+Much like the $\ell^p$-norm is standard for $\ell^p$, the $L^p$-norm is standard for $L^p$. It is defined in the same way, the only difference being the promotion of the sum to a Lebesgue integral on $X$ using the measure $\mu$:
 
 $$
 \|f\|_p =
@@ -244,14 +254,13 @@ $$
 \end{cases}
 $$
 
-Notice that if $X = \mathbb{N}$ and $\mu$ is the counting measure, $L^p(X, \\, \mu)$ becomes $\ell^p$ and the $L^p$-norm is the $\ell^p$-norm.
-In the important case of $L^2(\mathbb{R})$, the inner product defined by
+Notice that if $X = \mathbb{N}$ and $\mu$ is the counting measure, $L^p(X, \\, \mu)$ becomes $\ell^p$ and the $L^p$-norm is the $\ell^p$-norm (the latter is one countable case of the former). In the important case of $L^2(\mathbb{R})$, the inner product defined by
 
 $$
-\langle f_1(x), \, f_2(x) \rangle = \int_{\mathbb{R}} f_1(x) \overline{f_2(x)} \, dx
+\langle f_1(x), f_2(x) \rangle = \int_{\mathbb{R}} f_1(x) \overline{f_2(x)} \, dx
 $$
 
-actually ensures that $\langle f, f \rangle = \\| f \\|\_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of "continuous basis" for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,
+actually ensures that $\langle f, f \rangle = \\| f \\|\_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of "continuous basis" for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. So for all $f \in L^2(\mathbb{R})$,
 
 $$
 f(t) = \int_{\mathbb{R}} c(\omega)b(\omega) \, d\mu(\omega) = \int_{-\infty}^{\infty} c(\omega)\, b_\omega(t)\, d\omega.
@@ -265,7 +274,7 @@ c(\omega) =
 = \int_{-\infty}^{\infty} f(t)\, e^{-2 \pi i \omega t} \, dt.
 $$
 
-In a finite-dimensional case, we would compute $\langle v, \\, e_n \rangle$ to observe the "contribution" of the basis element $e_n$ in the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:
+In a finite-dimensional case, we would compute $\langle v, \\, e_n \rangle$ to observe the "contribution" of a basis element $e_n$ to the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per basis index $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:
 
 $$
 c(\omega) = \langle f(t), \, b_\omega(t) \rangle.
@@ -275,9 +284,9 @@ It is not difficult to show algebraically that the Fourier transform $\mathcal{F
 
 {{% /hint %}}
 
-#### Overview
+### Overview
 
-We have expanded a finite-dimensional view of vector spaces to potentially allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^p$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered the conepts of Banach and Hilbert spaces.
+We have diluted the finite-dimensional barrier of vector spaces to allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^p$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered Banach and Hilbert spaces, which allow us to assume structure in abstract contexts.
 
 {{< hcenter >}}
 {{< figure src="david-hilbert.jpg" width="256" caption="David Hilbert (January 23, 1862 – February 14, 1943)" >}}
@@ -285,13 +294,13 @@ We have expanded a finite-dimensional view of vector spaces to potentially allow
 
 {{% hint title="3.7. Note" %}}
 
-In fact, $(1)$ is a special case of $(2)$, which is a special case of $(5)$. Therefore, it is truly a relaxation of the linear combination; at no point did we lock ourselves out of any vector spaces we could already span. Namely, in the case of $(5)$ and $(2)$ for a given vector space $V$,
+$(1)$ is a special case of $(2)$, which is itself a special case of $(5)$. So this was truly a relaxation of the linear combination, as we did not lock ourselves out of any vector spaces we could already span. To be explicit, in the case of $(5)$ and $(2)$,
 
 $$
 \Omega = \mathbb{N} \iff \forall v \in V, \; v = \int_{\Omega} c(\omega)b(\omega) \, d{\mu}(\omega) = \sum_{i \, = \, 0}^{\infty} c_i b_i.
 $$
 
-In the case of $(2)$ and $(5)$, when all vectors in $V$ are a linear combination of a finite number of basis elements (as is the case for $\mathbb{F}[x]$),
+In the case of $(2)$ and $(1)$, when all vectors in $V$ are a linear combination of a finite number of basis elements, observe that much like in the case where $V = \mathbb{F}[x]$
 
 $$
 \forall v \in V, \; v = \sum_{i \, = \, 0}^{\infty} c_i b_i = \sum_{i \, = \, 0}^{k} c_i b_i \;\; \text{s.t.} \;\; k \in \mathbb{N}.
@@ -299,15 +308,15 @@ $$
 
 {{% /hint %}}
 
-### Abstract Tensor Spaces
+## Tensor Spaces
 
 Let us revisit the opening scene of _Linear Algebra Done Right_:
 
 > Linear algebra is the study of linear maps on finite-dimensional vector spaces.
 
-Another thing to note (apart from the restriction to finite dimensions) is the lack of matrices and vectors in this description. This section will live up to this witholding; we will first look for a linear-map-centric view of the objects in linear algebra and, afterwards, gain an understanding of tensor spaces.
+Another thing to note (apart from the restriction to finite dimensions) is the lack of mention of matrices and vectors in this description. This section will live up to this witholding; we will first adopt a linear-map-centric view of the objects in linear algebra and, afterwards, gain an understanding of tensor spaces.
 
-#### Vectors and Matrices
+### Matrices
 
 A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:
 
@@ -342,7 +351,7 @@ is a vector space over $\mathbb{F}$. We denote the case of linear operators on $
 
 {{% hint title="3.9. Note" %}}
 
-There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way.
+There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way (the way that makes matrix multiplication work as expected).
 
 {{% /hint %}}
 
@@ -354,7 +363,7 @@ $$
 \psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda.
 $$
 
-When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9) -- the familiar column of "coordinates" of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,
+When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of 3.9) -- the familiar column of "coordinates" of $v$. In particular, scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,
 
 $$
 \psi_v(\lambda) = 
@@ -376,19 +385,19 @@ $$
 
 {{% /hint %}}
 
-This sets up a clear organization of vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence 
+This conceptually organizes vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence 
 
 $$
 \text{Linear maps} \cong \text{Vectors}.
 $$
 
-Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so in finite dimensions ($\cong^\!$)
+Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so at least in finite dimensions ($\cong^\!$)
 
 $$
 \text{Matrices} \cong^! \text{Linear maps}.
 $$
 
-Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, turning the linear map into the central object of our understanding of linear algebra. In summary,
+Indeed, we can adopt the perspective that a vector can be represented as a matrix solely through its identifiability as a linear map, turning the linear map into the central object of our understanding of linear algebra. In summary,
 
 $$
 \begin{equation}
@@ -400,7 +409,7 @@ $$
 
 We have started to use the symbol $\cong$. In this context, stating $A \cong B$ implies that there is a linear [isomorphism](https://en.wikipedia.org/wiki/Isomorphism) between $A$ and $B$. Exactly, this means that there exists some linear map $\phi : A \to B$ that is a bijection. 
 
-This is complete as a definition of the symbol $\cong$. However, its use in the rest of this piece will often reference a choice of $\phi$ that is [canonical](https://en.wikipedia.org/wiki/Canonical_map). This means that if you see $A \cong B$, there is probably an "standard" way to obtain a $b \in B$ from one unique $a \in A$ (and vice versa) -- here, we can informally say that if $\phi(a) = b$ then $a$ "is" $b$, but it is more precise to say that $a$ "identifies" $b$. Oftentimes, $\phi$ will not be made explicit.
+This is complete as a definition of the symbol $\cong$. However, its use in the rest of this article will often reference a choice of $\phi$ that is [canonical](https://en.wikipedia.org/wiki/Canonical_map). This means that if you see $A \cong B$, there is probably an "standard" way to obtain a $b \in B$ from one unique $a \in A$ (and vice versa) -- here, we can informally say that if $\phi(a) = b$ then $a$ "is" $b$, but it is more precise to say that $a$ "identifies" $b$. Oftentimes, $\phi$ will not be made explicit.
 
 For example, choosing a basis $\mathcal{B}$ for a space $V$ gives the canonical isomorphism $\mathbb{F}^{(\dim V)\times(\dim V)} \cong \mathcal{L}(V)$. In this case, it makes sense to say that "a matrix is a linear transformation." But without a choice of basis there is no "standard" bijection $\Phi_\mathcal{B} : \mathcal{L}(V) \to \mathbb{F}^{(\dim V) \times (\dim V)}$ (no way to bijectively identify maps from matrices).
  
@@ -410,9 +419,9 @@ For example, choosing a basis $\mathcal{B}$ for a space $V$ gives the canonical 
 {{< figure src="vera-molnar-untitled-square-1974.png" width="512" caption="Vera Molnár, Untitled (1974)" >}}
 {{< /hcenter >}}
 
-#### Vector Translation
+### Vector Translation
 
-The statement of 3.10 is neuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some _other_ linear map $\psi_v$, which is identified by some _other_ column matrix $M^\prime$,
+The statement of 3.10 is somewhat nuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some _other_ linear map $\psi_v$, which is identified by some _other_ column matrix $M^\prime$,
 
 $$
 M 
@@ -433,7 +442,7 @@ This makes sense when the vector space $U$ is finite-dimensional, as is the case
 
 {{% /hint %}}
 
-#### Linear Forms 
+### Linear Forms 
 
 In a way that is "dual" to the statement 3.10, one could look at another representation which, while not as standard as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,
 
@@ -468,9 +477,9 @@ Just as stated in 3.12 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ fr
 
 {{% /hint %}}
 
-#### Dual Spaces 
+### Dual Spaces 
 
-All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of [linear forms](https://en.wikipedia.org/wiki/Linear_form) on the space $U$. After 3.8, this is no more than the vector space 
+All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of [linear forms](https://en.wikipedia.org/wiki/Linear_form) on the space $U$. Applying 3.8, this is no more than the vector space 
 
 $$
  U^* = \{ \, \varphi : U \to \mathbb{F}^1 \; | \; \varphi \text{ is linear} \}.
@@ -500,7 +509,7 @@ $$
 {{< figure src="frigyes-riesz.jpg" width="256" caption="Frigyes Riesz (January 22, 1880 – February 28, 1956)" >}}
 {{< /hcenter >}}
 
-#### Multilinearity
+### Multilinearity
 
 We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where 
 
@@ -508,7 +517,7 @@ $$
 T : V_1 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, \ldots, \, v_n) = w,
 $$
 
-we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called [multilinear maps](https://en.wikipedia.org/wiki/Multilinear_map). The set of multilinear maps of this form is denoted
+we say that $T$ is linear in the argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the newly altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called [multilinear maps](https://en.wikipedia.org/wiki/Multilinear_map). The set of multilinear maps of this form is denoted
 
 $$
 \mathcal{L}(V_1, \, \ldots, \, V_n; \, W) = \{\, T : V_1 \times \dots \times V_n \to W \; | \; \text{ T is linear} \}.
@@ -526,19 +535,19 @@ This is with the understanding that $m$-by-$n$ matrices with entries in $\mathbb
 
 {{% /hint %}}
 
-We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has the codomain of $\mathbb{F}$ itself, it is called an $n$-linear form (where all maps like this are called [multilinear forms](https://en.wikipedia.org/wiki/Multilinear_form)).
+We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has $\mathbb{F}$ itself as a codomain, it is generally referred to as an $n$-linear form (where all maps like this are called [multilinear forms](https://en.wikipedia.org/wiki/Multilinear_form)).
 
-#### Tensor Product
+### Tensor Product
 
-If one has two vector spaces $V$ and $W$ over the same field, one can naturally talk about their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, one can talk about a third vector space $V \otimes W$ (called the [tensor product](https://en.wikipedia.org/wiki/Tensor_product) of $V$ and $W$) which, while having just as much expressiveness as $V \times W$, of course has the added benefit of being a vector space itself.
+For two vector spaces $V$ and $W$ over the same field, one can of course construct their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, we can construct a third vector space $V \otimes W$ (called the [tensor product](https://en.wikipedia.org/wiki/Tensor_product) of $V$ and $W$) which, while being as expressive as $V \times W$, enjoys the added benefit of being a vector space itself.
 
 {{% hint title="3.16. Note" %}}
 
-Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the [universal property](https://en.wikipedia.org/wiki/Universal_property) of the tensor product, which justifies the phrase "just as much expressiveness."
+Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the [universal property](https://en.wikipedia.org/wiki/Universal_property) of the tensor product, and it justifies the phrase "as expressive as $V \times W$."
 
 {{% /hint %}}
 
-Every tensor product $V \otimes W$ is equipped with such a bilinear map $\varphi : V \times W \to V \otimes W$ that allows the construction of vectors in $V \otimes W$. The [outer product](https://en.wikipedia.org/wiki/Outer_product) is an example of this in finite dimensions, but in other cases one must be more creative. Confusingly, this map $\varphi$ is also called a tensor product, and $\otimes$ is predominantly used instead of $\varphi$ in notation. Summarizing,
+Every tensor product $V \otimes W$ is equipped with a bilinear map $\varphi : V \times W \to V \otimes W$ that allows the construction of vectors in $V \otimes W$. The [outer product](https://en.wikipedia.org/wiki/Outer_product) is an example of this in finite dimensions, but in other cases one must be more creative. Confusingly, this map $\varphi$ is also called a tensor product, and $\otimes$ is predominantly used instead of $\varphi$ in notation. Summarizing this overloaded notation,
 
 $$
 \forall (v, w) \in V \times W, \; \varphi(v, w) = v \otimes w \quad \text{where} \quad v \otimes w \in V \otimes W.
@@ -546,23 +555,23 @@ $$
 
 {{% hint title="3.17. Note" %}}
 
-Even if the tensor product among vectors is not strictly commutative, there are canonical isomorphisms among permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,
+Even if the tensor product among vectors is not strictly commutative, there are induced canonical isomorphisms between all permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,
 
 $$
 V_1 \otimes \cdots \otimes V_n \;\cong\; V_{\sigma(1)} \otimes \cdots \otimes V_{\sigma(n)}.
 $$
 
-Due to this symmetry, we often write tensor products as if they were commutative without loss of generality. But when one talks about actual computation or representations, order will probably matter.
+Due to this symmetry, we often write tensor products as if they were commutative without loss of generality. But order will matter in actual computation or representation -- we simply have to track what permutations we apply. In that sense, these permutations represent bijections that are "situationally" canonical (because we will always know which ones we used).
 
 {{% /hint %}}
 
-Totally, through 3.16 and 3.17, the tensor product is precisely designed to "linearize" multilinear maps. To elaborate, for any multilinear map $h \in \mathcal{L}(V_1, \\, \ldots, \\, V_n; \\, W)$, there exists a unique linear map[^sub-indices]
+Through 3.16 and 3.17, the tensor product is precisely designed to "linearize" multilinear maps. In other words, for any multilinear map $h \in \mathcal{L}(V_1, \\, \ldots, \\, V_n; \\, W)$, there exists a unique linear map[^sub-indices]
 
 $$
 \tilde h : \bigotimes_i V_i \to W \;\; \text{s.t.} \;\; \tilde h(v_1 \otimes \cdots \otimes v_n) = h(v_1, \ldots, v_n).
 $$
 
-#### More Matrices
+### More Matrices
 
 Being now able to identify every multilinear map with a unique linear map over a tensor product space, it is possible to assert that 3.8, 3.9, and 3.10 also apply to tensor product spaces. I will reiterate the notes, dressing them up specifically for the case of tensor product spaces.
 
@@ -643,7 +652,7 @@ With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented b
 
 {{% /hint %}}
 
-#### Homogeneous Tensors 
+### Homogeneous Tensors 
 
 Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. Prior to taking that perspective, we will understand [tensors](https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)) as linear maps associated with a single vector space $V$ over $\mathbb{F}$ of the form
 
@@ -680,7 +689,7 @@ Let us observe the types of some known tensors of form $T_{n}^{\, 0} : (\times^n
 {{< figure src="vera-molnar-structures-of-squares-1974.png" width="512" caption="Vera Molnár, 'Structures of Squares' (1974)" >}}
 {{< /hcenter >}}
 
-#### Tensor Identification
+### Tensor Identification
 
 When the definition of a multilinear map involves many vector spaces, there will continue to be a lack of such a canonical isomorphism (at least using the insights we currently have). But if we consider arbitrary multilinear maps defined over a single vector space $V$ over a field $\mathbb{F}$ (even those without a codomain $\mathbb{F}$ ), we will see that canonically
 
@@ -821,7 +830,7 @@ where $A, B \in \mathcal{L}(V)$. But due to 3.25, we can reform $T : (\times^2 \
 
 {{% /hint %}}
 
-#### Heterogeneous Tensors 
+### Heterogeneous Tensors 
 
 We have used algebraic pathways to extend the idea of a tensor beyond scalar-valued multilinear maps. Our primary tool was the canonical isomorphism, which allowed us to ignore many specifics in all cases. Now, we will widen the concept of a tensor to involve many vector spaces with linear maps of form
 
@@ -877,7 +886,7 @@ With heterogeneous tensors, one must also carry a mapping of type index to corre
 {{< figure src="vera-molnar-untitled-1974.png" width="512" caption="Vera Molnár, Untitled (1974)" >}}
 {{< /hcenter >}}
 
-#### Tensor Contractions 
+### Tensor Contractions 
 
 The statements of $(9)$ and $(11)$ may initially seem like a cryptic justification of our choice of vocabulary; they justify why we use the word "tensor" so liberally, with the most general use being in reference to an element of a heterogeneous tensor product space (up to isomorphism).
 
@@ -963,7 +972,7 @@ Recall 3.26, and that the canonicity of $V \cong V^\*$ can be "manually" induced
 
 {{% /hint %}}
 
-#### Heterogeneous Contractions
+### Heterogeneous Contractions
 
 We have mostly ignored heterogeneous tensor spaces. Now, the framework of contractions offers a great opportunity to pull them back onto our train of thought. We have implied two stages for finding the type of a tensor contraction. First, consider the tensor product of all the spaces involved. Then, repeatedly utilize the canonical map $\text{ev}_V$, once per pair of dual spaces involved in the contraction.  
 
@@ -997,8 +1006,7 @@ One subtlety of the heterogeneous tensor contraction is that different vector sp
 
 {{% /hint %}}
 
-
-#### Syntax and Applications 
+### Graphical Notation 
 
 An appealing model of tensor operations was offered by [Sir Roger Penrose](https://en.wikipedia.org/wiki/Roger_Penrose) in 1971 within the illustrated writeup [Applications of Negative-Dimensional Tensors](https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf). There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as [Penrose graphical notation](https://en.wikipedia.org/wiki/Penrose_graphical_notation). It provides its users with a feeling of intuitive dominance on tensor algebra.
 
@@ -1081,13 +1089,15 @@ provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \
 
 {{% /hint %}}
 
+In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm. 
+
 {{< hcenter >}}
 {{< figure src="mark-wilson-1e90-1990.png" width="512" caption="Mark Wilson, \'1e90\' (1990)" >}}
 {{< /hcenter >}}
 
-In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm. 
+### Einstein Notation
 
-The dominant model for tensor operations in coordinates is indisputably [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation). Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^\*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer [Ricci-Curbastro](https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro), but it was made popular by [Einstein](https://en.wikipedia.org/wiki/Albert_Einstein) when he published a novel use of it in physics with his [field equations](https://en.wikipedia.org/wiki/Einstein_field_equations) in 1915.
+The dominant model for tensor operations in coordinates is indisputably [Einstein notation](https://en.wikipedia.org/wiki/Einstein_notation). Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^\*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer [Ricci-Curbastro](https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro) (as [Ricci Calculus](https://en.wikipedia.org/wiki/Ricci_calculus)), but it was hugely popularized by [Einstein](https://en.wikipedia.org/wiki/Albert_Einstein) and its novel use in physics with his [field equations](https://en.wikipedia.org/wiki/Einstein_field_equations) in 1915.
 
 {{% hint title="3.41. Note" %}}
 
@@ -1147,17 +1157,17 @@ denotes an entry of its matrix representation. Taking the tensor product of $t$ 
 
 $$
 t \otimes g = 
-{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$
 
 To perform contractions as specified in 3.35, one does a weighted sum across a pair of indices, one upper and one lower (which may belong to different tensors in a tensor product). For example, one could contract $\alpha_a$ with the index $\delta_1$ in the product $t \otimes g$ to obtain
 
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1}} \, 
-g_{\delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+g_{\delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$
 
 Note that in the homogeneous case, one can always do this for any upper-lower index pair. The heterogeneous case just requires knowing which upper indices can be contracted with which lower indices (which can be done by tracking which index pairs correspond to duals of the same vector space). Finally, tensors of equal type may be summed entrywise,
@@ -1172,10 +1182,10 @@ with the understanding that the tensor product is distributive over tensor sums.
 
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$
 
 Note that at any point we can find an entry in the matrix representation by replacing all indices with values. This means that Einstein notation is simply element-wise treatment of tensor matrices, with careful consideration of contraction compatibility by use of upper and lower indices. Here, "trades" translate to index raising or lowering, where (depending on context) one may be allowed to
@@ -1190,10 +1200,10 @@ If allowed to raise or lower indices (which is context-dependent as seen in 3.36
 
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
-g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }} =
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma_1 \, \cdots \, \gamma_c }} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
-g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }}.
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma_1 \, \cdots \, \gamma_c }}.
 $$
 
 {{% /hint %}}
@@ -1204,7 +1214,16 @@ $$
 w_{abc}^{ik} = \text{reduce}_j \left( v_{a b c}^{i j k} \right).
 $$
 
-Since the user is giving up all algebraic gurantees, they may annihilate any index (upper or lower). This is simply treating the tensor matrix as data. But it shows that Einstein notation maintains its richness beyond pure tensor algebra, and is even generalizable to infinite-dimensional tensors via wise choices of $\text{reduce}$.
+Since the user is giving up all algebraic gurantees they may annihilate any index. In the worst case this essentially treats the tensor matrix as pure data, but many choices of $\text{reduce}$ do preserve linearity. This shows that Einstein notation can be useful beyond representing linear maps when working with "pure data," but remains generalizable to linear maps over infinite-dimensional tensor spaces. Inspired by $(5)$, we could decompose $f(x) \in L^2(\mathbb{R})$ with
+
+$$
+f(x) = f^x = 
+c^{\omega} \,
+b_{\omega}^{x} =
+\int_{\Omega} \,
+c^{\omega} \,
+b_{\omega}^{x} \, d\mu(\omega).
+$$
 
 {{% hint title="3.42. Example" %}}
 
@@ -1249,7 +1268,7 @@ result = np.einsum('is,st->it', VX, weights)
 
 {{% /hint %}}
 
-#### Overview
+### Overview
 
 We began this section by organizing the concepts of matrices, linear maps, and vectors. We then took a look at linear forms and dual spaces, being careful of infinite-dimensional cases. Later, we expanded the concept of linearity to multilinear maps, and showed how the tensor product "linearizes" them. That way, we saw how the way we organized matrices, vectors, and linear maps early on applied to tensor product spaces in very natural ways. Finally, tensors allowed us to speak about these objects as unified under a single umbrella woven by tight isomorphisms.
 
@@ -1259,13 +1278,13 @@ Although this trajectory was predominantly abstract, we were also exposed to pra
 {{< figure src="mark-wilson-e67109-2012.png" width="512" caption="Mark Wilson, \'e67109\' (2012)" >}}
 {{< /hcenter >}}
 
-### Signals and Systems 
+## Signals and Systems 
 
 
 
-### Kernel Methods
+## Kernel Methods
 
-[^kernel-semantics]: These two "kernels" received their names for a superficial reason -- because the symbols that represent them show up inside other symbols. One could imagine that people started calling them "kernel" independently just to avoid saying the phrase "that term in in the middle" while pointing at a blackboard. As such, the connecting view of the convolution and reproducing kernels in this piece does not "generalize" to kernels in other contexts (many of which received their names the same non-profound reason). 
+[^kernel-semantics]: These two "kernels" received their names for a superficial reason -- because the symbols that represent them show up inside other symbols. One could imagine that people started calling them "kernel" independently just to avoid saying the phrase "that term in in the middle" while pointing at a blackboard. As such, the connecting view of the convolution and reproducing kernels in this article does not "generalize" to kernels in other contexts (many of which received their names the same non-profound reason). 
 
 
 [^axiom-choice]: When considering infinite-dimensional vector spaces, this statement is true if and only if one admits the axiom of choice. Perhaps this was another motivation of Axler's restriction to finite-dimensional vector spaces.

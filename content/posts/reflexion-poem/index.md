@@ -1,5 +1,5 @@
 ---
-title: "Poem 9. \"Reflexiones\""
+title: "Poem 9. \"Reflexión\""
 category: personal 
 date: 2025-10-13
 ---

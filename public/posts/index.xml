@@ -22,7 +22,7 @@
       <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/poem-9.-reflexiones/</guid>
-      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;soledades entre columnas de piedra
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;son soledades entre columnas de piedra
 vacíos entre las personas del mundo
 las cumbres de la tierra, sus árboles 
 venas de fuego que mueren en el mar
@@ -124,37 +124,106 @@ ser que se yergue
     
     
     <item>
-      <title>Perspectives into Tensors, Signals, and Kernel Methods</title>
-      <link>http://localhost:1313/perspectives-into-tensors-signals-and-kernel-methods/</link>
+      <title>Poem 6. &#34;Lena&#34;</title>
+      <link>http://localhost:1313/poem-6.-lena/</link>
       <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/perspectives-into-tensors-signals-and-kernel-methods/</guid>
+      <guid>http://localhost:1313/poem-6.-lena/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;entrevista criatura echada en la baldosa,
+la luz penetraba el follaje 
+    del helecho donde te resguardabas:
+en ese entonces, los dos éramos niños y 
+  nos ceñía la juventud de nuestra familia,
+ese hogar llevaba tu color, 
+        y en ese jardín
+  nos vestía el espacio de una piel
+            más radiante y transparente 
+
+criatura entrevista entre las décadas,
+  tiempo tenaz que fluye a mi costado:
+  todavía soy un niño, pero sin ti
+             ya no soy joven,
+   mi familia ya no es joven
+    ahora que tú no estás, 
+        te resguardo dentro de mí,
+      y en ti siempre se encontrarán 
+    aquellas joyas de nuestra juventud
+  dentro de las cuales centellea 
+la luz que compartimos
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Unifying Perspectives of Tensors, Signals, and Kernel Methods</title>
+      <link>http://localhost:1313/unifying-perspectives-of-tensors-signals-and-kernel-methods/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/unifying-perspectives-of-tensors-signals-and-kernel-methods/</guid>
       <description>&lt;aside id=&#34;toc&#34;&gt;
     &lt;details&gt;
         &lt;summary&gt;&amp;nbsp;&lt;strong&gt; Table of contents&lt;/strong&gt;&lt;/summary&gt;
         &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#abstract&#34;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
+    &lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;
       &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#linear-combinations&#34;&gt;Linear Combinations&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#abstract-tensor-spaces&#34;&gt;Abstract Tensor Spaces&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dimensionality&#34;&gt;Dimensionality&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tensor-spaces&#34;&gt;Tensor Spaces&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#signals-and-systems&#34;&gt;Signals and Systems&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#kernel-methods&#34;&gt;Kernel Methods&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#dimensionality-1&#34;&gt;Dimensionality&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#hamel-bases&#34;&gt;Hamel Bases&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#schauder-bases&#34;&gt;Schauder Bases&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#taxonomy-of-spaces&#34;&gt;Taxonomy of Spaces&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#continuous-bases&#34;&gt;Continuous Bases&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#overview-1&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#tensor-spaces-1&#34;&gt;Tensor Spaces&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#matrices&#34;&gt;Matrices&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#vector-translation&#34;&gt;Vector Translation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#linear-forms&#34;&gt;Linear Forms&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dual-spaces&#34;&gt;Dual Spaces&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#multilinearity&#34;&gt;Multilinearity&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tensor-product&#34;&gt;Tensor Product&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#more-matrices&#34;&gt;More Matrices&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#homogeneous-tensors&#34;&gt;Homogeneous Tensors&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tensor-identification&#34;&gt;Tensor Identification&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#heterogeneous-tensors&#34;&gt;Heterogeneous Tensors&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tensor-contractions&#34;&gt;Tensor Contractions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#heterogeneous-contractions&#34;&gt;Heterogeneous Contractions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#graphical-notation&#34;&gt;Graphical Notation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#einstein-notation&#34;&gt;Einstein Notation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#overview-2&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#signals-and-systems-1&#34;&gt;Signals and Systems&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#kernel-methods-1&#34;&gt;Kernel Methods&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
     &lt;/details&gt;
 &lt;/aside&gt;
 
 &lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
-&lt;p&gt;Linear algebra, signal processing, and machine learning methods are (one of many groups of) topics that enjoy beautiful relationships enclosed in a dense shell of mathematics. Within the shell, one finds a kernel of surprisingly diverse perspectives which are simply a pleasure to entertain. This article hopes to give the reader a thematic glimpse of some ideas in this particular group of topics, deprioritizing content density.&lt;/p&gt;
+&lt;p&gt;Tensor algebra, signal processing, and machine learning methods are (one of many groups of) topics with natural relationships enclosed in a dense shell of mathematics. This article approaches these topics individually through somewhat unusual logical paths, making an upfront payment in mathematical accessibility to arrive at perspectives which reveal romantic links between their concepts. All these perspectives are well-known, but it is rare to see many of them presented together in a structured narrative.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;I follow an essay-like structure including an introduction, body, and conclusion. The introduction sets the stage building from &amp;ldquo;class-style&amp;rdquo; knowledge, assuming a first course in linear algebra, signal processing, and machine learning. For readers lacking this background, I leave pointers to free resources.&lt;/p&gt;
-&lt;p&gt;The introduction arrives at the &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_map&#34;&gt;linear operator&lt;/a&gt; perspective of &lt;a href=&#34;https://en.wikipedia.org/wiki/Multidimensional_system&#34;&gt;systems of many dimensions&lt;/a&gt;, taking system properties like &lt;a href=&#34;https://en.wikipedia.org/wiki/Time-invariant_system&#34;&gt;time-invariance&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Causal_system&#34;&gt;causality&lt;/a&gt; in terms of &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor&#34;&gt;tensor&lt;/a&gt; representations. These perspectives then help the body (a cross-cutting perspective of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Convolution&#34;&gt;convolution kernel&lt;/a&gt; and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space#:~:text=then%20called%20the-,reproducing%20kernel,-%2C%20and%20it%20reproduces&#34;&gt;reproducing kernel&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This article has four primary parts, each on a particular topic. They are intended to be consumed in order. I assume eingineering-oriented first courses in linear algebra, signal processing, and machine learning. For readers in need of comprehensive review or first-time coverage, I leave these resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kernel methods.&lt;/strong&gt; &lt;a href=&#34;https://cs.nyu.edu/~mohri/mlbook/&#34;&gt;&lt;em&gt;Foundations of Machine Learning&lt;/em&gt;&lt;/a&gt; by Mohri, Rostamizadeh, and Talwalkar,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Signals and Systems.&lt;/strong&gt; &lt;a href=&#34;https://ss2-2e.eecs.umich.edu/&#34;&gt;&lt;em&gt;Signals &amp;amp; Systems: Theory and Applications&lt;/em&gt;&lt;/a&gt; by Ulaby and Yagle,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear algebra.&lt;/strong&gt; &lt;a href=&#34;https://linear.axler.net/&#34;&gt;&lt;em&gt;Linear Algebra Done Right&lt;/em&gt;&lt;/a&gt; by Axler.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dimensionality&#34;&gt;Dimensionality&lt;/h3&gt;
+&lt;p&gt;I begin by considering infinite-dimensional vector spaces. I demonstrate how the definition of span  can a be relaxed to allow the coordinate-based treatement of vector spaces of dimensions with different (infinite) cardinalities, and what the notion of a basis becomes under these relaxations. This leads us to Banach and Hilbert spaces while being a digestible way to ramp-up for the following sections.&lt;/p&gt;
+&lt;h3 id=&#34;tensor-spaces&#34;&gt;Tensor Spaces&lt;/h3&gt;
+&lt;p&gt;I organize the semantics behind matrices, vectors, and linear maps. After introducing some preliminary concepts not usually covered in a first course in linear algebra (e.g. canonical isomorphisms), I provide an abstract introduction to tensors and tensor spaces, showing how they are &amp;ldquo;many things at once&amp;rdquo; up to (quite practical) isomorphism. After the abstract introduction, I share notation standards for coordinate-based and coordinate-free tensor algebra paired with real-world examples from differential geometry and deep learning.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -170,7 +239,7 @@ ser que se yergue
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -186,29 +255,27 @@ ser que se yergue
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;The word &amp;ldquo;kernel&amp;rdquo; is criminally polysemous in mathematics, and it will be used a lot in this piece. I mostly use the word under two semantics: The convolution kernel from signal processing and the reproducing kernel from machine learning. All other instances of the word should simply refer to its english meaning.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;The logical procedures and syntax conventions of this section are shown to be valid for Hilbert spaces and tensor products thereof, although there are other infinite-dimensional cases where they also apply. But it would be too difficult to structure these nuances in a complete way, and they would not enjoy much overlap with subsequent topics regardless.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;h3 id=&#34;signals-and-systems&#34;&gt;Signals and Systems&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;h3 id=&#34;kernel-methods&#34;&gt;Kernel Methods&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This section provides not much more than a definition-based refresher on select topics from first courses in linear algebra, signal processing, and machine learning. For readers in need of comprehensive review or first-time coverage, I leave these free resources on said topics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Kernel methods.&lt;/strong&gt; &lt;a href=&#34;https://cs.nyu.edu/~mohri/mlbook/&#34;&gt;&lt;em&gt;Foundations of Machine Learning&lt;/em&gt;&lt;/a&gt; by Mohri, Rostamizadeh, and Talwalkar.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Signals and Systems.&lt;/strong&gt; &lt;a href=&#34;https://ss2-2e.eecs.umich.edu/&#34;&gt;&lt;em&gt;Signals &amp;amp; Systems: Theory and Applications&lt;/em&gt;&lt;/a&gt; by Ulaby and Yagle.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Linear algebra.&lt;/strong&gt; &lt;a href=&#34;https://linear.axler.net/&#34;&gt;&lt;em&gt;Linear Algebra Done Right&lt;/em&gt;&lt;/a&gt; by Axler.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;linear-combinations&#34;&gt;Linear Combinations&lt;/h3&gt;
-&lt;p&gt;In what is nowadays close to being a canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of &lt;em&gt;Linear Algebra Done Right&lt;/em&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;dimensionality-1&#34;&gt;Dimensionality&lt;/h2&gt;
+&lt;p&gt;In what could nowadays be seen as the canon of linear algebra education, Sheldon Axler opens with the statement below to set the stage for the rest of &lt;em&gt;Linear Algebra Done Right&lt;/em&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Here, the restriction of vector spaces to the finite-dimensional case was one the most mathematically respectful ways to negotiate generality with practical pedagogy. However, the spirit of linear algebra is alive way beyond the finite-dimensional case.&lt;/p&gt;
-&lt;h4 id=&#34;hamel-bases&#34;&gt;Hamel Bases&lt;/h4&gt;
-&lt;p&gt;Most engineers are familiar with the concept of a (Hamel) basis of a vector space. If we have a vector space $V$ over a field $\mathbb{F}$ and a Hamel basis $\mathcal{B}$, then &amp;ldquo;$\mathcal{B}$ spans $V$&amp;rdquo; translates to&lt;/p&gt;
+&lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The restriction of vector spaces to the finite-dimensional case was one the most mathematically respectful ways to negotiate generality with practical pedagogy. But the spirit of linear algebra lives beyond the finite-dimensional case.&lt;/p&gt;
+&lt;h3 id=&#34;hamel-bases&#34;&gt;Hamel Bases&lt;/h3&gt;
+&lt;p&gt;Most engineers are familiar with the concept of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Basis_(linear_algebra)&#34;&gt;Hamel basis&lt;/a&gt; of a vector space (even if they are not aware of this). For a vector space $V$ over a field $\mathbb{F}$ and a Hamel basis $\mathcal{B}$, then &amp;ldquo;$\mathcal{B}$ spans $V$&amp;rdquo; translates to the familiar&lt;/p&gt;
 $$
 \begin{equation}
     \forall v \in V, \; v = \sum_{i \, = \, 0}^{k} c_i b_i \;\; \text{s.t.} \;\; c_i \in \mathbb{F}, \, b_i \in \mathcal{B}, \, k \in \mathbb{N}.
 \end{equation}
-$$&lt;p&gt;Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have finite terms. Note that this is allowed even in cases where $\mathcal{B}$ is infinite (or in other words, where $V$ is infinite-dimensional), as one does not necessarily assign nonzero coefficients $c_i$ to each element of $\mathcal{B}$.&lt;/p&gt;
+$$&lt;p&gt;Importantly, for $\mathcal{B}$ to be a Hamel basis, the sum in $(1)$ must have finite terms. Note that this is allowed even in cases where $\mathcal{B}$ is infinite (or in other words, where $V$ is infinite-dimensional), as one does not necessarily assign nonzero coefficients $c_i$ to each element of $\mathcal{B}$.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -224,7 +291,7 @@ $$&lt;p&gt;Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -243,7 +310,7 @@ $$&lt;p&gt;Importantly, for $B$ to be a Hamel basis, the sum in $(1)$ must have 
 &lt;p&gt;The vector space of polynomials (of finite terms) with coefficients in a field $\mathbb{F}$,&lt;/p&gt;
 $$
 \mathbb{F}[x] = \left\{ \sum_{i \, = \, 0}^n a_i x^i \;\Big|\; n \in \mathbb{N},\ a_i \in \mathbb{F} \right\},
-$$&lt;p&gt;has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \{1, x, x^2, x^3, \dots \}$. Each of its elements, however, is the linear combination of a finite number of basis elements. For example, $p(x) = 3 + 4x^2 + x^3$ can be expressed as the combination&lt;/p&gt;
+$$&lt;p&gt;has the infinite basis $\mathcal{B}_{\mathbb{F}[x]} = \{1, x, x^2, x^3, \dots \}$. However, each of its elements is the linear combination of a finite number of basis elements. For example, the polynomial $p(x) = 3 + 4x^2 + x^3$ can be expressed as the linear combination&lt;/p&gt;
 $$
 p(x) = 3
 \begin{bmatrix}
@@ -267,7 +334,7 @@ p(x) = 3
  1 \\
  \vdots
 \end{bmatrix}.
-$$&lt;p&gt;Here we imposed a (canonical) representation such that, for example, $x^2 = \left[ 0, \, 0, \, 1, \, 0, \, {\dots} \right]^\top$. We see that, despite each basis vector being infinite-dimensional, all polynomials are determined by a finite number of them.&lt;/p&gt;
+$$&lt;p&gt;Here we imposed a standard representation such that, for example, $x^2 = \left[ 0, \, 0, \, 1, \, 0, \, {\dots} \right]^\top$. We see that, despite each basis vector being infinite-dimensional, all polynomials are combine a finite number of them &amp;ndash; $\mathcal{B}_{\mathbb{F}[x]}$ is a Hamel basis.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
@@ -287,8 +354,8 @@ $$&lt;p&gt;Here we imposed a (canonical) representation such that, for example, 
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;schauder-bases&#34;&gt;Schauder Bases&lt;/h4&gt;
-&lt;p&gt;Interpreting Axler strictly, $\mathbb{F}[x]$ is already beyond linear algebra because it is of &lt;a href=&#34;https://en.wikipedia.org/wiki/Semi-infinite&#34;&gt;semi-infinite&lt;/a&gt; dimension. But definitionally, it is a perfectly valid vector space. Just as finite dimensionality is not necessary in order to access the theorems of linear algebra, having a countable Hamel basis is also not necessary; all vector spaces do have a Hamel basis&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, but not all of them have a countable one.&lt;/p&gt;
+&lt;h3 id=&#34;schauder-bases&#34;&gt;Schauder Bases&lt;/h3&gt;
+&lt;p&gt;Under a very strict interpretation of Axler, $\mathbb{F}[x]$ is already beyond linear algebra since it is of &lt;a href=&#34;https://en.wikipedia.org/wiki/Semi-infinite&#34;&gt;semi-infinite&lt;/a&gt; dimension. However, it is definitionally a perfectly valid vector space. Just as finite dimensionality is not necessary in order to access the theorems of linear algebra, having a countable Hamel basis is also not strictly necessary. While all vector spaces do have some Hamel basis&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, not all of them have a countable one.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -304,7 +371,7 @@ $$&lt;p&gt;Here we imposed a (canonical) representation such that, for example, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -344,7 +411,7 @@ $$&lt;p&gt;If the above is true for a vector space $V$ over $\mathbb{F}$, then $
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -388,8 +455,8 @@ $$
 \right\}.
 $$&lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;taxonomy-of-spaces&#34;&gt;Taxonomy of Spaces&lt;/h4&gt;
-&lt;p&gt;Hidden in $(2)$ is the requirement that all such sums over basis elements converge. But the definition of a vector space does not include any operation that computes the &amp;ldquo;closeness&amp;rdquo; of two vectors, so additional concepts are needed to make sense of convergence. Abstractly, one needs to equip the vector space of interest with a &lt;a href=&#34;https://en.wikipedia.org/wiki/Topological_space#topology&#34;&gt;topology&lt;/a&gt;. The way of doing so that we will consider is by assuming a &lt;a href=&#34;https://en.wikipedia.org/wiki/Norm_(mathematics)&#34;&gt;norm&lt;/a&gt; over the space, such that we can concretely declare the definition of an infinite series&lt;/p&gt;
+&lt;h3 id=&#34;taxonomy-of-spaces&#34;&gt;Taxonomy of Spaces&lt;/h3&gt;
+&lt;p&gt;Hidden in $(2)$ is the need for all infinite series over basis elements to converge for each vector in $V$. But standalone vector spaces do not include any operation that computes the &amp;ldquo;closeness&amp;rdquo; of two vectors, so additional concepts are needed to make sense of convergence. Abstractly, one needs to equip the vector space of interest with a &lt;a href=&#34;https://en.wikipedia.org/wiki/Topological_space#topology&#34;&gt;topology&lt;/a&gt;. The way of doing so that we will consider is by assuming a &lt;a href=&#34;https://en.wikipedia.org/wiki/Norm_(mathematics)&#34;&gt;norm&lt;/a&gt; over the space, such that we can concretely declare the definition of an infinite series&lt;/p&gt;
 $$
 \begin{equation}
     \lim_{n \to \infty} \left\| x - \sum_{k \, = \, 1}^n a_k \right\| = 0 \iff x = \sum_{k \, = \, 1}^{\infty} a_k.
@@ -416,7 +483,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -432,7 +499,7 @@ $$&lt;style&gt;
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this piece, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a complete space (such as $\ell^p$).&lt;/p&gt;
+&lt;p&gt;Banach spaces do not necessarily have a Schauder basis. The reason for this is technical and out of scope. Additionally, not all normed vector spaces that have a Schauder basis are Banach spaces, because they may not be complete. But for the remainder of this article, completeness can be comfortably assumed. Indeed, most of the time anyone talks about a Schauder basis in a practical context, it spans a Banach space (such as $\ell^p$).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;If a Banach space is also equipped with an &lt;a href=&#34;https://en.wikipedia.org/wiki/Inner_product_space&#34;&gt;inner product&lt;/a&gt; in such a way that $\langle x, \, x \rangle = \| x \|^2$, then it is also called a &lt;a href=&#34;https://en.wikipedia.org/wiki/Inner_product_space&#34;&gt;Hilbert space&lt;/a&gt;. With the understanding that a vector space with an inner product defined is called an inner-product space, we arrive at the following:&lt;/p&gt;
@@ -449,8 +516,8 @@ $$
 &amp;\supset \text{Hilbert spaces} = (\text{Banach spaces} \, \cap \, \text{Inner-product spaces}).
 \end{aligned}
 \end{equation}
-$$&lt;h4 id=&#34;continuous-bases&#34;&gt;Continuous Bases&lt;/h4&gt;
-&lt;p&gt;The last thing we will consider are vector spaces of uncountably-infinite dimension. So far, we have been comfortable in using syntax such as &amp;ldquo;$x = [ 1, \, 2, \, \ldots ]^\top$&amp;rdquo; to refer to vectors of countably-infinite dimension. This will no longer be possible with uncountably-infinite dimensions, so we must revisit our notation.&lt;/p&gt;
+$$&lt;h3 id=&#34;continuous-bases&#34;&gt;Continuous Bases&lt;/h3&gt;
+&lt;p&gt;We will now consider are vector spaces of uncountably-infinite dimension. We have been comfortable in our use of syntax like &amp;ldquo;$x = [ 1, \, 2, \, \ldots ]^\top$&amp;rdquo; to point at vectors of countably-infinite dimension. This will no longer be possible with uncountably-infinite dimensions, so we must revisit our notation.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -466,7 +533,7 @@ $$&lt;h4 id=&#34;continuous-bases&#34;&gt;Continuous Bases&lt;/h4&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -482,11 +549,10 @@ $$&lt;h4 id=&#34;continuous-bases&#34;&gt;Continuous Bases&lt;/h4&gt;
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;A vector $v$ is an abstract object, and is independent of a choice of basis. To write $v$ as a tuple $[c_1, \dots, c_n]$, one must choose a basis ${b_1, \, \dots, \, b_n}$ and expand (in the finite-dimensional case)&lt;/p&gt;
+&lt;p&gt;A vector $v$ is an abstract object and exists independently of a choice of basis. To write $v$ as a tuple $[c_1, \dots, c_n]$, one must choose a basis ${b_1, \, \dots, \, b_n}$ and expand (in the finite-dimensional case)&lt;/p&gt;
 $$
 v = \sum_{i \, = \, 1}^n c_i b_i.
-$$&lt;p&gt;Hence, $[1, \, 2, \, 3]^\top$ means “the coefficients of $v$ in this basis.”
-Changing the basis changes the coefficients, but not the vector itself. This also applies to infinite-dimensional cases.&lt;/p&gt;
+$$&lt;p&gt;Hence, $[c_1, \ldots, c_n]^\top$ means “the coefficients of $v$ in basis $b_1, \, \ldots, \, b_n$.” Changing the basis can change the coefficients (sometimes referred to as coordinaates), but not the vector itself. This also applies to infinite-dimensional cases.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Observing that, once a basis is chosen, a vector in a vector space $V$ over a field $\mathbb{F}$ is determined by the coefficients in its representation as a linear combination of basis vectors, we can introduce a new type of linear combination to evolve the translation of &amp;ldquo;$\mathcal{B}$ spans $V$&amp;rdquo; to involve a &lt;a href=&#34;https://en.wikipedia.org/wiki/Lebesgue_integral&#34;&gt;Lebesgue integral&lt;/a&gt;,&lt;/p&gt;
@@ -494,7 +560,7 @@ $$
 \begin{equation}
     \forall v \in V, \; v = \int_{\mathcal{\Omega}} c(\omega) b(\omega) \, d\mu(\omega) \;\; \text{s.t.} \;\; c : \Omega \to \mathbb{F}, \, b : \Omega \to \mathcal{B},
 \end{equation}
-$$&lt;p&gt;where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intuitively replaces the index $i$ from $(2)$, where there is a map $c$ &amp;ldquo;choosing&amp;rdquo; a coefficient $c(\omega)$ and a map $b$ &amp;ldquo;choosing&amp;rdquo; a basis element $b(\omega)$ per index $\omega$. This way, once a map $b : \Omega \to \mathcal{B}$ and a measure $\mu$ over $\Omega$ have been agreed upon, a vector can still be represented by &amp;ldquo;its coefficients,&amp;rdquo; which is just the map $c$.&lt;/p&gt;
+$$&lt;p&gt;where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\omega$ intuitively replaces the index $i$ from $(2)$, where there is a map $c$ &amp;ldquo;choosing&amp;rdquo; a coefficient $c(\omega)$ and a map $b$ &amp;ldquo;choosing&amp;rdquo; a basis element $b(\omega)$ per index $\omega$. This way, once a map $b : \Omega \to \mathcal{B}$ and a measure $\mu$ over $\Omega$ have been agreed upon, a vector can still be represented (intuitively) by &amp;ldquo;its coefficients,&amp;rdquo; which are now encoded by the map $c$.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -510,7 +576,7 @@ $$&lt;p&gt;where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -530,18 +596,17 @@ $$&lt;p&gt;where a measure ${\mu}$ over $\Omega$ is provided. Here, the index $\
 $$
 L^p(X, \, \mu) = 
 \Bigl\{\, f: X \to \mathbb{C} \; \text{measurable} \; \big| \; \int_{X} |f(x)|^p \, d\mu(x) &lt; \infty \,\Bigr\}.
-$$&lt;p&gt;Much like the $\ell^p$-norm is standard for $\ell^p$, the $L^p$-norm is standard for $L^p$. It is defined in the same way, with the only difference being the promotion of the sum to a Lebesgue integral on $X$ using the measure $\mu$&lt;/p&gt;
+$$&lt;p&gt;Much like the $\ell^p$-norm is standard for $\ell^p$, the $L^p$-norm is standard for $L^p$. It is defined in the same way, the only difference being the promotion of the sum to a Lebesgue integral on $X$ using the measure $\mu$:&lt;/p&gt;
 $$
 \|f\|_p =
 \begin{cases}
 \; \left( \displaystyle\int_{X} |f(x)|^p \, d\mu(x) \right)^{1/p} &amp; \text{if} \;\; 1 \le p &lt; \infty, \\[1.4em]
 \;\; \sup_x |f(x)| &amp; \text{if} \;\; p = \infty.
 \end{cases}
-$$&lt;p&gt;Notice that if $X = \mathbb{N}$ and $\mu$ is the counting measure, $L^p(X, \, \mu)$ becomes $\ell^p$ and the $L^p$-norm is the $\ell^p$-norm.
-In the important case of $L^2(\mathbb{R})$, the inner product defined by&lt;/p&gt;
+$$&lt;p&gt;Notice that if $X = \mathbb{N}$ and $\mu$ is the counting measure, $L^p(X, \, \mu)$ becomes $\ell^p$ and the $L^p$-norm is the $\ell^p$-norm (the latter is one countable case of the former). In the important case of $L^2(\mathbb{R})$, the inner product defined by&lt;/p&gt;
 $$
-\langle f_1(x), \, f_2(x) \rangle = \int_{\mathbb{R}} f_1(x) \overline{f_2(x)} \, dx
-$$&lt;p&gt;actually ensures that $\langle f, f \rangle = \| f \|_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of &amp;ldquo;continuous basis&amp;rdquo; for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. For all $f \in L^2(\mathbb{R})$,&lt;/p&gt;
+\langle f_1(x), f_2(x) \rangle = \int_{\mathbb{R}} f_1(x) \overline{f_2(x)} \, dx
+$$&lt;p&gt;actually ensures that $\langle f, f \rangle = \| f \|_2$, making $L^2(\mathbb{R})$ a Hilbert space. A natural choice of &amp;ldquo;continuous basis&amp;rdquo; for $L^2(\mathbb{R})$ is the complex exponentials indexed by frequency, $b_\omega(t) = e^{2 \pi i \omega t}$ with $\omega \in \mathbb{R}$. So for all $f \in L^2(\mathbb{R})$,&lt;/p&gt;
 $$
 f(t) = \int_{\mathbb{R}} c(\omega)b(\omega) \, d\mu(\omega) = \int_{-\infty}^{\infty} c(\omega)\, b_\omega(t)\, d\omega.
 $$&lt;p&gt;The measure $d\omega$ is the typical Lebesgue measure on $\mathbb{R}$. Here, we see that any $f \in L^2(\mathbb{R})$ can be expressed as a continuous linear combination of basis elements in the form $e^{2 \pi i \omega t}$ which, to reiterate, are other functions parameterized by $t$ and indexed by $\omega \in \mathbb{R}$. In this case, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fourier_transform&#34;&gt;Fourier transform&lt;/a&gt; of $f(t)$ is in fact $c(\omega)$:&lt;/p&gt;
@@ -549,14 +614,14 @@ $$
 c(\omega) =
 \int_{-\infty}^{\infty} f(t) \, \overline{b_\omega(t)} \, dt
 = \int_{-\infty}^{\infty} f(t)\, e^{-2 \pi i \omega t} \, dt.
-$$&lt;p&gt;In a finite-dimensional case, we would compute $\langle v, \, e_n \rangle$ to observe the &amp;ldquo;contribution&amp;rdquo; of the basis element $e_n$ in the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:&lt;/p&gt;
+$$&lt;p&gt;In a finite-dimensional case, we would compute $\langle v, \, e_n \rangle$ to observe the &amp;ldquo;contribution&amp;rdquo; of a basis element $e_n$ to the vector $v$, obtaining the coefficient it would be assigned in its decomposition as a linear combination of basis elements. The Fourier transform does exactly the same thing per basis index $\omega$, where $v = f(t)$ and $e_n = b_\omega(t)$:&lt;/p&gt;
 $$
 c(\omega) = \langle f(t), \, b_\omega(t) \rangle.
 $$&lt;p&gt;It is not difficult to show algebraically that the Fourier transform $\mathcal{F} : L^2(\mathbb{R}) \to L^2(\mathbb{R})$ is a linear operator over this Hilbert space. (So if it were countably-infinite dimensional, it would have a matrix representation.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;overview-1&#34;&gt;Overview&lt;/h4&gt;
-&lt;p&gt;We have expanded a finite-dimensional view of vector spaces to potentially allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^p$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered the conepts of Banach and Hilbert spaces.&lt;/p&gt;
+&lt;h3 id=&#34;overview-1&#34;&gt;Overview&lt;/h3&gt;
+&lt;p&gt;We have diluted the finite-dimensional barrier of vector spaces to allow those with countably- or uncountably-infinite dimensions. To do so, we had to slowly relax our concept of a linear combination from $(1)$ (which already spanned certain infinite-dimensional spaces like $\mathbb{F}[x]$), to $(2)$ (which was able to span a more countably-infinite-dimensional spaces like $\ell^p$), and finally $(5)$ (which can span uncountably-infinite dimensional spaces like $L^2(\mathbb{R})$). We have also encountered Banach and Hilbert spaces, which allow us to assume structure in abstract contexts.&lt;/p&gt;
 &lt;style&gt;
     .halign-container {
         display: flex;
@@ -589,7 +654,7 @@ $$&lt;p&gt;It is not difficult to show algebraically that the Fourier transform 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -605,20 +670,21 @@ $$&lt;p&gt;It is not difficult to show algebraically that the Fourier transform 
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;In fact, $(1)$ is a special case of $(2)$, which is a special case of $(5)$. Therefore, it is truly a relaxation of the linear combination; at no point did we lock ourselves out of any vector spaces we could already span. Namely, in the case of $(5)$ and $(2)$ for a given vector space $V$,&lt;/p&gt;
+&lt;p&gt;$(1)$ is a special case of $(2)$, which is itself a special case of $(5)$. So this was truly a relaxation of the linear combination, as we did not lock ourselves out of any vector spaces we could already span. To be explicit, in the case of $(5)$ and $(2)$,&lt;/p&gt;
 $$
 \Omega = \mathbb{N} \iff \forall v \in V, \; v = \int_{\Omega} c(\omega)b(\omega) \, d{\mu}(\omega) = \sum_{i \, = \, 0}^{\infty} c_i b_i.
-$$&lt;p&gt;In the case of $(2)$ and $(5)$, when all vectors in $V$ are a linear combination of a finite number of basis elements (as is the case for $\mathbb{F}[x]$),&lt;/p&gt;
+$$&lt;p&gt;In the case of $(2)$ and $(1)$, when all vectors in $V$ are a linear combination of a finite number of basis elements, observe that much like in the case where $V = \mathbb{F}[x]$&lt;/p&gt;
 $$
 \forall v \in V, \; v = \sum_{i \, = \, 0}^{\infty} c_i b_i = \sum_{i \, = \, 0}^{k} c_i b_i \;\; \text{s.t.} \;\; k \in \mathbb{N}.
 $$&lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;abstract-tensor-spaces&#34;&gt;Abstract Tensor Spaces&lt;/h3&gt;
+&lt;h2 id=&#34;tensor-spaces-1&#34;&gt;Tensor Spaces&lt;/h2&gt;
 &lt;p&gt;Let us revisit the opening scene of &lt;em&gt;Linear Algebra Done Right&lt;/em&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Another thing to note (apart from the restriction to finite dimensions) is the lack of matrices and vectors in this description. This section will live up to this witholding; we will first look for a linear-map-centric view of the objects in linear algebra and, afterwards, gain an understanding of tensor spaces.&lt;/p&gt;
-&lt;h4 id=&#34;vectors-and-matrices&#34;&gt;Vectors and Matrices&lt;/h4&gt;
+&lt;p&gt;Linear algebra is the study of linear maps on finite-dimensional vector spaces.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Another thing to note (apart from the restriction to finite dimensions) is the lack of mention of matrices and vectors in this description. This section will live up to this witholding; we will first adopt a linear-map-centric view of the objects in linear algebra and, afterwards, gain an understanding of tensor spaces.&lt;/p&gt;
+&lt;h3 id=&#34;matrices&#34;&gt;Matrices&lt;/h3&gt;
 &lt;p&gt;A regrettable aspect of a typical introduction to linear algebra is the marriage of syntax to abstract objects. Most of us were told in a first impression that a vector $v$ and a matrix $M$ may look something like this:&lt;/p&gt;
 $$
 \begin{equation}
@@ -649,7 +715,7 @@ $$&lt;p&gt;I assert that $v$ and $M$ are &lt;em&gt;both&lt;/em&gt; matrices, eac
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -686,7 +752,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -702,7 +768,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way.&lt;/p&gt;
+&lt;p&gt;There is a bijection between $\mathcal{L}(V, W)$ and $\mathbb{F}^{(\dim V) \times (\dim W)}$, where $V$ and $W$ are vector spaces on the same field $\mathbb{F}$ and are finite-dimensional. In other words, for each linear map $T$ from a vector space of dimension $n$ to another of dimension $m$, there is exactly one $m$-by-$n$ matrix with entries in $\mathbb{F}$. When bases are fixed, $T$ and its corresponding matrix can be translated in a standard way (the way that makes matrix multiplication work as expected).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
@@ -720,7 +786,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -739,7 +805,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the case of linear ope
 &lt;p&gt;A vector $v$ in a space $V$ over $\mathbb{F}$ can be regarded as a linear map from the space $\mathbb{F}^1$ into $V$, via&lt;/p&gt;
 $$
 \psi_v : \mathbb{F}^1 \to V, \;\; \psi_v(\lambda) = v \lambda.
-$$&lt;p&gt;When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of theorem 3.9) &amp;ndash; the familiar column of &amp;ldquo;coordinates&amp;rdquo; of $v$. In particular, observe that scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,&lt;/p&gt;
+$$&lt;p&gt;When a basis for $V$ is fixed, the map $\psi_v$ is represented by an $n \times 1$ matrix (as an instance of 3.9) &amp;ndash; the familiar column of &amp;ldquo;coordinates&amp;rdquo; of $v$. In particular, scalar multiplication can be seen as matrix multiplication with a single-dimensional vector,&lt;/p&gt;
 $$
 \psi_v(\lambda) = 
 \begin{bmatrix}
@@ -758,13 +824,13 @@ v_{(\dim V)}
 \lambda_1 v.
 $$&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;This sets up a clear organization of vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence&lt;/p&gt;
+&lt;p&gt;This conceptually organizes vectors, matrices, and linear maps. With fixed bases, we see that the set of linear maps from $V$ to $W$ is already a vector space (via 3.8) and also that all vectors in a space $U$ over a field $\mathbb{F}$ are canonically a linear map from $\mathbb{F}^1$ into $U$ (via 3.10), hence&lt;/p&gt;
 $$
 \text{Linear maps} \cong \text{Vectors}.
-$$&lt;p&gt;Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so in finite dimensions ($\cong^!$)&lt;/p&gt;
+$$&lt;p&gt;Also, we see that there is a one-to-one correspondence between linear maps and matrices (via 3.9) by the bijection $\mathcal{L}(V, W) \leftrightarrow \mathbb{F}^{(\dim W) \times (\dim V)}$, so at least in finite dimensions ($\cong^!$)&lt;/p&gt;
 $$
 \text{Matrices} \cong^! \text{Linear maps}.
-$$&lt;p&gt;Indeed, a vector can be turned into a matrix solely through its identifiability as a linear map, turning the linear map into the central object of our understanding of linear algebra. In summary,&lt;/p&gt;
+$$&lt;p&gt;Indeed, we can adopt the perspective that a vector can be represented as a matrix solely through its identifiability as a linear map, turning the linear map into the central object of our understanding of linear algebra. In summary,&lt;/p&gt;
 $$
 \begin{equation}
     \text{Matrices} \cong^! \text{Linear maps} \cong \text{Vectors}.
@@ -784,7 +850,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -801,7 +867,7 @@ $$&lt;style&gt;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
 &lt;p&gt;We have started to use the symbol $\cong$. In this context, stating $A \cong B$ implies that there is a linear &lt;a href=&#34;https://en.wikipedia.org/wiki/Isomorphism&#34;&gt;isomorphism&lt;/a&gt; between $A$ and $B$. Exactly, this means that there exists some linear map $\phi : A \to B$ that is a bijection.&lt;/p&gt;
-&lt;p&gt;This is complete as a definition of the symbol $\cong$. However, its use in the rest of this piece will often reference a choice of $\phi$ that is &lt;a href=&#34;https://en.wikipedia.org/wiki/Canonical_map&#34;&gt;canonical&lt;/a&gt;. This means that if you see $A \cong B$, there is probably an &amp;ldquo;standard&amp;rdquo; way to obtain a $b \in B$ from one unique $a \in A$ (and vice versa) &amp;ndash; here, we can informally say that if $\phi(a) = b$ then $a$ &amp;ldquo;is&amp;rdquo; $b$, but it is more precise to say that $a$ &amp;ldquo;identifies&amp;rdquo; $b$. Oftentimes, $\phi$ will not be made explicit.&lt;/p&gt;
+&lt;p&gt;This is complete as a definition of the symbol $\cong$. However, its use in the rest of this article will often reference a choice of $\phi$ that is &lt;a href=&#34;https://en.wikipedia.org/wiki/Canonical_map&#34;&gt;canonical&lt;/a&gt;. This means that if you see $A \cong B$, there is probably an &amp;ldquo;standard&amp;rdquo; way to obtain a $b \in B$ from one unique $a \in A$ (and vice versa) &amp;ndash; here, we can informally say that if $\phi(a) = b$ then $a$ &amp;ldquo;is&amp;rdquo; $b$, but it is more precise to say that $a$ &amp;ldquo;identifies&amp;rdquo; $b$. Oftentimes, $\phi$ will not be made explicit.&lt;/p&gt;
 &lt;p&gt;For example, choosing a basis $\mathcal{B}$ for a space $V$ gives the canonical isomorphism $\mathbb{F}^{(\dim V)\times(\dim V)} \cong \mathcal{L}(V)$. In this case, it makes sense to say that &amp;ldquo;a matrix is a linear transformation.&amp;rdquo; But without a choice of basis there is no &amp;ldquo;standard&amp;rdquo; bijection $\Phi_\mathcal{B} : \mathcal{L}(V) \to \mathbb{F}^{(\dim V) \times (\dim V)}$ (no way to bijectively identify maps from matrices).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -822,8 +888,8 @@ $$&lt;style&gt;
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;vector-translation&#34;&gt;Vector Translation&lt;/h4&gt;
-&lt;p&gt;The statement of 3.10 is neuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some &lt;em&gt;other&lt;/em&gt; linear map $\psi_v$, which is identified by some &lt;em&gt;other&lt;/em&gt; column matrix $M^\prime$,&lt;/p&gt;
+&lt;h3 id=&#34;vector-translation&#34;&gt;Vector Translation&lt;/h3&gt;
+&lt;p&gt;The statement of 3.10 is somewhat nuanced. Consider the case of a linear map $T \in \mathcal{L}(V, W)$ represented by a matrix $M$ (under fixed bases). According to 3.8 that map is a vector, but according to 3.10 it is identified by some &lt;em&gt;other&lt;/em&gt; linear map $\psi_v$, which is identified by some &lt;em&gt;other&lt;/em&gt; column matrix $M^\prime$,&lt;/p&gt;
 $$
 M 
 \xrightarrow{\displaystyle\Phi_\mathcal{B}^{-1}} T 
@@ -847,7 +913,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -866,7 +932,7 @@ $$&lt;style&gt;
 &lt;p&gt;This makes sense when the vector space $U$ is finite-dimensional, as is the case whenever $U = \mathcal{L}(V, W)$ for finite-dimensional $V$ and $W$; the fact that we always interpret finite-dimensional vectors as column matrices is what makes this case of $\Psi_U$ &amp;ldquo;canonical.&amp;rdquo; In other cases where matrix representations make no sense (e.g. the linear map of the Fourier transform $\mathcal{F}$ from 3.6), the choice of $\Psi_U$ will have to be more conscientious.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;linear-forms&#34;&gt;Linear Forms&lt;/h4&gt;
+&lt;h3 id=&#34;linear-forms&#34;&gt;Linear Forms&lt;/h3&gt;
 &lt;p&gt;In a way that is &amp;ldquo;dual&amp;rdquo; to the statement 3.10, one could look at another representation which, while not as standard as mapping onto linear maps of column-matrix form (and hence non-canonical), can be seen as equally valid. Namely, one could map vectors to linear maps of row-matrix form,&lt;/p&gt;
 $$
 \Psi_U^* : U \to \mathcal{L}(U, \mathbb{F}^1) \;\; \text{s.t.} \;\; \Psi_U^*(u) = \varphi_u \; \forall \, u \in U.
@@ -903,7 +969,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -922,8 +988,8 @@ $$&lt;style&gt;
 &lt;p&gt;Just as stated in 3.12 for $\Psi_U$, motivating the form $U \to \mathbb{F}^1$ from row matrices in the case of vector spaces $U$ of infinite dimension does not always work, as matrix representations sometimes make no sense there. Hence, the concrete choice of $\Psi_U^*$ may require deeper consideration (e.g. in uncountably-infinite dimensions).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;dual-spaces&#34;&gt;Dual Spaces&lt;/h4&gt;
-&lt;p&gt;All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_form&#34;&gt;linear forms&lt;/a&gt; on the space $U$. After 3.8, this is no more than the vector space&lt;/p&gt;
+&lt;h3 id=&#34;dual-spaces&#34;&gt;Dual Spaces&lt;/h3&gt;
+&lt;p&gt;All linear maps $\varphi_u : U \to \mathbb{F}^1$ receive the name of &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_form&#34;&gt;linear forms&lt;/a&gt; on the space $U$. Applying 3.8, this is no more than the vector space&lt;/p&gt;
 $$
  U^* = \{ \, \varphi : U \to \mathbb{F}^1 \; | \; \varphi \text{ is linear} \}.
 $$&lt;p&gt;This is called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Dual_space&#34;&gt;dual vector space&lt;/a&gt; of $U$, which receives the special notation $U^*$ due to how naturally it arises. Much like elements of $U$ can be represented by column matrices, the elements of $U^*$ (which are called covectors) can be represented by row matrices (wherever matrices make sense).&lt;/p&gt;
@@ -942,7 +1008,7 @@ $$&lt;p&gt;This is called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Dual
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -984,11 +1050,11 @@ $$&lt;style&gt;
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;multilinearity&#34;&gt;Multilinearity&lt;/h4&gt;
+&lt;h3 id=&#34;multilinearity&#34;&gt;Multilinearity&lt;/h3&gt;
 &lt;p&gt;We can continue talking about linearity in maps even when they have multiple arguments. For a map $T$ from multiple vector spaces $V_i$ into another $W$ (all over some field $\mathbb{F}$) where&lt;/p&gt;
 $$
 T : V_1 \times \dots \times V_n \to W \;\; \text{s.t.} \;\; T(v_1, \, \ldots, \, v_n) = w,
-$$&lt;p&gt;we say that $T$ is linear in an argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called &lt;a href=&#34;https://en.wikipedia.org/wiki/Multilinear_map&#34;&gt;multilinear maps&lt;/a&gt;. The set of multilinear maps of this form is denoted&lt;/p&gt;
+$$&lt;p&gt;we say that $T$ is linear in the argument $v_i$ if, for all other arguments $v_j \neq v_i$, fixing $v_j$ makes the newly altered map $T^\prime : V_i \to W$ linear. If such a map $T$ is linear in all of its $n$ arguments it is called $n$-linear, and all maps like this are called &lt;a href=&#34;https://en.wikipedia.org/wiki/Multilinear_map&#34;&gt;multilinear maps&lt;/a&gt;. The set of multilinear maps of this form is denoted&lt;/p&gt;
 $$
 \mathcal{L}(V_1, \, \ldots, \, V_n; \, W) = \{\, T : V_1 \times \dots \times V_n \to W \; | \; \text{ T is linear} \}.
 $$&lt;style&gt;
@@ -1006,7 +1072,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1028,9 +1094,9 @@ B : M_{m \times n}(\mathbb{F}) \times \mathbb{F}^n \to \mathbb{F}^m.
 $$&lt;p&gt;This is with the understanding that $m$-by-$n$ matrices with entries in $\mathbb{F}$, in other words $M_{m \times n}(\mathbb{F})$, indeed form a vector space over the same field $\mathbb{F}$. One can verify that fixing either argument (the vector or the matrix) forms a linear map with the other argument.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has the codomain of $\mathbb{F}$ itself, it is called an $n$-linear form (where all maps like this are called &lt;a href=&#34;https://en.wikipedia.org/wiki/Multilinear_form&#34;&gt;multilinear forms&lt;/a&gt;).&lt;/p&gt;
-&lt;h4 id=&#34;tensor-product&#34;&gt;Tensor Product&lt;/h4&gt;
-&lt;p&gt;If one has two vector spaces $V$ and $W$ over the same field, one can naturally talk about their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, one can talk about a third vector space $V \otimes W$ (called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_product&#34;&gt;tensor product&lt;/a&gt; of $V$ and $W$) which, while having just as much expressiveness as $V \times W$, of course has the added benefit of being a vector space itself.&lt;/p&gt;
+&lt;p&gt;We may also extend linear forms with the same treatment that led us to multilinear maps. In particular, if an $n$-linear map over a field $\mathbb{F}$ has $\mathbb{F}$ itself as a codomain, it is generally referred to as an $n$-linear form (where all maps like this are called &lt;a href=&#34;https://en.wikipedia.org/wiki/Multilinear_form&#34;&gt;multilinear forms&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;tensor-product&#34;&gt;Tensor Product&lt;/h3&gt;
+&lt;p&gt;For two vector spaces $V$ and $W$ over the same field, one can of course construct their cartesian product $V \times W$ (as we have been doing in the case of multilinear maps). But instead of doing that, we can construct a third vector space $V \otimes W$ (called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_product&#34;&gt;tensor product&lt;/a&gt; of $V$ and $W$) which, while being as expressive as $V \times W$, enjoys the added benefit of being a vector space itself.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -1046,7 +1112,7 @@ $$&lt;p&gt;This is with the understanding that $m$-by-$n$ matrices with entries 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1062,10 +1128,10 @@ $$&lt;p&gt;This is with the understanding that $m$-by-$n$ matrices with entries 
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Universal_property&#34;&gt;universal property&lt;/a&gt; of the tensor product, which justifies the phrase &amp;ldquo;just as much expressiveness.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Let $\varphi : V \times W \to V \otimes W$ be a bilinear map. Then, for each bilinear map $h : V \times W \to Z$ (into another vector space $Z$), there is a unique linear map $\tilde h : V \otimes W \to Z$ such that $h = \tilde h \circ \varphi$. This is referred to as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Universal_property&#34;&gt;universal property&lt;/a&gt; of the tensor product, and it justifies the phrase &amp;ldquo;as expressive as $V \times W$.&amp;rdquo;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Every tensor product $V \otimes W$ is equipped with such a bilinear map $\varphi : V \times W \to V \otimes W$ that allows the construction of vectors in $V \otimes W$. The &lt;a href=&#34;https://en.wikipedia.org/wiki/Outer_product&#34;&gt;outer product&lt;/a&gt; is an example of this in finite dimensions, but in other cases one must be more creative. Confusingly, this map $\varphi$ is also called a tensor product, and $\otimes$ is predominantly used instead of $\varphi$ in notation. Summarizing,&lt;/p&gt;
+&lt;p&gt;Every tensor product $V \otimes W$ is equipped with a bilinear map $\varphi : V \times W \to V \otimes W$ that allows the construction of vectors in $V \otimes W$. The &lt;a href=&#34;https://en.wikipedia.org/wiki/Outer_product&#34;&gt;outer product&lt;/a&gt; is an example of this in finite dimensions, but in other cases one must be more creative. Confusingly, this map $\varphi$ is also called a tensor product, and $\otimes$ is predominantly used instead of $\varphi$ in notation. Summarizing this overloaded notation,&lt;/p&gt;
 $$
 \forall (v, w) \in V \times W, \; \varphi(v, w) = v \otimes w \quad \text{where} \quad v \otimes w \in V \otimes W.
 $$&lt;style&gt;
@@ -1083,7 +1149,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1099,16 +1165,16 @@ $$&lt;style&gt;
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;Even if the tensor product among vectors is not strictly commutative, there are canonical isomorphisms among permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,&lt;/p&gt;
+&lt;p&gt;Even if the tensor product among vectors is not strictly commutative, there are induced canonical isomorphisms between all permutations of tensor products of vector spaces. That is, for any permutation $\sigma$,&lt;/p&gt;
 $$
 V_1 \otimes \cdots \otimes V_n \;\cong\; V_{\sigma(1)} \otimes \cdots \otimes V_{\sigma(n)}.
-$$&lt;p&gt;Due to this symmetry, we often write tensor products as if they were commutative without loss of generality. But when one talks about actual computation or representations, order will probably matter.&lt;/p&gt;
+$$&lt;p&gt;Due to this symmetry, we often write tensor products as if they were commutative without loss of generality. But order will matter in actual computation or representation &amp;ndash; we simply have to track what permutations we apply. In that sense, these permutations represent bijections that are &amp;ldquo;situationally&amp;rdquo; canonical (because we will always know which ones we used).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Totally, through 3.16 and 3.17, the tensor product is precisely designed to &amp;ldquo;linearize&amp;rdquo; multilinear maps. To elaborate, for any multilinear map $h \in \mathcal{L}(V_1, \, \ldots, \, V_n; \, W)$, there exists a unique linear map&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Through 3.16 and 3.17, the tensor product is precisely designed to &amp;ldquo;linearize&amp;rdquo; multilinear maps. In other words, for any multilinear map $h \in \mathcal{L}(V_1, \, \ldots, \, V_n; \, W)$, there exists a unique linear map&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 $$
 \tilde h : \bigotimes_i V_i \to W \;\; \text{s.t.} \;\; \tilde h(v_1 \otimes \cdots \otimes v_n) = h(v_1, \ldots, v_n).
-$$&lt;h4 id=&#34;more-matrices&#34;&gt;More Matrices&lt;/h4&gt;
+$$&lt;h3 id=&#34;more-matrices&#34;&gt;More Matrices&lt;/h3&gt;
 &lt;p&gt;Being now able to identify every multilinear map with a unique linear map over a tensor product space, it is possible to assert that 3.8, 3.9, and 3.10 also apply to tensor product spaces. I will reiterate the notes, dressing them up specifically for the case of tensor product spaces.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
@@ -1125,7 +1191,7 @@ $$&lt;h4 id=&#34;more-matrices&#34;&gt;More Matrices&lt;/h4&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1162,7 +1228,7 @@ $$&lt;p&gt;is a vector space over $\mathbb{F}$. We denote the operator case as $
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1204,7 +1270,7 @@ $$&lt;p&gt;is said to have shape $(2, 3)$ &amp;ndash; once it is &amp;ldquo;draw
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1238,7 +1304,7 @@ $$&lt;p&gt;is said to have shape $(2, 3)$ &amp;ndash; once it is &amp;ldquo;draw
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1290,7 +1356,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1312,7 +1378,7 @@ $$
 $$&lt;p&gt;With a basis for $\bigotimes_i V_i$ fixed, the map $\psi_v$ can be represented by a matrix of shape $(1, \, \Pi_i V_i)$ (invoking 3.19). But for tensor product spaces, it is canonical to represent $\psi_v$ using a matrix of shape $(\dim V_1, \, \ldots, \, \dim V_n)$ (invoking 3.21). We will see why in 3.41.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;homogeneous-tensors&#34;&gt;Homogeneous Tensors&lt;/h4&gt;
+&lt;h3 id=&#34;homogeneous-tensors&#34;&gt;Homogeneous Tensors&lt;/h3&gt;
 &lt;p&gt;Many people refer to vectors in tensor product spaces as tensors, especially in computationally-oriented scientific disciplines. This population has recently gained numerosity (and maybe even majority) thanks to the increasing availability of efficient computers and their applications. Prior to taking that perspective, we will understand &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_(intrinsic_definition)&#34;&gt;tensors&lt;/a&gt; as linear maps associated with a single vector space $V$ over $\mathbb{F}$ of the form&lt;/p&gt;
 $$
 \begin{equation}
@@ -1334,7 +1400,7 @@ $$&lt;p&gt;Here, $(m, \, n)$ is named the &amp;ldquo;type&amp;rdquo; of the tens
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1350,7 +1416,7 @@ $$&lt;p&gt;Here, $(m, \, n)$ is named the &amp;ldquo;type&amp;rdquo; of the tens
         &#34;
     /&gt;
     &lt;div style=&#34;font-size: 0.92em&#34; class=&#34;box-body&#34;&gt;
-&lt;p&gt;The tensor space of type $(m, \, n)$ defined over a vector space $V$ is denoted&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;The tensor space of type $(m, \, n)$ defined over a vector space $V$ is denoted&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 $$
 T_{n}^{\, m}(V) = \mathcal{L}(V_{(1)}^*, \, \dots, \, V_{(m)}^*, \, V_{(1)}, \, \dots, \, V_{(n)}; \, \mathbb{F}).
 $$&lt;/div&gt;
@@ -1370,7 +1436,7 @@ $$&lt;/div&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1412,7 +1478,7 @@ $$&lt;/div&gt;
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;tensor-identification&#34;&gt;Tensor Identification&lt;/h4&gt;
+&lt;h3 id=&#34;tensor-identification&#34;&gt;Tensor Identification&lt;/h3&gt;
 &lt;p&gt;When the definition of a multilinear map involves many vector spaces, there will continue to be a lack of such a canonical isomorphism (at least using the insights we currently have). But if we consider arbitrary multilinear maps defined over a single vector space $V$ over a field $\mathbb{F}$ (even those without a codomain $\mathbb{F}$ ), we will see that canonically&lt;/p&gt;
 $$
 \begin{equation}
@@ -1436,7 +1502,7 @@ $$&lt;p&gt;where we always interpret $\times^0 \, V = \mathbb{F}$ and $\otimes^0
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1472,7 +1538,7 @@ $$&lt;/div&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1509,7 +1575,7 @@ $$&lt;p&gt;where $u, w \in V$. Above, $\Phi$ is exactly $J$ fom 3.14 and is cano
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1557,7 +1623,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1609,7 +1675,7 @@ $$&lt;p&gt;This finalizes the definition of $\tilde \Gamma : T \mapsto \tilde T$
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1653,7 +1719,7 @@ $$&lt;p&gt;for each $\hat T^\prime$ we could construct. This finalizes the defin
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1680,7 +1746,7 @@ T : (V \otimes V^*) \times (V \otimes V^*) \to (V \otimes V^*) \;\; \text{s.t.} 
 $$&lt;p&gt;where $A, B \in \mathcal{L}(V)$. But due to 3.25, we can reform $T : (\times^2 \, V^*) \times (\times^2 \, V) \to V \otimes V^*$. Applying $(9)$ one more time, we observe that this is a type $(3, 3)$ tensor. This illustrates how the tensor type of a multilinear map defined over other tensor product spaces can be computed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;heterogeneous-tensors&#34;&gt;Heterogeneous Tensors&lt;/h4&gt;
+&lt;h3 id=&#34;heterogeneous-tensors&#34;&gt;Heterogeneous Tensors&lt;/h3&gt;
 &lt;p&gt;We have used algebraic pathways to extend the idea of a tensor beyond scalar-valued multilinear maps. Our primary tool was the canonical isomorphism, which allowed us to ignore many specifics in all cases. Now, we will widen the concept of a tensor to involve many vector spaces with linear maps of form&lt;/p&gt;
 $$
 \begin{equation}
@@ -1708,7 +1774,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1748,7 +1814,7 @@ $$&lt;p&gt;where $\mathcal{V}_k = [V]$ in $(\mathcal{V} / =)$ and $|\mathcal{V}_
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1788,7 +1854,7 @@ $$&lt;p&gt;With heterogeneous tensors, one must also carry a mapping of type ind
 
 &lt;/div&gt;
 
-&lt;h4 id=&#34;tensor-contractions&#34;&gt;Tensor Contractions&lt;/h4&gt;
+&lt;h3 id=&#34;tensor-contractions&#34;&gt;Tensor Contractions&lt;/h3&gt;
 &lt;p&gt;The statements of $(9)$ and $(11)$ may initially seem like a cryptic justification of our choice of vocabulary; they justify why we use the word &amp;ldquo;tensor&amp;rdquo; so liberally, with the most general use being in reference to an element of a heterogeneous tensor product space (up to isomorphism).&lt;/p&gt;
 &lt;p&gt;But beyond justifying use of language, $(9)$ and $(11)$ also provide a clear perspective on computation with tensors. These isomorphisms specify an &amp;ldquo;exchange rate&amp;rdquo; between inputs and outputs of homogeneus and heterogeneous tensors &amp;ndash; using 3.26, one can algebraically &amp;ldquo;trade&amp;rdquo; a tensor input in $V$ for a tensor product evaluation with a canonical element of $V^*$ in the output as many times as desired while maintaining type.&lt;/p&gt;
 &lt;style&gt;
@@ -1806,7 +1872,7 @@ $$&lt;p&gt;With heterogeneous tensors, one must also carry a mapping of type ind
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1843,7 +1909,7 @@ $$&lt;/div&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1885,7 +1951,7 @@ $$&lt;p&gt;in which case $\tilde f \circ \tilde g$ would be a tensor of type $(2
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1936,7 +2002,7 @@ $$&lt;p&gt;with 3.17 (to disregard argument order) to get $(\text{ev}_V \otimes 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -1958,7 +2024,7 @@ $$
 $$&lt;p&gt;Recall 3.26, and that the canonicity of $V \cong V^*$ can be &amp;ldquo;manually&amp;rdquo; induced by providing a canonical bijection to underlie it. Many applications specify tensors which enable &amp;ldquo;trades&amp;rdquo; via contractions with them for this purpose. This is often done by replacing the standard inner product in a set with another bilinear map (see 3.40).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;heterogeneous-contractions&#34;&gt;Heterogeneous Contractions&lt;/h4&gt;
+&lt;h3 id=&#34;heterogeneous-contractions&#34;&gt;Heterogeneous Contractions&lt;/h3&gt;
 &lt;p&gt;We have mostly ignored heterogeneous tensor spaces. Now, the framework of contractions offers a great opportunity to pull them back onto our train of thought. We have implied two stages for finding the type of a tensor contraction. First, consider the tensor product of all the spaces involved. Then, repeatedly utilize the canonical map $\text{ev}_V$, once per pair of dual spaces involved in the contraction.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
@@ -1975,7 +2041,7 @@ $$&lt;p&gt;Recall 3.26, and that the canonicity of $V \cong V^*$ can be &amp;ldq
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2018,7 +2084,7 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2037,7 +2103,7 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
 &lt;p&gt;One subtlety of the heterogeneous tensor contraction is that different vector spaces in a heterogeneous tensor network may have different canonical bijections through which &amp;ldquo;trades&amp;rdquo; are done, making bookeeping harder.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;syntax-and-applications&#34;&gt;Syntax and Applications&lt;/h4&gt;
+&lt;h3 id=&#34;graphical-notation&#34;&gt;Graphical Notation&lt;/h3&gt;
 &lt;p&gt;An appealing model of tensor operations was offered by &lt;a href=&#34;https://en.wikipedia.org/wiki/Roger_Penrose&#34;&gt;Sir Roger Penrose&lt;/a&gt; in 1971 within the illustrated writeup &lt;a href=&#34;https://www.mscs.dal.ca/%7Eselinger/papers/graphical-bib/public/Penrose-applications-of-negative-dimensional-tensors.pdf&#34;&gt;Applications of Negative-Dimensional Tensors&lt;/a&gt;. There, he provided a first theory of abstract tensor networks which he called Abstract Tensor Systems (ATS), which came with a coordinate-free system for representing homogeneous tensors and contractions. This system became known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Penrose_graphical_notation&#34;&gt;Penrose graphical notation&lt;/a&gt;. It provides its users with a feeling of intuitive dominance on tensor algebra.&lt;/p&gt;
 &lt;style&gt;
     .halign-container {
@@ -2071,7 +2137,7 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2106,7 +2172,7 @@ $$&lt;p&gt;a contraction is determined by a collection of pairs $\{ (X_{(i)}^*, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2169,6 +2235,7 @@ w_\theta
 $$&lt;p&gt;provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{\Phi}(v), \, \mathcal{J} \mathcal{\Phi}(w) \rangle_{\mathbb{R}^3}$ which, for two points differential to a point $c = (\phi, \, \theta)$ in $P$ (and hence in $S^2$ via $\Psi$), determines their geometric relationship (as it is an inner product). This defines a &lt;a href=&#34;https://en.wikipedia.org/wiki/Tensor_field&#34;&gt;tensor field&lt;/a&gt; $G$ that assigns one such tensor $g_c = G(c)$ of type $(0, 2)$ per $T_c P$ which fixes the geometry of $\mathcal{M}$ independently of the ambient space $\mathbb{R}^3$. Here, $g_c$ is the (pointwise) &lt;a href=&#34;https://en.wikipedia.org/wiki/Pullback_(differential_geometry)&#34;&gt;pullback&lt;/a&gt; of the $\mathbb{R}^3$ metric (given by $\langle \cdot, \cdot \rangle_{\mathbb{R}^3}$) to $S^2$ and we say that $\mathbb{R}^3$ &amp;ldquo;induced&amp;rdquo; a metric on $S^2$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;p&gt;In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.&lt;/p&gt;
 &lt;style&gt;
     .halign-container {
         display: flex;
@@ -2186,8 +2253,8 @@ $$&lt;p&gt;provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{
 
 &lt;/div&gt;
 
-&lt;p&gt;In 3.40, the spaces $T_p M$ have no abstract canonical isomorphism to their own dual, as the inner product (which is precisely the tensor $g_p$ as described) depends on the geometry of $\mathcal{M}$. This is an example of the statement of 3.36, showing that a purely abstract treatment of tensor spaces is not always productive. But before people approached tensors abstractly, coordinate-based approaches were the norm.&lt;/p&gt;
-&lt;p&gt;The dominant model for tensor operations in coordinates is indisputably &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_notation&#34;&gt;Einstein notation&lt;/a&gt;. Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer &lt;a href=&#34;https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro&#34;&gt;Ricci-Curbastro&lt;/a&gt;, but it was made popular by &lt;a href=&#34;https://en.wikipedia.org/wiki/Albert_Einstein&#34;&gt;Einstein&lt;/a&gt; when he published a novel use of it in physics with his &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_field_equations&#34;&gt;field equations&lt;/a&gt; in 1915.&lt;/p&gt;
+&lt;h3 id=&#34;einstein-notation&#34;&gt;Einstein Notation&lt;/h3&gt;
+&lt;p&gt;The dominant model for tensor operations in coordinates is indisputably &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_notation&#34;&gt;Einstein notation&lt;/a&gt;. Coincidentally, Penrose introduced ATS in Einstein notation. It is a data-oriented system where indices corresponding to each argument in $V$ and $V^*$ of a tensor in scalar-valued map form (see $(8)$ and $(10)$) are tracked. Credit for its creation is given to differential geometer &lt;a href=&#34;https://en.wikipedia.org/wiki/Gregorio_Ricci-Curbastro&#34;&gt;Ricci-Curbastro&lt;/a&gt; (as &lt;a href=&#34;https://en.wikipedia.org/wiki/Ricci_calculus&#34;&gt;Ricci Calculus&lt;/a&gt;), but it was hugely popularized by &lt;a href=&#34;https://en.wikipedia.org/wiki/Albert_Einstein&#34;&gt;Einstein&lt;/a&gt; and its novel use in physics with his &lt;a href=&#34;https://en.wikipedia.org/wiki/Einstein_field_equations&#34;&gt;field equations&lt;/a&gt; in 1915.&lt;/p&gt;
 &lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
@@ -2203,7 +2270,7 @@ $$&lt;p&gt;provides a tensor $g_c : (v, w) \mapsto \langle \mathcal{J} \mathcal{
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2259,14 +2326,14 @@ $$
 $$&lt;p&gt;denotes an entry of its matrix representation. Taking the tensor product of $t$ with a new tensor $g$ of type $(c, d)$ is very simple, as each entry of the product (by the same logic) requires $a + c$ upper and $b + d$ lower indices to be found. So we simply denote their tensor product&lt;/p&gt;
 $$
 t \otimes g = 
-{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+{\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a} \, g_{\delta_1 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$&lt;p&gt;To perform contractions as specified in 3.35, one does a weighted sum across a pair of indices, one upper and one lower (which may belong to different tensors in a tensor product). For example, one could contract $\alpha_a$ with the index $\delta_1$ in the product $t \otimes g$ to obtain&lt;/p&gt;
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1}} \, 
-g_{\delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+g_{\delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$&lt;p&gt;Note that in the homogeneous case, one can always do this for any upper-lower index pair. The heterogeneous case just requires knowing which upper indices can be contracted with which lower indices (which can be done by tracking which index pairs correspond to duals of the same vector space). Finally, tensors of equal type may be summed entrywise,&lt;/p&gt;
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a}}} +
@@ -2275,10 +2342,10 @@ $$
 $$&lt;p&gt;with the understanding that the tensor product is distributive over tensor sums. This completes the system that Ricci-Curbastro outlined, allowing an axiomatic treatment for tensors in coordinates. The convention to eschew summation notation in contractions (only implying it when a symbol appears twice as an index) was introduced and popularized by Einstein (effectively his only contribution to &lt;a href=&#34;https://en.wikipedia.org/wiki/Ricci_calculus&#34;&gt;Ricci calculus&lt;/a&gt;):&lt;/p&gt;
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}} =
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_{a - 1} \, k} \,
-g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma \, \cdots \, \gamma_c}}.
+g_{k \, \delta_2 \, \cdots \, \delta_d}^{\gamma_1 \, \cdots \, \gamma_c}}.
 $$&lt;p&gt;Note that at any point we can find an entry in the matrix representation by replacing all indices with values. This means that Einstein notation is simply element-wise treatment of tensor matrices, with careful consideration of contraction compatibility by use of upper and lower indices. Here, &amp;ldquo;trades&amp;rdquo; translate to index raising or lowering, where (depending on context) one may be allowed to&lt;/p&gt;
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b}^{\alpha_1 \, \cdots \, \alpha_a}} \xrightarrow{\text{raise } \beta_b}
@@ -2287,17 +2354,24 @@ $$
 $$&lt;p&gt;If allowed to raise or lower indices (which is context-dependent as seen in 3.36 and 3.40), a contraction can be done on two lower or upper indices. So summation (and legality of index lowering or raising) remains implied in cases where $V \cong V^*$ canonically (which Penrose called &amp;ldquo;cartesian&amp;rdquo; in ATS). For example,&lt;/p&gt;
 $$
 {\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
-g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }} =
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma_1 \, \cdots \, \gamma_c }} =
 \sum_k \,
 {\large t_{\beta_1 \, \cdots \, \beta_b \, k}^{\alpha_1 \, \cdots \, \alpha_{a}} \,
-g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma \, \cdots \, \gamma_c }}.
+g_{\delta_1 \, \cdots \, \delta_d \, k}^{\gamma_1 \, \cdots \, \gamma_c }}.
 $$&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Notice that the &amp;ldquo;reduction&amp;rdquo; done by way of summation in a tensor contraction can use any operation with the effect of &lt;a href=&#34;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&#34;&gt;folding&lt;/a&gt; a collection (returning a single value from multiple values of the same type), although this may break any and all algebraic invariants (depending on context). This could look like&lt;/p&gt;
 $$
 w_{abc}^{ik} = \text{reduce}_j \left( v_{a b c}^{i j k} \right).
-$$&lt;p&gt;Since the user is giving up all algebraic gurantees, they may annihilate any index (upper or lower). This is simply treating the tensor matrix as data. But it shows that Einstein notation maintains its richness beyond pure tensor algebra, and is even generalizable to infinite-dimensional tensors via wise choices of $\text{reduce}$.&lt;/p&gt;
-&lt;style&gt;
+$$&lt;p&gt;Since the user is giving up all algebraic gurantees they may annihilate any index. In the worst case this essentially treats the tensor matrix as pure data, but many choices of $\text{reduce}$ do preserve linearity. This shows that Einstein notation can be useful beyond representing linear maps when working with &amp;ldquo;pure data,&amp;rdquo; but remains generalizable to linear maps over infinite-dimensional tensor spaces. Inspired by $(5)$, we could decompose $f(x) \in L^2(\mathbb{R})$ with&lt;/p&gt;
+$$
+f(x) = f^x = 
+c^{\omega} \,
+b_{\omega}^{x} =
+\int_{\Omega} \,
+c^{\omega} \,
+b_{\omega}^{x} \, d\mu(\omega).
+$$&lt;style&gt;
     .box-body &gt; :last-child {
         margin-bottom: 0 !important;
     }
@@ -2312,7 +2386,7 @@ $$&lt;p&gt;Since the user is giving up all algebraic gurantees, they may annihil
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2376,7 +2450,7 @@ $$&lt;p&gt;With the &lt;a href=&#34;https://numpy.org/doc/stable/reference/gener
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;overview-2&#34;&gt;Overview&lt;/h4&gt;
+&lt;h3 id=&#34;overview-2&#34;&gt;Overview&lt;/h3&gt;
 &lt;p&gt;We began this section by organizing the concepts of matrices, linear maps, and vectors. We then took a look at linear forms and dual spaces, being careful of infinite-dimensional cases. Later, we expanded the concept of linearity to multilinear maps, and showed how the tensor product &amp;ldquo;linearizes&amp;rdquo; them. That way, we saw how the way we organized matrices, vectors, and linear maps early on applied to tensor product spaces in very natural ways. Finally, tensors allowed us to speak about these objects as unified under a single umbrella woven by tight isomorphisms.&lt;/p&gt;
 &lt;p&gt;Although this trajectory was predominantly abstract, we were also exposed to practical notation and uses of tensors in coordinates, with examples from the early history of tensors in differential geometry and from modern applications in deep learning. These examples showed that tensors can be found at many points of the spectrum between raw data and abstract algebraic objects, and that their theory is robust to a wide range of uses &amp;ndash; some more disrespectful than others, but never enough to erase their basic qualities.&lt;/p&gt;
 &lt;style&gt;
@@ -2396,58 +2470,23 @@ $$&lt;p&gt;With the &lt;a href=&#34;https://numpy.org/doc/stable/reference/gener
 
 &lt;/div&gt;
 
-&lt;h3 id=&#34;signals-and-systems&#34;&gt;Signals and Systems&lt;/h3&gt;
-&lt;h3 id=&#34;kernel-methods&#34;&gt;Kernel Methods&lt;/h3&gt;
+&lt;h2 id=&#34;signals-and-systems-1&#34;&gt;Signals and Systems&lt;/h2&gt;
+&lt;h2 id=&#34;kernel-methods-1&#34;&gt;Kernel Methods&lt;/h2&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;These two &amp;ldquo;kernels&amp;rdquo; received their names for a superficial reason &amp;ndash; because the symbols that represent them show up inside other symbols. One could imagine that people started calling them &amp;ldquo;kernel&amp;rdquo; independently just to avoid saying the phrase &amp;ldquo;that term in in the middle&amp;rdquo; while pointing at a blackboard. As such, the connecting view of the convolution and reproducing kernels in this piece does not &amp;ldquo;generalize&amp;rdquo; to kernels in other contexts (many of which received their names the same non-profound reason).&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When considering infinite-dimensional vector spaces, this statement is true if and only if one admits the axiom of choice. Perhaps this was another motivation of Axler&amp;rsquo;s restriction to finite-dimensional vector spaces.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;When considering infinite-dimensional vector spaces, this statement is true if and only if one admits the axiom of choice. Perhaps this was another motivation of Axler&amp;rsquo;s restriction to finite-dimensional vector spaces.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Non-parenthesized sub-indices imply that the item is part of an indexed set &amp;ndash; $a_i$ may not be equal to $a_j$.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;Non-parenthesized sub-indices imply that the item is part of an indexed set &amp;ndash; $a_i$ may not be equal to $a_j$.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;Parenthesized sub-indices are only used to indicate argument index. That is, $a_{(i)} = a_{(j)}$ for all $i$ and $j$.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Parenthesized sub-indices are only used to indicate argument index. That is, $a_{(i)} = a_{(j)}$ for all $i$ and $j$.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Poem 6. &#34;Lena&#34;</title>
-      <link>http://localhost:1313/poem-6.-lena/</link>
-      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/poem-6.-lena/</guid>
-      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;entrevista criatura echada en la baldosa,
-la luz penetraba el follaje 
-    del helecho donde te resguardabas:
-en ese entonces, los dos éramos niños y 
-  nos ceñía la juventud de nuestra familia,
-ese hogar llevaba tu color, 
-        y en ese jardín
-  nos vestía el espacio de una piel
-            más radiante y transparente 
-
-criatura entrevista entre las décadas,
-  tiempo tenaz que fluye a mi costado:
-  todavía soy un niño, pero sin ti
-             ya no soy joven,
-   mi familia ya no es joven
-    ahora que tú no estás, 
-        te resguardo dentro de mí,
-      y en ti siempre se encontrarán 
-    aquellas joyas de nuestra juventud
-  dentro de las cuales centellea 
-la luz que compartimos
-&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     
@@ -2607,7 +2646,7 @@ We will replace that with its formal meaning, which is a specific kind of &lt;a 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2645,7 +2684,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2685,7 +2724,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2720,7 +2759,7 @@ $$&lt;p&gt;we are an example away from making sense. In particular, consider $R 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2824,7 +2863,7 @@ $$&lt;p&gt;Next, we will consider player performance. Just as Elo, we take the p
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2865,7 +2904,7 @@ $$&lt;p&gt;Finally, we will assert a prior on the distribution of $X_i$, which w
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2913,7 +2952,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -2947,7 +2986,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3071,7 +3110,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3140,7 +3179,7 @@ $$&lt;style&gt;
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3201,7 +3240,7 @@ $$&lt;p&gt;offers a complete recovery (and generalization) of the Elo update aft
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3859,7 +3898,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3928,7 +3967,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -3970,7 +4009,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4014,7 +4053,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4055,7 +4094,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4097,7 +4136,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4183,7 +4222,7 @@ View the PDF file &lt;a class=&#34;pdf-source&#34; id=&#34;pdf-source-noscript-d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4219,7 +4258,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4275,7 +4314,7 @@ $$ s_j \in t_{\text{pre}}(s_i) \iff a(s_j) \in t_{\text{post}}(a(s_i)). $$&lt;/d
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4345,7 +4384,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4438,7 +4477,7 @@ $$ a(B_i) = a(B_j) \iff B_i \text{ is symmetrical to } B_j. $$&lt;p&gt;Further, 
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4549,7 +4588,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
@@ -4616,7 +4655,7 @@ $$ W(s) = \max_{s&#39; \in \\, t(s)} \min_{s&#39; \in \\, t(s)} W(s&#39;). $$&lt
         border: 1px solid #000000;
         padding: 10px;
         border-radius: 5px;
-        margin: 25px 0;
+        margin: 16px 0;
         background-color: rgba(0, 0, 0, 0.05);
     &#34;
 &gt;
