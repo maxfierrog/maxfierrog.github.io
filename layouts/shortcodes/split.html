@@ -7,7 +7,7 @@
         margin-bottom: 0px !important;
     }
 </style>
-<div style="display: flex; flex-wrap: flex">
+<div style="display: flex; flex-wrap: wrap">
     {{ $widths := .Get "widths" | default "1" }} {{ $widthsArray := split
     $widths "," }} {{ range $index, $content := split .Inner "<--->" }} {{
     $width := index $widthsArray $index | default "1" }}

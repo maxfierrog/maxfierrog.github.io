@@ -2,7 +2,7 @@
 title: "Unifying Perspectives of Tensors, Signals, and Kernel Methods"
 category: technical
 date: 2025-09-08
-draft: true 
+draft: false 
 plots: false 
 math: true
 ---
