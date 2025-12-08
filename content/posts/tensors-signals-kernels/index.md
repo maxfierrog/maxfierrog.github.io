@@ -922,7 +922,7 @@ in which case $\tilde f \circ \tilde g$ would be a tensor of type $(2, 2)$. As a
 
 {{% /hint %}}
 
-In the example of 3.34, the map $\otimes : (f, \\, g) \mapsto \tilde f \circ \tilde g$ receives the special name of tensor outer product. It is defined for any two tensors, just as the tensor product (which it is a special case of) is defined on any two tensor product spaces. Taking the outer product of two tensors of type $(a, b)$ and $(c, d)$ results in one more of type $(a + c, \\, b + d)$.
+In the example of 3.34, the map $\otimes : (f, \\, g) \mapsto \tilde f \circ \tilde g$ receives the special name of tensor outer product. It exists for any two tensors, just as a tensor product (which it is a special case of) exists for any two tensor product spaces. Taking the outer product of two tensors of type $(a, b)$ and $(c, d)$ results in one more of type $(a + c, \\, b + d)$.
 
 Likewise, the map $\langle \cdot, \\, \cdot \rangle : (f, \\, g) \mapsto \hat f \circ \hat g$ is simply a special case of an inner product. As such, it only made sense in 3.34 as it admitted two tensors that live in the same tensor product space. In such cases, the inner product of two tensors of (necessarily equal) type $(a, b)$ is a scalar of type $(0, 0)$.
 

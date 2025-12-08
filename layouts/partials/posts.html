@@ -1,4 +1,4 @@
-<h3>Technical</h3>
+<h3>Objective</h3>
 <ul id="posts">
   {{- $tech := where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) ".Params.category" "technical" -}}
   {{- range $tech }}
@@ -6,7 +6,7 @@
   {{- end }}
 </ul>
 
-<h3>Personal</h3>
+<h3>Subjective</h3>
 <ul id="posts">
   {{- $pers := where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) ".Params.category" "personal" -}}
   {{- range $pers }}

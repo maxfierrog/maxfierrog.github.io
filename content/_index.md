@@ -2,10 +2,8 @@
 title: "Max Fierro"
 ---
 
-Howdy! I'm Max, and I am in your user space.
+If you are here to learn about me as a collaborator, you might be interested in [my resume](/resume/). Otherwise, you can look at my favorite [music collections](/music/). Sometimes I also write things for "fun" and publish them here. If you find something interesting or useful, you should send me an email. I might scream.
 
-If you would like to get to know me a little better, I wrote a wall of text in the [about section](/about/). You can also see [my resume](/resume/) if you would like. Some of my favorite music is [here](/music/), too. I like to write on occasion, and you can find some of my senseless ramblings below.
-
-**Email:** `maxfierro (at) berkeley.edu`
+**Email:** `maxfierro (at) berkeley (dot) edu`
 
 ---

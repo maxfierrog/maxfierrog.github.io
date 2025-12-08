@@ -31,11 +31,6 @@ I am graduating from [UC Berkeley](https://www.berkeley.edu/) intellectually inv
 
 <!-- -->
 
-* `EE 126` _Probability and Random Processes_ ([Prof. Khanna](https://www2.eecs.berkeley.edu/Faculty/Homepages/pkhanna.html))
-* `EE 120` **_Signals and Systems_** ([<u>Prof. Dimakis</u>](https://people.eecs.berkeley.edu/~alexdimakis/))
-
-<!-- -->
-
 * `MATH 1A` _Calculus I_ ([Prof. Vojta](https://math.berkeley.edu/~vojta/))
 * `MATH 1B` _Calculus II_ ([<u>Prof. Paulin</u>](https://math.berkeley.edu/~apaulin/))
 * `MATH 54` **_Linear Algebra & Differential Equations_** ([Prof. Lott](https://math.berkeley.edu/~lott/))
