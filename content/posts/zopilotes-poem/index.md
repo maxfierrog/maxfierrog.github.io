@@ -1,10 +1,13 @@
 ---
 title: "Poem 10. \"Zopilotes\""
-category: personal 
+category: personal
 date: 2025-11-16
 ---
 
-```
+Statements regarding the persistence of my condition.
+
+{{< highlight text "linenos=true,linenostart=1" >}}
+
     días de nada,
 semanas perdidas
 como perros en la calle:
@@ -15,18 +18,19 @@ como perros en la calle:
  mis palabras se vuelan
    y todo lo que pienso
   se vuelve pétalos de loto,
-  escuelas de peces traslúcidos 
+  escuelas de peces traslúcidos
        que pronto se desvanecen:
  voy absorto por el mundo
  que me da vértigo la nada,
-     entonces pienso, 
-         defiendo mi ración 
+     entonces pienso,
+         defiendo mi ración
          de paraíso labriego,
-     que aquellos zopilotes 
+     que aquellos zopilotes
      van bajando del cielo:
   buscan horas huecas,
   comen huesos vacíos:
-    desperdicios 
+    desperdicios
     días de nada,
-```
+
+{{< /highlight >}}
 

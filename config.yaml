@@ -17,13 +17,26 @@ params:
 
 menu:
   main:
+    - identifier: resume
+      name: resume
+      weight: 1
+      url: /resume/
+    - identifier: music
+      name: music
+      weight: 2
+      url: /music/
+    - identifier: notes
+      name: notes
+      weight: 3
+      url: /notes/
     - identifier: rss
       name: rss
-      weight: 1
+      weight: 4
       url: /index.xml
 
 permalinks:
   posts: "/:title/"
+  notes: "/notes/:title/"
 
 markup:
   highlight:

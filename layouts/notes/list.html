@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article>
+    {{- /* Get all series (subsections) and sort by date */ -}}
+    {{- $series := sort .Sections ".Date" "asc" -}}
+
+    {{- /* Render each series and its notes */ -}}
+    {{- range $series -}}
+        {{- /* Get published notes for this series */ -}}
+        {{- $notes := where .Pages "Draft" false -}}
+
+        {{- /* Only show series that have published notes */ -}}
+        {{- if gt (len $notes) 0 -}}
+            <hr>
+            <h3>{{ .Title }}</h3>
+            {{- if .Content -}}
+                {{ .Content }}
+            {{- end -}}
+            <ul id="posts">
+                {{- range sort $notes "Params.order" "asc" -}}
+                    {{ .Render "li" }}
+                {{- end -}}
+            </ul>
+        {{- end -}}
+    {{- end -}}
+
+</article>
+{{ end }}

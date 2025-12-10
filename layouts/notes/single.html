@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article>
+    <header id="post-header">
+        <h1>{{ .Title }}</h1>
+        {{- if .Parent -}}
+        <div>
+            Part of the {{ .Parent.Title }} series.
+        </div>
+        {{- end -}}
+    </header>
+
+    {{- .Content -}}
+
+    {{- /* Navigation within series */ -}}
+    {{- if .Parent -}}
+        {{- $seriesNotes := where .Parent.Pages "Draft" false -}}
+        {{- $seriesNotes = sort $seriesNotes "Params.order" "asc" -}}
+
+        {{- $prevNote := "" -}}
+        {{- $nextNote := "" -}}
+        {{- $foundCurrent := false -}}
+
+        {{- range $seriesNotes -}}
+            {{- if $foundCurrent -}}
+                {{- if not $nextNote -}}
+                    {{- $nextNote = . -}}
+                {{- end -}}
+            {{- end -}}
+
+            {{- if eq .Permalink $.Permalink -}}
+                {{- $foundCurrent = true -}}
+            {{- else -}}
+                {{- if not $foundCurrent -}}
+                    {{- $prevNote = . -}}
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- if or $prevNote $nextNote -}}
+            <nav class="series-navigation">
+                <div class="series-nav-links" style="display: flex; justify-content: space-between;">
+                    {{- if $prevNote -}}
+                        <a href="{{ $prevNote.RelPermalink }}" class="prev-note">‹ {{ $prevNote.Title }}</a>
+                    {{- else -}}
+                        <span></span>
+                    {{- end -}}
+
+                    {{- if $nextNote -}}
+                        <a href="{{ $nextNote.RelPermalink }}" class="next-note">{{ $nextNote.Title }} ›</a>
+                    {{- end -}}
+                </div>
+            </nav>
+        {{- end -}}
+    {{- end -}}
+</article>
+{{ end }}

@@ -1,10 +1,13 @@
 ---
 title: "Poem 3. \"Lucy\""
-category: personal 
+category: personal
 date: 2025-07-12
 ---
 
-```
+Dedicated to my dearest friend, Lucy Revina.
+
+{{< highlight text "linenos=true,linenostart=1" >}}
+
 Marsupial madre de un amor tenaz
 que se resguarda entre mis costillas;
 me llena de un sentimiento líquido
@@ -19,5 +22,6 @@ Cómo te extraño, querida amiga;
 que convertiste nuestra vivienda en hogar,
 y cuidas siempre de mí, así cómo yo de ti.
 Pronto nos veremos otra vez.
-```
+
+{{< /highlight >}}
 

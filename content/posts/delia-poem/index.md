@@ -1,10 +1,13 @@
 ---
 title: "Poem 1. \"Delia\""
-category: personal 
+category: personal
 date: 2025-04-27
 ---
 
-```
+Dedicated to my beautiful mother, Delia García.
+
+{{< highlight text "linenos=true,linenostart=1" >}}
+
 Madre que no me suelta el estandarte,
 madre de selva que me cubre como yedra,
 estás completamente marcada en mí;
@@ -32,5 +35,6 @@ piedra de orgullo inexorable.
 Árbol terrestre que toca el cielo;
 sosiego inminente,
 calor solar.
-```
+
+{{< /highlight >}}
 

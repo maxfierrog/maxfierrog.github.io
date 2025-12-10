@@ -1,0 +1,10 @@
+<div style="display: flex; gap: 1.5rem; margin-top: 2rem; align-items: flex-start;">
+    <div style="flex-shrink: 0;">
+        <img src="{{ .Get "src" }}" width="175" style="display: block;">
+    </div>
+    <div style="flex: 1;">
+        <header id="post-header">
+            {{ .Inner | markdownify }}
+        </header>
+    </div>
+</div>

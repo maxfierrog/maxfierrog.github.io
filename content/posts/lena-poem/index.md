@@ -1,30 +1,34 @@
 ---
 title: "Poem 6. \"Lena\""
-category: personal 
+category: personal
 date: 2025-09-08
 ---
 
-```
+Dedicated to Lena. Your memory brings me peace and your spirit guides me. I love you.
+
+{{< highlight text "linenos=true,linenostart=1" >}}
+
 entrevista criatura echada en la baldosa,
-la luz penetraba el follaje 
+la luz penetraba el follaje
     del helecho donde te resguardabas:
-en ese entonces, los dos éramos niños y 
+en ese entonces, los dos éramos niños y
   nos ceñía la juventud de nuestra familia,
-ese hogar llevaba tu color, 
+ese hogar llevaba tu color,
         y en ese jardín
   nos vestía el espacio de una piel
-            más radiante y transparente 
+            más radiante y transparente
 
 criatura entrevista entre las décadas,
   tiempo tenaz que fluye a mi costado:
   todavía soy un niño, pero sin ti
              ya no soy joven,
    mi familia ya no es joven
-    ahora que tú no estás, 
+    ahora que tú no estás,
         te resguardo dentro de mí,
-      y en ti siempre se encontrarán 
+      y en ti siempre se encontrarán
     aquellas joyas de nuestra juventud
-  dentro de las cuales centellea 
+  dentro de las cuales centellea
 la luz que compartimos
-```
+
+{{< /highlight >}}
 
