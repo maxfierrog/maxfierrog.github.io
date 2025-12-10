@@ -51,7 +51,7 @@ I was in bed one night unable to sleep, listening to music. _Rosemary_ started p
 ### Undercurrent
 <div>Bill Evans and Jim Hall</div>
 
-Listening to Jim Hall's decisions in this album is delightful. His contribution to this recording of _My Funny Valentine_ made it my favorite. While the album is played quite rubato (as is usual for Bill Evans), I love the tighter impressionistic elements in _Romain_ and _Dream Gypsy_. I certainly listen to those three songs the most.
+Listening to Jim Hall's decisions in this album is delightful. His contribution to the recording of _My Funny Valentine_ included made it my favorite. While the album is played quite rubato (as is usual for Bill Evans), I love the closer impressionistic parts in _Romain_ and _Dream Gypsy_. I certainly listen to those three songs the most.
 
 {{< /album >}}
 
@@ -188,31 +188,46 @@ I believe my friend Celeste showed me this album, or at least _Truth_. Regardles
 ### Lateralus
 <div>Tool</div>
 
-
+It is interesting to reflect on Tool. Their albums feel like massive discoveries, but for most people, burnout is almost inevitable. I think it is due to how corny they are. But the fact of the matter remains that they are fantastic works. My favorite aspects of this album are its rhythmics and how cohesive the instrumentals and lyrics are.
 
 {{< /album >}}
 
 {{< album src="https://i.scdn.co/image/ab67616d0000b2738d47f69b6e1b5e7202e49ea0" >}}
 ### Symphony No. 6
 <div>Tchaikovsky</div>
+
+Now here is a way to reliably get me to cry. If I were to describe this in a single word, I would say "disarming." This symphony suspends you in the air, shows you there is nothing around you, and lets you be with yourself. Remembering its history and its given name, _pathetic_, is completely disarming. Just disarming.
+
 {{< /album >}}
 
 {{< album src="https://i.scdn.co/image/ab67616d0000b2732a05b124cd97397315615e22" >}}
 ### Voluma
 <div>León Larregui</div>
+
+Playful, pretty, and feeling. León Larregui's range fits perfectly in calm instrumentals across (mostly) love songs. It very stylistically coherent as an album, such that if you can play one song, you can definitely play them all. It reminds me of that worry-free period when two people begin dating. I love the song _Birdie_.
+
 {{< /album >}}
 
 {{< album src="https://i.scdn.co/image/ab67616d0000b27352cd51946404b5ef1f923140" >}}
 ### Suite del Ángel
 <div>Piazzolla</div>
+
+It is generally difficult for me to consume tango. It feels almost morally disconnected from the modern world. But Astor Piazolla shows such human colors in this suite that its evocative capacity just takes ahold of you. _Oblivion_ has brass that reminds me of Miles Davis' slower side. My absolute favorite part is _Milonga del Ángel_.
+
 {{< /album >}}
 
 {{< album src="https://i.scdn.co/image/ab67616d00001e02e379b684061a1d2de65c9494" >}}
 ### Préludes, Book 1
 <div>Debussy (performed by Daniel Barenboim)</div>
+
+In the spectrum of music, I think of this book as closest to free-form poetry. Standing quite free of many compositional "formalisms," it first struck me as liberated, atomic, and elemental in the space of musical expression. Apart from being beautiful, it has helped me distill the beauty of other works by projecting them onto this book.
+
 {{< /album >}}
 
 {{< album src="https://i.scdn.co/image/ab67616d0000b2733d7b95838b533131d1db6292" >}}
 ### INTER SHIBUYA - LA MAFIA
 <div>Feid</div>
+
+This stuff is very close to my heart, and I could write a lot about it. I will restrain my remarks to say that I love its texture, intensity, and production. My relationship to the album is very experience-based, and it reminds me a lot of my friend Emilio. I think _CORONE_ and _PURRITO APA_ are my favorite tracks.
+
 {{< /album >}}
