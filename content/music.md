@@ -7,11 +7,19 @@ layout: music
 
 ---
 
+{{< album src="https://i.scdn.co/image/ab67616d0000b27327d473c26c974cf5a70c1986" >}}
+### The Elements 
+<div>Joe Henderson and Alice Coltrane</div>
+
+I am honestly not sure how to describe this album in a way that does not place its cultural influences first, which are quite palpably Indian (via Alice Coltrane's spiritual pursuits) and African-American (through jazz itself). I like to listen to this half-awake and let it sequester my attention. Although it is not meditative (it is very "boppy").
+
+{{< /album >}}
+
 {{< album src="https://i.scdn.co/image/ab67616d0000b273c7dd2b3ce549d92297a79aaa" >}}
 ### Moon Beams
 <div>Bill Evans Trio</div>
 
-In particular, I love the intricate drumwork of Paul Motian in _Re: Person I Knew_, apart from the clear saturday-evening chords given by Bill Evans in other songs. It turns out that my favorite recording of _If You Could See Me Now_ is the one in this album.
+In particular, I love the intricate drumwork of Paul Motian in _Re: Person I Knew_, apart from the clear, saturday-evening chords given by Bill Evans in other songs. It turns out that my favorite recording of _If You Could See Me Now_ is the one included in this album. But I find Chet Baker's recordings simpler (in a nice way).
 
 {{< /album >}}
 
@@ -19,7 +27,7 @@ In particular, I love the intricate drumwork of Paul Motian in _Re: Person I Kne
 ### Comfort y Música Para Volar
 <div>Soda Stereo</div>
 
-Although it has more the feeling of a compilation and missed out on _Génesis_, I love the contemplative side of this release. _Planeador_, my favorite song in the album, has slow instrumentals that eventually blend with breathing-like vocals.
+Although it has more the feeling of a compilation and missed out on _Génesis_, I love the contemplative side of this release. _Planeador_, my favorite song in the album, has slow instrumentals that eventually blend with breathing-like vocals. Also, _Té Para 3_ is a great musical shoulder to cry on.
 
 {{< /album >}}
 
@@ -35,7 +43,7 @@ Rubenstein's interpretation of the theme of Op. 24 reminds me of a parent gently
 ### Relaxin' With The Miles Davis Quintet
 <div>Miles Davis Quintet</div>
 
-My friend Graham showed me this one. I love how energetic it can be while keeping a softness in taste (not "too boppy"?). This album has also benefitted from me liking Miles Davis' muted trumpet more and more as time goes by. My favorite aspects of his playing are perfect in _You're My Everything_.
+My friend Graham showed me this one. I love how energetic it can be while keeping a softness in taste (not too "boppy"?). This album has also benefitted from me liking Miles Davis' muted trumpet more and more as time goes by. My favorite aspects of his playing are perfect in _You're My Everything_.
 
 {{< /album >}}
 
