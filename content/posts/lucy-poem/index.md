@@ -4,7 +4,7 @@ category: personal
 date: 2025-07-12
 ---
 
-Dedicated to my dearest friend, Lucy Revina.
+Dedicated to my dear friend, Lucy Revina.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 
