@@ -4,7 +4,7 @@ category: personal
 date: 2025-11-16
 ---
 
-Statements regarding the persistence of my condition.
+n/a
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 
