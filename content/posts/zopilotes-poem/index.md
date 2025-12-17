@@ -23,8 +23,8 @@ como perros en la calle:
  voy absorto por el mundo
  que me da vértigo la nada,
      entonces pienso,
-         defiendo mi ración
-         de paraíso labriego,
+         para tener mi ración
+         de paraíso terrestre,
      que aquellos zopilotes
      van bajando del cielo:
   buscan horas huecas,
