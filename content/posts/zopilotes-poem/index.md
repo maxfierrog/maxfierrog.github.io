@@ -22,7 +22,7 @@ como perros en la calle:
        que pronto se desvanecen:
  voy absorto por el mundo
  que me da vértigo la nada,
-     entonces pienso,
+     entonces pienso
          para tener mi ración
          de paraíso terrestre,
      que aquellos zopilotes
