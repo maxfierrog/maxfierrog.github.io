@@ -37,7 +37,7 @@ de mi alma, y no lo escucho;
 pensamientos que me gritan,
    memorias que me ahogan
 en su caudal, río perdido
-       que te busca siempre
+       que te sigue buscando 
 
 {{< /highlight >}}
 
