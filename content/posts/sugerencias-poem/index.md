@@ -4,7 +4,7 @@ category: personal
 date: 2025-10-13
 ---
 
-Abstraction about the ephemerality of transition within eternity, grounded in concrete elements.
+Mostly nonsense.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

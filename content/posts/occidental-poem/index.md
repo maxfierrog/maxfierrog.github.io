@@ -4,7 +4,7 @@ category: personal
 date: 2025-04-30
 ---
 
-Regards knowledge as existent in an equal capacity as its object(s). 
+Failed attempt at processing a concept that I still can't quite explain.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

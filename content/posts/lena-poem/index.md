@@ -4,7 +4,7 @@ category: personal
 date: 2025-09-08
 ---
 
-Dedicated to Lena. Your memory brings me peace and your spirit guides me. I love you.
+Dedicated to Lena, who passed away of old age. (I love you, darling.)
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

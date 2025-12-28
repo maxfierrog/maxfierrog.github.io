@@ -7,7 +7,7 @@ weight: 1
 
 ## Introduction
 
-I am graduating from [UC Berkeley](https://www.berkeley.edu/) intellectually invested in mathematics and computer science. I am a systems programmer and machine learning practitioner by trade. With these aptitudes, I pursue projects in the intersection of machine learning and game theory. I also spent four summers at [Meta](https://about.meta.com/) (working on ML infrastructure, among other things) and have two years of leadership experience as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
+I graduated from [UC Berkeley](https://www.berkeley.edu/) intellectually invested in mathematics and computer science. Concretely, I am both a systems programmer and machine learning practitioner. I spent all four of my summers at [Meta](https://about.meta.com/) (building machine learning infrastructure, among other things) and have two years of leadership experience as an engineering lead at [UC Berkeley SAIT](https://technology.berkeley.edu/SAIT).
 
 ---
 
@@ -160,7 +160,7 @@ No meal is complete without the bread, and no CV is complete without fast food e
 
 ### Research & Development @ [GamesCrafters](https://gamescrafters.github.io/)
 
-Berkeley, CA -- Jan 2023 to now
+Berkeley, CA -- Jan 2023 to Dec 2025 
 
 {{< collapse "summary"="Details..." >}}
 

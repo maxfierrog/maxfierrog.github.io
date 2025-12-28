@@ -4,7 +4,7 @@ category: personal
 date: 2025-12-19
 ---
 
-n/a
+Dedicated to a person-like concept I considered while meditating as a recipient to feelings of love.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

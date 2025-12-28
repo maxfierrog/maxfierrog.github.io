@@ -4,7 +4,7 @@ category: personal
 date: 2025-12-20
 ---
 
-n/a
+I was thinking about the nature of art, and concluded that my artistic vision with regards to any particular medium should stem from a single total transmedial aesthetic that is consistent with and inspired by my values. I wanted to write something that would prove that, if abstraction is morally accepted (which I personally do), such a transmedial aesthetic could be allowed to live in full breadth even in single-medium works. My success is unkown, as usual. 
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

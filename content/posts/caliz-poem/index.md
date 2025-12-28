@@ -4,7 +4,7 @@ category: personal
 date: 2025-09-21
 ---
 
-Dedicated to a person-like abstraction I created during meditation as a recipient to feelings of loss and affection.
+Dedicated to a person-like concept I considered while meditating as a recipient to feelings of loss and affection.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

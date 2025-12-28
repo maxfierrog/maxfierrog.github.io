@@ -4,7 +4,7 @@ category: personal
 date: 2025-11-16
 ---
 
-n/a
+I am on the more depressive side of personhood.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

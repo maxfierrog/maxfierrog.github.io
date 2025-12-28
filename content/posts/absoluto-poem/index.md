@@ -4,7 +4,7 @@ category: personal
 date: 2025-09-15
 ---
 
-Inspired by the night sky of Joshua Tree National Park, which I visited with my sister Mara.
+Thoughts after the night sky of Joshua Tree National Park, which I visited with my sister Mara.
 
 {{< highlight text "linenos=true,linenostart=1" >}}
 

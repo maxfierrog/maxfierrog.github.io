@@ -7,11 +7,20 @@ layout: music
 
 ---
 
+{{< album src="https://i.scdn.co/image/ab67616d0000b273a3ec3ea27c858d95e7c9e9a4" >}}
+### Summertime 
+<div>Paul Desmond</div>
+
+I always thought of Paul Desmond's performances as dishonest through their failure to aesthetically acknowledge the hardship and complexity there is in life. While I still think his style does not properly acknowledge these things, I grew some "trust" that lets me enjoy it by understanding that it is a (constructive) break from those realities.
+
+{{< /album >}}
+
+
 {{< album src="https://i.scdn.co/image/ab67616d0000b27327d473c26c974cf5a70c1986" >}}
 ### The Elements 
 <div>Joe Henderson and Alice Coltrane</div>
 
-I am honestly not sure how to describe this album in a way that does not place its cultural influences first, which are quite palpably Indian (via Alice Coltrane's spiritual pursuits) and African-American (through jazz itself). I like to listen to this half-awake and let it sequester my attention. Although it is not meditative (it is very "boppy").
+I am honestly not sure how to describe this album in a way that does not place its cultural influences first, which are quite palpably Indian (via Alice Coltrane's spiritual pursuits) and African-American. I like to listen to this half-awake and let it sequester my attention. Although it is not meditative (it is very "boppy").
 
 {{< /album >}}
 
