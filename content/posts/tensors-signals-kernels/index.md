@@ -25,7 +25,7 @@ This article has four primary parts, each on a particular topic. They are intend
 
 ### Dimensionality
 
-I begin by considering infinite-dimensional vector spaces. I demonstrate how the definition of span  can a be relaxed to allow the coordinate-based treatement of vector spaces of dimensions with different (infinite) cardinalities, and what the notion of a basis becomes under these relaxations. This leads us to Banach and Hilbert spaces while being a digestible way to ramp-up for the following sections.
+I begin by considering infinite-dimensional vector spaces. I demonstrate how the definition of span  can be relaxed to allow the coordinate-based treatement of vector spaces of dimensions with different (infinite) cardinalities, and what the notion of a basis becomes under these relaxations. This points us to Banach and Hilbert spaces, while providing a digestible way to ramp up for the following sections.
 
 ### Tensor Spaces
 
@@ -33,7 +33,7 @@ I organize the semantics behind matrices, vectors, and linear maps. After introd
 
 {{% hint title="2.1. Note" %}}
 
-The logical procedures and syntax conventions of this section are shown to be valid for Hilbert spaces and tensor products thereof, although there are other infinite-dimensional cases where they also apply. But it would be too difficult to structure these nuances in a complete way, and they would not enjoy much overlap with subsequent topics regardless.
+The logical procedures and syntax conventions of this section are shown to be valid for Hilbert spaces and tensor products thereof. However, there are other infinite-dimensional cases where they also apply. But it would be too difficult to structure these nuances (that lie beyond Hilbert spaces) in a complete way, and they would not enjoy much overlap with subsequent sections regardless. So I leave them unexplored, as they would not clearly contribute to conceptual unification.
 
 {{% /hint %}}
 
@@ -1264,6 +1264,7 @@ weights = weights / np.sum(weights, axis=0, keepdims=True)
 
 VX = np.einsum('ij,jt->it', V, X) # values
 result = np.einsum('is,st->it', VX, weights)
+
 {{< /highlight >}}
 
 {{% /hint %}}
