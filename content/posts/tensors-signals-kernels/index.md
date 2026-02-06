@@ -1281,8 +1281,6 @@ Although this trajectory was predominantly abstract, we were also exposed to pra
 
 ## Signals and Systems 
 
-
-
 ## Kernel Methods
 
 [^kernel-semantics]: These two "kernels" received their names for a superficial reason -- because the symbols that represent them show up inside other symbols. One could imagine that people started calling them "kernel" independently just to avoid saying the phrase "that term in in the middle" while pointing at a blackboard. As such, the connecting view of the convolution and reproducing kernels in this article does not "generalize" to kernels in other contexts (many of which received their names the same non-profound reason). 

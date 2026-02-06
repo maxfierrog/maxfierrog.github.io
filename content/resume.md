@@ -45,6 +45,19 @@ I graduated from [UC Berkeley](https://www.berkeley.edu/) intellectually investe
 
 ## Professional History 
 
+### Software Engineer (IC3) @ [Meta](https://about.meta.com/)
+
+New York, NY -- Feb 2025 to present 
+
+{{< collapse "summary"="Details..." >}}
+
+TODO (I just started working.)
+
+
+[]() <!-- This is for rendering the above as a <p> element -->
+
+{{< /collapse >}}
+
 ### Software Engineer Intern @ [Meta](https://about.meta.com/)
 
 New York, NY -- May 2025 to Aug 2025
