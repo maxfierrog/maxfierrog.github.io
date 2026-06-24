@@ -1,6 +1,6 @@
 ---
 title: "Poem 10. \"Zopilotes\""
-category: personal
+category: subjective
 date: 2025-11-16
 ---
 

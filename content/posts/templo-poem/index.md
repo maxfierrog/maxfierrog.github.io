@@ -1,6 +1,6 @@
 ---
 title: "Poem 12. \"Templo\""
-category: personal
+category: subjective
 date: 2025-12-20
 ---
 

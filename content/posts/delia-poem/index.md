@@ -1,6 +1,6 @@
 ---
 title: "Poem 1. \"Delia\""
-category: personal
+category: subjective
 date: 2025-04-27
 ---
 

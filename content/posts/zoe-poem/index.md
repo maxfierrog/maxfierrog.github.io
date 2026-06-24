@@ -1,6 +1,6 @@
 ---
 title: "Poem 5. \"Zoe\""
-category: personal
+category: subjective
 date: 2025-07-28
 ---
 

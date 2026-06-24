@@ -1,6 +1,6 @@
 ---
 title: "Poem 3. \"Lucy\""
-category: personal
+category: subjective
 date: 2025-07-12
 ---
 

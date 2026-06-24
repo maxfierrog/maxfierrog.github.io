@@ -1,6 +1,6 @@
 ---
 title: "Poem 11. \"Tabachín\""
-category: personal
+category: subjective
 date: 2025-12-19
 ---
 

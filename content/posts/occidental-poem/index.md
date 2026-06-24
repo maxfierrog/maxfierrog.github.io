@@ -1,6 +1,6 @@
 ---
 title: "Poem 2. \"Occidental\""
-category: personal
+category: subjective
 date: 2025-04-30
 ---
 

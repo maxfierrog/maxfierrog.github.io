@@ -1,6 +1,6 @@
 ---
 title: "Poem 6. \"Lena\""
-category: personal
+category: subjective
 date: 2025-09-08
 ---
 

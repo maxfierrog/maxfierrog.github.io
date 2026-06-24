@@ -25,18 +25,22 @@ menu:
       name: music
       weight: 2
       url: /music/
-    - identifier: notes
-      name: notes
+    - identifier: series
+      name: series
       weight: 3
-      url: /notes/
+      url: /series/
     - identifier: rss
       name: rss
       weight: 4
       url: /index.xml
 
 permalinks:
-  posts: "/:title/"
-  notes: "/notes/:title/"
+  posts: "/:slug/"
+
+taxonomies:
+  tag: tags
+  category: categories
+  series: series
 
 markup:
   highlight:

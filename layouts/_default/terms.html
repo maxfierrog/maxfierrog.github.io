@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article>
+    {{- .Content -}}
+
+    {{- /* Each series (taxonomy term), newest first by the series' own date */ -}}
+    {{- range (sort .Pages "Date" "desc") -}}
+        {{- $leaves := where .Pages "Draft" false -}}
+        {{- if gt (len $leaves) 0 -}}
+            <hr>
+            <section id="series-{{ path.Base .RelPermalink }}">
+                <h3>{{ .Title }}</h3>
+                {{- with .Content }}{{ . }}{{ end -}}
+                <ul id="posts">
+                    {{- range (sort $leaves "Date" "desc") -}}
+                        {{ .Render "li" }}
+                    {{- end -}}
+                </ul>
+            </section>
+        {{- end -}}
+    {{- end -}}
+</article>
+{{ end }}

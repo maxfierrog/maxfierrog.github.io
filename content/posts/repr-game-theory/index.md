@@ -1,8 +1,9 @@
 ---
 title: "Representation Concepts in Game-Theoretic Systems"
-category: technical
+category: objective
 date: 2024-04-20
 math: true
+draft: true 
 ---
 
 {{< toc >}}

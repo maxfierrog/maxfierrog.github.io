@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta name="description" content="Max&#39;s personal site">
+    
+     
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)"> 
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://localhost:1313/control-theoretic-perspective-of-performative-prediction/" />
+    <title>Control Theoretic Perspective of Performative Prediction</title>
+</head>
+<body><header id="banner">
+    <h2><a href="/">Max Fierro</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/resume/" title=""
+                    >resume</a
+                >
+            </li><li>
+                <a href="/music/" title=""
+                    >music</a
+                >
+            </li><li>
+                <a href="/notes/" title=""
+                    >notes</a
+                >
+            </li><li>
+                <a href="/index.xml" title=""
+                    >rss</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Control Theoretic Perspective of Performative Prediction</h1>
+        <div>
+                <time>April 25, 2026</time>
+            </div>
+    </header><aside id="toc">
+    <details>
+        <summary>&nbsp;<strong> Table of contents</strong></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#background">Background</a>
+      <ul>
+        <li><a href="#performative-prediction">Performative Prediction</a></li>
+        <li><a href="#control-theory-preliminaries">Control Theory Preliminaries</a></li>
+      </ul>
+    </li>
+    <li><a href="#formulation">Formulation</a>
+      <ul>
+        <li><a href="#the-state-space">The State Space</a></li>
+        <li><a href="#the-strategic-jacobian">The Strategic Jacobian</a></li>
+        <li><a href="#closing-the-loop">Closing the Loop</a></li>
+        <li><a href="#the-closed-loop-system">The Closed-Loop System</a></li>
+        <li><a href="#linearization">Linearization</a></li>
+        <li><a href="#the-autonomous-special-case">The Autonomous Special Case</a></li>
+      </ul>
+    </li>
+    <li><a href="#analysis">Analysis</a>
+      <ul>
+        <li><a href="#stability">Stability</a></li>
+        <li><a href="#robustness">Robustness</a></li>
+        <li><a href="#transient-response">Transient Response</a></li>
+        <li><a href="#strategic-coupling">Strategic Coupling</a></li>
+      </ul>
+    </li>
+    <li><a href="#discussion">Discussion</a></li>
+  </ul>
+</nav>
+    </details>
+</aside>
+
+<h2 id="abstract">Abstract</h2>
+<p>In <a href="https://en.wikipedia.org/wiki/Performative_prediction">performative prediction</a>, deploying a model changes the distribution it was trained on &ndash; predictions are self-fulfilling or self-defeating. Perdomo et al. (2020) formalize this through a distribution map \(\mathcal{D}(\theta)\) and study when repeated risk minimization converges to a stable point.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> In this post I argue that the same structure is naturally a <a href="https://en.wikipedia.org/wiki/Control_theory#Feedback_control_systems">feedback control system</a>. I extend the distribution map with an exogenous world state \(w(t)\), decompose its time evolution via the chain rule, and cast the optimizer as a continuous-time feedback controller. Linearizing around the equilibrium yields a state-space representation \((A, E, C, F)\) whose state matrix \(A = -\alpha H\) is the product of the learning rate and the performative Hessian. The autonomous special case recovers the paper&rsquo;s convergence results as <a href="https://en.wikipedia.org/wiki/Lyapunov_stability">Lyapunov stability</a>; the non-autonomous case opens the door to robustness analysis (input-to-state stability, steady-state tracking error) and transient response characterization. Crucially, the Jacobian \(J_\theta = \frac{\partial \mathcal{D}}{\partial \theta} \in \mathbb{R}^{d \times n}\) &ndash; the sensitivity of the distribution to the model &ndash; is revealed as the interface of a <a href="https://en.wikipedia.org/wiki/Stackelberg_competition">Stackelberg game</a> between the learner and a strategic population, and its structure feeds into the eigenvalues of \(A\) that determine whether the retraining loop converges, oscillates, or diverges.</p>
+<hr>
+<h2 id="background">Background</h2>
+<h3 id="performative-prediction">Performative Prediction</h3>
+<p>Perdomo et al.<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> consider a learner who deploys a model parameterized by \(\theta \in \Theta\). The act of deployment changes the data distribution, so the distribution is itself a function of the deployed parameters.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p><strong>Distribution map.</strong> A map \(\mathcal{D}: \Theta \to \Delta(\mathcal{Z})\) that assigns to each parameter vector \(\theta\) the distribution \(\mathcal{D}(\theta)\) over the data space \(\mathcal{Z}\) that arises when \(\theta\) is deployed.</p>
+</div>
+</div>
+<p>The learner&rsquo;s objective is to minimize a <a href="https://en.wikipedia.org/wiki/Risk_measure">risk functional</a> that depends on the deployed distribution. The <em>performative risk</em> is</p>
+$$
+\begin{equation}
+    \text{PR}(\theta) \;=\; \mathbb{E}_{Z \,\sim\, \mathcal{D}(\theta)} \!\Big[\, \ell(\theta, Z) \,\Big],
+\end{equation}
+$$<p>where \(\ell\) is a loss function. This creates a circular dependency: the risk depends on the distribution, which depends on the parameters, which the learner chooses by minimizing the risk.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p><strong>Performative stability.</strong> A point \(\theta_{\text{PS}}\) is <em>performatively stable</em> if it is a fixed point of the map \(\theta \mapsto \arg\min_{\theta'} \, \mathbb{E}_{Z \sim \mathcal{D}(\theta)}[\ell(\theta', Z)]\). In other words, \(\theta_{\text{PS}}\) is optimal for the distribution it induces.</p>
+</div>
+</div>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p><strong>Performative optimality.</strong> A point \(\theta_{\text{PO}}\) is <em>performatively optimal</em> if it minimizes the performative risk directly: \(\theta_{\text{PO}} = \arg\min_{\theta} \, \text{PR}(\theta)\). Note that performative optimality implies performative stability, but not vice versa.</p>
+</div>
+</div>
+<p>The paper&rsquo;s central analytical tool is a <a href="https://en.wikipedia.org/wiki/Lipschitz_continuity">Lipschitz</a> condition on the distribution map.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Definition</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p><strong>\(\varepsilon\)-sensitivity.</strong> The distribution map \(\mathcal{D}\) is \(\varepsilon\)-sensitive if, for all \(\theta_1, \theta_2 \in \Theta\),</p>
+$$
+d_{\mathcal{W}}\!\big(\mathcal{D}(\theta_1),\, \mathcal{D}(\theta_2)\big) \;\leq\; \varepsilon \, \| \theta_1 - \theta_2 \|,
+$$<p>where \(d_{\mathcal{W}}\) is a suitable metric on distributions.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+</div>
+</div>
+<p>With \(\varepsilon\)-sensitivity and strong convexity of the loss, the paper shows that <em>repeated risk minimization</em> (RRM) &ndash; the procedure of alternately deploying \(\theta_t\) and retraining on \(\mathcal{D}(\theta_t)\) &ndash; converges geometrically to the performatively stable point whenever \(\varepsilon\) is small enough relative to the strong convexity constant. This is the result I want to recover from a control perspective.</p>
+<h3 id="control-theory-preliminaries">Control Theory Preliminaries</h3>
+<p>I only need a small vocabulary from <a href="https://en.wikipedia.org/wiki/Control_theory">control theory</a>. A continuous-time <a href="https://en.wikipedia.org/wiki/Dynamical_system">dynamical system</a> has the form</p>
+$$
+\dot{x} = f(x, u, w),
+$$<p>where \(x\) is the state, \(u\) is a control input, and \(w\) is an exogenous disturbance. A <a href="https://en.wikipedia.org/wiki/PID_controller">feedback controller</a> is a policy \(u = \kappa(x)\) that closes the loop, yielding an autonomous system \(\dot{x} = f(x, \kappa(x), w)\).</p>
+<p>An equilibrium \(x^*\) of the autonomous system (with \(w = 0\)) is <em>Lyapunov stable</em> if trajectories starting near \(x^*\) stay near it, and <em>asymptotically stable</em> if they converge to it. The standard tool for proving stability is a <a href="https://en.wikipedia.org/wiki/Lyapunov_function">Lyapunov function</a> \(V(x)\) &ndash; a positive definite, continuously differentiable function whose time derivative \(\dot{V} = \nabla V \cdot f\) is negative definite along trajectories.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>When the disturbance is nonzero (\(w \neq 0\)), one asks for <a href="https://en.wikipedia.org/wiki/Input-to-state_stability">input-to-state stability</a> (ISS): the state remains bounded by a function of the disturbance magnitude. ISS gives a clean way to talk about <em>robustness</em> &ndash; how much the system&rsquo;s behavior degrades as a function of the perturbation.</p>
+<p>For analysis near an equilibrium, one typically <a href="https://en.wikipedia.org/wiki/Linearization">linearizes</a> and works in <a href="https://en.wikipedia.org/wiki/State-space_representation">state-space form</a>. If \(x \in \mathbb{R}^n\) is the state centered at the equilibrium, the linearized dynamics are</p>
+$$
+\dot{x} = Ax + Bu,
+$$<p>where \(A \in \mathbb{R}^{n \times n}\) is the <em>state matrix</em> and \(B \in \mathbb{R}^{n \times m}\) maps inputs to state changes. The equilibrium is asymptotically stable if and only if every <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalue</a> of \(A\) has strictly negative real part. The eigenvalues &ndash; the system&rsquo;s <em>poles</em> &ndash; encode everything about the local behavior: real parts set convergence rates, imaginary parts set oscillation frequencies.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Observation</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>There is already a suggestive correspondence:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Control theory</th>
+          <th>Performative prediction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>State vector \(x \in \mathbb{R}^n\)</td>
+          <td>Model parameters \(\theta \in \mathbb{R}^n\)</td>
+      </tr>
+      <tr>
+          <td>Control input \(u\)</td>
+          <td>Parameter update \(\dot{\theta}\)</td>
+      </tr>
+      <tr>
+          <td>Feedback law \(u = \kappa(x)\)</td>
+          <td>Optimizer / learning rule</td>
+      </tr>
+      <tr>
+          <td>State matrix \(A\)</td>
+          <td><em>(to be constructed)</em></td>
+      </tr>
+      <tr>
+          <td>Equilibrium \(x^* = 0\)</td>
+          <td>Performatively stable point \(\theta_{\text{PS}}\)</td>
+      </tr>
+      <tr>
+          <td>Eigenvalues of \(A\)</td>
+          <td>Convergence rates of RRM</td>
+      </tr>
+      <tr>
+          <td>Disturbance \(w\)</td>
+          <td><em>(no analogue in the paper)</em></td>
+      </tr>
+  </tbody>
+</table>
+<p>The goal of the next section is to make this precise.</p>
+</div>
+</div>
+<hr>
+<h2 id="formulation">Formulation</h2>
+<h3 id="the-state-space">The State Space</h3>
+<p>I take the model parameters \(\theta(t) \in \mathbb{R}^n\) as the state vector and the world state \(w(t) \in \mathbb{R}^m\) as an exogenous input. The distribution \(\mathcal{D}\) lives in some infinite-dimensional space, but I represent it through a finite-dimensional parameterization so that the distribution map takes the form<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+$$
+\begin{equation}
+    \mathcal{D}: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^d, \quad (\theta, w) \mapsto \mathcal{D}(\theta, w).
+\end{equation}
+$$<p>This is the first departure from the paper: the distribution depends on both the learner&rsquo;s parameters and an exogenous world state. The sensitivity of the distribution to each input is a <a href="https://en.wikipedia.org/wiki/Linear_map">linear map</a>. I define the Jacobian matrices</p>
+$$
+J_\theta(\theta, w) \;=\; \frac{\partial \mathcal{D}}{\partial \theta} \in \mathbb{R}^{d \times n}, \qquad J_w(\theta, w) \;=\; \frac{\partial \mathcal{D}}{\partial w} \in \mathbb{R}^{d \times m},
+$$<p>so that the <a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> gives the distribution dynamics in vector form:</p>
+$$
+\begin{equation}
+    \dot{\mathcal{D}} \;=\; J_\theta \, \dot{\theta} \;+\; J_w \, \dot{w} \;+\; \eta(t),
+\end{equation}
+$$<p>where \(\eta(t) \in \mathbb{R}^d\) is unmodeled distributional drift.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> Read this as: the distribution&rsquo;s velocity is the sum of three vectors in \(\mathbb{R}^d\) &ndash; the learner&rsquo;s influence \(J_\theta \dot{\theta}\) (the control input mapped through the plant), the world&rsquo;s influence \(J_w \dot{w}\), and noise.</p>
+<h3 id="the-strategic-jacobian">The Strategic Jacobian</h3>
+<p>The matrix \(J_\theta \in \mathbb{R}^{d \times n}\) in $(3)$ deserves scrutiny. So far I have written it as a given property of the world &ndash; like the transfer function of a motor or a heating element. But in most applications of performative prediction, this Jacobian is not a passive physical quantity. It is the aggregate result of <em>strategic agents</em> reacting to the deployed model.</p>
+<p>Consider <a href="https://en.wikipedia.org/wiki/Strategic_classification">strategic classification</a>. A lender deploys a credit scoring model \(\theta\). Applicants observe (or infer) the model and adjust their features &ndash; some genuinely improve (taking a financial literacy course), others game (shifting debt between accounts). The post-deployment distribution \(\mathcal{D}(\theta)\) is the <a href="https://en.wikipedia.org/wiki/Pushforward_measure">pushforward</a> of the underlying population through a strategic response:</p>
+$$
+\begin{equation}
+    \mathcal{D}(\theta) \;=\; \text{BR}(\,\cdot\,,\, \theta)_{\#}\, \mathcal{D}_0,
+\end{equation}
+$$<p>where \(\mathcal{D}_0\) is the pre-deployment distribution and \(\text{BR}(z, \theta)\) is the agent&rsquo;s <a href="https://en.wikipedia.org/wiki/Best_response">best response</a> &ndash; the features they choose to present given their true features \(z\) and the deployed model \(\theta\). The Jacobian then factors as</p>
+$$
+J_\theta \;\sim\; \frac{\partial \, \text{BR}}{\partial \theta} \cdot \mathcal{D}_0,
+$$<p>which depends on the agents&rsquo; cost of manipulation, their rationality, their knowledge of \(\theta\), and their objectives. The learner is a <a href="https://en.wikipedia.org/wiki/Stackelberg_competition">Stackelberg leader</a> committing to \(\theta\); the population is the follower best-responding to it.</p>
+<p>This means the &ldquo;plant&rdquo; in our control system is not a fixed piece of physics. It is an adaptive entity whose transfer matrix depends on who is on the other side and what they want. Three qualitative regimes are worth distinguishing:</p>
+<ul>
+<li><strong>Cooperative.</strong> Agents&rsquo; responses genuinely reduce risk (e.g., applicants actually becoming more creditworthy). Here \(J_\theta\) <em>reinforces</em> the controller &ndash; the distribution shifts in a direction that helps the learner.</li>
+<li><strong>Adversarial.</strong> Agents game the system (e.g., applicants masking risk without reducing it). Here \(J_\theta\) <em>opposes</em> the controller &ndash; the distribution shifts to undermine the model.</li>
+<li><strong>Mixed.</strong> Some agents cooperate, some game. The columns of \(J_\theta\) have components of both types.</li>
+</ul>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Observation</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The paper&rsquo;s \(\varepsilon\)-sensitivity condition bounds the <a href="https://en.wikipedia.org/wiki/Operator_norm">operator norm</a> \(\|J_\theta\|_{\text{op}} \leq \varepsilon\): it says the plant gain is at most \(\varepsilon\). The convergence condition (small \(\varepsilon\) relative to strong convexity) is a <em>gain margin</em> condition &ndash; the controller can stabilize the loop only if the plant gain is not too large. This is a conservative bound because it does not distinguish cooperative from adversarial components of \(J_\theta\).</p>
+</div>
+</div>
+<h3 id="closing-the-loop">Closing the Loop</h3>
+<p>The learner controls \(\dot{\theta} \in \mathbb{R}^n\). Define the <em>performative gradient</em></p>
+$$
+g(\theta, w) \;=\; \nabla_\theta \, \text{PR}\!\big(\theta;\, \mathcal{D}(\theta, w)\big) \;\in\; \mathbb{R}^n,
+$$<p>the vector pointing in the direction of steepest increase of the performative risk. The feedback law is <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a> on PR:</p>
+$$
+\begin{equation}
+    \dot{\theta} \;=\; -\alpha \, g(\theta, w),
+\end{equation}
+$$<p>where \(\alpha > 0\) is the learning rate (or <em>gain</em>). This is a feedback law: the control input \(\dot{\theta} \in \mathbb{R}^n\) is a function of the current state through \(\mathcal{D}\) and PR.</p>
+<h3 id="the-closed-loop-system">The Closed-Loop System</h3>
+<p>Substituting the feedback law $(5)$ into the chain rule $(3)$ gives the closed-loop distribution dynamics:</p>
+$$
+\begin{equation}
+    \dot{\mathcal{D}} \;=\; -\alpha \, J_\theta \, g(\theta, w) \;+\; J_w \, \dot{w} \;+\; \eta(t).
+\end{equation}
+$$<p>Read this as: the distribution&rsquo;s velocity is the stabilizing action of the controller (the matrix \(J_\theta\) mapping the negative gradient \(-\alpha g\) into \(\mathbb{R}^d\)), plus the world&rsquo;s disturbance, plus noise.</p>
+<h3 id="linearization">Linearization</h3>
+<p>The nonlinear system $(5)$&ndash;$(6)$ is the full model. To apply the eigenvalue machinery of state-space analysis, I linearize around a performatively stable point \(\theta_{\text{PS}}\) with \(g(\theta_{\text{PS}}, w_0) = 0\). Define the deviation \(x = \theta - \theta_{\text{PS}} \in \mathbb{R}^n\) and the matrices</p>
+$$
+H \;=\; \frac{\partial g}{\partial \theta}\bigg|_{\theta_{\text{PS}}} \!\in \mathbb{R}^{n \times n}, \qquad G_w \;=\; \frac{\partial g}{\partial w}\bigg|_{\theta_{\text{PS}}} \!\in \mathbb{R}^{n \times m}.
+$$<p>The matrix \(H\) is the <em>performative Hessian</em> &ndash; it captures how the gradient vector changes as the parameters move, including the indirect effect through the distribution. \(G_w\) is the sensitivity of the gradient to the world state. Taylor-expanding the gradient and substituting into $(5)$:</p>
+$$
+\begin{equation}
+    \dot{x} \;=\; \underbrace{-\alpha H}_{A} \, x \;+\; \underbrace{(-\alpha G_w)}_{E} \, \delta w.
+\end{equation}
+$$<p>This is the state equation. The distribution deviation is the output:</p>
+$$
+\begin{equation}
+    \delta\mathcal{D} \;=\; \underbrace{J_\theta\vphantom{G}}_{C} \, x \;+\; \underbrace{J_w\vphantom{G}}_{F} \, \delta w.
+\end{equation}
+$$<p>Equations $(7)$ and $(8)$ are the <a href="https://en.wikipedia.org/wiki/State-space_representation">state-space representation</a> \((A, E, C, F)\) of the performative prediction loop. Every question about stability, robustness, and transient behavior reduces to a question about these four matrices.</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Note</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The state matrix \(A = -\alpha H\) is the product of the scalar gain \(\alpha\) and the performative Hessian \(H\). The Hessian itself depends on the distribution coupling through \(J_\theta\) &ndash; so the strategic structure of the Jacobian is baked into the eigenvalues of \(A\). I will unpack this in the Analysis.</p>
+</div>
+</div>
+<h3 id="the-autonomous-special-case">The Autonomous Special Case</h3>
+<p>Setting \(\delta w = 0\) (no world drift) recovers the paper&rsquo;s setting:</p>
+$$
+\begin{equation}
+    \dot{x} \;=\; Ax \;=\; -\alpha H x.
+\end{equation}
+$$<p>Asymptotic stability requires every eigenvalue of \(A\) to have strictly negative real part &ndash; equivalently, every eigenvalue of \(H\) must have strictly positive real part. Under the paper&rsquo;s strong convexity assumptions, \(H\) is <a href="https://en.wikipedia.org/wiki/Definite_matrix">positive definite</a> (\(H \succ 0\)), so all its eigenvalues are real and positive, all eigenvalues of \(A\) are real and negative, and the system is exponentially stable.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> This recovers the geometric convergence of RRM.</p>
+<hr>
+<h2 id="analysis">Analysis</h2>
+<h3 id="stability">Stability</h3>
+<p>In the autonomous case $(9)$, the quadratic form</p>
+$$
+V(x) \;=\; \tfrac{1}{2} \, x^\top H \, x
+$$<p>is a natural Lyapunov function &ndash; it is the second-order approximation of \(\text{PR}(\theta) - \text{PR}(\theta_{\text{PS}})\).<sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> Its time derivative under the dynamics is</p>
+$$
+\begin{equation}
+    \dot{V} \;=\; x^\top H \dot{x} \;=\; -\alpha \, x^\top H^2 x \;\leq\; 0.
+\end{equation}
+$$<p>Since \(H \succ 0\), we have \(H^2 \succ 0\), so \(\dot{V} < 0\) for all \(x \neq 0\). The convergence rate is set by the smallest eigenvalue: if \(\lambda_1 \leq \cdots \leq \lambda_n\) are the eigenvalues of \(H\), the slowest decaying mode has rate \(\alpha \lambda_1\), and</p>
+$$
+\|x(t)\| \;\leq\; \|x(0)\| \, e^{-\alpha \lambda_1 t}.
+$$<p>This recovers the paper&rsquo;s geometric convergence. Under the \(\varepsilon\)-sensitivity and strong convexity assumptions, \(\lambda_1 > 0\) is guaranteed, and \(\alpha \lambda_1\) is the continuous-time analogue of the paper&rsquo;s contraction factor.</p>
+<p>The takeaway: <em>performative stability is Lyapunov stability of the closed-loop system, and the convergence rate is determined by the smallest eigenvalue of the performative Hessian \(H\).</em></p>
+<h3 id="robustness">Robustness</h3>
+<p>When \(\delta w \neq 0\), the full state equation $(7)$ applies:</p>
+$$
+\dot{x} \;=\; Ax + E\,\delta w \;=\; -\alpha H x - \alpha G_w \,\delta w.
+$$<p>The performatively stable point drifts: \(\theta_{\text{PS}}(w(t))\) becomes a moving target. ISS analysis of the \((A, E)\) pair gives:</p>
+<ul>
+<li><strong>Bounded tracking error.</strong> If \(\delta w\) is bounded, the tracking error \(\|x(t)\|\) is bounded by a function of \(\|\delta w\|\) and the ISS gain \(\|A^{-1}E\| = \|H^{-1}G_w\|\).</li>
+<li><strong>Steady-state error.</strong> For a constant disturbance \(\delta w\), the system settles to \(x_{\text{ss}} = -A^{-1}E\,\delta w = H^{-1}G_w\,\delta w\). The steady-state error depends on the <a href="https://en.wikipedia.org/wiki/Condition_number">condition number</a> of \(H\): if \(H\) is poorly conditioned, even small world shifts cause large parameter errors along the ill-conditioned eigenvectors.</li>
+<li><strong>Recovery.</strong> If \(\delta w(t) \to 0\), the system recovers asymptotic stability and \(x(t) \to 0\).</li>
+</ul>
+<p>None of this is available in the original framework, which assumes a static world. The state-space formulation gives it for free from the \((A, E)\) pair.</p>
+<h3 id="transient-response">Transient Response</h3>
+<p>Even in the autonomous case, the <em>path</em> to equilibrium matters in practice. The eigenvalues of \(A = -\alpha H\) determine the transient behavior:</p>
+<ul>
+<li><strong>Convergence rates.</strong> The slowest mode decays at rate \(\alpha \lambda_{\min}(H)\), the fastest at \(\alpha \lambda_{\max}(H)\). A large condition number \(\kappa(H) = \lambda_{\max}/\lambda_{\min}\) means some directions converge much faster than others &ndash; the trajectory takes a long, narrow path to the equilibrium.</li>
+<li><strong>Overshoot.</strong> Even though the state \(x(t)\) decays monotonically in each eigendirection of \(A\) (since \(H \succ 0\) implies real eigenvalues), the <em>distribution output</em> \(\delta\mathcal{D}(t) = C\,x(t) = J_\theta \, x(t)\) can overshoot. The output matrix \(C = J_\theta\) mixes eigenmodes: if fast-decaying and slow-decaying components contribute with opposite signs to a particular distribution coordinate, that coordinate will overshoot before settling.</li>
+<li><strong>Oscillation.</strong> For the gradient flow controller $(5)$, the performative Hessian \(H\) is symmetric, so \(A\) has real eigenvalues and the linearized \(\theta\)-dynamics do not oscillate. But other feedback laws &ndash; repeated risk minimization, <a href="https://en.wikipedia.org/wiki/Information_geometry#Natural_gradient">natural gradient</a>, gradient descent with <a href="https://en.wikipedia.org/wiki/Gradient_descent#Momentum">momentum</a> &ndash; yield non-symmetric state matrices whose eigenvalues can be complex. Complex eigenvalues produce spiraling trajectories: the learner and population alternately overreacting to each other.</li>
+<li><strong>Gain tuning.</strong> The learning rate \(\alpha\) scales all eigenvalues of \(A\) uniformly: doubling \(\alpha\) doubles every convergence rate but also doubles any oscillation frequency. The condition number \(\kappa(H)\) is independent of \(\alpha\) &ndash; tuning the scalar gain cannot fix a poorly conditioned Hessian.</li>
+</ul>
+<h3 id="strategic-coupling">Strategic Coupling</h3>
+<p>The analysis above treated \(H\) as given. But \(H = \frac{\partial g}{\partial \theta}\) is the <a href="https://en.wikipedia.org/wiki/Total_derivative">total derivative</a> of the performative gradient, which includes the indirect effect through the distribution map. Schematically:</p>
+$$
+H \;=\; H_{\text{direct}} \;+\; H_{\text{indirect}}(J_\theta),
+$$<p>where \(H_{\text{direct}} = \mathbb{E}_{\mathcal{D}}[\nabla^2_{\theta\theta} \, \ell] \in \mathbb{R}^{n \times n}\) is the curvature of the loss at fixed distribution, and \(H_{\text{indirect}}\) captures how the distribution&rsquo;s response to \(\theta\) feeds back into the gradient. The strategic Jacobian \(J_\theta\) appears inside \(H_{\text{indirect}}\).</p>
+<p>In the cooperative regime, \(H_{\text{indirect}}\) is positive semi-definite: the population&rsquo;s response increases the curvature of the effective loss, and the eigenvalues of \(H\) are larger than those of \(H_{\text{direct}}\) alone. The state matrix \(A = -\alpha H\) has more negative eigenvalues, and convergence is faster.</p>
+<p>In the adversarial regime, \(H_{\text{indirect}}\) is negative semi-definite: the population&rsquo;s response flattens or inverts the effective loss landscape. If the adversarial coupling is strong enough &ndash; if \(\|H_{\text{indirect}}\|_{\text{op}} > \lambda_{\min}(H_{\text{direct}})\) &ndash; then \(H\) loses positive definiteness, \(A\) acquires a positive eigenvalue, and the system is unstable. The \(\varepsilon\)-sensitivity condition prevents this: bounding \(\|J_\theta\|_{\text{op}} \leq \varepsilon\) bounds \(\|H_{\text{indirect}}\|_{\text{op}}\), ensuring \(H \succ 0\) for small enough \(\varepsilon\).</p>
+<style>
+    .box-body > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .box-body > :first-child {
+        margin-top: 0 !important;
+    }
+</style>
+<div
+    class="hint-box"
+    style="
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 16px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >Observation</strong
+    >
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+            width: calc(100%);
+        "
+    />
+    <div style="font-size: 0.92em" class="box-body">
+<p>The adversarial regime is where the state-space perspective adds the most. The paper&rsquo;s framework converges or doesn&rsquo;t; it has no way to describe <em>how</em> the population&rsquo;s strategic response interacts with the optimizer along the trajectory. In the state-space formulation, this interaction is encoded in the eigenvalues of \(A = -\alpha H\): their magnitudes set convergence rates, their signs determine stability, and (for non-gradient feedback laws) their imaginary parts produce oscillation. The critical transition &ndash; where an eigenvalue of \(A\) crosses zero because the adversarial component of \(J_\theta\) overpowers the direct curvature \(H_{\text{direct}}\) &ndash; is a bifurcation in the learner-population system, invisible to the original framework.</p>
+</div>
+</div>
+<p>The connection to <a href="https://en.wikipedia.org/wiki/Differential_game">differential games</a> is now explicit. The learner and the population are playing a continuous-time <a href="https://en.wikipedia.org/wiki/Stackelberg_competition">Stackelberg game</a>: the learner commits to a policy \(\dot{\theta} = -\alpha g(\theta, w)\), the population best-responds through \(\text{BR}(\cdot, \theta)\), and the equilibrium &ndash; if it exists &ndash; is the performatively stable point \(\theta_{\text{PS}}\). The stability analysis of the closed-loop system is the stability analysis of this game&rsquo;s dynamics, and the matrices \(A\), \(C\), \(J_\theta\), and \(H\) are its structural parameters.</p>
+<hr>
+<h2 id="discussion">Discussion</h2>
+<p>The central claim of this post is a change of vocabulary. The distribution map is a plant with transfer matrix \(J_\theta\). The optimizer is a controller. Performative stability is Lyapunov stability. The convergence of RRM is asymptotic stability under feedback, governed by the eigenvalues of the state matrix \(A = -\alpha H\). When the plant is a strategic population, \(J_\theta\) is the interface of a game, and its structure is baked into \(H\). Once the vocabulary is in place, the toolbox of control theory becomes available without additional mathematical development.</p>
+<p>What is gained:</p>
+<ul>
+<li><strong>Robustness.</strong> The world state \(w(t) \in \mathbb{R}^m\) and noise \(\eta(t) \in \mathbb{R}^d\) are first-class citizens. The \((A, E)\) pair answers questions like &ldquo;how fast can the world change before the learner can no longer track?&rdquo; &ndash; the steady-state error is \(x_{\text{ss}} = H^{-1}G_w\,\delta w\), readable directly from the matrices.</li>
+<li><strong>Transient analysis.</strong> The eigenvalues of \(A\) determine convergence rates; the condition number \(\kappa(H)\) determines the spread. The output matrix \(C = J_\theta\) determines whether the distribution overshoots even when the parameters do not.</li>
+<li><strong>Strategic structure.</strong> The decomposition \(H = H_{\text{direct}} + H_{\text{indirect}}(J_\theta)\) gives finer-grained stability conditions than \(\varepsilon\)-sensitivity alone, and connects the framework to Stackelberg games and differential games.</li>
+<li><strong>Controller design.</strong> The learning rate \(\alpha\) is a scalar gain on the state matrix. This suggests principled tuning and possibly more sophisticated controllers (adaptive gain, integral action, <a href="https://en.wikipedia.org/wiki/Robust_control">robust control</a> for adversarial populations).</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li><strong>Continuous time is an idealization.</strong> Real retraining is discrete. The continuous-time formulation is a useful fiction<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> &ndash; it simplifies analysis and builds intuition, but the discretization gap matters in practice.</li>
+<li><strong>The matrices are not observable.</strong> The Jacobians \(J_\theta\) and \(J_w\), and therefore the Hessian \(H\), are not directly measurable. In control terms, we are designing a controller without a plant model, which limits what guarantees we can provide. This is especially acute in the adversarial case, where \(J_\theta\) itself depends on the population&rsquo;s strategy and may change as \(\theta\) evolves.</li>
+<li><strong>The world state is not measurable.</strong> We posited \(w(t) \in \mathbb{R}^m\) as an exogenous input, but in practice the learner may not know what \(w\) is, let alone measure it. This is an observability problem.</li>
+<li><strong>The strategic model is stylized.</strong> The best-response model $(4)$ assumes agents observe \(\theta\) and respond optimally. In practice, agents have partial information, bounded rationality, and heterogeneous objectives. The matrix \(J_\theta\) is messier than any clean decomposition suggests.</li>
+</ul>
+<p>These limitations are not fatal &ndash; they are the same limitations faced by <a href="https://en.wikipedia.org/wiki/Adaptive_control">adaptive control</a> and <a href="https://en.wikipedia.org/wiki/Online_machine_learning">online learning</a>, which have developed practical tools despite them. The connection to <a href="https://en.wikipedia.org/wiki/Strategic_classification">strategic classification</a> is now explicit rather than suggestive: the &ldquo;plant&rdquo; in that setting is a population of strategic agents, \(J_\theta\) encodes their best-response behavior, and the stability of the retraining loop is the stability of a Stackelberg game. I suspect the right next step is to take a concrete instance &ndash; a linear strategic classification model with known agent cost functions &ndash; and work out the eigenvalues of \(A = -\alpha H\) explicitly, to see whether the cooperative/adversarial decomposition of \(J_\theta\) yields meaningfully tighter convergence bounds than \(\varepsilon\)-sensitivity.</p>
+<hr>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>J. Perdomo, T. Zrnic, C. Mendler-Dünner, and M. Hardt, <a href="https://arxiv.org/abs/2002.06673"><em>Performative Prediction</em></a>, ICML 2020.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>The choice of metric on distributions (Wasserstein, total variation, etc.) affects the strength of the \(\varepsilon\)-sensitivity condition. The paper uses a metric that makes the loss Lipschitz in the distribution, which is the natural choice for bounding risk differences.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>The Lyapunov function plays the role of &ldquo;energy&rdquo; in a mechanical system. The statement \(\dot{V} \leq 0\) says that energy is non-increasing &ndash; the system is dissipative. In our setting, the performative risk is the energy, and the gradient controller dissipates it.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>The finite-dimensional parameterization is a modeling choice. For <a href="https://en.wikipedia.org/wiki/Exponential_family">exponential families</a>, \(d\) is the number of natural parameters; for empirical distributions over a finite support, \(d\) is the number of atoms; for Gaussian models, \(d = n + \binom{n}{2}\). The state-space analysis is local (valid near the equilibrium), so the parameterization only needs to be faithful in a neighborhood of \(\mathcal{D}(\theta_{\text{PS}})\).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>The continuous-time formulation is obtained by taking the time step \(\Delta t \to 0\) in the discrete retraining loop. This is analogous to how continuous-time gradient flow \(\dot{\theta} = -\nabla f(\theta)\) approximates discrete gradient descent \(\theta_{t+1} = \theta_t - \alpha \nabla f(\theta_t)\). The approximation is good when the learning rate is small relative to the curvature of the loss landscape.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Strictly, a performatively stable point is a fixed point of the best-response map, not necessarily a stationary point of \(\text{PR}\). The two coincide under regularity conditions (e.g., when the loss is differentiable and the distribution map is smooth). I am assuming these conditions throughout.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+
+        </main><footer id="footer">
+    Copyright © 2025 Max Fierro
+</footer>
+</body>
+</html>

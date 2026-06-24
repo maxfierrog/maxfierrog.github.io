@@ -1,6 +1,6 @@
 ---
-title: "Unifying Perspectives of Tensors, Signals, and Kernel Methods"
-category: technical
+title: "Tensors and Signals in the Uncompromising Abstraction"
+category: objective
 date: 2025-09-08
 draft: true 
 plots: false 
@@ -1280,6 +1280,8 @@ Although this trajectory was predominantly abstract, we were also exposed to pra
 {{< /hcenter >}}
 
 ## Signals and Systems 
+
+
 
 ## Kernel Methods
 

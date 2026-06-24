@@ -1,6 +1,6 @@
 ---
 title: "Poem 4. \"Consuelo\""
-category: personal
+category: subjective
 date: 2025-07-27
 ---
 

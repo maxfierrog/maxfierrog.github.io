@@ -1,6 +1,6 @@
 ---
 title: "Poem 9. \"Sugerencias\""
-category: personal
+category: subjective
 date: 2025-10-13
 ---
 

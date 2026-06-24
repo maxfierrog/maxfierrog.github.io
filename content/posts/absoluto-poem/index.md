@@ -1,6 +1,6 @@
 ---
 title: "Poem 7. \"Absoluto\""
-category: personal
+category: subjective
 date: 2025-09-15
 ---
 

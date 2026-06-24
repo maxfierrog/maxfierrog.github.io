@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article>
+    <header id="post-header">
+        <h1>{{ .Title }}</h1>
+        {{- with .GetTerms "series" -}}
+            {{- $term := index . 0 -}}
+            <div>Part of <a href="/series/#series-{{ path.Base $term.RelPermalink }}">{{ $term.LinkTitle }}</a>.</div>
+        {{- end -}}
+        <div>
+        {{- if isset .Params "date" -}}
+            {{ if eq .Lastmod .Date }}
+                <time>{{ .Date | time.Format (i18n "post.created") }}</time>
+            {{ else }}
+                <time>{{ .Lastmod | time.Format (i18n "post.updated") }}</time>
+            {{ end }}
+        {{- end -}}
+        </div>
+    </header>
+
+    {{- .Content -}}
+
+    {{- /* Previous/next navigation within the series (ordered by date) */ -}}
+    {{- with .GetTerms "series" -}}
+        {{- $term := index . 0 -}}
+        {{- $sibs := sort (where $term.Pages "Draft" false) "Date" "asc" -}}
+        {{- $prev := "" -}}
+        {{- $next := "" -}}
+        {{- $found := false -}}
+        {{- range $sibs -}}
+            {{- if $found -}}
+                {{- if not $next -}}{{- $next = . -}}{{- end -}}
+            {{- end -}}
+            {{- if eq .Permalink $.Permalink -}}
+                {{- $found = true -}}
+            {{- else -}}
+                {{- if not $found -}}{{- $prev = . -}}{{- end -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if or $prev $next -}}
+            <nav class="series-navigation">
+                <div class="series-nav-links" style="display: flex; justify-content: space-between;">
+                    {{- if $prev -}}
+                        <a href="{{ $prev.RelPermalink }}" class="prev-note">‹ {{ $prev.Title }}</a>
+                    {{- else -}}
+                        <span></span>
+                    {{- end -}}
+                    {{- if $next -}}
+                        <a href="{{ $next.RelPermalink }}" class="next-note">{{ $next.Title }} ›</a>
+                    {{- end -}}
+                </div>
+            </nav>
+        {{- end -}}
+    {{- end -}}
+</article>
+{{ end }}

@@ -1,15 +1,62 @@
-<h3>Objective</h3>
-<ul id="posts">
-  {{- $tech := where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) ".Params.category" "technical" -}}
-  {{- range $tech }}
-    {{ .Render "li" }}
-  {{- end }}
-</ul>
+{{- $cats := slice (dict "key" "objective" "label" "Objective") (dict "key" "subjective" "label" "Subjective") -}}
+{{- range $cats -}}
+  {{- $label := .label -}}
+  {{- $key := .key -}}
+  {{- $pages := where (where $.Site.RegularPages "Section" "posts") ".Params.category" $key -}}
 
-<h3>Subjective</h3>
-<ul id="posts">
-  {{- $pers := where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) ".Params.category" "personal" -}}
-  {{- range $pers }}
-    {{ .Render "li" }}
-  {{- end }}
-</ul>
+  {{- /* Build a unified row list: standalone pages + one collapsed entry per series. */ -}}
+  {{- $rows := slice -}}
+  {{- $seen := slice -}}
+  {{- range $pages -}}
+    {{- $s := .Param "series" -}}
+    {{- if $s -}}
+      {{- $name := index $s 0 -}}
+      {{- if not (in $seen $name) -}}
+        {{- $seen = $seen | append $name -}}
+        {{- $term := site.GetPage (printf "/series/%s" $name) -}}
+        {{- if $term -}}
+          {{- $leaves := where $term.Pages "Draft" false -}}
+          {{- if gt (len $leaves) 0 -}}
+            {{- $latest := index (sort $leaves "Date" "desc") 0 -}}
+            {{- $rows = $rows | append (dict "date" $latest.Date "kind" "series" "term" $term "leaves" (sort $leaves "Date" "desc")) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $rows = $rows | append (dict "date" .Date "kind" "page" "page" .) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $rows = sort $rows "date" "desc" -}}
+
+  <h3>{{ $label }}</h3>
+  <ul id="posts">
+    {{- range $rows -}}
+      {{- if eq .kind "page" -}}
+        {{ .page.Render "li" }}
+      {{- else -}}
+        {{- $term := .term -}}
+        <li class="series-item">
+          <a href="#" class="series-toggle">
+            <small style="display: inline-block; width: 7em;"><time>{{ .date | time.Format (i18n "posts.date") }}</time></small>{{ $term.Title }}
+          </a>
+          <div class="series-body">
+            <ul id="posts">
+              {{- range .leaves -}}
+                {{ .Render "li" }}
+              {{- end -}}
+            </ul>
+          </div>
+        </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+{{- end -}}
+
+<script>
+  document.querySelectorAll(".series-toggle").forEach(function (t) {
+    t.addEventListener("click", function (e) {
+      e.preventDefault();
+      t.closest(".series-item").classList.toggle("expanded");
+    });
+  });
+</script>

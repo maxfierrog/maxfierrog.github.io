@@ -1,6 +1,6 @@
 ---
 title: "The Elo Rating System through Likelihood Gradient Ascent"
-category: technical
+category: objective
 date: 2025-04-30
 math: true
 ---

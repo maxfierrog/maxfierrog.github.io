@@ -1,6 +1,6 @@
 ---
 title: "Poem 8. \"Cáliz\""
-category: personal
+category: subjective
 date: 2025-09-21
 ---
 

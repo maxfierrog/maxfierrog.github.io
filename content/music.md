@@ -7,6 +7,114 @@ layout: music
 
 ---
 
+{{< album src="https://i.scdn.co/image/ab67616d0000b273d554b816e4eb5f9371307f55" >}}
+### Three Ragas
+<div>Ravi Shankar</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b27398a20dc778073f9543380d03" >}}
+### Piano Concerto No. 2
+<div>Nikolai Medtner</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2731fed17233f29826480266e4a" >}}
+### Piano Concerto No. 2
+<div>Dimitri Shostakovich</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b273c15c91f419491a577adbb8dd" >}}
+### Piano Concerto No. 2
+<div>Sergei Rachmaninoff</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2731bb219b02448904ff34897f8" >}}
+### Cello Sonata in G Minor
+<div>Sergei Rachmaninoff</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2737e553e1367924fa3429a692c" >}}
+### Doble Vida
+<div>Soda Stereo</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b27311bcda65e9d1eafcaa31d2c9" >}}
+### Sunday at the Village Vanguard
+<div>the Bill Evans Trio</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2732137648a9b28a333debbe193" >}}
+### Waltz for Debby
+<div>the Bill Evans Trio</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b273e1d9b4284bd479b1f5125235" >}}
+### Ptah, the El Daoud
+<div>Alice Coltrane</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2734c43a2f36c0aec708ba024d5" >}}
+### The Planets
+<div>Gustav Holst</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2732efa2ee6c07c470af8a98aeb" >}}
+### Symphony No. 5
+<div>Gustav Mahler</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2734d32fdb4682aad6f266b84df" >}}
+### Tannhäuser
+<div>Richard Wagner</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2739647d334bd856c51ffa71efe" >}}
+### Tristan und Isolde
+<div>Richard Wagner</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2733ad78907ac8063115f6c2df0" >}}
+### Siegfried-Idyll
+<div>Richard Wagner</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b273137ad3c57aa16f1da0623038" >}}
+### Piano Concerto
+<div>Alexander Scriabin</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b273c8e40db65e094100eaecb1a6" >}}
+### Glad to Be Unhappy
+<div>Paul Desmond</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b2730b74376f97f28004e03bb1a8" >}}
+### Eternity
+<div>Alice Coltrane</div>
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b27355c9b757d8d511d196350bfa" >}}
+### Journey in Satchidananda
+<div>Alice Coltrane</div>
+
+{{< /album >}}
+
 {{< album src="https://i.scdn.co/image/ab67616d0000b273a3ec3ea27c858d95e7c9e9a4" >}}
 ### Summertime 
 <div>Paul Desmond</div>
@@ -37,6 +145,12 @@ In particular, I love the intricate drumwork of Paul Motian in _Re: Person I Kne
 <div>Soda Stereo</div>
 
 Although it has more the feeling of a compilation and missed out on _Génesis_, I love the contemplative side of this release. _Planeador_, my favorite song in the album, has slow instrumentals that eventually blend with breathing-like vocals. Also, _Té Para 3_ is a great musical shoulder to cry on.
+
+{{< /album >}}
+
+{{< album src="https://i.scdn.co/image/ab67616d0000b27325eaccf22cdd84dbcb1fb5ab" >}}
+### A Sound Heart
+<div>Jaubi</div>
 
 {{< /album >}}
 

@@ -1,7 +1,8 @@
 ---
 title: N-Gram Model of Optimal Policy on Interpretable Abstractions
-category: technical
+category: objective
 date: 2025-02-21
+draft: true 
 math: true
 ---
 

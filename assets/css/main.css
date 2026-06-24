@@ -304,3 +304,23 @@ footer#footer {
     color: #737373;
     margin: 40px 0;
 }
+
+/* Series — collapsible entries on listing pages */
+#posts li.series-item > .series-toggle {
+    cursor: pointer;
+}
+#posts li.series-item .series-body {
+    display: none;
+    padding-left: 2em;
+}
+#posts li.series-item.expanded .series-body {
+    display: block;
+}
+#posts li.series-item .series-body ul#posts {
+    margin: 0;
+}
+
+/* Series reading navigation (leaf pages) */
+.series-navigation {
+    margin-top: 2em;
+}
