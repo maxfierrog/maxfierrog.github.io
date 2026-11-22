@@ -1,5 +1,5 @@
 ---
-title: "Essay 1. Risk"
+title: "Essay 1. \"Risk\""
 category: subjective 
 date: 2026-11-22
 math: true
