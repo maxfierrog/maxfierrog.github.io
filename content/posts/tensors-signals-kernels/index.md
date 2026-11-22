@@ -23,7 +23,7 @@ This article has four primary parts, each on a particular topic. They are intend
 * **Signals and Systems.** [_Signals & Systems: Theory and Applications_](https://ss2-2e.eecs.umich.edu/) by Ulaby and Yagle,
 * **Linear algebra.** [_Linear Algebra Done Right_](https://linear.axler.net/) by Axler.
 
-### Dimensionality
+## Dimensionality
 
 I begin by considering infinite-dimensional vector spaces. I demonstrate how the definition of span  can be relaxed to allow the coordinate-based treatement of vector spaces of dimensions with different (infinite) cardinalities, and what the notion of a basis becomes under these relaxations. This points us to Banach and Hilbert spaces, while providing a digestible way to ramp up for the following sections.
 

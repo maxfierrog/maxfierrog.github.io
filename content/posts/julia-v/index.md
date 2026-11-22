@@ -8,7 +8,6 @@ draft: false
 ---
 
 {{< highlight text "linenos=true,linenostart=1" >}}
-
   me encontraste aquí,
   sobre la cumbre de mi mente
           mi visión se alineó

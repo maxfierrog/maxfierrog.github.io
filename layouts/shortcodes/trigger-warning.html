@@ -1,0 +1,27 @@
+{{/*
+  Trigger warning box. The inner content is the message (markdown allowed).
+  Optional "title" param overrides the heading (default "Trigger warning").
+
+  {{< trigger-warning >}}This piece contains ...{{< /trigger-warning >}}
+*/}}
+{{- if not (trim .Inner "\n ") -}}
+{{ warnf "trigger-warning: missing message: %s" .Position }}
+{{- end -}}
+<aside
+    class="trigger-warning"
+    role="note"
+    aria-label="{{ .Get "title" | default "Trigger warning" }}"
+    style="
+        border: 1px solid #000000;
+        border-left: 4px solid #000000;
+        padding: 10px 14px;
+        border-radius: 5px;
+        margin: 16px 0 24px 0;
+        background-color: rgba(0, 0, 0, 0.05);
+    "
+>
+    <strong style="display: block; margin-bottom: 5px"
+        >&#9888;&#xFE0E; {{ .Get "title" | default "Trigger warning" }}</strong
+    >
+    <div style="font-size: 0.92em">{{ .Inner | markdownify }}</div>
+</aside>
