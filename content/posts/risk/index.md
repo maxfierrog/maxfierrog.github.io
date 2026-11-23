@@ -6,7 +6,7 @@ math: true
 ---
 
 {{< trigger-warning >}}
-This essay is aggresive in provoking psychological distress. I published it in spite of ethical doubts because I believe some may find it beautiful. Please know that I do not wish you or myself harm, and that I love you.
+This essay is aggresive in provoking psychological distress. I published it in spite of ethical doubts because I believe some may find it beautiful. Please know that I do not wish you or myself harm.
 {{< /trigger-warning >}}
 
 When evaluating future possibilities, there is a multiplicative factor that is joined to the estimate of value associated with one of many outcomes that may follow a choice. It does not vex me to wonder which outcome I prefer. I now enjoy the privilege of an effective set of objective values. That is to say, outcome resolution I consider for myself a solved problem; I own a sufficiently clear order under which I value the possible outcomes of my actions. Yet those quantities, the values of outcomes, cannot be rationally used in ignorance of their associated risks. It is in estimating those risks that I have found the most heartbreaking of my circumstances. 
